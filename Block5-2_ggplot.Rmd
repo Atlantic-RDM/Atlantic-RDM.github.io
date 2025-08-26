@@ -268,6 +268,30 @@ Take a look at our data set and make two new plots.
 **Challenge:** What is one component of your plot you would like to change? Can you look up a solution? 
 :::
 
+:::question
+See if you can recreate the plot below.
+
+<br>
+
+**Hint:** This type of chart is called a "proportional bar chart", and search engines are your best friend!
+
+```{r echo=FALSE, fig.align='center'}
+knitr::include_graphics("images/block5-2_prov-edu.png")
+```
+
+```{r class.source = 'fold-hide', results = 'hide'}
+prov_edu_plot <- ggplot(js_data, aes(x = province_fact, fill = eduLevel_fact)) +
+  geom_bar(position = "fill") +
+  labs(
+    title = "Proportion of Education Levels by Province",
+    x = "Province",
+    y = "Proportion",
+    fill = "Education Level"
+  ) +
+  theme(axis.text.x = element_text(angle = 45, hjust = 1))
+```
+
+:::
 
 :::question
 See if you can recreate the plot below.  
@@ -295,30 +319,7 @@ time_alone_plot <- ggplot(na.omit(js_data), aes(x = factor(timeWantAlone), y = d
 
 :::
 
-:::question
-See if you can recreate the plot below.
 
-<br>
-
-**Hint:** This type of chart is called a "proportional bar chart", and search engines are your best friend!
-
-```{r echo=FALSE, fig.align='center'}
-knitr::include_graphics("images/block5-2_prov-edu.png")
-```
-
-```{r class.source = 'fold-hide', results = 'hide'}
-prov_edu_plot <- ggplot(js_data, aes(x = province_fact, fill = eduLevel_fact)) +
-  geom_bar(position = "fill") +
-  labs(
-    title = "Proportion of Education Levels by Province",
-    x = "Province",
-    y = "Proportion",
-    fill = "Education Level"
-  ) +
-  theme(axis.text.x = element_text(angle = 45, hjust = 1))
-```
-
-:::
 
 ## Save Your Work
 
