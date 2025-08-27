@@ -33,29 +33,10 @@ The go-to package for data visualization in R is `ggplot2`, which is part of the
 
 This package approaches data visualization through "a grammar of graphics." In other words, using the same syntax, you can create an infinite number of data visualizations. Although there are a lot of functions and components to learn at first, once you understand the overall structure of building graphics in `ggplot2`, you can replicate and expand on this structure to visualize data in an unlimited number of ways. 
 
-### Create a New Script
-
-Let's start by creating a new script.
-
-![](images/block3_create-r-script.gif)
-
-If you have installed the tidyverse, then `ggplot2` is included. Otherwise you can install it now. Let's also load our dataset for today.
-
-```{r, eval = FALSE}
-install.packages("ggplot2")
-library(ggplot2)
-```
-
-:::note
-Let's also load our dataset.  For this exercise, we are using a dataset that is exactly the same as the one that was produced in the session **Data Types and Structures**, but that has one extra variable added called `isFeelRushed`.  This variable is derived from the `feelRushed` variable, with the number `1` indicating that somebody feels rushed, and `0` indicating they do not feel rushed.  For more information on this variable and how it was created, see the session [R: Filter and Select](https://alliance-rdm-gdr.github.io/rdm-jumpstart/3-ACT-3-FilterSelect.html)
-
-:::
-
-```{r}
-load("data/block-5_visualization.RData")
-```
 
 There are many ways to make data visualizations in R; however, other approaches tend to be more automatic and consequently limit the amount you can change and adapt your visualization to your needs. `ggplot2` works in layers, allowing for maximum control and flexibility. 
+
+### Layers in ggplot2
 
 Here are some of the most common layers (i.e., functions) used in `ggplot2`. Typically you connect these layers using the `+` symbol. There is often more than one way to build the same plot with the `ggplot` package. 
 
@@ -85,6 +66,28 @@ There are many more data visualization options in `ggplot` but to get started to
 
 Let's take a look at the [ggplot2 documentation](https://ggplot2.tidyverse.org/reference/index.html)
 
+### Create a New Script
+
+Let's start by creating a new script.
+
+![](images/block3_create-r-script.gif)
+
+If you have installed the tidyverse, then `ggplot2` is included. Otherwise you can install it now. Let's also load our dataset for today.
+
+```{r, eval = FALSE}
+install.packages("ggplot2")
+library(ggplot2)
+```
+
+
+:::note
+Let's load our dataset.  For this exercise, we are using a dataset that is exactly the same as the one that was produced in the session **Data Types and Structures**, but that has one extra variable added called `isFeelRushed`.  This variable is derived from the `feelRushed` variable, with the number `1` indicating that somebody feels rushed, and `0` indicating they do not feel rushed.  For more information on this variable and how it was created, see the session [R: Filter and Select](https://alliance-rdm-gdr.github.io/rdm-jumpstart/3-ACT-3-FilterSelect.html)
+
+:::
+
+```{r}
+load("data/block-5_visualization.RData")
+```
 
 ### Basic Bar Plot: Counts
 Let's make our first plot in R! We are going to slowly add layers, building up to a box plot representing the number of people in each group in the `isFeelRushed` variable.
