@@ -25,7 +25,7 @@ knitr::opts_chunk$set(echo = TRUE, message = FALSE, warnings = FALSE)
 ```
 
 
-### Visualizations with ggplot2
+## Visualizations with ggplot2
 
 Now that we have our data visualization imaginations going, let's get into how we can visually represent our data in R.
 
