@@ -41,9 +41,9 @@ Let's start by creating a new script.
 
 If you have installed the tidyverse, then `ggplot2` is included. Otherwise you can install it now. Let's also load our dataset for today.
 
-```{r}
-#install.packages("ggplot2")
-#library(ggplot2)
+```{r, eval = FALSE}
+install.packages("ggplot2")
+library(ggplot2)
 ```
 
 :::note
@@ -83,6 +83,8 @@ Here are some of the most common layers (i.e., functions) used in `ggplot2`. Typ
 
 There are many more data visualization options in `ggplot` but to get started today we are going to focus on making a bar plot (good for categorical data) and a scatter plot (good for continuous data). 
 
+Let's take a look at the [ggplot2 documentation](https://ggplot2.tidyverse.org/reference/index.html)
+
 
 ### Basic Bar Plot: Counts
 Let's make our first plot in R! We are going to slowly add layers, building up to a box plot representing the number of people in each group in the `isFeelRushed` variable.
@@ -93,13 +95,15 @@ When creating visualizations, it's always good to have a sense of the variables 
 View(js_data)
 ```
 
-It can also be helpful to have the data dictionary handy, so you know each variable's data type and description:
+Because we know that we're going to be starting with the `isFeelRushed` variable, it's also helpful to know what its data type is:
 
-```{r, echo=FALSE, out.width="95%", out.height="500in"}
-    knitr::include_graphics("images/Block4-2_Dictionary.pdf")
+```{r, results = 'hide'}
+class(js_data$isFeelRushed)
 ```
 
 <br>
+
+#### Starting the Plot
 
 First we create the blank plot on which we will add our data. We nearly always start with the function `ggplot` and then telling the function what dataset to use. 
 
