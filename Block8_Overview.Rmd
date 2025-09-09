@@ -1,29 +1,51 @@
 ---
-title: "Untitled"
-output: html_document
-date: "2025-09-09"
+title: "Working with a Survey"
+pagetitle: "Working with a Survey"
+output:
+  html_document:
+    includes:
+      after_body: footer.html # include a custom footer.
+    toc: true
+    toc_depth: 3
+    toc_float:
+      collapsed: false
+      smooth_scroll: false
 ---
 
-```{r setup, include=FALSE}
-knitr::opts_chunk$set(echo = TRUE)
-```
+## Working with a Survey
 
-## R Markdown
+**Setup Pre-requisites:**
 
-This is an R Markdown document. Markdown is a simple formatting syntax for authoring HTML, PDF, and MS Word documents. For more details on using R Markdown see <http://rmarkdown.rstudio.com>.
+  * <a href="Block7_EXT-RRStudio.html">Download R and RStudio</a> 
+  
 
-When you click the **Knit** button a document will be generated that includes both content as well as the output of any embedded R code chunks within the document. You can embed an R code chunk like this:
+In this 3-part course, we'll cover the fundamental steps of working with survey data, focusing on transparent and reproducible workflows.  The first section will be an interactive introduction to R and RStudio, including an introduction to the environment, basic syntax and foundational concepts, and creating our first reproducible R script.
 
-```{r cars}
-summary(cars)
-```
+### Overarching Learning Objectives
 
-## Including Plots
+By the end of this course, you will be able to:
 
-You can also embed plots, for example:
 
-```{r pressure, echo=FALSE}
-plot(pressure)
-```
 
-Note that the `echo = FALSE` parameter was added to the code chunk to prevent printing of the R code that generated the plot.
+
+### Section Overviews
+
+#### Section 1: Introduction to R
+
+* Introduce R and RStudio
+* Setting up files in R
+  * File types in R
+  * Creating a project
+  * Setting a working directory
+* Create our first R script
+* Creating objects in R
+* Applying literate coding principles to make our code interpretable and reproducible
+
+#### Section 2: Collecting and Cleaning Survey Data
+
+
+
+
+
+
+

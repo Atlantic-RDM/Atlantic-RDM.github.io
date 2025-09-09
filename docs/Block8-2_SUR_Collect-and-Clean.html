@@ -10,9 +10,8 @@
 
 
 
-<meta name="date" content="2025-09-09" />
 
-<title>Untitled</title>
+<title>Collecting and Cleaning Survey Data</title>
 
 <script src="site_libs/header-attrs-2.29/header-attrs.js"></script>
 <script src="site_libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
@@ -30,7 +29,12 @@
        h6 {font-size: 12px;}
        code {color: inherit; background-color: rgba(0, 0, 0, 0.04);}
        pre:not([class]) { background-color: white }</style>
+<script src="site_libs/jqueryui-1.13.2/jquery-ui.min.js"></script>
+<link href="site_libs/tocify-1.9.1/jquery.tocify.css" rel="stylesheet" />
+<script src="site_libs/tocify-1.9.1/jquery.tocify.js"></script>
 <script src="site_libs/navigation-1.1/tabsets.js"></script>
+<script src="site_libs/navigation-1.1/codefolding.js"></script>
+<script src="site_libs/navigation-1.1/sourceembed.js"></script>
 <link href="site_libs/highlightjs-9.12.0/textmate.css" rel="stylesheet" />
 <script src="site_libs/highlightjs-9.12.0/highlight.js"></script>
 <!-- Google tag (gtag.js) -->
@@ -66,6 +70,11 @@ if (window.hljs) {
 
 
 
+<style type="text/css">
+#rmd-source-code {
+  display: none;
+}
+</style>
 
 
 <link rel="stylesheet" href="styles.css" type="text/css" />
@@ -227,7 +236,79 @@ $(document).ready(function () {
 </style>
 
 <!-- code folding -->
+<style type="text/css">
+.code-folding-btn { margin-bottom: 4px; }
+</style>
 
+
+
+<style type="text/css">
+
+#TOC {
+  margin: 25px 0px 20px 0px;
+}
+@media (max-width: 768px) {
+#TOC {
+  position: relative;
+  width: 100%;
+}
+}
+
+@media print {
+.toc-content {
+  /* see https://github.com/w3c/csswg-drafts/issues/4434 */
+  float: right;
+}
+}
+
+.toc-content {
+  padding-left: 30px;
+  padding-right: 40px;
+}
+
+div.main-container {
+  max-width: 1200px;
+}
+
+div.tocify {
+  width: 20%;
+  max-width: 260px;
+  max-height: 85%;
+}
+
+@media (min-width: 768px) and (max-width: 991px) {
+  div.tocify {
+    width: 25%;
+  }
+}
+
+@media (max-width: 767px) {
+  div.tocify {
+    width: 100%;
+    max-width: none;
+  }
+}
+
+.tocify ul, .tocify li {
+  line-height: 20px;
+}
+
+.tocify-subheader .tocify-item {
+  font-size: 0.90em;
+}
+
+.tocify .list-group-item {
+  border-radius: 0px;
+}
+
+.tocify-subheader {
+  display: inline;
+}
+.tocify-subheader .tocify-item {
+  font-size: 0.95em;
+}
+
+</style>
 
 
 
@@ -237,6 +318,16 @@ $(document).ready(function () {
 
 
 <div class="container-fluid main-container">
+
+
+<!-- setup 3col/9col grid for toc_float and main content  -->
+<div class="row">
+<div class="col-xs-12 col-sm-4 col-md-3">
+<div id="TOC" class="tocify">
+</div>
+</div>
+
+<div class="toc-content col-xs-12 col-sm-8 col-md-9">
 
 
 
@@ -510,42 +601,141 @@ $(document).ready(function () {
 
 <div id="header">
 
+<div class="btn-group pull-right float-right">
+<button type="button" class="btn btn-default btn-xs btn-secondary btn-sm dropdown-toggle" data-toggle="dropdown" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><span>Code</span> <span class="caret"></span></button>
+<ul class="dropdown-menu dropdown-menu-right" style="min-width: 50px;">
+<li><a id="rmd-show-all-code" href="#">Show All Code</a></li>
+<li><a id="rmd-hide-all-code" href="#">Hide All Code</a></li>
+<li role="separator" class="divider"></li>
+<li><a id="rmd-download-source" href="#">Download Rmd</a></li>
+</ul>
+</div>
 
 
-<h1 class="title toc-ignore">Untitled</h1>
-<h4 class="date">2025-09-09</h4>
+
+<h1 class="title toc-ignore">Collecting and Cleaning Survey Data</h1>
 
 </div>
 
 
-<div id="r-markdown" class="section level2">
-<h2>R Markdown</h2>
-<p>This is an R Markdown document. Markdown is a simple formatting
-syntax for authoring HTML, PDF, and MS Word documents. For more details
-on using R Markdown see <a href="http://rmarkdown.rstudio.com"
-class="uri">http://rmarkdown.rstudio.com</a>.</p>
-<p>When you click the <strong>Knit</strong> button a document will be
-generated that includes both content as well as the output of any
-embedded R code chunks within the document. You can embed an R code
-chunk like this:</p>
-<pre class="r"><code>summary(cars)</code></pre>
-<pre><code>##      speed           dist       
-##  Min.   : 4.0   Min.   :  2.00  
-##  1st Qu.:12.0   1st Qu.: 26.00  
-##  Median :15.0   Median : 36.00  
-##  Mean   :15.4   Mean   : 42.98  
-##  3rd Qu.:19.0   3rd Qu.: 56.00  
-##  Max.   :25.0   Max.   :120.00</code></pre>
+<div id="collecting-and-cleaning-survey-data" class="section level2">
+<h2>Collecting and Cleaning Survey Data</h2>
+<p>Before we jump into cleaning survey data, it’s helpful to get a sense
+of what the survey actually looks like. Ideas of survey and study design
+are a bit beyond the focus of this course, but you’re encouraged to
+think about these ideas as you go through these materials, and if you’re
+attending a session live, please feel free to ask questions and offer
+insights!</p>
+<div id="our-research-question" class="section level3">
+<h3>Our Research Question</h3>
+<p>For the purpose of this course, we’re going to frame things with an
+overarching research question:</p>
+<p><strong>How does social media usage influence the mental health of
+university students?</strong></p>
+<p>This is a huge question, and you can imagine that to get a proper
+answer you would have to ask far too many questions in a survey, that
+most people wouldn’t want to finish. You can also imagine that you might
+also want to include things like interviews with a variety of groups,
+explore social media algorithms, explore the different types of content
+that social media has to offer, etc.</p>
+<p>Because covering all of this would be far too much for this course,
+we’re going to focus on a fairly short survey as a way to get a sense
+managing this type of data. However, these concepts apply broadly beyond
+this course, and there’s also the possibility that there will be future
+branches of this course to cover additional types of data (stay
+tuned!).</p>
 </div>
-<div id="including-plots" class="section level2">
-<h2>Including Plots</h2>
-<p>You can also embed plots, for example:</p>
-<p><img src="Block8-2_SUR_Collect-and-Clean_files/figure-html/pressure-1.png" width="672" /></p>
-<p>Note that the <code>echo = FALSE</code> parameter was added to the
-code chunk to prevent printing of the R code that generated the
-plot.</p>
+<div id="our-survey" class="section level3">
+<h3>Our Survey</h3>
+<p>The survey we’re going to be working with was created using Google
+Forms because it is an open platform that is freely accessible to anyone
+with a computer. The survey was designed in such a way to utilize every
+question type that the tool offers so you can see how these different
+question types produce different data types, as well as how to work with
+these different data types. Despite using Google Forms, the actions
+we’ll perform in this workshop apply to any survey tool that you might
+use.</p>
+<p>So to start things off, take a couple minutes to go through the
+survey: <a
+href="https://docs.google.com/forms/d/e/1FAIpQLScZEp7MPaCz6G9TgiiZ-q4LjAgfMFsAAa-3RhNZqHFUfrREaw/viewform?usp=header">survey
+link</a></p>
+</div>
+<div id="our-data" class="section level3">
+<h3>Our Data</h3>
+<p>Now that we know what the survey / data collection looks like, let’s
+take a look at the data. The dataset that we’ll be using contains mock
+entries that resemble some general trends you might find in a real
+survey of this kind.</p>
+<p><a href="/data/survey-cleaning-workshop/social-media-survey.csv" download>
+Download the dataset</a></p>
+<div class="question">
+<p>Let’s take a look at the dataset!</p>
+<ul>
+<li>Is it what you expected to see?</li>
+<li>Are there any fields that you think might be tricky to work
+with?</li>
+<li>Can you imagine how the data might need to change in order to ask
+questions of it?</li>
+</ul>
+</div>
+<div id="a-quick-blurb-on-csv-files" class="section level4">
+<h4>A Quick Blurb on CSV files</h4>
+<p>When downloading data from a survey tool, most platforms by default
+will export to a <code>.csv</code> file. <code>.csv</code>, which stands
+for “comma separated values”, are plain text, non-proprietary file
+formats, meaning that they can be opened by any plain text editor (like
+notepad, or textEdit), and do not rely on any paid-for software (this is
+also very helpful for others to access and reuse your data).
+<code>.csv</code> files are also the preferable file format when working
+with spreadsheet data in programming languages like R and Python.</p>
+</div>
+</div>
+<div id="beginning-our-work" class="section level3">
+<h3>Beginning Our Work</h3>
+<p>Now that we have our data, we can start getting to work!</p>
+<p>The first thing we need to do is to create a project folder to keep
+our files in one place. To keep everything consistent, follow these
+steps:</p>
+<ol style="list-style-type: decimal">
+<li>Go to your <code>Documents</code> folder</li>
+<li>Create a folder called <code>social_media_project</code></li>
+<li>Move the file you just downloaded, called
+<code>social-media-survey.csv</code> to the
+<code>social_media_project</code> folder</li>
+</ol>
+<div class="note">
+<p><strong>A quick note on folder and file naming</strong></p>
+<p>Much like naming objects in R, that was covered in the Introduction
+to R session, when naming files and folders follow these practices:</p>
+<ul>
+<li>Only use letters in the English alphabet, number 0-9, dashes -, and
+underscores _</li>
+<li>Do not use spaces or special characters such as:
+~!@#$%^&amp;*()+=…</li>
+<li>Separate naming elements with dashes - and underscores _</li>
+</ul>
+</div>
+</div>
+<div id="setting-a-working-directory" class="section level3">
+<h3>Setting a Working Directory</h3>
+<p>When working in a coding environment, you need to let R (or other
+coding environments) know what folder you want to be working from so you
+can easily access your files. This concept is know as <strong>setting a
+working directory</strong>.</p>
+<p>There are two main ways of doing this in R:</p>
+<ol style="list-style-type: decimal">
+<li>You can use the <code>setwd()</code> function, by manually inserting
+your file path in the brackets like this:</li>
+</ol>
+<ul>
+<li><code>setwd("directory-name/secondary-directory/etc...")</code></li>
+<li>See section on <a href="Block4-1_File-Paths.html">File and Directory
+Paths</a> for more information on paths.</li>
+</ul>
+</div>
 </div>
 
+<div id="rmd-source-code">LS0tDQp0aXRsZTogIkNvbGxlY3RpbmcgYW5kIENsZWFuaW5nIFN1cnZleSBEYXRhIg0KcGFnZXRpdGxlOiAiQ29sbGVjdGluZyBhbmQgQ2xlYW5pbmcgU3VydmV5IERhdGEiDQpvdXRwdXQ6DQogIGh0bWxfZG9jdW1lbnQ6DQogICAgY29kZV9mb2xkaW5nOiBzaG93ICMgYWxsb3dzIHRvZ2dsaW5nIG9mIHNob3dpbmcgYW5kIGhpZGluZyBjb2RlLiBSZW1vdmUgaWYgbm90IHVzaW5nIGNvZGUuDQogICAgY29kZV9kb3dubG9hZDogdHJ1ZSAjIGFsbG93cyB0aGUgdXNlciB0byBkb3dubG9hZCB0aGUgc291cmNlIC5SbWQgZmlsZS4gUmVtb3ZlIGlmIG5vdCB1c2luZyBjb2RlLg0KICAgIGluY2x1ZGVzOg0KICAgICAgYWZ0ZXJfYm9keTogZm9vdGVyLmh0bWwgIyBpbmNsdWRlIGEgY3VzdG9tIGZvb3Rlci4NCiAgICB0b2M6IHRydWUNCiAgICB0b2NfZGVwdGg6IDMNCiAgICB0b2NfZmxvYXQ6DQogICAgICBjb2xsYXBzZWQ6IGZhbHNlDQogICAgICBzbW9vdGhfc2Nyb2xsOiBmYWxzZQ0KLS0tDQpgYGB7ciBzZXR1cCwgaW5jbHVkZT1GQUxTRX0NCmtuaXRyOjpvcHRzX2NodW5rJHNldChtZXNzYWdlID0gRkFMU0UsIHdhcm5pbmdzID0gRkFMU0UpDQpgYGANCg0KIyMgQ29sbGVjdGluZyBhbmQgQ2xlYW5pbmcgU3VydmV5IERhdGENCg0KQmVmb3JlIHdlIGp1bXAgaW50byBjbGVhbmluZyBzdXJ2ZXkgZGF0YSwgaXQncyBoZWxwZnVsIHRvIGdldCBhIHNlbnNlIG9mIHdoYXQgdGhlIHN1cnZleSBhY3R1YWxseSBsb29rcyBsaWtlLiAgSWRlYXMgb2Ygc3VydmV5IGFuZCBzdHVkeSBkZXNpZ24gYXJlIGEgYml0IGJleW9uZCB0aGUgZm9jdXMgb2YgdGhpcyBjb3Vyc2UsIGJ1dCB5b3UncmUgZW5jb3VyYWdlZCB0byB0aGluayBhYm91dCB0aGVzZSBpZGVhcyBhcyB5b3UgZ28gdGhyb3VnaCB0aGVzZSBtYXRlcmlhbHMsIGFuZCBpZiB5b3UncmUgYXR0ZW5kaW5nIGEgc2Vzc2lvbiBsaXZlLCBwbGVhc2UgZmVlbCBmcmVlIHRvIGFzayBxdWVzdGlvbnMgYW5kIG9mZmVyIGluc2lnaHRzIQ0KDQojIyMgT3VyIFJlc2VhcmNoIFF1ZXN0aW9uDQoNCkZvciB0aGUgcHVycG9zZSBvZiB0aGlzIGNvdXJzZSwgd2UncmUgZ29pbmcgdG8gZnJhbWUgdGhpbmdzIHdpdGggYW4gb3ZlcmFyY2hpbmcgcmVzZWFyY2ggcXVlc3Rpb246DQoNCioqSG93IGRvZXMgc29jaWFsIG1lZGlhIHVzYWdlIGluZmx1ZW5jZSB0aGUgbWVudGFsIGhlYWx0aCBvZiB1bml2ZXJzaXR5IHN0dWRlbnRzPyoqDQoNClRoaXMgaXMgYSBodWdlIHF1ZXN0aW9uLCBhbmQgeW91IGNhbiBpbWFnaW5lIHRoYXQgdG8gZ2V0IGEgcHJvcGVyIGFuc3dlciB5b3Ugd291bGQgaGF2ZSB0byBhc2sgZmFyIHRvbyBtYW55IHF1ZXN0aW9ucyBpbiBhIHN1cnZleSwgdGhhdCBtb3N0IHBlb3BsZSB3b3VsZG4ndCB3YW50IHRvIGZpbmlzaC4gIFlvdSBjYW4gYWxzbyBpbWFnaW5lIHRoYXQgeW91IG1pZ2h0IGFsc28gd2FudCB0byBpbmNsdWRlIHRoaW5ncyBsaWtlIGludGVydmlld3Mgd2l0aCBhIHZhcmlldHkgb2YgZ3JvdXBzLCBleHBsb3JlIHNvY2lhbCBtZWRpYSBhbGdvcml0aG1zLCBleHBsb3JlIHRoZSBkaWZmZXJlbnQgdHlwZXMgb2YgY29udGVudCB0aGF0IHNvY2lhbCBtZWRpYSBoYXMgdG8gb2ZmZXIsIGV0Yy4gIA0KDQpCZWNhdXNlIGNvdmVyaW5nIGFsbCBvZiB0aGlzIHdvdWxkIGJlIGZhciB0b28gbXVjaCBmb3IgdGhpcyBjb3Vyc2UsIHdlJ3JlIGdvaW5nIHRvIGZvY3VzIG9uIGEgZmFpcmx5IHNob3J0IHN1cnZleSBhcyBhIHdheSB0byBnZXQgYSBzZW5zZSBtYW5hZ2luZyB0aGlzIHR5cGUgb2YgZGF0YS4gIEhvd2V2ZXIsIHRoZXNlIGNvbmNlcHRzIGFwcGx5IGJyb2FkbHkgYmV5b25kIHRoaXMgY291cnNlLCBhbmQgdGhlcmUncyBhbHNvIHRoZSBwb3NzaWJpbGl0eSB0aGF0IHRoZXJlIHdpbGwgYmUgZnV0dXJlIGJyYW5jaGVzIG9mIHRoaXMgY291cnNlIHRvIGNvdmVyIGFkZGl0aW9uYWwgdHlwZXMgb2YgZGF0YSAoc3RheSB0dW5lZCEpLg0KDQojIyMgT3VyIFN1cnZleQ0KDQpUaGUgc3VydmV5IHdlJ3JlIGdvaW5nIHRvIGJlIHdvcmtpbmcgd2l0aCB3YXMgY3JlYXRlZCB1c2luZyBHb29nbGUgRm9ybXMgYmVjYXVzZSBpdCBpcyBhbiBvcGVuIHBsYXRmb3JtIHRoYXQgaXMgZnJlZWx5IGFjY2Vzc2libGUgdG8gYW55b25lIHdpdGggYSBjb21wdXRlci4gIFRoZSBzdXJ2ZXkgd2FzIGRlc2lnbmVkIGluIHN1Y2ggYSB3YXkgdG8gdXRpbGl6ZSBldmVyeSBxdWVzdGlvbiB0eXBlIHRoYXQgdGhlIHRvb2wgb2ZmZXJzIHNvIHlvdSBjYW4gc2VlIGhvdyB0aGVzZSBkaWZmZXJlbnQgcXVlc3Rpb24gdHlwZXMgcHJvZHVjZSBkaWZmZXJlbnQgZGF0YSB0eXBlcywgYXMgd2VsbCBhcyBob3cgdG8gd29yayB3aXRoIHRoZXNlIGRpZmZlcmVudCBkYXRhIHR5cGVzLiAgRGVzcGl0ZSB1c2luZyBHb29nbGUgRm9ybXMsIHRoZSBhY3Rpb25zIHdlJ2xsIHBlcmZvcm0gaW4gdGhpcyB3b3Jrc2hvcCBhcHBseSB0byBhbnkgc3VydmV5IHRvb2wgdGhhdCB5b3UgbWlnaHQgdXNlLg0KDQpTbyB0byBzdGFydCB0aGluZ3Mgb2ZmLCB0YWtlIGEgY291cGxlIG1pbnV0ZXMgdG8gZ28gdGhyb3VnaCB0aGUgc3VydmV5OiBbc3VydmV5IGxpbmtdKGh0dHBzOi8vZG9jcy5nb29nbGUuY29tL2Zvcm1zL2QvZS8xRkFJcFFMU2NaRXA3TVBhQ3o2RzlUZ2lpWi1xNExqQWdmTUZzQUFhLTNSaE5acUhGVWZyUkVhdy92aWV3Zm9ybT91c3A9aGVhZGVyKQ0KDQojIyMgT3VyIERhdGENCg0KTm93IHRoYXQgd2Uga25vdyB3aGF0IHRoZSBzdXJ2ZXkgLyBkYXRhIGNvbGxlY3Rpb24gbG9va3MgbGlrZSwgbGV0J3MgdGFrZSBhIGxvb2sgYXQgdGhlIGRhdGEuICBUaGUgZGF0YXNldCB0aGF0IHdlJ2xsIGJlIHVzaW5nIGNvbnRhaW5zIG1vY2sgZW50cmllcyB0aGF0IHJlc2VtYmxlIHNvbWUgZ2VuZXJhbCB0cmVuZHMgeW91IG1pZ2h0IGZpbmQgaW4gYSByZWFsIHN1cnZleSBvZiB0aGlzIGtpbmQuDQoNCjxhIGhyZWY9Ii9kYXRhL3N1cnZleS1jbGVhbmluZy13b3Jrc2hvcC9zb2NpYWwtbWVkaWEtc3VydmV5LmNzdiIgZG93bmxvYWQ+IERvd25sb2FkIHRoZSBkYXRhc2V0PC9hPg0KDQo6OjpxdWVzdGlvbg0KDQpMZXQncyB0YWtlIGEgbG9vayBhdCB0aGUgZGF0YXNldCENCg0KKiBJcyBpdCB3aGF0IHlvdSBleHBlY3RlZCB0byBzZWU/DQoqIEFyZSB0aGVyZSBhbnkgZmllbGRzIHRoYXQgeW91IHRoaW5rIG1pZ2h0IGJlIHRyaWNreSB0byB3b3JrIHdpdGg/DQoqIENhbiB5b3UgaW1hZ2luZSBob3cgdGhlIGRhdGEgbWlnaHQgbmVlZCB0byBjaGFuZ2UgaW4gb3JkZXIgdG8gYXNrIHF1ZXN0aW9ucyBvZiBpdD8NCg0KOjo6DQoNCiMjIyMgQSBRdWljayBCbHVyYiBvbiBDU1YgZmlsZXMNCg0KV2hlbiBkb3dubG9hZGluZyBkYXRhIGZyb20gYSBzdXJ2ZXkgdG9vbCwgbW9zdCBwbGF0Zm9ybXMgYnkgZGVmYXVsdCB3aWxsIGV4cG9ydCB0byBhIGAuY3N2YCBmaWxlLiAgYC5jc3ZgLCB3aGljaCBzdGFuZHMgZm9yICJjb21tYSBzZXBhcmF0ZWQgdmFsdWVzIiwgYXJlIHBsYWluIHRleHQsIG5vbi1wcm9wcmlldGFyeSBmaWxlIGZvcm1hdHMsIG1lYW5pbmcgdGhhdCB0aGV5IGNhbiBiZSBvcGVuZWQgYnkgYW55IHBsYWluIHRleHQgZWRpdG9yIChsaWtlIG5vdGVwYWQsIG9yIHRleHRFZGl0KSwgYW5kIGRvIG5vdCByZWx5IG9uIGFueSBwYWlkLWZvciBzb2Z0d2FyZSAodGhpcyBpcyBhbHNvIHZlcnkgaGVscGZ1bCBmb3Igb3RoZXJzIHRvIGFjY2VzcyBhbmQgcmV1c2UgeW91ciBkYXRhKS4gYC5jc3ZgIGZpbGVzIGFyZSBhbHNvIHRoZSBwcmVmZXJhYmxlIGZpbGUgZm9ybWF0IHdoZW4gd29ya2luZyB3aXRoIHNwcmVhZHNoZWV0IGRhdGEgaW4gcHJvZ3JhbW1pbmcgbGFuZ3VhZ2VzIGxpa2UgUiBhbmQgUHl0aG9uLg0KDQojIyMgQmVnaW5uaW5nIE91ciBXb3JrDQoNCk5vdyB0aGF0IHdlIGhhdmUgb3VyIGRhdGEsIHdlIGNhbiBzdGFydCBnZXR0aW5nIHRvIHdvcmshICANCg0KVGhlIGZpcnN0IHRoaW5nIHdlIG5lZWQgdG8gZG8gaXMgdG8gY3JlYXRlIGEgcHJvamVjdCBmb2xkZXIgdG8ga2VlcCBvdXIgZmlsZXMgaW4gb25lIHBsYWNlLiBUbyBrZWVwIGV2ZXJ5dGhpbmcgY29uc2lzdGVudCwgZm9sbG93IHRoZXNlIHN0ZXBzOg0KDQoxKSBHbyB0byB5b3VyIGBEb2N1bWVudHNgIGZvbGRlcg0KMikgQ3JlYXRlIGEgZm9sZGVyIGNhbGxlZCBgc29jaWFsX21lZGlhX3Byb2plY3RgDQozKSBNb3ZlIHRoZSBmaWxlIHlvdSBqdXN0IGRvd25sb2FkZWQsIGNhbGxlZCBgc29jaWFsLW1lZGlhLXN1cnZleS5jc3ZgIHRvIHRoZSBgc29jaWFsX21lZGlhX3Byb2plY3RgIGZvbGRlcg0KDQo6Ojpub3RlDQoNCioqQSBxdWljayBub3RlIG9uIGZvbGRlciBhbmQgZmlsZSBuYW1pbmcqKg0KDQpNdWNoIGxpa2UgbmFtaW5nIG9iamVjdHMgaW4gUiwgdGhhdCB3YXMgY292ZXJlZCBpbiB0aGUgSW50cm9kdWN0aW9uIHRvIFIgc2Vzc2lvbiwgd2hlbiBuYW1pbmcgZmlsZXMgYW5kIGZvbGRlcnMgZm9sbG93IHRoZXNlIHByYWN0aWNlczoNCg0KKiBPbmx5IHVzZSBsZXR0ZXJzIGluIHRoZSBFbmdsaXNoIGFscGhhYmV0LCBudW1iZXIgMC05LCBkYXNoZXMgLSwgYW5kIHVuZGVyc2NvcmVzIF8NCiogRG8gbm90IHVzZSBzcGFjZXMgb3Igc3BlY2lhbCBjaGFyYWN0ZXJzIHN1Y2ggYXM6IH4hQCMkJV4mKigpKz3igKYNCiogU2VwYXJhdGUgbmFtaW5nIGVsZW1lbnRzIHdpdGggZGFzaGVzIC0gYW5kIHVuZGVyc2NvcmVzIF8NCg0KOjo6DQoNCiMjIyBTZXR0aW5nIGEgV29ya2luZyBEaXJlY3RvcnkNCg0KV2hlbiB3b3JraW5nIGluIGEgY29kaW5nIGVudmlyb25tZW50LCB5b3UgbmVlZCB0byBsZXQgUiAob3Igb3RoZXIgY29kaW5nIGVudmlyb25tZW50cykga25vdyB3aGF0IGZvbGRlciB5b3Ugd2FudCB0byBiZSB3b3JraW5nIGZyb20gc28geW91IGNhbiBlYXNpbHkgYWNjZXNzIHlvdXIgZmlsZXMuICBUaGlzIGNvbmNlcHQgaXMga25vdyBhcyAqKnNldHRpbmcgYSB3b3JraW5nIGRpcmVjdG9yeSoqLg0KDQpUaGVyZSBhcmUgdHdvIG1haW4gd2F5cyBvZiBkb2luZyB0aGlzIGluIFI6DQoNCjEpIFlvdSBjYW4gdXNlIHRoZSBgc2V0d2QoKWAgZnVuY3Rpb24sIGJ5IG1hbnVhbGx5IGluc2VydGluZyB5b3VyIGZpbGUgcGF0aCBpbiB0aGUgYnJhY2tldHMgbGlrZSB0aGlzOg0KICAqIGBzZXR3ZCgiZGlyZWN0b3J5LW5hbWUvc2Vjb25kYXJ5LWRpcmVjdG9yeS9ldGMuLi4iKWAgDQogICogU2VlIHNlY3Rpb24gb24gW0ZpbGUgYW5kIERpcmVjdG9yeSBQYXRoc10oQmxvY2s0LTFfRmlsZS1QYXRocy5odG1sKSBmb3IgbW9yZSBpbmZvcm1hdGlvbiBvbiBwYXRocy4NCiAgDQoNCg0KDQoNCg0KDQoNCg0KDQoNCg0K</div>
 <div id="footer">
     <hr />
     <div class = "inst-logos">
@@ -566,6 +756,8 @@ Built and rendered courtesy of <a href="https://rmarkdown.rstudio.com/index.html
 
 
 
+</div>
+</div>
 
 </div>
 
@@ -597,7 +789,42 @@ $(document).ready(function () {
 </script>
 
 <!-- code folding -->
+<script>
+$(document).ready(function () {
+  window.initializeSourceEmbed("Block8-2_SUR_Collect-and-Clean.Rmd");
+  window.initializeCodeFolding("show" === "show");
+});
+</script>
 
+<script>
+$(document).ready(function ()  {
+
+    // temporarily add toc-ignore selector to headers for the consistency with Pandoc
+    $('.unlisted.unnumbered').addClass('toc-ignore')
+
+    // move toc-ignore selectors from section div to header
+    $('div.section.toc-ignore')
+        .removeClass('toc-ignore')
+        .children('h1,h2,h3,h4,h5').addClass('toc-ignore');
+
+    // establish options
+    var options = {
+      selectors: "h1,h2,h3",
+      theme: "bootstrap3",
+      context: '.toc-content',
+      hashGenerator: function (text) {
+        return text.replace(/[.\\/?&!#<>]/g, '').replace(/\s/g, '_');
+      },
+      ignoreSelector: ".toc-ignore",
+      scrollTo: 0
+    };
+    options.showAndHide = false;
+    options.smoothScroll = false;
+
+    // tocify
+    var toc = $("#TOC").tocify(options).data("toc-tocify");
+});
+</script>
 
 <!-- dynamically load mathjax for compatibility with self-contained -->
 <script>
