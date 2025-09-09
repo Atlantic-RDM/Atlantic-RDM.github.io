@@ -13,7 +13,7 @@
 
 <title>Setting up OSF</title>
 
-<script src="site_libs/header-attrs-2.28/header-attrs.js"></script>
+<script src="site_libs/header-attrs-2.29/header-attrs.js"></script>
 <script src="site_libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <link href="site_libs/bootstrap-3.3.5/css/flatly.min.css" rel="stylesheet" />
@@ -490,6 +490,27 @@ div.tocify {
 </li>
 <li class="dropdown">
   <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+    Working with a Survey
+     
+    <span class="caret"></span>
+  </a>
+  <ul class="dropdown-menu" role="menu">
+    <li>
+      <a href="Block8_Overview.html">Overview</a>
+    </li>
+    <li>
+      <a href="Block8_SUR_Intro-to-R.html">Introduction to R</a>
+    </li>
+    <li>
+      <a href="Block8_SUR_Collect-and-Clean.html">Collecting and Cleaning Survey Data</a>
+    </li>
+    <li>
+      <a href="Block8_SUR_Making-Sense.html">Making Sense of Survey Data</a>
+    </li>
+  </ul>
+</li>
+<li class="dropdown">
+  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
     Extras
      
     <span class="caret"></span>
@@ -614,7 +635,7 @@ email address of your choosing.</p>
 <p><img src="images/6-EXT-osfSignOpts.png" /></p>
 </div>
 
-<div id="rmd-source-code">LS0tCnRpdGxlOiAiU2V0dGluZyB1cCBPU0YiCnBhZ2V0aXRsZTogIlNldHRpbmcgdXAgT1NGIgpvdXRwdXQ6CiAgaHRtbF9kb2N1bWVudDoKICAgIGNvZGVfZm9sZGluZzogc2hvdyAjIGFsbG93cyB0b2dnbGluZyBvZiBzaG93aW5nIGFuZCBoaWRpbmcgY29kZS4gUmVtb3ZlIGlmIG5vdCB1c2luZyBjb2RlLgogICAgY29kZV9kb3dubG9hZDogdHJ1ZSAjIGFsbG93cyB0aGUgdXNlciB0byBkb3dubG9hZCB0aGUgc291cmNlIC5SbWQgZmlsZS4gUmVtb3ZlIGlmIG5vdCB1c2luZyBjb2RlLgogICAgaW5jbHVkZXM6CiAgICAgIGFmdGVyX2JvZHk6IGZvb3Rlci5odG1sICMgaW5jbHVkZSBhIGN1c3RvbSBmb290ZXIuCiAgICB0b2M6IHRydWUKICAgIHRvY19kZXB0aDogMwogICAgdG9jX2Zsb2F0OgogICAgICBjb2xsYXBzZWQ6IGZhbHNlCiAgICAgIHNtb290aF9zY3JvbGw6IGZhbHNlCi0tLQoKIyMgT1NGIFNldHVwIAoKT1NGIHdpbGwgYmUgYSBwbGF0Zm9ybSB0aGF0IHdlIHVzZSB0byBzaGFyZSBwcm9qZWN0IGZpbGVzIHdpdGggeW91LCBhbmQgdGhhdCB5b3Ugd2lsbCB1c2UgdG8gYmFja3VwIHRoYXQgd29yayB0aGF0IHlvdSBkbyB0aHJvdWdob3V0IHRoZSB3ZWVrLiBXaGlsZSBPU0YgaXMgd2ViLWJhc2VkIGFuZCBkb2VzbuKAmXQgcmVxdWlyZSBhbnkgZG93bmxvYWRpbmcsIHdlIGFzayB0aGF0IHlvdSBjcmVhdGUgYW4gT1NGIGFjY291bnQ6CgpMaW5rIHRvIE9TRjogW2h0dHBzOi8vb3NmLmlvL10oaHR0cHM6Ly9vc2YuaW8vKQoKIyMgU2lnbiB1cAoKIVtdKGltYWdlcy82LUVYVC1vc2ZTaWduVXAucG5nKQoKSWYgeW91J3JlIHdpdGggVUJDLCBzZWxlY3QgJ1NpZ24gdXAgdXNpbmcgSW5zdGl0dXRpb24nLiBJZiB5b3UgaGF2ZSBhbiBPUkNJRCwgc2VsZWN0ICdTaWduIHVwIHVzaW5nIE9SQ0lEJy4gQWx0ZXJuYXRpdmVseSwgc2lnbiB1cCB3aXRoIGFuIGVtYWlsIGFkZHJlc3Mgb2YgeW91ciBjaG9vc2luZy4KCiFbXShpbWFnZXMvNi1FWFQtb3NmU2lnbk9wdHMucG5nKQo=</div>
+<div id="rmd-source-code">LS0tDQp0aXRsZTogIlNldHRpbmcgdXAgT1NGIg0KcGFnZXRpdGxlOiAiU2V0dGluZyB1cCBPU0YiDQpvdXRwdXQ6DQogIGh0bWxfZG9jdW1lbnQ6DQogICAgY29kZV9mb2xkaW5nOiBzaG93ICMgYWxsb3dzIHRvZ2dsaW5nIG9mIHNob3dpbmcgYW5kIGhpZGluZyBjb2RlLiBSZW1vdmUgaWYgbm90IHVzaW5nIGNvZGUuDQogICAgY29kZV9kb3dubG9hZDogdHJ1ZSAjIGFsbG93cyB0aGUgdXNlciB0byBkb3dubG9hZCB0aGUgc291cmNlIC5SbWQgZmlsZS4gUmVtb3ZlIGlmIG5vdCB1c2luZyBjb2RlLg0KICAgIGluY2x1ZGVzOg0KICAgICAgYWZ0ZXJfYm9keTogZm9vdGVyLmh0bWwgIyBpbmNsdWRlIGEgY3VzdG9tIGZvb3Rlci4NCiAgICB0b2M6IHRydWUNCiAgICB0b2NfZGVwdGg6IDMNCiAgICB0b2NfZmxvYXQ6DQogICAgICBjb2xsYXBzZWQ6IGZhbHNlDQogICAgICBzbW9vdGhfc2Nyb2xsOiBmYWxzZQ0KLS0tDQoNCiMjIE9TRiBTZXR1cCANCg0KT1NGIHdpbGwgYmUgYSBwbGF0Zm9ybSB0aGF0IHdlIHVzZSB0byBzaGFyZSBwcm9qZWN0IGZpbGVzIHdpdGggeW91LCBhbmQgdGhhdCB5b3Ugd2lsbCB1c2UgdG8gYmFja3VwIHRoYXQgd29yayB0aGF0IHlvdSBkbyB0aHJvdWdob3V0IHRoZSB3ZWVrLiBXaGlsZSBPU0YgaXMgd2ViLWJhc2VkIGFuZCBkb2VzbuKAmXQgcmVxdWlyZSBhbnkgZG93bmxvYWRpbmcsIHdlIGFzayB0aGF0IHlvdSBjcmVhdGUgYW4gT1NGIGFjY291bnQ6DQoNCkxpbmsgdG8gT1NGOiBbaHR0cHM6Ly9vc2YuaW8vXShodHRwczovL29zZi5pby8pDQoNCiMjIFNpZ24gdXANCg0KIVtdKGltYWdlcy82LUVYVC1vc2ZTaWduVXAucG5nKQ0KDQpJZiB5b3UncmUgd2l0aCBVQkMsIHNlbGVjdCAnU2lnbiB1cCB1c2luZyBJbnN0aXR1dGlvbicuIElmIHlvdSBoYXZlIGFuIE9SQ0lELCBzZWxlY3QgJ1NpZ24gdXAgdXNpbmcgT1JDSUQnLiBBbHRlcm5hdGl2ZWx5LCBzaWduIHVwIHdpdGggYW4gZW1haWwgYWRkcmVzcyBvZiB5b3VyIGNob29zaW5nLg0KDQohW10oaW1hZ2VzLzYtRVhULW9zZlNpZ25PcHRzLnBuZykNCg==</div>
 <div id="footer">
     <hr />
     <div class = "inst-logos">

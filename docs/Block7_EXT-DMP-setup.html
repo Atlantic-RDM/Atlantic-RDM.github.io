@@ -13,7 +13,7 @@
 
 <title>Setting up DMP Assistant</title>
 
-<script src="site_libs/header-attrs-2.28/header-attrs.js"></script>
+<script src="site_libs/header-attrs-2.29/header-attrs.js"></script>
 <script src="site_libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <link href="site_libs/bootstrap-3.3.5/css/flatly.min.css" rel="stylesheet" />
@@ -490,6 +490,27 @@ div.tocify {
 </li>
 <li class="dropdown">
   <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+    Working with a Survey
+     
+    <span class="caret"></span>
+  </a>
+  <ul class="dropdown-menu" role="menu">
+    <li>
+      <a href="Block8_Overview.html">Overview</a>
+    </li>
+    <li>
+      <a href="Block8_SUR_Intro-to-R.html">Introduction to R</a>
+    </li>
+    <li>
+      <a href="Block8_SUR_Collect-and-Clean.html">Collecting and Cleaning Survey Data</a>
+    </li>
+    <li>
+      <a href="Block8_SUR_Making-Sense.html">Making Sense of Survey Data</a>
+    </li>
+  </ul>
+</li>
+<li class="dropdown">
+  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
     Extras
      
     <span class="caret"></span>
@@ -615,7 +636,7 @@ to go!</p></li>
 program organizer for assistance.</p>
 </div>
 
-<div id="rmd-source-code">LS0tCnRpdGxlOiAiU2V0dGluZyB1cCBETVAgQXNzaXN0YW50IgpwYWdldGl0bGU6ICJTZXR0aW5nIHVwIERNUCBBc3Npc3RhbnQiCm91dHB1dDoKICBodG1sX2RvY3VtZW50OgogICAgY29kZV9mb2xkaW5nOiBzaG93ICMgYWxsb3dzIHRvZ2dsaW5nIG9mIHNob3dpbmcgYW5kIGhpZGluZyBjb2RlLiBSZW1vdmUgaWYgbm90IHVzaW5nIGNvZGUuCiAgICBjb2RlX2Rvd25sb2FkOiB0cnVlICMgYWxsb3dzIHRoZSB1c2VyIHRvIGRvd25sb2FkIHRoZSBzb3VyY2UgLlJtZCBmaWxlLiBSZW1vdmUgaWYgbm90IHVzaW5nIGNvZGUuCiAgICBpbmNsdWRlczoKICAgICAgYWZ0ZXJfYm9keTogZm9vdGVyLmh0bWwgIyBpbmNsdWRlIGEgY3VzdG9tIGZvb3Rlci4KICAgIHRvYzogdHJ1ZQogICAgdG9jX2RlcHRoOiAzCiAgICB0b2NfZmxvYXQ6CiAgICAgIGNvbGxhcHNlZDogZmFsc2UKICAgICAgc21vb3RoX3Njcm9sbDogZmFsc2UKLS0tCgojIyBETVAgQXNzaXN0YW50IFNldHVwCgpUaGUgRE1QIEFzc2lzdGFudCBpcyBhIHBsYXRmb3JtIHRoYXQgd2Ugd2lsbCB1c2UgdG8gY3JlYXRlIGEgZGF0YSBtYW5hZ2VtZW50IHBsYW4gKERNUCkgZm9yIHRoZSBzZXJpZXMsIHdoaWNoIHdpbGwgYmVnaW4gaW4gQmxvY2sgMSBhbmQgd2lsbCBjb250aW51ZSB0aHJvdWdob3V0IHRoZSBwcm9ncmFtLiAgVG8gdXNlIHRoZSBETVAgQXNzaXN0YW50LCB5b3UnbGwgbmVlZCB0byBjcmVhdGUgYW4gYWNjb3VudCBieSBmb2xsb3dpbmcgdGhlIHN0ZXBzIGJlbG93OgoKMS4gR28gdG8gdGhlIERNUCBBc3Npc3RhbnQgV2Vic2l0ZTogPGEgaHJlZj0iaHR0cHM6Ly9kbXAtcGdkLmNhLyI+aHR0cHM6Ly9kbXAtcGdkLmNhLzwvYT4KCjIuIEZpbGwgb3V0IHlvdXIgZmlyc3QgYW5kIGxhc3QgbmFtZSwgZW1haWwsIG9yZ2FuaXphdGlvbiAoVW5pdmVyc2l0eSBvZiBWaWN0b3JpYSksIGFuZCB0aGVuIGNob29zZSBhIHBhc3N3b3JkLiAgWW91IHNob3VsZCByZWNlaXZlIGFuIGVtYWlsIGNvbmZpcm1pbmcgeW91ciBzdWNjZXNzZnVsIGFjY291bnQgc2V0dXAsIGFuZCBub3cgeW91J3JlIGdvb2QgdG8gZ28hIAoKSWYgeW91IHJ1biBpbnRvIGFueSBpc3N1ZXMgd2l0aCB0aGlzIHByb2Nlc3MsIHBsZWFzZSByZWFjaCBvdXQgdG8gdGhlIHByb2dyYW0gb3JnYW5pemVyIGZvciBhc3Npc3RhbmNlLgoK</div>
+<div id="rmd-source-code">LS0tDQp0aXRsZTogIlNldHRpbmcgdXAgRE1QIEFzc2lzdGFudCINCnBhZ2V0aXRsZTogIlNldHRpbmcgdXAgRE1QIEFzc2lzdGFudCINCm91dHB1dDoNCiAgaHRtbF9kb2N1bWVudDoNCiAgICBjb2RlX2ZvbGRpbmc6IHNob3cgIyBhbGxvd3MgdG9nZ2xpbmcgb2Ygc2hvd2luZyBhbmQgaGlkaW5nIGNvZGUuIFJlbW92ZSBpZiBub3QgdXNpbmcgY29kZS4NCiAgICBjb2RlX2Rvd25sb2FkOiB0cnVlICMgYWxsb3dzIHRoZSB1c2VyIHRvIGRvd25sb2FkIHRoZSBzb3VyY2UgLlJtZCBmaWxlLiBSZW1vdmUgaWYgbm90IHVzaW5nIGNvZGUuDQogICAgaW5jbHVkZXM6DQogICAgICBhZnRlcl9ib2R5OiBmb290ZXIuaHRtbCAjIGluY2x1ZGUgYSBjdXN0b20gZm9vdGVyLg0KICAgIHRvYzogdHJ1ZQ0KICAgIHRvY19kZXB0aDogMw0KICAgIHRvY19mbG9hdDoNCiAgICAgIGNvbGxhcHNlZDogZmFsc2UNCiAgICAgIHNtb290aF9zY3JvbGw6IGZhbHNlDQotLS0NCg0KIyMgRE1QIEFzc2lzdGFudCBTZXR1cA0KDQpUaGUgRE1QIEFzc2lzdGFudCBpcyBhIHBsYXRmb3JtIHRoYXQgd2Ugd2lsbCB1c2UgdG8gY3JlYXRlIGEgZGF0YSBtYW5hZ2VtZW50IHBsYW4gKERNUCkgZm9yIHRoZSBzZXJpZXMsIHdoaWNoIHdpbGwgYmVnaW4gaW4gQmxvY2sgMSBhbmQgd2lsbCBjb250aW51ZSB0aHJvdWdob3V0IHRoZSBwcm9ncmFtLiAgVG8gdXNlIHRoZSBETVAgQXNzaXN0YW50LCB5b3UnbGwgbmVlZCB0byBjcmVhdGUgYW4gYWNjb3VudCBieSBmb2xsb3dpbmcgdGhlIHN0ZXBzIGJlbG93Og0KDQoxLiBHbyB0byB0aGUgRE1QIEFzc2lzdGFudCBXZWJzaXRlOiA8YSBocmVmPSJodHRwczovL2RtcC1wZ2QuY2EvIj5odHRwczovL2RtcC1wZ2QuY2EvPC9hPg0KDQoyLiBGaWxsIG91dCB5b3VyIGZpcnN0IGFuZCBsYXN0IG5hbWUsIGVtYWlsLCBvcmdhbml6YXRpb24gKFVuaXZlcnNpdHkgb2YgVmljdG9yaWEpLCBhbmQgdGhlbiBjaG9vc2UgYSBwYXNzd29yZC4gIFlvdSBzaG91bGQgcmVjZWl2ZSBhbiBlbWFpbCBjb25maXJtaW5nIHlvdXIgc3VjY2Vzc2Z1bCBhY2NvdW50IHNldHVwLCBhbmQgbm93IHlvdSdyZSBnb29kIHRvIGdvISANCg0KSWYgeW91IHJ1biBpbnRvIGFueSBpc3N1ZXMgd2l0aCB0aGlzIHByb2Nlc3MsIHBsZWFzZSByZWFjaCBvdXQgdG8gdGhlIHByb2dyYW0gb3JnYW5pemVyIGZvciBhc3Npc3RhbmNlLg0KDQo=</div>
 <div id="footer">
     <hr />
     <div class = "inst-logos">

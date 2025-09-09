@@ -13,7 +13,7 @@
 
 <title>Setting up Borealis</title>
 
-<script src="site_libs/header-attrs-2.28/header-attrs.js"></script>
+<script src="site_libs/header-attrs-2.29/header-attrs.js"></script>
 <script src="site_libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <link href="site_libs/bootstrap-3.3.5/css/flatly.min.css" rel="stylesheet" />
@@ -490,6 +490,27 @@ div.tocify {
 </li>
 <li class="dropdown">
   <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+    Working with a Survey
+     
+    <span class="caret"></span>
+  </a>
+  <ul class="dropdown-menu" role="menu">
+    <li>
+      <a href="Block8_Overview.html">Overview</a>
+    </li>
+    <li>
+      <a href="Block8_SUR_Intro-to-R.html">Introduction to R</a>
+    </li>
+    <li>
+      <a href="Block8_SUR_Collect-and-Clean.html">Collecting and Cleaning Survey Data</a>
+    </li>
+    <li>
+      <a href="Block8_SUR_Making-Sense.html">Making Sense of Survey Data</a>
+    </li>
+  </ul>
+</li>
+<li class="dropdown">
+  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
     Extras
      
     <span class="caret"></span>
@@ -612,7 +633,7 @@ how to do this. Select UVic as your institutuion:
 </ol>
 </div>
 
-<div id="rmd-source-code">LS0tCnRpdGxlOiAiU2V0dGluZyB1cCBCb3JlYWxpcyIKcGFnZXRpdGxlOiAiU2V0dGluZyB1cCBCb3JlYWxpcyIKb3V0cHV0OgogIGh0bWxfZG9jdW1lbnQ6CiAgICBjb2RlX2ZvbGRpbmc6IHNob3cgIyBhbGxvd3MgdG9nZ2xpbmcgb2Ygc2hvd2luZyBhbmQgaGlkaW5nIGNvZGUuIFJlbW92ZSBpZiBub3QgdXNpbmcgY29kZS4KICAgIGNvZGVfZG93bmxvYWQ6IHRydWUgIyBhbGxvd3MgdGhlIHVzZXIgdG8gZG93bmxvYWQgdGhlIHNvdXJjZSAuUm1kIGZpbGUuIFJlbW92ZSBpZiBub3QgdXNpbmcgY29kZS4KICAgIGluY2x1ZGVzOgogICAgICBhZnRlcl9ib2R5OiBmb290ZXIuaHRtbCAjIGluY2x1ZGUgYSBjdXN0b20gZm9vdGVyLgogICAgdG9jOiB0cnVlCiAgICB0b2NfZGVwdGg6IDMKICAgIHRvY19mbG9hdDoKICAgICAgY29sbGFwc2VkOiBmYWxzZQogICAgICBzbW9vdGhfc2Nyb2xsOiBmYWxzZQotLS0KCiMjIEJvcmVhbGlzIFNldHVwCgpPbiB0aGUgZmluYWwgZGF5IG9mIHRoZSBKdW1wc3RhcnQsIHdlIHdpbGwgYmUgZG9pbmcgYSBoYW5kcy1vbiBkZW1vbnN0cmF0aW9uIG9mIGEgZGF0YSBkZXBvc2l0IHVzaW5nIHRoZSBkZW1vIGluc3RhbmNlIG9mIHRoZSBCb3JlYWxpcyBkYXRhIHJlcG9zaXRvcnkuIEluIG9yZGVyIHRvIGRvIHRoaXMsIHlvdeKAmWxsIG5lZWQgdG8gY3JlYXRlIGFuIGFjY291bnQgb24gdGhlIGRlbW8gaW5zdGFuY2U6CgoxLiBHbyB0byB0aGlzIHdlYnNpdGU6IDxhIGhyZWY9Imh0dHBzOi8vZGVtby5ib3JlYWxpc2RhdGEuY2EvZGF0YXZlcnNlLnhodG1sIj5odHRwczovL2RlbW8uYm9yZWFsaXNkYXRhLmNhL2RhdGF2ZXJzZS54aHRtbDwvYT4KCjIuIEZvbGxvdyB0aGUgc3RlcHMgaW4gdGhpcyBkb2N1bWVudCwgd2hpY2ggd2lsbCB3YWxrIHlvdSB0aHJvdWdoIGhvdyB0byBkbyB0aGlzLiBTZWxlY3QgVVZpYyBhcyB5b3VyIGluc3RpdHV0dWlvbjoKPGEgaHJlZj0iaHR0cHM6Ly9sZWFybi5zY2hvbGFyc3BvcnRhbC5pbmZvL2FsbC1ndWlkZXMvYm9yZWFsaXMvdXNlci1hY2NvdW50cy8iPmh0dHBzOi8vbGVhcm4uc2Nob2xhcnNwb3J0YWwuaW5mby9hbGwtZ3VpZGVzL2JvcmVhbGlzL3VzZXItYWNjb3VudHMvPC9hPgoKCg==</div>
+<div id="rmd-source-code">LS0tDQp0aXRsZTogIlNldHRpbmcgdXAgQm9yZWFsaXMiDQpwYWdldGl0bGU6ICJTZXR0aW5nIHVwIEJvcmVhbGlzIg0Kb3V0cHV0Og0KICBodG1sX2RvY3VtZW50Og0KICAgIGNvZGVfZm9sZGluZzogc2hvdyAjIGFsbG93cyB0b2dnbGluZyBvZiBzaG93aW5nIGFuZCBoaWRpbmcgY29kZS4gUmVtb3ZlIGlmIG5vdCB1c2luZyBjb2RlLg0KICAgIGNvZGVfZG93bmxvYWQ6IHRydWUgIyBhbGxvd3MgdGhlIHVzZXIgdG8gZG93bmxvYWQgdGhlIHNvdXJjZSAuUm1kIGZpbGUuIFJlbW92ZSBpZiBub3QgdXNpbmcgY29kZS4NCiAgICBpbmNsdWRlczoNCiAgICAgIGFmdGVyX2JvZHk6IGZvb3Rlci5odG1sICMgaW5jbHVkZSBhIGN1c3RvbSBmb290ZXIuDQogICAgdG9jOiB0cnVlDQogICAgdG9jX2RlcHRoOiAzDQogICAgdG9jX2Zsb2F0Og0KICAgICAgY29sbGFwc2VkOiBmYWxzZQ0KICAgICAgc21vb3RoX3Njcm9sbDogZmFsc2UNCi0tLQ0KDQojIyBCb3JlYWxpcyBTZXR1cA0KDQpPbiB0aGUgZmluYWwgZGF5IG9mIHRoZSBKdW1wc3RhcnQsIHdlIHdpbGwgYmUgZG9pbmcgYSBoYW5kcy1vbiBkZW1vbnN0cmF0aW9uIG9mIGEgZGF0YSBkZXBvc2l0IHVzaW5nIHRoZSBkZW1vIGluc3RhbmNlIG9mIHRoZSBCb3JlYWxpcyBkYXRhIHJlcG9zaXRvcnkuIEluIG9yZGVyIHRvIGRvIHRoaXMsIHlvdeKAmWxsIG5lZWQgdG8gY3JlYXRlIGFuIGFjY291bnQgb24gdGhlIGRlbW8gaW5zdGFuY2U6DQoNCjEuIEdvIHRvIHRoaXMgd2Vic2l0ZTogPGEgaHJlZj0iaHR0cHM6Ly9kZW1vLmJvcmVhbGlzZGF0YS5jYS9kYXRhdmVyc2UueGh0bWwiPmh0dHBzOi8vZGVtby5ib3JlYWxpc2RhdGEuY2EvZGF0YXZlcnNlLnhodG1sPC9hPg0KDQoyLiBGb2xsb3cgdGhlIHN0ZXBzIGluIHRoaXMgZG9jdW1lbnQsIHdoaWNoIHdpbGwgd2FsayB5b3UgdGhyb3VnaCBob3cgdG8gZG8gdGhpcy4gU2VsZWN0IFVWaWMgYXMgeW91ciBpbnN0aXR1dHVpb246DQo8YSBocmVmPSJodHRwczovL2xlYXJuLnNjaG9sYXJzcG9ydGFsLmluZm8vYWxsLWd1aWRlcy9ib3JlYWxpcy91c2VyLWFjY291bnRzLyI+aHR0cHM6Ly9sZWFybi5zY2hvbGFyc3BvcnRhbC5pbmZvL2FsbC1ndWlkZXMvYm9yZWFsaXMvdXNlci1hY2NvdW50cy88L2E+DQoNCg0K</div>
 <div id="footer">
     <hr />
     <div class = "inst-logos">

@@ -71,6 +71,16 @@ navbar:
           href: Block7_Bonus_Saving-Output.html
         - text: "R: Troubleshooting"
           href: Block7_Bonus_Troubleshooting.html
+    - text: "Working with a Survey"
+      menu: 
+        - text: "Overview"
+          href: Block8_Overview.html
+        - text: "Introduction to R"
+          href: Block8_SUR_Intro-to-R.html
+        - text: "Collecting and Cleaning Survey Data"
+          href: Block8_SUR_Collect-and-Clean.html
+        - text: "Making Sense of Survey Data"
+          href: Block8_SUR_Making-Sense.html
     - text: "Extras"
       menu:
         - text: "Resources"

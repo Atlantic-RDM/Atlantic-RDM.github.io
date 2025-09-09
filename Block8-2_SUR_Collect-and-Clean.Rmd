@@ -1,0 +1,50 @@
+---
+title: "Collecting and Cleaning Survey Data"
+pagetitle: "Collecting and Cleaning Survey Data"
+output:
+  html_document:
+    code_folding: show # allows toggling of showing and hiding code. Remove if not using code.
+    code_download: true # allows the user to download the source .Rmd file. Remove if not using code.
+    includes:
+      after_body: footer.html # include a custom footer.
+    toc: true
+    toc_depth: 3
+    toc_float:
+      collapsed: false
+      smooth_scroll: false
+---
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(message = FALSE, warnings = FALSE)
+```
+
+## Collecting and Cleaning Survey Data
+
+Before we jump into cleaning survey data, it's helpful to get a sense of what the survey actually looks like.  Ideas of survey and study design are a bit beyond the focus of this course, but you're encouraged to think about these ideas as you go through these materials, and if you're attending a session live, please feel free to ask questions and offer insights!
+
+### Our Research Question
+
+For the purpose of this course, we're going to frame things with an overarching research question:
+
+**How does social media usage influence the mental health of university students?**
+
+This is a huge question, and you can imagine that to get a proper answer you would have to ask far too many questions in a survey, that most people wouldn't want to finish.  You can also imagine that you might also want to include things like interviews with a variety of groups, explore social media algorithms, explore the different types of content that social media has to offer, etc.  
+
+Because covering all of this would be far too much for this course, we're going to focus on a fairly short survey as a way to get a sense managing this type of data.  However, these concepts apply broadly beyond this course, and there's also the possibility that there will be future branches of this course to cover additional types of data (stay tuned!).
+
+### Our Survey
+
+The survey we're going to be working with was created using Google Forms, primarily because it is an open platform that is freely accessible to anyone with a computer.  The survey was designed in such a way to utilize every question type that the tool offers so you can see how these different question types produce different data types, as well as how to work with these different data types.
+
+So to start things off, take a few minutes and go through the survey: 
+
+
+
+
+
+
+
+
+
+
+
+

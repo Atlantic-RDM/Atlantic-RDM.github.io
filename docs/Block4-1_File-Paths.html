@@ -13,7 +13,7 @@
 
 <title>File Paths</title>
 
-<script src="site_libs/header-attrs-2.28/header-attrs.js"></script>
+<script src="site_libs/header-attrs-2.29/header-attrs.js"></script>
 <script src="site_libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <link href="site_libs/bootstrap-3.3.5/css/flatly.min.css" rel="stylesheet" />
@@ -490,6 +490,27 @@ div.tocify {
 </li>
 <li class="dropdown">
   <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+    Working with a Survey
+     
+    <span class="caret"></span>
+  </a>
+  <ul class="dropdown-menu" role="menu">
+    <li>
+      <a href="Block8_Overview.html">Overview</a>
+    </li>
+    <li>
+      <a href="Block8_SUR_Intro-to-R.html">Introduction to R</a>
+    </li>
+    <li>
+      <a href="Block8_SUR_Collect-and-Clean.html">Collecting and Cleaning Survey Data</a>
+    </li>
+    <li>
+      <a href="Block8_SUR_Making-Sense.html">Making Sense of Survey Data</a>
+    </li>
+  </ul>
+</li>
+<li class="dropdown">
+  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
     Extras
      
     <span class="caret"></span>
@@ -619,7 +640,7 @@ Path Exercise</a></p>
 </div>
 </div>
 
-<div id="rmd-source-code">LS0tCnRpdGxlOiAiRmlsZSBQYXRocyIKcGFnZXRpdGxlOiAiRmlsZSBQYXRocyIKb3V0cHV0OgogIGh0bWxfZG9jdW1lbnQ6CiAgICBjb2RlX2ZvbGRpbmc6IHNob3cgIyBhbGxvd3MgdG9nZ2xpbmcgb2Ygc2hvd2luZyBhbmQgaGlkaW5nIGNvZGUuIFJlbW92ZSBpZiBub3QgdXNpbmcgY29kZS4KICAgIGNvZGVfZG93bmxvYWQ6IHRydWUgIyBhbGxvd3MgdGhlIHVzZXIgdG8gZG93bmxvYWQgdGhlIHNvdXJjZSAuUm1kIGZpbGUuIFJlbW92ZSBpZiBub3QgdXNpbmcgY29kZS4KICAgIGluY2x1ZGVzOgogICAgICBhZnRlcl9ib2R5OiBmb290ZXIuaHRtbCAjIGluY2x1ZGUgYSBjdXN0b20gZm9vdGVyLgogICAgdG9jOiB0cnVlCiAgICB0b2NfZGVwdGg6IDMKICAgIHRvY19mbG9hdDoKICAgICAgY29sbGFwc2VkOiBmYWxzZQogICAgICBzbW9vdGhfc2Nyb2xsOiBmYWxzZQotLS0KCiMjIEZpbGUgYW5kIERpcmVjdG9yeSBQYXRocwoKKiBbRG93bmxvYWQgdGhlIFBvd2VyUG9pbnRdKGZpbGVzL0Jsb2NrNC0xX0ZpbGUtUGF0aHMucHB0eCkKCjxvYmplY3QgY2xhc3MgPSAicGRmIiBkYXRhID0gImZpbGVzL0Jsb2NrNC0xX0ZpbGUtUGF0aHMucGRmIj48L29iamVjdD4KCjxicj4KCiMjIyBFeGVyY2lzZQoKCiFbXShpbWFnZXMvYmxvY2s0LTFfZmlsZS1wYXRoLWV4ZXJjaXNlLnBuZykKCjEuIFdoYXQncyB0aGUgcGF0aCB0byB0aGUgTXVzaWMgZGlyZWN0b3J5PwoKMi4gV2hhdCdzIHRoZSBwYXRoIHRvIHRoZSBTLUNsdWItNyBkaXJlY3Rvcnk/CgoKRW50ZXIgeW91ciBhbnN3ZXJzIGluIFBhZGxldDogPGEgaHJlZj0iaHR0cHM6Ly9wYWRsZXQuY29tL25pY2tyb2NobGluL2ZpbGUtcGF0aC1leGVyY2lzZS1rYWZ4aWQ1N285czA5MnJlIj5GaWxlIFBhdGggRXhlcmNpc2U8L2E+CgoKCgoKCgoKCgoKCgoK</div>
+<div id="rmd-source-code">LS0tDQp0aXRsZTogIkZpbGUgUGF0aHMiDQpwYWdldGl0bGU6ICJGaWxlIFBhdGhzIg0Kb3V0cHV0Og0KICBodG1sX2RvY3VtZW50Og0KICAgIGNvZGVfZm9sZGluZzogc2hvdyAjIGFsbG93cyB0b2dnbGluZyBvZiBzaG93aW5nIGFuZCBoaWRpbmcgY29kZS4gUmVtb3ZlIGlmIG5vdCB1c2luZyBjb2RlLg0KICAgIGNvZGVfZG93bmxvYWQ6IHRydWUgIyBhbGxvd3MgdGhlIHVzZXIgdG8gZG93bmxvYWQgdGhlIHNvdXJjZSAuUm1kIGZpbGUuIFJlbW92ZSBpZiBub3QgdXNpbmcgY29kZS4NCiAgICBpbmNsdWRlczoNCiAgICAgIGFmdGVyX2JvZHk6IGZvb3Rlci5odG1sICMgaW5jbHVkZSBhIGN1c3RvbSBmb290ZXIuDQogICAgdG9jOiB0cnVlDQogICAgdG9jX2RlcHRoOiAzDQogICAgdG9jX2Zsb2F0Og0KICAgICAgY29sbGFwc2VkOiBmYWxzZQ0KICAgICAgc21vb3RoX3Njcm9sbDogZmFsc2UNCi0tLQ0KDQojIyBGaWxlIGFuZCBEaXJlY3RvcnkgUGF0aHMNCg0KKiBbRG93bmxvYWQgdGhlIFBvd2VyUG9pbnRdKGZpbGVzL0Jsb2NrNC0xX0ZpbGUtUGF0aHMucHB0eCkNCg0KPG9iamVjdCBjbGFzcyA9ICJwZGYiIGRhdGEgPSAiZmlsZXMvQmxvY2s0LTFfRmlsZS1QYXRocy5wZGYiPjwvb2JqZWN0Pg0KDQo8YnI+DQoNCiMjIyBFeGVyY2lzZQ0KDQoNCiFbXShpbWFnZXMvYmxvY2s0LTFfZmlsZS1wYXRoLWV4ZXJjaXNlLnBuZykNCg0KMS4gV2hhdCdzIHRoZSBwYXRoIHRvIHRoZSBNdXNpYyBkaXJlY3Rvcnk/DQoNCjIuIFdoYXQncyB0aGUgcGF0aCB0byB0aGUgUy1DbHViLTcgZGlyZWN0b3J5Pw0KDQoNCkVudGVyIHlvdXIgYW5zd2VycyBpbiBQYWRsZXQ6IDxhIGhyZWY9Imh0dHBzOi8vcGFkbGV0LmNvbS9uaWNrcm9jaGxpbi9maWxlLXBhdGgtZXhlcmNpc2Uta2FmeGlkNTdvOXMwOTJyZSI+RmlsZSBQYXRoIEV4ZXJjaXNlPC9hPg0KDQoNCg0KDQoNCg0KDQoNCg0KDQoNCg0KDQoNCg==</div>
 <div id="footer">
     <hr />
     <div class = "inst-logos">
