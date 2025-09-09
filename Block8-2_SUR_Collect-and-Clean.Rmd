@@ -89,7 +89,9 @@ There are two main ways of doing this in R:
   * `setwd("directory-name/secondary-directory/etc...")` 
   * See section on [File and Directory Paths](Block4-1_File-Paths.html) for more information on paths.
   
-2) 
+2) Selecting the `Session` tab in the toolbar, and selecting `Set Working Directory`:
+
+![](images/Block8-2_set-wd.gif)
   
 
 
