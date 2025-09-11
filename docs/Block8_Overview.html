@@ -10,9 +10,8 @@
 
 
 
-<meta name="date" content="2025-09-09" />
 
-<title>Untitled</title>
+<title>Working with a Survey</title>
 
 <script src="site_libs/header-attrs-2.29/header-attrs.js"></script>
 <script src="site_libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
@@ -30,6 +29,9 @@
        h6 {font-size: 12px;}
        code {color: inherit; background-color: rgba(0, 0, 0, 0.04);}
        pre:not([class]) { background-color: white }</style>
+<script src="site_libs/jqueryui-1.13.2/jquery-ui.min.js"></script>
+<link href="site_libs/tocify-1.9.1/jquery.tocify.css" rel="stylesheet" />
+<script src="site_libs/tocify-1.9.1/jquery.tocify.js"></script>
 <script src="site_libs/navigation-1.1/tabsets.js"></script>
 <link href="site_libs/highlightjs-9.12.0/textmate.css" rel="stylesheet" />
 <script src="site_libs/highlightjs-9.12.0/highlight.js"></script>
@@ -230,6 +232,75 @@ $(document).ready(function () {
 
 
 
+<style type="text/css">
+
+#TOC {
+  margin: 25px 0px 20px 0px;
+}
+@media (max-width: 768px) {
+#TOC {
+  position: relative;
+  width: 100%;
+}
+}
+
+@media print {
+.toc-content {
+  /* see https://github.com/w3c/csswg-drafts/issues/4434 */
+  float: right;
+}
+}
+
+.toc-content {
+  padding-left: 30px;
+  padding-right: 40px;
+}
+
+div.main-container {
+  max-width: 1200px;
+}
+
+div.tocify {
+  width: 20%;
+  max-width: 260px;
+  max-height: 85%;
+}
+
+@media (min-width: 768px) and (max-width: 991px) {
+  div.tocify {
+    width: 25%;
+  }
+}
+
+@media (max-width: 767px) {
+  div.tocify {
+    width: 100%;
+    max-width: none;
+  }
+}
+
+.tocify ul, .tocify li {
+  line-height: 20px;
+}
+
+.tocify-subheader .tocify-item {
+  font-size: 0.90em;
+}
+
+.tocify .list-group-item {
+  border-radius: 0px;
+}
+
+.tocify-subheader {
+  display: inline;
+}
+.tocify-subheader .tocify-item {
+  font-size: 0.95em;
+}
+
+</style>
+
+
 
 </head>
 
@@ -237,6 +308,16 @@ $(document).ready(function () {
 
 
 <div class="container-fluid main-container">
+
+
+<!-- setup 3col/9col grid for toc_float and main content  -->
+<div class="row">
+<div class="col-xs-12 col-sm-4 col-md-3">
+<div id="TOC" class="tocify">
+</div>
+</div>
+
+<div class="toc-content col-xs-12 col-sm-8 col-md-9">
 
 
 
@@ -408,13 +489,13 @@ $(document).ready(function () {
       <a href="Block8_Overview.html">Overview</a>
     </li>
     <li>
-      <a href="Block8_SUR_Intro-to-R.html">Introduction to R</a>
+      <a href="Block8-1_SUR_Intro-to-R.html">Introduction to R</a>
     </li>
     <li>
-      <a href="Block8_SUR_Collect-and-Clean.html">Collecting and Cleaning Survey Data</a>
+      <a href="Block8-2_SUR_Collect-and-Clean.html">Collecting and Cleaning Survey Data</a>
     </li>
     <li>
-      <a href="Block8_SUR_Making-Sense.html">Making Sense of Survey Data</a>
+      <a href="Block8-3_SUR_Making-Sense.html">Making Sense of Survey Data</a>
     </li>
   </ul>
 </li>
@@ -512,38 +593,49 @@ $(document).ready(function () {
 
 
 
-<h1 class="title toc-ignore">Untitled</h1>
-<h4 class="date">2025-09-09</h4>
+<h1 class="title toc-ignore">Working with a Survey</h1>
 
 </div>
 
 
-<div id="r-markdown" class="section level2">
-<h2>R Markdown</h2>
-<p>This is an R Markdown document. Markdown is a simple formatting
-syntax for authoring HTML, PDF, and MS Word documents. For more details
-on using R Markdown see <a href="http://rmarkdown.rstudio.com"
-class="uri">http://rmarkdown.rstudio.com</a>.</p>
-<p>When you click the <strong>Knit</strong> button a document will be
-generated that includes both content as well as the output of any
-embedded R code chunks within the document. You can embed an R code
-chunk like this:</p>
-<pre class="r"><code>summary(cars)</code></pre>
-<pre><code>##      speed           dist       
-##  Min.   : 4.0   Min.   :  2.00  
-##  1st Qu.:12.0   1st Qu.: 26.00  
-##  Median :15.0   Median : 36.00  
-##  Mean   :15.4   Mean   : 42.98  
-##  3rd Qu.:19.0   3rd Qu.: 56.00  
-##  Max.   :25.0   Max.   :120.00</code></pre>
+<div id="working-with-a-survey" class="section level2">
+<h2>Working with a Survey</h2>
+<p><strong>Setup Pre-requisites:</strong></p>
+<ul>
+<li><a href="Block7_EXT-RRStudio.html">Download R and RStudio</a></li>
+</ul>
+<p>In this 3-part course, we’ll cover the fundamental steps of working
+with survey data, focusing on transparent and reproducible workflows.
+The first section will be an interactive introduction to R and RStudio,
+including an introduction to the environment, basic syntax and
+foundational concepts, and creating our first reproducible R script.</p>
+<div id="overarching-learning-objectives" class="section level3">
+<h3>Overarching Learning Objectives</h3>
+<p>By the end of this course, you will be able to:</p>
 </div>
-<div id="including-plots" class="section level2">
-<h2>Including Plots</h2>
-<p>You can also embed plots, for example:</p>
-<p><img src="Block8_Overview_files/figure-html/pressure-1.png" width="672" /></p>
-<p>Note that the <code>echo = FALSE</code> parameter was added to the
-code chunk to prevent printing of the R code that generated the
-plot.</p>
+<div id="section-overviews" class="section level3">
+<h3>Section Overviews</h3>
+<div id="section-1-introduction-to-r" class="section level4">
+<h4>Section 1: Introduction to R</h4>
+<ul>
+<li>Introduce R and RStudio</li>
+<li>Setting up files in R
+<ul>
+<li>File types in R</li>
+<li>Creating a project</li>
+<li>Setting a working directory</li>
+</ul></li>
+<li>Create our first R script</li>
+<li>Creating objects in R</li>
+<li>Applying literate coding principles to make our code interpretable
+and reproducible</li>
+</ul>
+</div>
+<div id="section-2-collecting-and-cleaning-survey-data"
+class="section level4">
+<h4>Section 2: Collecting and Cleaning Survey Data</h4>
+</div>
+</div>
 </div>
 
 <div id="footer">
@@ -566,6 +658,8 @@ Built and rendered courtesy of <a href="https://rmarkdown.rstudio.com/index.html
 
 
 
+</div>
+</div>
 
 </div>
 
@@ -598,6 +692,35 @@ $(document).ready(function () {
 
 <!-- code folding -->
 
+<script>
+$(document).ready(function ()  {
+
+    // temporarily add toc-ignore selector to headers for the consistency with Pandoc
+    $('.unlisted.unnumbered').addClass('toc-ignore')
+
+    // move toc-ignore selectors from section div to header
+    $('div.section.toc-ignore')
+        .removeClass('toc-ignore')
+        .children('h1,h2,h3,h4,h5').addClass('toc-ignore');
+
+    // establish options
+    var options = {
+      selectors: "h1,h2,h3",
+      theme: "bootstrap3",
+      context: '.toc-content',
+      hashGenerator: function (text) {
+        return text.replace(/[.\\/?&!#<>]/g, '').replace(/\s/g, '_');
+      },
+      ignoreSelector: ".toc-ignore",
+      scrollTo: 0
+    };
+    options.showAndHide = false;
+    options.smoothScroll = false;
+
+    // tocify
+    var toc = $("#TOC").tocify(options).data("toc-tocify");
+});
+</script>
 
 <!-- dynamically load mathjax for compatibility with self-contained -->
 <script>
