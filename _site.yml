@@ -76,11 +76,11 @@ navbar:
         - text: "Overview"
           href: Block8_Overview.html
         - text: "Introduction to R"
-          href: Block8_SUR_Intro-to-R.html
+          href: Block8-1_SUR_Intro-to-R.html
         - text: "Collecting and Cleaning Survey Data"
-          href: Block8_SUR_Collect-and-Clean.html
+          href: Block8-2_SUR_Collect-and-Clean.html
         - text: "Making Sense of Survey Data"
-          href: Block8_SUR_Making-Sense.html
+          href: Block8-3_SUR_Making-Sense.html
     - text: "Extras"
       menu:
         - text: "Resources"
