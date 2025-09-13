@@ -21,19 +21,13 @@ knitr::opts_chunk$set(message = FALSE, warnings = FALSE)
 
 Before we jump into cleaning survey data, it's helpful to get a sense of what the survey actually looks like.  Ideas of survey and study design are a bit beyond the focus of this course, but you're encouraged to think about these ideas as you go through these materials, and if you're attending a session live, please feel free to ask questions and offer insights!
 
-### Our Research Question
+### Our Research Question: **How does social media usage influence the mental health of university students?**
 
-For the purpose of this course, we're going to frame things with an overarching research question:
-
-**How does social media usage influence the mental health of university students?**
-
-This is a huge question, and you can imagine that to get a proper answer you would have to ask far too many questions in a survey, that most people wouldn't want to finish.  You can also imagine that you might also want to include things like interviews with a variety of groups, explore social media algorithms, explore the different types of content that social media has to offer, etc.  
-
-Because covering all of this would be far too much for this course, we're going to focus on a fairly short survey as a way to get a sense managing this type of data.  However, these concepts apply broadly beyond this course, and there's also the possibility that there will be future branches of this course to cover additional types of data (stay tuned!).
+There could be a number of ways to address this question, but for the purpose of this course we're going to focus on a fairly short survey as a way to get a sense managing this type of data.  
 
 ### Our Survey
 
-The survey we're going to be working with was created using Google Forms because it is an open platform that is freely accessible to anyone with a computer.  The survey was designed in such a way to utilize every question type that the tool offers so you can see how these different question types produce different data types, as well as how to work with these different data types.  Despite using Google Forms, the actions we'll perform in this workshop apply to any survey tool that you might use.
+The survey we're going to be working with was created using Google Forms because it is an open platform that is freely accessible to anyone with a computer.  The survey was designed in such a way to use the main question types offered by survey tools.  This will allow us to see how these different question types produce different types of data, and then explore how to work with these different data types.  Despite using Google Forms, the actions we'll perform in this workshop apply to any survey tool that you might use.
 
 So to start things off, take a couple minutes to go through the survey: [survey link](https://docs.google.com/forms/d/e/1FAIpQLScZEp7MPaCz6G9TgiiZ-q4LjAgfMFsAAa-3RhNZqHFUfrREaw/viewform?usp=header)
 
@@ -41,7 +35,7 @@ So to start things off, take a couple minutes to go through the survey: [survey 
 
 Now that we know what the survey / data collection looks like, let's take a look at the data.  The dataset that we'll be using contains mock entries that resemble some general trends you might find in a real survey of this kind.
 
-<a href="/data/survey-cleaning-workshop/social-media-survey.csv" download> Download the dataset</a>
+<a href="/docs/data/survey-cleaning-workshop/social-media-survey.csv" download> Download the dataset</a>
 
 :::question
 
