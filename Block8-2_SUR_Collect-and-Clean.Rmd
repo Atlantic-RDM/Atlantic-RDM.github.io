@@ -35,7 +35,9 @@ So to start things off, take a couple minutes to go through the survey: [survey 
 
 Now that we know what the survey / data collection looks like, let's take a look at the data.  The dataset that we'll be using contains mock entries that resemble some general trends you might find in a real survey of this kind.
 
-<a href="/docs/data/survey-cleaning-workshop/social-media-survey.csv" download> Download the dataset</a>
+<a href="https://nickrochlin.github.io/rdm-jumpstart2/data/survey-cleaning-workshop/social-media-survey.csv" download>
+  Download the dataset
+</a>
 
 :::question
 
