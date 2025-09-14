@@ -1,4 +1,4 @@
-ID,timestamp,name,email,Age,Gender,year_of_study,hours-per-day,platforms,feel-connected,feel-increase-stress,feel-distracted,feel-improved-mood,usage-stay-in-touch,usage-entertainment,usage-news,usage-networking,usage-expression,Connectedness
+ID,timestamp,name,email,age,gender,year_of_study,hours-per-day,platforms,feel-connected,feel-increase-stress,feel-distracted,feel-improved-mood,usage-stay-in-touch,usage-entertainment,usage-news,usage-networking,usage-expression,Connectedness
 1,2024/01/20 01:29:00,Tulkas the Maid of Tarth,tulkas.the.maid.of.tarth@fantasyrealm.com,24,Male,4,Less than 2 hours,"LinkedIn, Instagram, Reddit, Facebook, X (Twitter)",Neutral,Neutral,Agree,Agree,4,2,5,3,1,4
 2,2024/01/24 22:52:00,Lanfear Snape,lanfear.snape@fantasyrealm.com,24,Female,4,2–4 hours,"TikTok, Snapchat, Instagram, Facebook",Agree,Strongly agree,Strongly disagree,Agree,5,2,3,1,4,4
 3,2024/04/30 10:06:00,Mat Half-Elven,mat.half-elven@fantasyrealm.com,20,Male,2,Less than 2 hours,"X (Twitter), Reddit, LinkedIn, Snapchat, TikTok",Neutral,Neutral,Agree,Agree,3,5,4,2,1,3

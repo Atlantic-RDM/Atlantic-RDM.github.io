@@ -205,7 +205,7 @@ head(survey_data)
 
 ## Cleaning Data
 
-You'll notice that the column names are reflective of the questions in the survey. Some of these will work, those that are very long and have spaces in the names can be annoying to work with.  The first step in cleaning data is getting all of the column names in a way that will be easy to work with.
+When we talk about "cleaning data", we're talking about manipulating the original data so that it's easier to start exploring trends, analyzing, and visualizing.  As we go through this process, it can be helpful to save different versions, or stages of the data, to help promote a transparent and reproducible process.  In this session, we're going to focus on some common cleaning techniques that are used on survey data.  
 
 In the [Introduction to R session](Block8-1_SUR_Intro-to-R.html) we discussed **objects** and **functions**, and played with the idea of objects storing information, and functions manipulating the object/data.
 
@@ -221,6 +221,8 @@ Pipes are used to chain steps of instructions or actions together, and often inv
 <br>
 
 ### Changing Column Names
+
+You'll notice that the column names are reflective of the questions in the survey. Some of these will work, those that are very long and have spaces in the names can be annoying to work with.  The first step in our cleaning will be to get all of the column names in a way that will be easy to work with.
 
 To change column names we can use the function `rename()`.  The function `rename()` is part of the [dplyr package](https://dplyr.tidyverse.org/index.html) that was installed with tidyverse.
 
@@ -289,7 +291,9 @@ survey_data <- survey_data |>
          "usage-expression" = "Self-expression/creativity",
          "timestamp" = "Timestamp",
          "name" = "Name",
-         "email" = "Email")
+         "email" = "Email",
+         "age" = "Age",
+         "gender" = "Gender")
 ```
 
 :::
@@ -301,8 +305,6 @@ You probably noticed that in this survey we collected names and email addresses.
 
 Let's try this is a few steps:
 
-<br>
-
 #### Add an ID column
 
 The `mutate()` function, that is part of the [dplyr package](https://dplyr.tidyverse.org/index.html) is useful when you want to create new columns that are functions of existing variables.
@@ -310,7 +312,7 @@ The `mutate()` function, that is part of the [dplyr package](https://dplyr.tidyv
 While not technically the function of an existing variable, we can use `mutuate` with the `row_number()` function to create a new column that will contain the number of each row, thus given entry a unique ID number.
 
 
-```{r}
+```{r, eval=FALSE}
 survey_data <- survey_data |>
   mutate(ID = row_number())
 ```
@@ -326,7 +328,6 @@ We'll play with more uses of `mutate` in just a little bit!
 :::
 
 <br>
-
 #### Move the ID column to the left-most position of the data
 
 Having an ID column as the left-most, or first, column in your dataset makes things generally easier to keep track of.
@@ -335,7 +336,7 @@ The `relocate()` function, which is also part of the **dplyr** package, which do
 
 The default of `relocate` is to put the specified column in the first position, so we don't need to specify location for this task.
 
-```{r}
+```{r, eval=FALSE}
 survey_data <- survey_data |>
   relocate(ID)
 ```
@@ -356,9 +357,61 @@ Much like we did with reading `.csv` data into R, there is a similar command to 
 
 If you use the same file name as the one you are working on, it will change that file based on what you've done.  However, **we don't want to touch our original data**, so we're going to make a new file to indicate that it has clean columns, ID codes, and personal identifiers.
 
-```{r}
+```{r, eval=FALSE}
 write_csv(survey_data, "survey-data_clean-cols_IDs.csv")
 ```
+
+
+### Back to Cleaning!
+
+Now that we've saved that version of the data, let's now remove the `email` and `name` columns to de-identify the dataset, and also remove some unnecessary columns.
+
+#### Removing Columns
+
+There are a number of ways to remove columns in R, we'll focus on the the `select` function from the `dplyr` package in Tidyverse.
+
+This follows the same syntax that we've been using, and after the `select` function, you insert a dash `-`, or minus symbol, plus the name of the column you want to remove.
+
+Let's start be removing the `timestamp` column by using its column name.
+
+```{r, eval=FALSE}
+survey_data <- survey_data |>
+  select(-timestamp)
+```
+
+You can take a look at the dataset and now see that the `timestamp` column is now gone.
+
+Let's now remove the identifiers `name` and `email`.  To do this is a single command, we're going to use the `c()` function that was used in the [Introduction to R session](Block8-1_SUR_Intro-to-R.html)
+
+
+```{r, eval=FALSE}
+survey_data <- suvey_data |>
+  select(-c(name, email))
+```
+
+<br>
+
+#### Save Another Version of the Data
+
+Now that we have a dataset that has cleaned columns, no identifiers, and no unnecessary columns, let's save a copy of this should we ever need to go back to the beginning.
+
+```{r, eval=FALSE}
+write_csv(survey_data, "survey-data_clean-cols_no-ID")
+```
+
+### Cleaning Values
+
+Now that we've cleaned up the variables/columns, let's take a look at our dataset and see what values might need some work.
+
+```{r, eval=FALSE}
+View(survey_data)
+```
+
+
+
+
+
+
 
 
 
