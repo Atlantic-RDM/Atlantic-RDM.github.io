@@ -1,0 +1,301 @@
+ID,Age,Gender,year-of-study,hours-per-day,platforms,feel-connected,feel-increase-stress,feel-distracted,feel-improved-mood,usage-stay-in-touch,usage-entertainment,usage-news,usage-networking,usage-expression,Connectedness
+1,24,Male,4,Less than 2 hours,"LinkedIn, Instagram, Reddit, Facebook, X (Twitter)",Neutral,Neutral,Agree,Agree,4,2,5,3,1,4
+2,24,Female,4,2–4 hours,"TikTok, Snapchat, Instagram, Facebook",Agree,Strongly agree,Strongly disagree,Agree,5,2,3,1,4,4
+3,20,Male,2,Less than 2 hours,"X (Twitter), Reddit, LinkedIn, Snapchat, TikTok",Neutral,Neutral,Agree,Agree,3,5,4,2,1,3
+4,23,Female,4,2–4 hours,"LinkedIn, Instagram, Facebook, TikTok, Reddit",Agree,Agree,Agree,Disagree,4,5,2,3,1,5
+5,21,Male,2,4–6 hours,"Facebook, X (Twitter), TikTok, Instagram, Reddit",Strongly agree,Strongly disagree,Strongly disagree,Agree,2,4,1,3,5,1
+6,19,Male,1,4–6 hours,"X (Twitter), TikTok, Instagram, Reddit",Neutral,Strongly disagree,Agree,Agree,3,5,4,1,2,2
+7,22,Male,3,Less than 2 hours,"LinkedIn, Snapchat, Instagram, Facebook, TikTok, Reddit",Neutral,Strongly agree,Agree,Agree,3,2,4,5,1,3
+8,18,Female,1,Less than 2 hours,"Facebook, TikTok, Instagram",Agree,Neutral,Neutral,Strongly agree,5,4,2,1,3,1
+9,21,Female,3,4–6 hours,"LinkedIn, Instagram, X (Twitter), TikTok, Reddit",Agree,Strongly disagree,Neutral,Agree,5,4,1,3,2,3
+10,21,Male,3,2–4 hours,"Facebook, TikTok, Reddit",Neutral,Disagree,Disagree,Agree,5,1,2,4,3,5
+11,19,Male,1,4–6 hours,"X (Twitter), LinkedIn, Reddit, TikTok",Neutral,Neutral,Strongly agree,Agree,3,1,5,4,2,5
+12,22,Male,3,4–6 hours,"Facebook, X (Twitter), Instagram, Reddit",Agree,Disagree,Strongly agree,Disagree,1,2,4,5,3,5
+13,24,Male,4,Less than 2 hours,"Facebook, TikTok, Instagram, Reddit",Neutral,Disagree,Neutral,Strongly agree,4,5,3,2,1,2
+14,20,Female,2,2–4 hours,"LinkedIn, Snapchat, Instagram, Reddit, X (Twitter), TikTok",Strongly agree,Disagree,Strongly agree,Agree,3,5,2,1,4,2
+15,19,Male,1,2–4 hours,"Reddit, TikTok, Instagram",Strongly agree,Strongly disagree,Agree,Strongly agree,5,1,2,4,3,4
+16,25,Non-binary/Other,4,2–4 hours,"Reddit, TikTok, Instagram, Facebook",Agree,Neutral,Neutral,Agree,3,1,5,4,2,3
+17,25,Female,4,2–4 hours,"Facebook, X (Twitter), LinkedIn, TikTok, Instagram",Strongly agree,Strongly disagree,Agree,Disagree,4,2,1,3,5,2
+18,18,Female,1,4–6 hours,"Snapchat, Instagram, Facebook, TikTok, Reddit",Neutral,Neutral,Neutral,Neutral,1,2,4,3,5,2
+19,19,Male,1,4–6 hours,"X (Twitter), TikTok, Snapchat, Instagram, Reddit",Neutral,Neutral,Neutral,Neutral,4,5,2,3,1,4
+20,21,Female,3,4–6 hours,"TikTok, LinkedIn, Snapchat, Instagram",Strongly agree,Strongly disagree,Strongly agree,Agree,1,4,2,3,5,2
+21,24,Male,4,2–4 hours,"TikTok, Snapchat, Instagram, Reddit, Facebook",Agree,Strongly agree,Agree,Neutral,3,5,4,1,2,2
+22,18,Male,1,2–4 hours,"Facebook, Reddit, Instagram, TikTok",Strongly agree,Strongly disagree,Strongly agree,Neutral,5,4,2,3,1,4
+23,25,Female,4,Less than 2 hours,"X (Twitter), Reddit, TikTok, Instagram, Facebook",Neutral,Neutral,Agree,Neutral,3,1,4,5,2,3
+24,25,Male,4,2–4 hours,"X (Twitter), LinkedIn, TikTok, Instagram, Reddit, Facebook",Neutral,Agree,Agree,Agree,1,5,3,4,2,2
+25,18,Female,1,4–6 hours,"LinkedIn, Snapchat, Instagram, Facebook, TikTok, X (Twitter)",Neutral,Disagree,Neutral,Agree,3,5,2,4,1,5
+26,19,Male,1,4–6 hours,"Snapchat, Instagram, Reddit, Facebook, TikTok, X (Twitter)",Strongly disagree,Neutral,Agree,Agree,3,2,1,4,5,2
+27,19,Female,1,2–4 hours,"LinkedIn, Instagram, Reddit, TikTok, X (Twitter)",Agree,Disagree,Disagree,Neutral,4,5,3,1,2,1
+28,24,Female,3,4–6 hours,"Snapchat, Instagram, X (Twitter), TikTok, Reddit, Facebook",Disagree,Neutral,Strongly agree,Strongly agree,3,5,1,2,4,1
+29,19,Male,2,4–6 hours,"Reddit, LinkedIn, Instagram, TikTok",Agree,Strongly disagree,Agree,Agree,3,2,1,4,5,5
+30,23,Male,4,2–4 hours,"LinkedIn, Snapchat, Instagram, Reddit, Facebook",Agree,Disagree,Agree,Disagree,2,4,5,3,1,4
+31,22,Female,3,2–4 hours,"X (Twitter), TikTok, Snapchat, Instagram",Strongly agree,Neutral,Agree,Agree,2,1,3,5,4,4
+32,23,Female,4,2–4 hours,"LinkedIn, Snapchat, Instagram, Facebook, TikTok",Neutral,Agree,Agree,Agree,2,5,4,3,1,5
+33,19,Female,1,2–4 hours,"Facebook, TikTok, Instagram",Neutral,Strongly agree,Agree,Disagree,4,1,5,3,2,3
+34,21,Female,3,2–4 hours,"LinkedIn, Snapchat, Instagram, TikTok, Reddit",Neutral,Strongly disagree,Strongly agree,Neutral,4,2,5,1,3,3
+35,18,Male,1,4–6 hours,"X (Twitter), TikTok, Snapchat, Reddit",Agree,Disagree,Neutral,Agree,1,4,3,2,5,5
+36,23,Male,4,Less than 2 hours,"LinkedIn, Instagram, X (Twitter), TikTok, Reddit, Facebook",Neutral,Neutral,Neutral,Agree,4,3,2,5,1,3
+37,18,Female,1,2–4 hours,"X (Twitter), LinkedIn, TikTok, Instagram",Neutral,Disagree,Strongly agree,Strongly disagree,2,1,5,4,3,4
+38,20,Male,2,Less than 2 hours,"X (Twitter), Reddit, Instagram, TikTok",Disagree,Agree,Strongly agree,Agree,2,1,3,4,5,5
+39,24,Male,3,4–6 hours,"Facebook, Reddit, Snapchat, Instagram",Strongly agree,Strongly agree,Neutral,Neutral,5,2,1,3,4,3
+40,21,Male,3,Less than 2 hours,"TikTok, Snapchat, Instagram, Reddit",Disagree,Agree,Neutral,Neutral,2,1,3,5,4,1
+41,20,Female,2,2–4 hours,"Facebook, LinkedIn, Snapchat, Instagram, TikTok",Agree,Agree,Strongly agree,Neutral,1,3,2,4,5,3
+42,19,Female,1,4–6 hours,"Snapchat, Instagram, Reddit, TikTok, X (Twitter)",Neutral,Neutral,Neutral,Strongly disagree,4,1,5,3,2,2
+43,18,Male,2,4–6 hours,"LinkedIn, Snapchat, Instagram, Reddit, TikTok",Strongly agree,Agree,Neutral,Neutral,4,1,5,2,3,2
+44,25,Male,4,More than 6 hours,"LinkedIn, Instagram, Reddit, TikTok, X (Twitter), Facebook",Strongly agree,Strongly agree,Agree,Disagree,5,3,4,1,2,5
+45,19,Male,1,4–6 hours,"X (Twitter), LinkedIn, TikTok, Instagram, Reddit",Neutral,Neutral,Neutral,Agree,5,2,3,4,1,4
+46,25,Male,4,2–4 hours,"X (Twitter), TikTok, Reddit, Facebook",Strongly agree,Neutral,Agree,Neutral,3,4,1,2,5,4
+47,24,Male,4,2–4 hours,"Reddit, Instagram, Facebook",Neutral,Disagree,Disagree,Agree,2,4,1,3,5,3
+48,21,Female,3,4–6 hours,"Facebook, LinkedIn, Instagram",Disagree,Disagree,Agree,Disagree,5,1,3,4,2,1
+49,25,Non-binary/Other,3,Less than 2 hours,"X (Twitter), LinkedIn, Snapchat, Reddit, TikTok, Facebook",Neutral,Agree,Agree,Neutral,5,2,3,4,1,5
+50,21,Non-binary/Other,3,4–6 hours,"Facebook, Instagram, TikTok",Agree,Neutral,Strongly agree,Disagree,2,4,5,1,3,5
+51,20,Female,2,More than 6 hours,"Facebook, Reddit, LinkedIn, Snapchat, Instagram, TikTok",Strongly agree,Agree,Neutral,Neutral,5,4,1,3,2,5
+52,20,Non-binary/Other,2,2–4 hours,"LinkedIn, Instagram, Reddit, TikTok, X (Twitter)",Agree,Neutral,Strongly disagree,Agree,1,3,2,5,4,5
+53,19,Male,1,4–6 hours,"Snapchat, Instagram, Reddit, TikTok, X (Twitter)",Strongly disagree,Neutral,Neutral,Disagree,3,2,4,1,5,2
+54,22,Male,3,4–6 hours,"X (Twitter), Snapchat, Reddit",Agree,Strongly disagree,Disagree,Agree,1,3,4,5,2,2
+55,18,Male,2,Less than 2 hours,"LinkedIn, Snapchat, Reddit, TikTok",Neutral,Disagree,Strongly disagree,Strongly agree,5,2,1,3,4,1
+56,22,Male,3,Less than 2 hours,"Snapchat, Instagram, Reddit, Facebook, X (Twitter)",Neutral,Agree,Strongly agree,Neutral,5,3,1,2,4,1
+57,21,Female,3,Less than 2 hours,"Reddit, TikTok, Instagram",Neutral,Neutral,Strongly agree,Disagree,5,4,3,2,1,2
+58,18,Female,1,4–6 hours,"Facebook, Reddit, TikTok, Instagram",Neutral,Agree,Agree,Disagree,4,1,2,3,5,3
+59,20,Male,2,2–4 hours,"X (Twitter), LinkedIn, TikTok, Instagram, Reddit",Agree,Neutral,Agree,Strongly agree,1,4,3,5,2,1
+60,19,Female,1,4–6 hours,"X (Twitter), Facebook, Reddit, Instagram, TikTok",Disagree,Neutral,Strongly agree,Neutral,4,5,3,2,1,5
+61,21,Male,3,More than 6 hours,"X (Twitter), Reddit, TikTok, Instagram",Agree,Strongly agree,Agree,Agree,4,3,2,5,1,3
+62,25,Non-binary/Other,4,2–4 hours,"TikTok, Instagram, Facebook",Neutral,Agree,Strongly agree,Strongly disagree,5,4,3,1,2,4
+63,22,Female,3,Less than 2 hours,"LinkedIn, Snapchat, Instagram, Facebook, TikTok, Reddit",Disagree,Strongly agree,Neutral,Neutral,5,4,2,1,3,4
+64,21,Male,3,Less than 2 hours,"X (Twitter), TikTok, Reddit",Disagree,Agree,Agree,Neutral,1,4,2,5,3,2
+65,23,Female,4,2–4 hours,"Facebook, Reddit, Snapchat, Instagram",Agree,Strongly disagree,Disagree,Agree,5,2,1,3,4,2
+66,18,Male,1,4–6 hours,"Facebook, X (Twitter), TikTok, Reddit",Disagree,Disagree,Disagree,Strongly disagree,5,2,4,3,1,2
+67,20,Male,2,4–6 hours,"X (Twitter), TikTok, Instagram, Reddit",Disagree,Neutral,Agree,Agree,3,2,1,5,4,1
+68,23,Female,4,2–4 hours,"Facebook, X (Twitter), TikTok, Reddit, Instagram",Agree,Strongly agree,Strongly agree,Disagree,3,5,4,1,2,1
+69,21,Male,3,Less than 2 hours,"TikTok, Instagram, Reddit",Neutral,Disagree,Strongly agree,Agree,4,2,3,5,1,5
+70,20,Female,2,4–6 hours,"Facebook, Reddit, Instagram, TikTok",Agree,Disagree,Agree,Disagree,2,3,5,4,1,4
+71,18,Male,1,4–6 hours,"Facebook, Reddit, TikTok, Instagram",Agree,Agree,Agree,Agree,5,3,2,4,1,2
+72,18,Male,1,4–6 hours,"Facebook, X (Twitter), TikTok, Instagram, Reddit",Neutral,Strongly disagree,Agree,Disagree,4,5,1,3,2,1
+73,20,Female,3,2–4 hours,"Reddit, Snapchat, TikTok, LinkedIn, Instagram",Agree,Agree,Agree,Strongly disagree,2,5,3,4,1,4
+74,19,Female,1,4–6 hours,"LinkedIn, Instagram, Reddit, TikTok, X (Twitter)",Strongly disagree,Neutral,Agree,Neutral,4,5,2,1,3,5
+75,18,Female,2,4–6 hours,"X (Twitter), TikTok, Instagram",Strongly agree,Neutral,Agree,Agree,4,1,2,3,5,4
+76,22,Female,3,2–4 hours,"Reddit, TikTok, Snapchat, Instagram",Neutral,Agree,Strongly agree,Strongly agree,1,4,2,3,5,2
+77,18,Female,1,4–6 hours,"Reddit, LinkedIn, Instagram, TikTok",Neutral,Disagree,Agree,Agree,1,3,5,4,2,3
+78,20,Female,2,4–6 hours,"LinkedIn, TikTok, Instagram",Agree,Strongly agree,Agree,Agree,2,4,5,1,3,2
+79,19,Female,1,2–4 hours,"Reddit, TikTok, Instagram",Neutral,Strongly disagree,Disagree,Strongly agree,1,3,2,5,4,5
+80,18,Female,1,4–6 hours,"Facebook, TikTok, Instagram",Strongly agree,Disagree,Neutral,Disagree,4,3,5,2,1,4
+81,21,Male,3,2–4 hours,"X (Twitter), Snapchat, Instagram, Reddit",Agree,Disagree,Strongly agree,Agree,5,1,2,3,4,3
+82,18,Male,1,4–6 hours,"Reddit, LinkedIn, TikTok",Neutral,Neutral,Agree,Strongly agree,2,4,5,3,1,4
+83,20,Male,2,4–6 hours,"Facebook, Reddit, Snapchat, TikTok",Neutral,Strongly agree,Agree,Neutral,4,3,1,5,2,4
+84,21,Non-binary/Other,3,More than 6 hours,"LinkedIn, Snapchat, Instagram, TikTok",Strongly agree,Strongly disagree,Strongly agree,Neutral,1,4,5,3,2,1
+85,22,Female,3,Less than 2 hours,"Facebook, LinkedIn, Snapchat, Instagram",Disagree,Disagree,Agree,Strongly agree,3,5,1,4,2,3
+86,21,Male,2,2–4 hours,"LinkedIn, Instagram, Reddit, TikTok, X (Twitter)",Agree,Agree,Strongly disagree,Agree,5,2,4,1,3,3
+87,20,Female,2,4–6 hours,"Instagram, X (Twitter), LinkedIn, Reddit, TikTok",Agree,Agree,Agree,Disagree,3,4,5,2,1,4
+88,18,Female,1,4–6 hours,"TikTok, Snapchat, Instagram",Disagree,Strongly agree,Agree,Strongly disagree,4,1,3,5,2,5
+89,18,Male,1,4–6 hours,"X (Twitter), TikTok, Instagram, Reddit",Agree,Agree,Neutral,Disagree,2,1,3,4,5,5
+90,20,Male,2,Less than 2 hours,"X (Twitter), LinkedIn, TikTok, Instagram, Reddit",Neutral,Disagree,Agree,Agree,2,5,3,1,4,1
+91,21,Male,2,Less than 2 hours,"Facebook, X (Twitter), TikTok, Instagram, Reddit",Neutral,Disagree,Strongly disagree,Strongly agree,2,1,4,5,3,3
+92,18,Female,1,4–6 hours,"Snapchat, Instagram, Reddit, TikTok, X (Twitter)",Agree,Strongly disagree,Agree,Neutral,4,3,5,1,2,5
+93,20,Male,2,4–6 hours,"Facebook, Snapchat, TikTok, Instagram, Reddit",Agree,Disagree,Neutral,Disagree,4,2,5,1,3,2
+94,24,Male,4,2–4 hours,"Facebook, X (Twitter), TikTok, Instagram, Reddit",Strongly agree,Disagree,Strongly agree,Neutral,3,4,1,2,5,2
+95,24,Female,4,2–4 hours,"Facebook, TikTok, Instagram",Agree,Agree,Strongly agree,Neutral,5,2,1,4,3,1
+96,22,Male,3,2–4 hours,"Reddit, LinkedIn, TikTok, Instagram",Agree,Neutral,Disagree,Neutral,4,1,5,2,3,4
+97,20,Male,2,More than 6 hours,"Instagram, Reddit, Facebook, TikTok, X (Twitter)",Agree,Disagree,Agree,Disagree,3,2,1,5,4,5
+98,19,Non-binary/Other,1,2–4 hours,"X (Twitter), Reddit, Instagram, TikTok",Agree,Agree,Disagree,Disagree,5,4,1,2,3,1
+99,22,Non-binary/Other,3,Less than 2 hours,"LinkedIn, Instagram, TikTok",Neutral,Neutral,Agree,Strongly disagree,1,5,4,3,2,5
+100,21,Male,3,4–6 hours,"Facebook, Instagram, Reddit",Agree,Disagree,Strongly agree,Strongly agree,2,5,4,3,1,2
+101,21,Male,3,Less than 2 hours,"Reddit, LinkedIn, TikTok, Instagram",Neutral,Disagree,Agree,Disagree,3,1,2,4,5,2
+102,20,Male,2,More than 6 hours,"Facebook, LinkedIn, TikTok, Instagram, Reddit",Agree,Neutral,Strongly agree,Neutral,4,5,3,2,1,5
+103,20,Female,2,Less than 2 hours,"LinkedIn, TikTok, Instagram",Neutral,Strongly disagree,Agree,Neutral,4,1,5,3,2,4
+104,19,Male,1,2–4 hours,"Reddit, TikTok, Instagram",Strongly agree,Agree,Neutral,Strongly disagree,3,2,1,4,5,4
+105,25,Male,3,Less than 2 hours,"Instagram, Reddit, Facebook, TikTok, X (Twitter)",Disagree,Strongly disagree,Strongly disagree,Disagree,1,3,4,2,5,3
+106,25,Male,4,2–4 hours,"X (Twitter), LinkedIn, TikTok, Reddit, Facebook",Agree,Neutral,Agree,Agree,3,1,5,2,4,2
+107,22,Female,3,2–4 hours,"X (Twitter), TikTok, Snapchat, Instagram",Neutral,Agree,Neutral,Neutral,2,5,1,3,4,3
+108,22,Female,3,4–6 hours,"Facebook, X (Twitter), Reddit, Instagram",Agree,Disagree,Agree,Agree,2,3,4,5,1,1
+109,19,Female,1,4–6 hours,"Reddit, LinkedIn, TikTok, Instagram",Disagree,Agree,Strongly agree,Agree,2,3,4,5,1,5
+110,18,Male,1,4–6 hours,"X (Twitter), Snapchat, Instagram, Reddit, TikTok",Disagree,Strongly agree,Neutral,Agree,3,4,2,5,1,1
+111,21,Male,3,Less than 2 hours,"LinkedIn, TikTok, Instagram, Reddit",Neutral,Strongly agree,Strongly agree,Disagree,3,1,4,2,5,2
+112,23,Male,4,2–4 hours,"X (Twitter), Reddit, TikTok, Instagram, Facebook",Strongly agree,Agree,Agree,Agree,3,4,1,2,5,1
+113,22,Female,3,4–6 hours,"TikTok, Snapchat, Instagram",Neutral,Neutral,Agree,Disagree,1,3,5,4,2,5
+114,19,Male,2,2–4 hours,"Reddit, TikTok, Instagram",Neutral,Strongly disagree,Agree,Agree,1,5,4,2,3,2
+115,19,Male,1,4–6 hours,"TikTok, LinkedIn, Snapchat, Instagram, Reddit",Disagree,Agree,Agree,Disagree,1,3,2,4,5,3
+116,19,Male,1,4–6 hours,"X (Twitter), Instagram, Reddit, TikTok",Disagree,Neutral,Agree,Agree,2,3,1,5,4,3
+117,18,Female,1,4–6 hours,"Facebook, Snapchat, Instagram, TikTok",Agree,Neutral,Neutral,Strongly agree,1,2,5,3,4,5
+118,20,Female,3,4–6 hours,"Snapchat, Instagram, Facebook, TikTok, Reddit",Strongly disagree,Disagree,Agree,Neutral,1,5,3,4,2,2
+119,21,Female,3,2–4 hours,"X (Twitter), LinkedIn, TikTok, Instagram",Strongly agree,Agree,Neutral,Neutral,3,4,1,2,5,5
+120,23,Male,4,2–4 hours,"Facebook, X (Twitter), LinkedIn, Instagram, Reddit",Agree,Disagree,Disagree,Neutral,4,5,2,1,3,2
+121,20,Female,2,2–4 hours,"X (Twitter), Reddit, TikTok, Instagram",Neutral,Strongly agree,Neutral,Strongly disagree,2,3,4,1,5,2
+122,19,Male,1,4–6 hours,"Snapchat, Instagram, Facebook, TikTok, X (Twitter), Reddit",Neutral,Agree,Neutral,Strongly disagree,2,1,5,4,3,4
+123,21,Female,3,4–6 hours,"Reddit, LinkedIn, TikTok, Instagram",Agree,Strongly agree,Agree,Agree,5,1,4,2,3,2
+124,21,Female,2,2–4 hours,"Facebook, TikTok, Snapchat, Instagram",Strongly agree,Neutral,Neutral,Neutral,4,2,1,5,3,3
+125,22,Female,3,2–4 hours,"Facebook, TikTok, Instagram",Agree,Strongly agree,Agree,Disagree,2,4,5,1,3,5
+126,19,Male,1,More than 6 hours,"Facebook, Reddit, TikTok, Instagram",Disagree,Agree,Disagree,Agree,3,2,1,4,5,5
+127,24,Female,4,Less than 2 hours,"LinkedIn, Snapchat, Instagram, Facebook, TikTok, X (Twitter)",Neutral,Neutral,Neutral,Strongly disagree,1,4,3,2,5,1
+128,25,Female,4,2–4 hours,"Reddit, Snapchat, TikTok, Instagram, Facebook",Neutral,Disagree,Agree,Strongly disagree,2,3,1,5,4,5
+129,20,Female,2,2–4 hours,"TikTok, LinkedIn, Snapchat, Instagram",Disagree,Disagree,Neutral,Neutral,5,3,4,1,2,2
+130,22,Male,3,2–4 hours,"Instagram, Reddit, Facebook, TikTok, X (Twitter)",Agree,Strongly disagree,Strongly agree,Neutral,5,3,4,2,1,2
+131,24,Female,4,2–4 hours,"Reddit, LinkedIn, TikTok, Instagram, Facebook",Neutral,Strongly disagree,Neutral,Strongly agree,1,2,4,5,3,3
+132,21,Non-binary/Other,3,2–4 hours,"Reddit, TikTok",Agree,Disagree,Strongly agree,Disagree,3,4,5,1,2,3
+133,21,Non-binary/Other,3,4–6 hours,"Reddit, TikTok, Instagram",Agree,Strongly disagree,Disagree,Strongly agree,2,4,5,1,3,3
+134,24,Non-binary/Other,4,2–4 hours,"X (Twitter), TikTok, Instagram, Facebook",Disagree,Disagree,Strongly agree,Strongly agree,3,1,4,5,2,4
+135,23,Female,4,2–4 hours,"X (Twitter), Reddit, Snapchat, Instagram, Facebook",Strongly disagree,Agree,Agree,Strongly disagree,5,1,3,2,4,5
+136,21,Male,3,4–6 hours,"LinkedIn, Instagram, Facebook, TikTok, X (Twitter), Reddit",Agree,Disagree,Agree,Agree,1,3,5,4,2,1
+137,23,Female,4,2–4 hours,"Facebook, X (Twitter), TikTok, Instagram",Disagree,Neutral,Strongly agree,Disagree,5,4,2,1,3,5
+138,18,Male,1,4–6 hours,"Reddit, TikTok, Instagram",Disagree,Agree,Disagree,Agree,1,5,3,4,2,2
+139,22,Male,3,4–6 hours,"Snapchat, TikTok, Instagram, Reddit",Strongly agree,Disagree,Agree,Neutral,1,4,5,2,3,1
+140,21,Male,3,Less than 2 hours,"X (Twitter), Snapchat, TikTok, Instagram, Reddit",Disagree,Agree,Neutral,Agree,2,3,5,1,4,1
+141,18,Non-binary/Other,1,4–6 hours,"Facebook, LinkedIn, TikTok",Agree,Agree,Neutral,Agree,5,2,1,4,3,1
+142,18,Male,1,4–6 hours,"Facebook, X (Twitter), TikTok, Reddit",Disagree,Strongly disagree,Strongly agree,Agree,4,1,3,5,2,3
+143,19,Male,1,4–6 hours,"Instagram, X (Twitter), LinkedIn, Reddit, TikTok",Strongly agree,Neutral,Disagree,Agree,1,2,4,5,3,1
+144,22,Non-binary/Other,2,2–4 hours,"Facebook, TikTok, Snapchat, Instagram",Neutral,Neutral,Agree,Disagree,5,3,2,1,4,3
+145,22,Male,3,4–6 hours,"LinkedIn, Snapchat, Instagram, Reddit",Neutral,Strongly disagree,Strongly agree,Neutral,3,5,4,2,1,5
+146,23,Female,4,2–4 hours,"LinkedIn, Instagram, Facebook, TikTok, X (Twitter)",Strongly agree,Neutral,Disagree,Disagree,4,1,2,5,3,1
+147,18,Female,1,4–6 hours,"X (Twitter), Instagram, TikTok",Neutral,Agree,Neutral,Disagree,5,3,4,2,1,5
+148,25,Male,3,2–4 hours,"Reddit, TikTok, Facebook",Strongly agree,Neutral,Disagree,Agree,1,5,2,4,3,4
+149,20,Non-binary/Other,2,2–4 hours,"LinkedIn, Instagram, X (Twitter), TikTok, Reddit",Strongly agree,Strongly disagree,Agree,Neutral,2,5,1,3,4,3
+150,18,Female,1,2–4 hours,"Instagram, X (Twitter), TikTok, Reddit",Strongly agree,Disagree,Agree,Neutral,4,1,3,2,5,4
+151,22,Female,3,2–4 hours,"TikTok, LinkedIn, Snapchat, Instagram",Agree,Agree,Agree,Neutral,5,4,3,2,1,1
+152,20,Female,2,2–4 hours,"Facebook, X (Twitter), TikTok, Instagram",Agree,Disagree,Agree,Agree,1,3,5,2,4,4
+153,22,Female,3,2–4 hours,"Facebook, TikTok, Instagram",Agree,Disagree,Neutral,Agree,3,2,1,4,5,3
+154,19,Female,1,4–6 hours,"Reddit, Snapchat, TikTok, Instagram",Disagree,Neutral,Strongly agree,Agree,2,4,1,3,5,2
+155,21,Female,3,4–6 hours,"Facebook, Snapchat, Instagram",Disagree,Neutral,Neutral,Neutral,1,2,4,3,5,5
+156,22,Female,3,Less than 2 hours,"Facebook, X (Twitter), TikTok, Snapchat, Instagram",Disagree,Disagree,Agree,Disagree,2,4,3,1,5,5
+157,18,Male,1,4–6 hours,"X (Twitter), Reddit, TikTok",Neutral,Agree,Agree,Strongly disagree,3,5,4,1,2,3
+158,18,Female,1,2–4 hours,"Facebook, X (Twitter), TikTok, Snapchat, Instagram",Agree,Strongly disagree,Strongly agree,Strongly agree,1,4,5,2,3,4
+159,18,Non-binary/Other,1,4–6 hours,"Facebook, X (Twitter), TikTok, Instagram",Neutral,Strongly agree,Agree,Strongly agree,3,5,2,1,4,2
+160,21,Non-binary/Other,2,4–6 hours,"Facebook, X (Twitter), LinkedIn, Instagram, TikTok",Agree,Neutral,Disagree,Agree,2,4,5,1,3,2
+161,24,Non-binary/Other,4,2–4 hours,"Facebook, Reddit, Instagram, TikTok",Neutral,Strongly agree,Agree,Neutral,5,3,2,4,1,5
+162,19,Male,1,4–6 hours,"X (Twitter), LinkedIn, Snapchat, Instagram, Reddit, TikTok",Agree,Strongly agree,Disagree,Strongly disagree,5,1,3,2,4,5
+163,21,Female,2,4–6 hours,"LinkedIn, Instagram, Facebook, TikTok, X (Twitter)",Neutral,Neutral,Strongly agree,Agree,4,2,5,3,1,3
+164,18,Female,1,4–6 hours,"LinkedIn, Snapchat, Instagram, TikTok, X (Twitter)",Disagree,Strongly disagree,Agree,Agree,4,1,3,5,2,3
+165,19,Male,1,4–6 hours,"TikTok, Reddit, LinkedIn, Snapchat",Strongly disagree,Strongly agree,Disagree,Disagree,2,3,4,1,5,4
+166,18,Male,1,4–6 hours,"LinkedIn, Snapchat, Instagram, Reddit, TikTok, X (Twitter)",Neutral,Agree,Agree,Strongly disagree,1,3,2,5,4,2
+167,19,Non-binary/Other,1,2–4 hours,"Reddit, LinkedIn, TikTok, Instagram",Disagree,Strongly disagree,Agree,Agree,4,3,5,1,2,3
+168,20,Female,2,More than 6 hours,"Facebook, Snapchat, TikTok, Instagram",Strongly agree,Strongly agree,Strongly agree,Neutral,1,2,5,4,3,2
+169,18,Female,1,4–6 hours,"LinkedIn, Snapchat, Instagram, Facebook, TikTok",Neutral,Disagree,Disagree,Agree,5,2,4,3,1,3
+170,18,Male,1,4–6 hours,"Facebook, Snapchat, TikTok, Instagram, Reddit",Strongly agree,Neutral,Neutral,Strongly agree,2,4,1,5,3,2
+171,22,Female,3,4–6 hours,"Reddit, Snapchat, TikTok, Instagram",Agree,Strongly disagree,Agree,Neutral,2,3,1,5,4,2
+172,19,Female,1,4–6 hours,"Facebook, X (Twitter), Snapchat, Instagram, TikTok",Disagree,Neutral,Neutral,Agree,2,1,3,4,5,3
+173,19,Female,1,More than 6 hours,"Facebook, TikTok, Instagram",Agree,Strongly agree,Disagree,Disagree,2,4,1,3,5,2
+174,19,Female,1,4–6 hours,"Facebook, LinkedIn, TikTok, Instagram",Disagree,Neutral,Strongly agree,Strongly agree,1,5,3,4,2,4
+175,19,Male,1,4–6 hours,"X (Twitter), Snapchat, Instagram, Reddit, TikTok",Disagree,Agree,Disagree,Neutral,2,5,3,1,4,2
+176,18,Female,1,4–6 hours,"Snapchat, TikTok, Instagram",Strongly agree,Strongly agree,Disagree,Neutral,3,2,4,5,1,1
+177,23,Non-binary/Other,4,Less than 2 hours,"Reddit, Snapchat, Instagram, TikTok, Facebook",Disagree,Neutral,Disagree,Strongly agree,4,3,1,2,5,2
+178,21,Non-binary/Other,3,4–6 hours,"Facebook, X (Twitter), LinkedIn, Instagram, TikTok",Neutral,Agree,Neutral,Disagree,5,4,3,2,1,5
+179,22,Male,3,Less than 2 hours,"Facebook, X (Twitter), TikTok, Instagram, Reddit",Disagree,Neutral,Agree,Disagree,5,3,1,4,2,5
+180,22,Non-binary/Other,4,Less than 2 hours,"Snapchat, Instagram, Facebook, TikTok, Reddit",Disagree,Disagree,Neutral,Strongly disagree,2,1,3,4,5,2
+181,24,Male,4,2–4 hours,"LinkedIn, Snapchat, Instagram, Facebook, X (Twitter), Reddit",Agree,Disagree,Strongly agree,Disagree,5,4,3,2,1,3
+182,23,Male,4,More than 6 hours,"Facebook, X (Twitter), Snapchat, TikTok, Reddit",Neutral,Strongly agree,Strongly disagree,Disagree,5,3,1,4,2,1
+183,20,Female,1,2–4 hours,"Reddit, LinkedIn, TikTok, Instagram",Agree,Neutral,Disagree,Disagree,5,1,4,2,3,3
+184,20,Female,2,Less than 2 hours,"X (Twitter), LinkedIn, Snapchat, Instagram, TikTok",Neutral,Neutral,Agree,Agree,4,2,1,3,5,5
+185,22,Male,2,4–6 hours,"Facebook, X (Twitter), TikTok, Reddit",Strongly agree,Strongly agree,Strongly agree,Agree,1,2,3,5,4,2
+186,22,Female,3,2–4 hours,"X (Twitter), TikTok, Instagram",Strongly agree,Strongly agree,Neutral,Agree,2,5,3,4,1,4
+187,24,Female,3,4–6 hours,"LinkedIn, Snapchat, Instagram, TikTok, Reddit, Facebook",Neutral,Strongly disagree,Agree,Strongly agree,2,5,3,1,4,1
+188,22,Male,3,4–6 hours,"LinkedIn, TikTok, Instagram, Reddit",Agree,Neutral,Disagree,Neutral,4,2,5,3,1,3
+189,18,Female,1,4–6 hours,"X (Twitter), LinkedIn, Instagram, TikTok",Agree,Strongly agree,Neutral,Agree,2,5,1,4,3,4
+190,20,Female,2,4–6 hours,"Snapchat, Instagram, Reddit, Facebook, X (Twitter), TikTok",Strongly agree,Disagree,Agree,Neutral,5,2,3,1,4,3
+191,18,Male,1,2–4 hours,"Facebook, LinkedIn, TikTok, Reddit",Agree,Agree,Strongly agree,Disagree,4,1,3,5,2,4
+192,22,Female,3,Less than 2 hours,"X (Twitter), LinkedIn, TikTok, Instagram",Neutral,Agree,Agree,Neutral,1,5,2,3,4,2
+193,18,Male,1,4–6 hours,"LinkedIn, TikTok, Instagram, Reddit",Neutral,Agree,Strongly agree,Strongly agree,2,4,1,5,3,3
+194,18,Female,1,2–4 hours,"X (Twitter), Reddit, Facebook, Instagram, TikTok",Strongly disagree,Neutral,Strongly agree,Agree,4,2,1,3,5,3
+195,18,Male,1,2–4 hours,"Facebook, TikTok, Instagram, Reddit",Neutral,Strongly agree,Disagree,Disagree,1,3,5,4,2,3
+196,18,Female,1,4–6 hours,"Reddit, Instagram, TikTok",Agree,Disagree,Neutral,Agree,4,3,5,1,2,5
+197,19,Female,2,Less than 2 hours,"X (Twitter), LinkedIn, Instagram, TikTok",Neutral,Disagree,Strongly agree,Agree,4,3,2,5,1,4
+198,18,Female,1,2–4 hours,"Facebook, X (Twitter), TikTok, Instagram",Neutral,Disagree,Disagree,Strongly agree,1,3,4,2,5,5
+199,22,Male,3,Less than 2 hours,"Facebook, X (Twitter), TikTok, Instagram, Reddit",Disagree,Agree,Strongly disagree,Strongly disagree,4,5,1,3,2,4
+200,22,Female,3,4–6 hours,"Reddit, Snapchat, Instagram",Neutral,Strongly disagree,Disagree,Disagree,3,4,5,1,2,1
+201,24,Non-binary/Other,4,Less than 2 hours,"Snapchat, Instagram, Reddit, TikTok, X (Twitter), Facebook",Neutral,Strongly disagree,Agree,Disagree,4,1,2,3,5,3
+202,19,Male,1,4–6 hours,"X (Twitter), Facebook, Reddit, Instagram, TikTok",Neutral,Agree,Strongly disagree,Disagree,2,1,5,3,4,2
+203,23,Female,4,Less than 2 hours,"Facebook, Instagram",Neutral,Disagree,Agree,Agree,1,4,5,2,3,2
+204,19,Male,1,2–4 hours,"Snapchat, Instagram, Reddit, TikTok",Disagree,Strongly agree,Neutral,Agree,2,4,1,5,3,2
+205,18,Male,1,4–6 hours,"Facebook, LinkedIn, Snapchat, Instagram, Reddit, TikTok",Neutral,Agree,Neutral,Neutral,1,2,4,3,5,1
+206,19,Female,1,4–6 hours,"LinkedIn, Snapchat, Instagram, Facebook, TikTok",Disagree,Neutral,Disagree,Agree,1,5,3,2,4,3
+207,25,Male,4,Less than 2 hours,"Facebook, X (Twitter), Instagram, Reddit",Neutral,Neutral,Neutral,Disagree,3,5,1,4,2,2
+208,19,Female,1,2–4 hours,"X (Twitter), Snapchat, Instagram, TikTok",Agree,Disagree,Disagree,Disagree,4,1,5,2,3,4
+209,20,Female,2,Less than 2 hours,"X (Twitter), Snapchat, TikTok, Instagram",Disagree,Strongly disagree,Agree,Disagree,3,2,5,1,4,1
+210,20,Male,2,Less than 2 hours,"Reddit, TikTok, Instagram",Neutral,Strongly agree,Disagree,Strongly disagree,1,2,5,4,3,4
+211,19,Female,1,2–4 hours,"Facebook, X (Twitter), LinkedIn, TikTok, Instagram",Strongly agree,Agree,Agree,Disagree,4,2,3,1,5,2
+212,21,Non-binary/Other,4,2–4 hours,"TikTok, Instagram",Strongly disagree,Agree,Agree,Neutral,3,4,2,5,1,4
+213,20,Male,2,2–4 hours,"Reddit, Snapchat, TikTok, Instagram",Agree,Disagree,Strongly agree,Neutral,5,3,2,1,4,4
+214,18,Male,1,2–4 hours,"Facebook, X (Twitter), TikTok, Instagram, Reddit",Strongly agree,Disagree,Strongly agree,Strongly agree,1,4,3,5,2,4
+215,19,Male,1,2–4 hours,"LinkedIn, Instagram, Facebook, TikTok, X (Twitter), Reddit",Neutral,Disagree,Agree,Agree,2,1,5,3,4,1
+216,23,Male,4,Less than 2 hours,"Reddit, TikTok, Instagram, Facebook",Neutral,Strongly agree,Strongly agree,Neutral,4,2,5,1,3,2
+217,21,Non-binary/Other,3,Less than 2 hours,"Reddit, TikTok, Snapchat, Instagram",Neutral,Disagree,Strongly agree,Disagree,5,2,4,3,1,3
+218,20,Female,2,Less than 2 hours,"Facebook, X (Twitter), Snapchat, TikTok, Instagram",Disagree,Neutral,Neutral,Disagree,1,3,5,2,4,3
+219,19,Female,1,4–6 hours,"Facebook, TikTok, Instagram",Neutral,Disagree,Strongly agree,Strongly agree,2,4,5,3,1,3
+220,24,Male,4,2–4 hours,"TikTok, LinkedIn, Snapchat, Reddit, Facebook",Agree,Strongly disagree,Strongly agree,Neutral,1,4,2,5,3,1
+221,19,Female,1,2–4 hours,"LinkedIn, Snapchat, Instagram, TikTok",Agree,Disagree,Disagree,Agree,5,1,3,2,4,1
+222,18,Male,1,4–6 hours,"Facebook, TikTok, Snapchat, Instagram, Reddit",Agree,Strongly agree,Strongly agree,Disagree,5,4,2,1,3,5
+223,19,Female,1,4–6 hours,"Facebook, X (Twitter), Instagram, TikTok",Neutral,Neutral,Neutral,Disagree,2,1,4,3,5,2
+224,25,Female,4,2–4 hours,"TikTok, Instagram, Facebook",Agree,Disagree,Disagree,Agree,5,4,1,3,2,3
+225,20,Female,2,Less than 2 hours,"LinkedIn, Snapchat, Instagram, Facebook, TikTok, Reddit",Neutral,Neutral,Disagree,Agree,2,5,4,3,1,4
+226,23,Non-binary/Other,4,2–4 hours,"LinkedIn, Instagram, TikTok, Facebook",Neutral,Agree,Agree,Strongly agree,5,1,3,2,4,2
+227,20,Female,2,4–6 hours,"Facebook, Reddit, TikTok, Instagram",Strongly agree,Agree,Agree,Disagree,1,3,5,2,4,3
+228,18,Female,1,4–6 hours,"X (Twitter), Reddit, TikTok, Instagram",Agree,Agree,Disagree,Agree,1,5,4,2,3,2
+229,18,Female,1,4–6 hours,"Facebook, X (Twitter), Instagram, TikTok",Neutral,Disagree,Neutral,Disagree,1,2,3,5,4,2
+230,20,Female,2,2–4 hours,"X (Twitter), LinkedIn, TikTok, Instagram",Agree,Agree,Neutral,Strongly disagree,5,4,2,1,3,2
+231,20,Female,1,2–4 hours,"Facebook, Reddit, TikTok, Instagram",Agree,Strongly disagree,Strongly agree,Neutral,3,5,1,2,4,3
+232,18,Female,1,4–6 hours,"Reddit, TikTok, Instagram",Neutral,Agree,Strongly agree,Neutral,5,2,3,1,4,3
+233,20,Female,3,2–4 hours,"Reddit, TikTok, Snapchat, Instagram",Agree,Neutral,Strongly agree,Neutral,1,3,2,5,4,5
+234,18,Female,1,4–6 hours,"Facebook, TikTok, Snapchat, Instagram",Neutral,Agree,Neutral,Disagree,2,5,1,4,3,4
+235,25,Male,4,2–4 hours,"LinkedIn, Instagram, Reddit, TikTok, X (Twitter), Facebook",Strongly agree,Disagree,Disagree,Strongly disagree,1,4,5,2,3,3
+236,22,Male,3,4–6 hours,"X (Twitter), Snapchat, TikTok, Instagram, Reddit",Strongly agree,Agree,Agree,Agree,5,2,1,3,4,2
+237,18,Female,1,4–6 hours,"X (Twitter), Reddit, Snapchat, Instagram, TikTok",Disagree,Agree,Agree,Neutral,4,3,1,5,2,3
+238,23,Male,4,2–4 hours,"X (Twitter), TikTok, Snapchat, Instagram, Reddit, Facebook",Strongly agree,Strongly agree,Strongly agree,Neutral,1,2,5,4,3,3
+239,19,Non-binary/Other,1,4–6 hours,"LinkedIn, TikTok, Instagram",Neutral,Strongly agree,Strongly agree,Neutral,2,5,1,3,4,4
+240,19,Female,1,4–6 hours,"TikTok, LinkedIn, Snapchat, Instagram",Neutral,Disagree,Strongly agree,Agree,4,1,3,5,2,2
+241,18,Male,2,More than 6 hours,"Facebook, TikTok, Reddit",Strongly agree,Agree,Strongly agree,Strongly agree,3,1,4,5,2,1
+242,21,Male,3,Less than 2 hours,"X (Twitter), LinkedIn, Instagram, Reddit",Disagree,Disagree,Neutral,Agree,3,4,1,2,5,4
+243,18,Female,1,4–6 hours,"Facebook, X (Twitter), TikTok, Instagram",Neutral,Disagree,Agree,Neutral,1,3,5,4,2,3
+244,20,Male,2,Less than 2 hours,"Reddit, LinkedIn, Instagram, TikTok",Neutral,Strongly disagree,Strongly agree,Strongly agree,2,5,1,4,3,4
+245,19,Male,1,4–6 hours,"Facebook, TikTok, Reddit",Disagree,Agree,Strongly agree,Neutral,1,2,5,4,3,1
+246,19,Female,2,2–4 hours,"Facebook, TikTok, Instagram",Neutral,Disagree,Agree,Neutral,1,3,5,4,2,4
+247,18,Female,1,2–4 hours,"LinkedIn, Snapchat, Instagram, TikTok",Agree,Strongly agree,Strongly disagree,Neutral,5,3,2,4,1,2
+248,18,Female,1,More than 6 hours,"Facebook, Reddit, LinkedIn, TikTok, Instagram",Neutral,Agree,Disagree,Agree,2,4,5,3,1,2
+249,19,Male,1,2–4 hours,"TikTok, Snapchat, Instagram, Reddit",Agree,Strongly disagree,Strongly disagree,Agree,3,1,4,2,5,4
+250,25,Female,4,2–4 hours,"X (Twitter), Facebook, Reddit, Instagram",Agree,Agree,Disagree,Strongly agree,5,3,2,4,1,3
+251,20,Male,2,4–6 hours,"Facebook, TikTok, LinkedIn, Snapchat, Reddit",Disagree,Disagree,Neutral,Neutral,4,2,5,1,3,5
+252,18,Male,1,4–6 hours,"LinkedIn, Snapchat, Instagram, Reddit, TikTok, X (Twitter)",Agree,Neutral,Strongly agree,Neutral,4,1,5,3,2,4
+253,20,Female,2,Less than 2 hours,"X (Twitter), LinkedIn, Instagram, TikTok",Disagree,Neutral,Neutral,Agree,3,5,4,2,1,2
+254,19,Female,1,4–6 hours,"LinkedIn, Snapchat, Instagram, TikTok",Disagree,Strongly agree,Strongly agree,Strongly disagree,3,2,5,4,1,5
+255,18,Male,1,More than 6 hours,"Facebook, Snapchat, Instagram, Reddit, TikTok",Agree,Strongly disagree,Strongly agree,Neutral,1,4,3,5,2,4
+256,22,Female,3,More than 6 hours,"Reddit, X (Twitter), TikTok, Instagram",Agree,Agree,Neutral,Strongly disagree,2,1,4,3,5,1
+257,18,Male,1,2–4 hours,"LinkedIn, Snapchat, Instagram, TikTok, Reddit",Neutral,Strongly agree,Disagree,Neutral,4,2,3,1,5,3
+258,19,Non-binary/Other,1,4–6 hours,"X (Twitter), Reddit, TikTok, Instagram",Disagree,Neutral,Agree,Agree,3,2,4,5,1,3
+259,21,Female,2,2–4 hours,"Facebook, LinkedIn, Instagram",Disagree,Strongly agree,Neutral,Disagree,4,1,3,5,2,2
+260,21,Non-binary/Other,4,2–4 hours,"X (Twitter), Reddit, LinkedIn, TikTok",Neutral,Agree,Neutral,Strongly disagree,1,3,5,4,2,2
+261,22,Non-binary/Other,4,2–4 hours,"LinkedIn, TikTok, Instagram",Agree,Strongly disagree,Neutral,Neutral,4,3,2,5,1,4
+262,18,Male,1,2–4 hours,"Snapchat, Instagram, Facebook, TikTok, X (Twitter), Reddit",Strongly agree,Agree,Agree,Neutral,4,1,5,2,3,4
+263,20,Female,2,2–4 hours,"LinkedIn, Snapchat, Instagram, Reddit, X (Twitter), TikTok",Strongly agree,Strongly disagree,Neutral,Agree,3,5,1,2,4,4
+264,25,Female,4,Less than 2 hours,"LinkedIn, TikTok, Instagram, Facebook",Disagree,Disagree,Disagree,Neutral,2,4,1,5,3,5
+265,19,Female,1,More than 6 hours,"Snapchat, Reddit, LinkedIn, TikTok, Instagram",Agree,Agree,Agree,Strongly agree,4,3,5,1,2,3
+266,18,Male,1,2–4 hours,"Facebook, X (Twitter), Instagram, Reddit, TikTok",Agree,Neutral,Disagree,Agree,5,1,3,2,4,1
+267,23,Female,4,Less than 2 hours,"TikTok, LinkedIn, Snapchat, Instagram, Facebook",Neutral,Disagree,Strongly agree,Strongly agree,3,4,1,5,2,5
+268,20,Female,2,Less than 2 hours,"LinkedIn, Snapchat, Instagram, Facebook, TikTok, Reddit",Disagree,Agree,Agree,Strongly disagree,1,4,2,3,5,2
+269,24,Male,4,2–4 hours,"LinkedIn, Snapchat, Instagram, TikTok, X (Twitter), Reddit, Facebook",Agree,Strongly disagree,Agree,Agree,4,2,3,1,5,1
+270,24,Female,4,Less than 2 hours,"X (Twitter), TikTok, Instagram, Facebook",Neutral,Strongly agree,Strongly agree,Strongly agree,1,4,5,2,3,1
+271,18,Male,1,2–4 hours,"X (Twitter), LinkedIn, Instagram, Reddit, TikTok",Neutral,Neutral,Strongly agree,Disagree,1,3,4,2,5,4
+272,22,Male,3,Less than 2 hours,"Instagram, X (Twitter), Reddit",Disagree,Strongly disagree,Agree,Agree,1,3,5,2,4,3
+273,19,Female,1,4–6 hours,"X (Twitter), Snapchat, Instagram, TikTok",Neutral,Neutral,Neutral,Agree,4,2,3,1,5,3
+274,18,Male,1,2–4 hours,"X (Twitter), LinkedIn, TikTok, Reddit",Agree,Strongly agree,Agree,Disagree,1,4,2,5,3,3
+275,24,Female,4,2–4 hours,"X (Twitter), TikTok, Instagram, Facebook",Agree,Agree,Strongly agree,Disagree,1,4,2,5,3,4
+276,20,Male,2,Less than 2 hours,"Facebook, Reddit, Instagram, TikTok",Disagree,Agree,Agree,Neutral,1,4,2,3,5,2
+277,20,Female,2,Less than 2 hours,"Reddit, Snapchat, Instagram, TikTok",Neutral,Strongly disagree,Agree,Strongly disagree,3,1,4,5,2,1
+278,19,Male,1,4–6 hours,"LinkedIn, Snapchat, Instagram, Facebook, TikTok, Reddit",Neutral,Disagree,Strongly agree,Strongly disagree,1,5,2,3,4,5
+279,19,Non-binary/Other,1,More than 6 hours,"LinkedIn, Instagram, Reddit, TikTok, X (Twitter)",Agree,Agree,Strongly agree,Neutral,2,3,5,4,1,2
+280,20,Male,2,Less than 2 hours,"Snapchat, LinkedIn, TikTok, Instagram, Reddit",Disagree,Disagree,Agree,Neutral,4,5,2,1,3,3
+281,19,Non-binary/Other,1,2–4 hours,"X (Twitter), TikTok, Instagram",Strongly agree,Strongly disagree,Strongly disagree,Strongly agree,4,5,1,2,3,4
+282,18,Male,1,2–4 hours,"X (Twitter), Reddit, TikTok",Strongly disagree,Strongly disagree,Agree,Disagree,2,1,4,5,3,5
+283,18,Male,1,2–4 hours,"Reddit, LinkedIn, TikTok",Agree,Disagree,Neutral,Strongly disagree,4,2,1,3,5,2
+284,25,Male,4,Less than 2 hours,"TikTok, LinkedIn, Snapchat, Instagram, Reddit, Facebook",Neutral,Agree,Agree,Agree,4,5,3,1,2,4
+285,20,Non-binary/Other,2,Less than 2 hours,"Facebook, X (Twitter), LinkedIn, TikTok",Neutral,Strongly disagree,Disagree,Strongly disagree,5,3,4,1,2,4
+286,18,Female,1,4–6 hours,"Reddit, TikTok, Instagram",Disagree,Neutral,Agree,Agree,5,2,4,1,3,2
+287,19,Female,1,2–4 hours,"Facebook, Reddit, LinkedIn, Instagram, TikTok",Strongly agree,Strongly agree,Agree,Agree,5,2,4,1,3,4
+288,18,Female,1,4–6 hours,"TikTok, Instagram",Strongly agree,Strongly agree,Strongly agree,Disagree,1,4,2,5,3,4
+289,20,Male,2,2–4 hours,"Snapchat, Instagram, Reddit, TikTok, X (Twitter)",Strongly agree,Disagree,Disagree,Disagree,3,1,4,2,5,5
+290,18,Male,2,2–4 hours,"LinkedIn, Snapchat, Facebook, TikTok, X (Twitter), Reddit",Strongly agree,Strongly disagree,Disagree,Neutral,1,5,2,4,3,4
+291,23,Female,4,2–4 hours,"Snapchat, Instagram, Reddit, TikTok, X (Twitter), Facebook",Agree,Disagree,Strongly agree,Neutral,5,1,4,2,3,5
+292,22,Female,2,2–4 hours,"TikTok, X (Twitter), LinkedIn, Snapchat, Instagram",Neutral,Strongly agree,Disagree,Neutral,4,2,5,1,3,4
+293,20,Male,2,4–6 hours,"Facebook, LinkedIn, Snapchat, Instagram, Reddit, TikTok",Agree,Strongly agree,Strongly agree,Agree,1,4,3,5,2,5
+294,19,Female,1,4–6 hours,"LinkedIn, TikTok, Instagram",Agree,Neutral,Neutral,Strongly agree,3,1,5,2,4,4
+295,20,Female,1,More than 6 hours,"Facebook, X (Twitter), Instagram, TikTok",Strongly agree,Neutral,Neutral,Strongly disagree,2,3,4,1,5,4
+296,18,Non-binary/Other,1,2–4 hours,"Instagram, Reddit, Facebook, TikTok, X (Twitter)",Neutral,Agree,Agree,Agree,4,5,1,2,3,2
+297,22,Female,3,2–4 hours,"Facebook, X (Twitter), Instagram",Agree,Strongly agree,Disagree,Disagree,4,2,3,5,1,4
+298,21,Female,3,2–4 hours,"X (Twitter), Reddit, TikTok, Instagram",Disagree,Neutral,Strongly agree,Strongly disagree,5,1,4,2,3,1
+299,18,Male,1,4–6 hours,"LinkedIn, Snapchat, Instagram, Facebook, X (Twitter), Reddit, TikTok",Disagree,Strongly disagree,Strongly agree,Disagree,5,1,2,4,3,1
+300,18,Male,1,4–6 hours,"Facebook, LinkedIn, Reddit, TikTok",Strongly disagree,Strongly disagree,Neutral,Disagree,1,2,4,3,5,3

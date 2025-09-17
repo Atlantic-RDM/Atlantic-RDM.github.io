@@ -122,23 +122,13 @@ When you first download R, it comes equipped with a number of pre-installed func
 
 The Tidyverse is a very commonly used package for research and data science activities, and instead of being a single package, it is a collection of packages that are designed to work together and that focus on the connections between activities in the data science workflow.  Each package follows the same syntax, which makes learning them easier, and the website functions as a really good reference point if you're struggling with how to approach a specific task.
 
-![](images/block4_data-science-workflow.jpg)
+![](images/block8-2_data-science-workflow.jpg)
 
 
 
 Let's take a closer look!  [Tidyverse](https://www.tidyverse.org/packages/)
 
 <br>
-
-## Let's get started!
-
-First, let's create a new R script.
-
-To create an R script file, select File > New File > R Script
-
-![](images/block3_create-r-script.gif)
-
-
 
 ### Install Package
 To install a package we use the function `install.packages()`. 
@@ -381,13 +371,20 @@ survey_data <- survey_data |>
 
 You can take a look at the dataset and now see that the `timestamp` column is now gone.
 
-Let's now remove the identifiers `name` and `email`.  To do this is a single command, we're going to use the `c()` function that was used in the [Introduction to R session](Block8-1_SUR_Intro-to-R.html)
+Let's now remove the identifiers `name` and `email`.  
 
+:::question
 
-```{r, eval=FALSE}
+See if you can remove the `name` and `email` columns, as we want to get rid of the identifying variables.
+
+Hint: To do this is a single command, see if you can figure out how to use the `c()` function that was introduced in the [Introduction to R session](Block8-1_SUR_Intro-to-R.html)
+```{r, class.source = 'fold-hide', eval = FALSE}
+
 survey_data <- suvey_data |>
   select(-c(name, email))
 ```
+:::
+
 
 <br>
 
@@ -406,6 +403,64 @@ Now that we've cleaned up the variables/columns, let's take a look at our datase
 ```{r, eval=FALSE}
 View(survey_data)
 ```
+
+## Cleaning Survey Values
+
+Now that we've cleaned up our headers, it's time to start looking at the values to see if we'll be easily able to analyze them, or if they need cleaning too.  
+
+If you take a look at the `platforms` column, you'll see that the values are pretty messy, and can include any combination of up to 6 options. This is very hard to work with, so we'll need to figure out the best way to format things.
+
+### Long Data, Wide Data, and the Tidy Data Principles
+
+In R, and specifically the Tidyverse, the [Tidy Data Principles](https://cran.r-project.org/web/packages/tidyr/vignettes/tidy-data.html) specify qualities of what is considered "tidy data", with data that doesn't meet all criteria being "messy data". They provide a standard way to organize data to "facilitate initial exploration and analysis of the data, and to simplify the development of data analysis tools that work well together".  ([source](https://cran.r-project.org/web/packages/tidyr/vignettes/tidy-data.html)).  
+
+**Tidy Data Principles:**
+
+* Each variable is a column.
+* Each observation is a row.
+* Each value is a cell. 
+
+Here is an example of what would be considered a messy dataset:
+
+![](images/block8-2_tidy-data1.png)
+
+While structuring data in this way is much easier for a human to scan and for summary tables, it's trickier for a coding language to parse and work with.  The various packages of the Tidyverse are specifically geared towards working with tidy data, and making your data tidy will make faceting, grouping, modelling, and visualizing much easier.
+
+Here's an example of what a tidy version of this data would look like:
+
+![](images/block8-2_tidy-data2.png)
+
+As you'll notice, the repeating values in the `Name` column seems clunky and weird to scan.  But a way to think about think about why this might be useful would be if instead of 3 quizs, there were 50.  Having a unique column for each would be tedious in its own way, and this is just a single variable. There could be several sets of wide spanning columns to capture what could be captured in a single variable.  The concept of tidy data focuses on minimizing the amount of columns in favour of fewer columns with rich amounts of observations.
+
+## Making a Dataset Tidy
+
+The [tidyr](https://tidyr.tidyverse.org/) package in the Tidyverse specializes in making data tidy.
+
+The `seperate_longer_delim()` function specializes in dealing with the messy values in our `platforms` column.
+
+The `trimsw` function is useful to add with the `sepearate_longer_delim()` function, because it removes all the white space surrounding on either side of a value, avoiding any complications this could bring up.
+
+:::walkthrough
+
+Let's give this a try!
+
+```{r}
+survey_data_long <- survey_data |>
+  separate_longer_delim(cols = platforms, delim = ",") |> 
+  mutate(platforms = trimws(platforms)) 
+```
+
+**Step-by-step explanation**
+
+1) We start off by creating a new r object called `survey_data_long`, which is going to take on all the information that is passed to it from the right side of the assignment operator `<-`.
+2) The `survey_data` object is then the data that we want to pass through the pipe `|>` to manipulate it.
+3) The `sepearate_longer_delim` function is applied to the `platforms` column to create a new row for each of the values in the cell, and because the values separated by commas, the `delim = ","` function tells R to separate each new row after a comma.
+4) The data object with the separate rows is then piped into the next function, which uses the `mutate` function to tell R that we want to modify the newly updated `platforms` values, and the `trimsw` then removes any whitespace on either side of the values.
+5) Et voila!
+
+:::
+
+
 
 
 
