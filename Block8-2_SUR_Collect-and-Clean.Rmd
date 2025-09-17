@@ -238,7 +238,7 @@ survey_data <- survey_data |>
 :::question
 First, use the function`names()` to display the column names.
 ```{r, eval=FALSE}
-names(survey_data
+names(survey_data)
 ```
 :::
 
@@ -275,9 +275,9 @@ survey_data <- survey_data |>
   rename( "feel-distracted" = "I find social media distracting from studies",
          "feel-improved-mood" = "Social media positively impacts my mood",
          "usage-stay-in-touch" = "Staying connected with friends/family",
-         "usage-entertainment" = "Entertainment",
-         "usage-news" = "News and current events",
+         "usage-entertainment" = "Entertainment/passing time",
          "usage-networking" = "Academic or professional networking",
+         "usage-news" = "Staying informed about news/events",
          "usage-expression" = "Self-expression/creativity",
          "timestamp" = "Timestamp",
          "name" = "Name",
@@ -461,8 +461,11 @@ survey_data_long <- survey_data |>
 :::
 
 
+If we take another look at the dataset, you'll see that the `platforms` variable now has single observations in each cell.
 
+### More Tidying
 
+IN addition to the `platforms` variable, you'll probably notice that 
 
 
 
