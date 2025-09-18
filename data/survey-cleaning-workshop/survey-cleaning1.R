@@ -87,7 +87,7 @@ survey_data_long <- survey_data |>
 
 write_csv(survey_data, "survey_data_long.csv")
 # Take a peak
-View(js_survey_long)
+View(survey_data_long)
 
 survey_data_longer <- survey_data_long |>
   pivot_longer(

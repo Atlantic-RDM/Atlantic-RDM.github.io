@@ -289,13 +289,13 @@ survey_data <- survey_data |>
 :::
 
 
-### Personal Idenfiers, ID Codes, and Data Versioning
+## Personal Idenfiers, ID Codes, and Data Versioning
 
 You probably noticed that in this survey we collected names and email addresses. This can be necessary for several reasons, but it also poses ethical issues with respect to who is able to see this information. It is common practice to remove personal identifiers from survey data, but you may also wish to create a code for each entry should you ever need to connect information back to the respondent.
 
 Let's try this is a few steps:
 
-#### Add an ID column
+### Add an ID column
 
 The `mutate()` function, that is part of the [dplyr package](https://dplyr.tidyverse.org/index.html) is useful when you want to create new columns that are functions of existing variables.
 
@@ -318,7 +318,8 @@ We'll play with more uses of `mutate` in just a little bit!
 :::
 
 <br>
-#### Move the ID column to the left-most position of the data
+
+### Move the ID column to the left-most position of the data
 
 Having an ID column as the left-most, or first, column in your dataset makes things generally easier to keep track of.
 
@@ -393,7 +394,7 @@ survey_data <- suvey_data |>
 Now that we have a dataset that has cleaned columns, no identifiers, and no unnecessary columns, let's save a copy of this should we ever need to go back to the beginning.
 
 ```{r, eval=FALSE}
-write_csv(survey_data, "survey-data_clean-cols_no-ID")
+write_csv(survey_data, "survey-data_clean-cols_no-ID.csv")
 ```
 
 ### Cleaning Values
@@ -543,11 +544,56 @@ write_csv(survey_data_tidy, "survey_data_tidy.csv")
 ```
 
 
+## Making Data Wide
 
+In the next session of this series, [Making Sense of Survey Data](Block8-3_SUR_Making-Sense.html), we will be using this tidied version of our data to dip our toes in analysis and visualization.  However, it is worth noting that for certain surveys, keeping the wide structure might be preferable to make it easier for human eyes to scan and creating basic summary tables.  
 
+We can take a quick look at an example of widening data, using the `platforms` variable that we previously made long.
 
+If we revisit the R object `survey_data`, which was saved as the `survey-data_clean-cols_no-ID.csv` file, we can step back to a stage in which the `platforms` variable was still quite messy.
 
+```{r, eval=FALSE}
+View(survey_data)
+```
 
+Instead of creating a new row for each of the platforms via the Tidy Data Principles, we can make the data wider and create a new column for each of the platforms.
+
+:::walkthrough
+
+Here's how to do this:
+
+```{r}
+survey_data_wide <- survey_data |>
+  mutate(platforms = strsplit(platforms, ",")) |>
+  unnest_longer(platforms) |>
+  mutate(platforms = trimws(platforms), present = 1) |>
+  pivot_wider(
+    names_from = platforms,
+    values_from = present,
+    values_fill = 0
+  )
+```
+
+**Step-by-step explanation:**
+
+1) We start by writing a new r object called `survey_data_wide`, that will hold everything to the left of the assignment operator `|>`.
+2) The `survey_data` object represents our dataset that we want to pass through the pipe `|>` to manipulate it.
+3) The `mutate` function is used to modify a column, which is applied to the `strsplit(platforms, ",")` function, to tell it to split the comma-separated strings in the `platforms` column into lists of individual platform names.
+4) We then pipe `|>` this into the `unnest_longer(platforms)` function to expand each element into its own row (which is like making the data longer)
+5) This is then piped `|>` into `mutate(platforms = trimws(platforms)` which continues to manipulate the `platforms` column, and much like we did when making this variable long, the `trimsw` removes white space surrounding the values.
+6) The `present = 1` function creates a new column called `present` that has a value of 1 for every row.  This is used as a temporary marker to indicate that the platform exists for that survey entry, and will not be there 
+7) Using another pipe `|>`, this information goes into the `pivot_wider` function, that works with a very similar syntax as `pivot_longer` that we used earlier.  
+8) `names_from = platforms` assigns new columns to the unique platform names.
+9) `values_from = present` assigns values in the new columns to come from the `present` column, which is `1`.
+10) Finally, with `values_fill = 0`, if a platform wasn't present for a survey entry, that column will get the value of `0`.
+
+This will end up with a wide dataset where each row is a survey entry, each platformat is a column, and the value `1` means a platform was listed, and `0` means a platform was not listed.
+
+::: 
+
+## Finish
+
+You have now seen some of the foundational functions to clean survey data, and the various types of data that a survey might create. The goal of this session is to give you a sense of how to approach your own survey data, and to be comfortable enough with these code chunks that you can switch out the data/variables for your own surveys, and work through them in quick and reproducible ways!
 
 
 
