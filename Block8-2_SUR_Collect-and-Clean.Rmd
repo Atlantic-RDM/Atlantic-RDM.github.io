@@ -502,7 +502,7 @@ survey_data_longer <- survey_data_long |>
 3) The `pivot_longer()` function reshapes the data from wide to long.  In this case we had several variables that started with `feel-`, and this function will gather them into two columns: one for the question name and one for the response value.
 4) The `cols = starts_with("feel-")` function tells `pivot_longer` which columns to gather. (You can see why variable naming can help with data cleaning!)
 5) `names_to = "feel_question"` names of the new column that will **hold the original column names** (ie. the question identifiers.  The new column will be called `feel_question`.
-6) `values_to "feel_response" names the new column that will **hold the values (answers) that used to sit in the `feel-` columns.  The new column will be called `feel_response`.
+6) `values_to` "feel_response" names the new column that will **hold the values (answers) that used to sit in the `feel-` columns.  The new column will be called `feel_response`.
 7) Close the bracket, and take a look to see what the data looks like.
 
 :::
