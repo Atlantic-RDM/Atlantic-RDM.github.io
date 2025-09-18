@@ -1,0 +1,301 @@
+timestamp,name,email,age,gender,year_of_study,hours-per-day,platforms,feel-connected,feel-increase-stress,feel-distracted,feel-improved-mood,usage-stay-in-touch,usage-entertainment,usage-networking,usage-news,usage-expression
+2024-01-20 1:29,Tulkas the Maid of Tarth,tulkas.the.maid.of.tarth@fantasyrealm.com,24,Male,4,Less than 2 hours,"LinkedIn, Instagram, Reddit, Facebook, X (Twitter)",Neutral,Neutral,Agree,Agree,4,2,3,5,1
+2024-01-24 22:52,Lanfear Snape,lanfear.snape@fantasyrealm.com,24,Female,4,2–4 hours,"TikTok, Snapchat, Instagram, Facebook",Agree,Strongly agree,Strongly disagree,Agree,5,2,1,3,4
+2024-04-30 10:06,Mat Half-Elven,mat.half-elven@fantasyrealm.com,20,Male,2,Less than 2 hours,"X (Twitter), Reddit, LinkedIn, Snapchat, TikTok",Neutral,Neutral,Agree,Agree,3,5,2,4,1
+2024-06-06 15:56,Bifur Son of Fundin,bifur.son.of.fundin@fantasyrealm.com,23,Female,4,2–4 hours,"LinkedIn, Instagram, Facebook, TikTok, Reddit",Agree,Agree,Agree,Disagree,4,5,3,2,1
+2024-02-07 5:14,Remus Daughter of the Night,remus.daughter.of.the.night@fantasyrealm.com,21,Male,2,4–6 hours,"Facebook, X (Twitter), TikTok, Instagram, Reddit",Strongly agree,Strongly disagree,Strongly disagree,Agree,2,4,3,1,5
+2024-01-05 21:46,Moiraine Lovegood,moiraine.lovegood@fantasyrealm.com,19,Male,1,4–6 hours,"X (Twitter), TikTok, Instagram, Reddit",Neutral,Strongly disagree,Agree,Agree,3,5,1,4,2
+2024-02-18 13:13,Brienne Lord of Horses,brienne.lord.of.horses@fantasyrealm.com,22,Male,3,Less than 2 hours,"LinkedIn, Snapchat, Instagram, Facebook, TikTok, Reddit",Neutral,Strongly agree,Agree,Agree,3,2,5,4,1
+2024-04-04 17:01,Remus the First Dark Lord,remus.the.first.dark.lord@fantasyrealm.com,18,Female,1,Less than 2 hours,"Facebook, TikTok, Instagram",Agree,Neutral,Neutral,Strongly agree,5,4,1,2,3
+2024-01-17 22:25,Severus Lord of Waters,severus.lord.of.waters@fantasyrealm.com,21,Female,3,4–6 hours,"LinkedIn, Instagram, X (Twitter), TikTok, Reddit",Agree,Strongly disagree,Neutral,Agree,5,4,3,1,2
+2024-06-27 5:04,Gandalf Dwarf,gandalf.dwarf@fantasyrealm.com,21,Male,3,2–4 hours,"Facebook, TikTok, Reddit",Neutral,Disagree,Disagree,Agree,5,1,4,2,3
+2024-06-26 20:47,Edmund Pevensie,edmund.pevensie@fantasyrealm.com,19,Male,1,4–6 hours,"X (Twitter), LinkedIn, Reddit, TikTok",Neutral,Neutral,Strongly agree,Agree,3,1,4,5,2
+2024-02-16 18:26,Drizzt the Smith,drizzt.the.smith@fantasyrealm.com,22,Male,3,4–6 hours,"Facebook, X (Twitter), Instagram, Reddit",Agree,Disagree,Strongly agree,Disagree,1,2,5,4,3
+2024-05-02 11:54,Laurana Dumbledore,laurana.dumbledore@fantasyrealm.com,24,Male,4,Less than 2 hours,"Facebook, TikTok, Instagram, Reddit",Neutral,Disagree,Neutral,Strongly agree,4,5,2,3,1
+2024-04-22 19:41,Kili Baggins,kili.baggins@fantasyrealm.com,20,Female,2,2–4 hours,"LinkedIn, Snapchat, Instagram, Reddit, X (Twitter), TikTok",Strongly agree,Disagree,Strongly agree,Agree,3,5,1,2,4
+2024-02-04 22:36,Manwe Son of Fundin,manwe.son.of.fundin@fantasyrealm.com,19,Male,1,2–4 hours,"Reddit, TikTok, Instagram",Strongly agree,Strongly disagree,Agree,Strongly agree,5,1,4,2,3
+2024-05-02 15:53,Tulkas Ba'alzamon,tulkas.ba'alzamon@fantasyrealm.com,25,Non-binary/Other,4,2–4 hours,"Reddit, TikTok, Instagram, Facebook",Agree,Neutral,Neutral,Agree,3,1,4,5,2
+2024-01-03 13:53,Luna Son of Dis,luna.son.of.dis@fantasyrealm.com,25,Female,4,2–4 hours,"Facebook, X (Twitter), LinkedIn, TikTok, Instagram",Strongly agree,Strongly disagree,Agree,Disagree,4,2,3,1,5
+2024-06-12 3:44,Sansa Dwarf,sansa.dwarf@fantasyrealm.com,18,Female,1,4–6 hours,"Snapchat, Instagram, Facebook, TikTok, Reddit",Neutral,Neutral,Neutral,Neutral,1,2,3,4,5
+2024-06-14 18:26,Thorin Baratheon,thorin.baratheon@fantasyrealm.com,19,Male,1,4–6 hours,"X (Twitter), TikTok, Snapchat, Instagram, Reddit",Neutral,Neutral,Neutral,Neutral,4,5,3,2,1
+2024-03-28 23:55,Peter the Betrayer,peter.the.betrayer@fantasyrealm.com,21,Female,3,4–6 hours,"TikTok, LinkedIn, Snapchat, Instagram",Strongly agree,Strongly disagree,Strongly agree,Agree,1,4,3,2,5
+2024-06-23 11:48,Ishamael the Doomsman,ishamael.the.doomsman@fantasyrealm.com,24,Male,4,2–4 hours,"TikTok, Snapchat, Instagram, Reddit, Facebook",Agree,Strongly agree,Agree,Neutral,3,5,1,4,2
+2024-06-24 5:37,Tulkas Son of Dis,tulkas.son.of.dis@fantasyrealm.com,18,Male,1,2–4 hours,"Facebook, Reddit, Instagram, TikTok",Strongly agree,Strongly disagree,Strongly agree,Neutral,5,4,3,2,1
+2024-01-08 23:27,Beorn the First Dark Lord,beorn.the.first.dark.lord@fantasyrealm.com,25,Female,4,Less than 2 hours,"X (Twitter), Reddit, TikTok, Instagram, Facebook",Neutral,Neutral,Agree,Neutral,3,1,5,4,2
+2024-01-07 23:45,Tulkas Lupin,tulkas.lupin@fantasyrealm.com,25,Male,4,2–4 hours,"X (Twitter), LinkedIn, TikTok, Instagram, Reddit, Facebook",Neutral,Agree,Agree,Agree,1,5,4,3,2
+2024-05-20 5:28,Balin the First Dark Lord,balin.the.first.dark.lord@fantasyrealm.com,18,Female,1,4–6 hours,"LinkedIn, Snapchat, Instagram, Facebook, TikTok, X (Twitter)",Neutral,Disagree,Neutral,Agree,3,5,4,2,1
+2024-02-03 14:58,Beorn Son of Fundin,beorn.son.of.fundin@fantasyrealm.com,19,Male,1,4–6 hours,"Snapchat, Instagram, Reddit, Facebook, TikTok, X (Twitter)",Strongly disagree,Neutral,Agree,Agree,3,2,4,1,5
+2024-02-02 11:56,Dalamar Dwarf,dalamar.dwarf@fantasyrealm.com,19,Female,1,2–4 hours,"LinkedIn, Instagram, Reddit, TikTok, X (Twitter)",Agree,Disagree,Disagree,Neutral,4,5,1,3,2
+2024-06-09 16:51,Drizzt Dumbledore,drizzt.dumbledore@fantasyrealm.com,24,Female,3,4–6 hours,"Snapchat, Instagram, X (Twitter), TikTok, Reddit, Facebook",Disagree,Neutral,Strongly agree,Strongly agree,3,5,2,1,4
+2024-02-24 12:44,Geralt Tarly,geralt.tarly@fantasyrealm.com,19,Male,2,4–6 hours,"Reddit, LinkedIn, Instagram, TikTok",Agree,Strongly disagree,Agree,Agree,3,2,4,1,5
+2024-02-16 13:06,Ancalagon the Brave,ancalagon.the.brave@fantasyrealm.com,23,Male,4,2–4 hours,"LinkedIn, Snapchat, Instagram, Reddit, Facebook",Agree,Disagree,Agree,Disagree,2,4,3,5,1
+2024-04-15 2:43,Perrin the Betrayer,perrin.the.betrayer@fantasyrealm.com,22,Female,3,2–4 hours,"X (Twitter), TikTok, Snapchat, Instagram",Strongly agree,Neutral,Agree,Agree,2,1,5,3,4
+2024-06-25 21:32,Hermione Lord of Waters,hermione.lord.of.waters@fantasyrealm.com,23,Female,4,2–4 hours,"LinkedIn, Snapchat, Instagram, Facebook, TikTok",Neutral,Agree,Agree,Agree,2,5,3,4,1
+2024-02-03 8:37,Lanfear the Dark Lord,lanfear.the.dark.lord@fantasyrealm.com,19,Female,1,2–4 hours,"Facebook, TikTok, Instagram",Neutral,Strongly agree,Agree,Disagree,4,1,3,5,2
+2024-03-25 16:16,Yavanna the Maid of Tarth,yavanna.the.maid.of.tarth@fantasyrealm.com,21,Female,3,2–4 hours,"LinkedIn, Snapchat, Instagram, TikTok, Reddit",Neutral,Strongly disagree,Strongly agree,Neutral,4,2,1,5,3
+2024-04-15 0:52,Remus Dumbledore,remus.dumbledore@fantasyrealm.com,18,Male,1,4–6 hours,"X (Twitter), TikTok, Snapchat, Reddit",Agree,Disagree,Neutral,Agree,1,4,2,3,5
+2024-04-30 14:30,Manwe the Black,manwe.the.black@fantasyrealm.com,23,Male,4,Less than 2 hours,"LinkedIn, Instagram, X (Twitter), TikTok, Reddit, Facebook",Neutral,Neutral,Neutral,Agree,4,3,5,2,1
+2024-03-10 9:44,Thranduil the Golden,thranduil.the.golden@fantasyrealm.com,18,Female,1,2–4 hours,"X (Twitter), LinkedIn, TikTok, Instagram",Neutral,Disagree,Strongly agree,Strongly disagree,2,1,4,5,3
+2024-05-09 18:37,Mat the Ogier,mat.the.ogier@fantasyrealm.com,20,Male,2,Less than 2 hours,"X (Twitter), Reddit, Instagram, TikTok",Disagree,Agree,Strongly agree,Agree,2,1,4,3,5
+2024-02-26 18:05,Shadowfax Majere,shadowfax.majere@fantasyrealm.com,24,Male,3,4–6 hours,"Facebook, Reddit, Snapchat, Instagram",Strongly agree,Strongly agree,Neutral,Neutral,5,2,3,1,4
+2024-03-31 16:23,Sauron the Great,sauron.the.great@fantasyrealm.com,21,Male,3,Less than 2 hours,"TikTok, Snapchat, Instagram, Reddit",Disagree,Agree,Neutral,Neutral,2,1,5,3,4
+2024-01-31 18:50,Sauron Mandragoran,sauron.mandragoran@fantasyrealm.com,20,Female,2,2–4 hours,"Facebook, LinkedIn, Snapchat, Instagram, TikTok",Agree,Agree,Strongly agree,Neutral,1,3,4,2,5
+2024-02-16 19:28,Gandalf Son of Dis,gandalf.son.of.dis@fantasyrealm.com,19,Female,1,4–6 hours,"Snapchat, Instagram, Reddit, TikTok, X (Twitter)",Neutral,Neutral,Neutral,Strongly disagree,4,1,3,5,2
+2024-04-09 11:26,Radagast the Spider,radagast.the.spider@fantasyrealm.com,18,Male,2,4–6 hours,"LinkedIn, Snapchat, Instagram, Reddit, TikTok",Strongly agree,Agree,Neutral,Neutral,4,1,2,5,3
+2024-04-25 7:52,Arwen Oakenshield,arwen.oakenshield@fantasyrealm.com,25,Male,4,More than 6 hours,"LinkedIn, Instagram, Reddit, TikTok, X (Twitter), Facebook",Strongly agree,Strongly agree,Agree,Disagree,5,3,1,4,2
+2024-04-15 14:07,Aviendha Farshaw,aviendha.farshaw@fantasyrealm.com,19,Male,1,4–6 hours,"X (Twitter), LinkedIn, TikTok, Instagram, Reddit",Neutral,Neutral,Neutral,Agree,5,2,4,3,1
+2024-02-28 22:42,Manwe the Marchwarden,manwe.the.marchwarden@fantasyrealm.com,25,Male,4,2–4 hours,"X (Twitter), TikTok, Reddit, Facebook",Strongly agree,Neutral,Agree,Neutral,3,4,2,1,5
+2024-03-17 16:12,Bellatrix Shieldmaiden of Rohan,bellatrix.shieldmaiden.of.rohan@fantasyrealm.com,24,Male,4,2–4 hours,"Reddit, Instagram, Facebook",Neutral,Disagree,Disagree,Agree,2,4,3,1,5
+2024-06-25 14:50,Manwe the Smith,manwe.the.smith@fantasyrealm.com,21,Female,3,4–6 hours,"Facebook, LinkedIn, Instagram",Disagree,Disagree,Agree,Disagree,5,1,4,3,2
+2024-03-09 18:07,Galadriel Pevensie,galadriel.pevensie@fantasyrealm.com,25,Non-binary/Other,3,Less than 2 hours,"X (Twitter), LinkedIn, Snapchat, Reddit, TikTok, Facebook",Neutral,Agree,Agree,Neutral,5,2,4,3,1
+2024-02-10 11:12,Loial Lovegood,loial.lovegood@fantasyrealm.com,21,Non-binary/Other,3,4–6 hours,"Facebook, Instagram, TikTok",Agree,Neutral,Strongly agree,Disagree,2,4,1,5,3
+2024-04-13 9:24,Laurana Ba'alzamon,laurana.ba'alzamon@fantasyrealm.com,20,Female,2,More than 6 hours,"Facebook, Reddit, LinkedIn, Snapchat, Instagram, TikTok",Strongly agree,Agree,Neutral,Neutral,5,4,3,1,2
+2024-04-03 23:05,Raistlin Son of Gondor,raistlin.son.of.gondor@fantasyrealm.com,20,Non-binary/Other,2,2–4 hours,"LinkedIn, Instagram, Reddit, TikTok, X (Twitter)",Agree,Neutral,Strongly disagree,Agree,1,3,5,2,4
+2024-06-26 2:13,Boromir Trakand,boromir.trakand@fantasyrealm.com,19,Male,1,4–6 hours,"Snapchat, Instagram, Reddit, TikTok, X (Twitter)",Strongly disagree,Neutral,Neutral,Disagree,3,2,1,4,5
+2024-06-16 21:43,Gandalf Pevensie,gandalf.pevensie@fantasyrealm.com,22,Male,3,4–6 hours,"X (Twitter), Snapchat, Reddit",Agree,Strongly disagree,Disagree,Agree,1,3,5,4,2
+2024-05-08 22:23,Thorin Son of Gondor,thorin.son.of.gondor@fantasyrealm.com,18,Male,2,Less than 2 hours,"LinkedIn, Snapchat, Reddit, TikTok",Neutral,Disagree,Strongly disagree,Strongly agree,5,2,3,1,4
+2024-04-13 17:50,Éowyn Kanan,éowyn.kanan@fantasyrealm.com,22,Male,3,Less than 2 hours,"Snapchat, Instagram, Reddit, Facebook, X (Twitter)",Neutral,Agree,Strongly agree,Neutral,5,3,2,1,4
+2024-03-21 16:38,Nori Dwarf,nori.dwarf@fantasyrealm.com,21,Female,3,Less than 2 hours,"Reddit, TikTok, Instagram",Neutral,Neutral,Strongly agree,Disagree,5,4,2,3,1
+2024-04-14 17:38,Samwell the Maid of Tarth,samwell.the.maid.of.tarth@fantasyrealm.com,18,Female,1,4–6 hours,"Facebook, Reddit, TikTok, Instagram",Neutral,Agree,Agree,Disagree,4,1,3,2,5
+2024-02-07 0:45,Loial King of Rohan,loial.king.of.rohan@fantasyrealm.com,20,Male,2,2–4 hours,"X (Twitter), LinkedIn, TikTok, Instagram, Reddit",Agree,Neutral,Agree,Strongly agree,1,4,5,3,2
+2024-02-24 19:17,Cersei the Doomsman,cersei.the.doomsman@fantasyrealm.com,19,Female,1,4–6 hours,"X (Twitter), Facebook, Reddit, Instagram, TikTok",Disagree,Neutral,Strongly agree,Neutral,4,5,2,3,1
+2024-06-04 4:51,Caramon Dwarf,caramon.dwarf@fantasyrealm.com,21,Male,3,More than 6 hours,"X (Twitter), Reddit, TikTok, Instagram",Agree,Strongly agree,Agree,Agree,4,3,5,2,1
+2024-04-23 12:45,Arya the Bowman,arya.the.bowman@fantasyrealm.com,25,Non-binary/Other,4,2–4 hours,"TikTok, Instagram, Facebook",Neutral,Agree,Strongly agree,Strongly disagree,5,4,1,3,2
+2024-01-21 10:24,Edmund the Betrayer,edmund.the.betrayer@fantasyrealm.com,22,Female,3,Less than 2 hours,"LinkedIn, Snapchat, Instagram, Facebook, TikTok, Reddit",Disagree,Strongly agree,Neutral,Neutral,5,4,1,2,3
+2024-01-22 1:00,Bellatrix the Lion,bellatrix.the.lion@fantasyrealm.com,21,Male,3,Less than 2 hours,"X (Twitter), TikTok, Reddit",Disagree,Agree,Agree,Neutral,1,4,5,2,3
+2024-01-30 15:50,Shelob Merrilin,shelob.merrilin@fantasyrealm.com,23,Female,4,2–4 hours,"Facebook, Reddit, Snapchat, Instagram",Agree,Strongly disagree,Disagree,Agree,5,2,3,1,4
+2024-01-09 12:36,Lucy Dumbledore,lucy.dumbledore@fantasyrealm.com,18,Male,1,4–6 hours,"Facebook, X (Twitter), TikTok, Reddit",Disagree,Disagree,Disagree,Strongly disagree,5,2,3,4,1
+2024-03-17 18:10,Bard McGonagall,bard.mcgonagall@fantasyrealm.com,20,Male,2,4–6 hours,"X (Twitter), TikTok, Instagram, Reddit",Disagree,Neutral,Agree,Agree,3,2,5,1,4
+2024-01-16 8:57,Kitiara Skin-changer,kitiara.skin-changer@fantasyrealm.com,23,Female,4,2–4 hours,"Facebook, X (Twitter), TikTok, Reddit, Instagram",Agree,Strongly agree,Strongly agree,Disagree,3,5,1,4,2
+2024-06-23 9:20,Severus Cauthon,severus.cauthon@fantasyrealm.com,21,Male,3,Less than 2 hours,"TikTok, Instagram, Reddit",Neutral,Disagree,Strongly agree,Agree,4,2,5,3,1
+2024-03-23 5:08,Sirius the White,sirius.the.white@fantasyrealm.com,20,Female,2,4–6 hours,"Facebook, Reddit, Instagram, TikTok",Agree,Disagree,Agree,Disagree,2,3,4,5,1
+2024-03-29 15:56,Daenerys Snow,daenerys.snow@fantasyrealm.com,18,Male,1,4–6 hours,"Facebook, Reddit, TikTok, Instagram",Agree,Agree,Agree,Agree,5,3,4,2,1
+2024-03-27 9:49,Elayne Merrilin,elayne.merrilin@fantasyrealm.com,18,Male,1,4–6 hours,"Facebook, X (Twitter), TikTok, Instagram, Reddit",Neutral,Strongly disagree,Agree,Disagree,4,5,3,1,2
+2024-05-05 14:52,Balin the Golden,balin.the.golden@fantasyrealm.com,20,Female,3,2–4 hours,"Reddit, Snapchat, TikTok, LinkedIn, Instagram",Agree,Agree,Agree,Strongly disagree,2,5,4,3,1
+2024-04-09 4:53,Reepicheep the Lion,reepicheep.the.lion@fantasyrealm.com,19,Female,1,4–6 hours,"LinkedIn, Instagram, Reddit, TikTok, X (Twitter)",Strongly disagree,Neutral,Agree,Neutral,4,5,1,2,3
+2024-01-04 12:50,Reepicheep Kanan,reepicheep.kanan@fantasyrealm.com,18,Female,2,4–6 hours,"X (Twitter), TikTok, Instagram",Strongly agree,Neutral,Agree,Agree,4,1,3,2,5
+2024-03-11 23:13,Haldir Fireforge,haldir.fireforge@fantasyrealm.com,22,Female,3,2–4 hours,"Reddit, TikTok, Snapchat, Instagram",Neutral,Agree,Strongly agree,Strongly agree,1,4,3,2,5
+2024-04-03 6:13,Arwen Son of Dis,arwen.son.of.dis@fantasyrealm.com,18,Female,1,4–6 hours,"Reddit, LinkedIn, Instagram, TikTok",Neutral,Disagree,Agree,Agree,1,3,4,5,2
+2024-02-22 16:38,Éowyn Cauthon,éowyn.cauthon@fantasyrealm.com,20,Female,2,4–6 hours,"LinkedIn, TikTok, Instagram",Agree,Strongly agree,Agree,Agree,2,4,1,5,3
+2024-04-07 20:04,Melkor the Ogier,melkor.the.ogier@fantasyrealm.com,19,Female,1,2–4 hours,"Reddit, TikTok, Instagram",Neutral,Strongly disagree,Disagree,Strongly agree,1,3,5,2,4
+2024-06-18 13:32,Nynaeve Skin-changer,nynaeve.skin-changer@fantasyrealm.com,18,Female,1,4–6 hours,"Facebook, TikTok, Instagram",Strongly agree,Disagree,Neutral,Disagree,4,3,2,5,1
+2024-06-27 4:08,Dori Captain of Gondor,dori.captain.of.gondor@fantasyrealm.com,21,Male,3,2–4 hours,"X (Twitter), Snapchat, Instagram, Reddit",Agree,Disagree,Strongly agree,Agree,5,1,3,2,4
+2024-04-09 16:46,Dori Majere,dori.majere@fantasyrealm.com,18,Male,1,4–6 hours,"Reddit, LinkedIn, TikTok",Neutral,Neutral,Agree,Strongly agree,2,4,3,5,1
+2024-01-06 21:42,Daenerys Tarly,daenerys.tarly@fantasyrealm.com,20,Male,2,4–6 hours,"Facebook, Reddit, Snapchat, TikTok",Neutral,Strongly agree,Agree,Neutral,4,3,5,1,2
+2024-06-18 16:51,Thorin the Dark Lord,thorin.the.dark.lord@fantasyrealm.com,21,Non-binary/Other,3,More than 6 hours,"LinkedIn, Snapchat, Instagram, TikTok",Strongly agree,Strongly disagree,Strongly agree,Neutral,1,4,3,5,2
+2024-04-02 9:36,Albus Stoor,albus.stoor@fantasyrealm.com,22,Female,3,Less than 2 hours,"Facebook, LinkedIn, Snapchat, Instagram",Disagree,Disagree,Agree,Strongly agree,3,5,4,1,2
+2024-02-22 20:37,Sansa the Dark Lord,sansa.the.dark.lord@fantasyrealm.com,21,Male,2,2–4 hours,"LinkedIn, Instagram, Reddit, TikTok, X (Twitter)",Agree,Agree,Strongly disagree,Agree,5,2,1,4,3
+2024-02-02 8:05,Mandos the Great,mandos.the.great@fantasyrealm.com,20,Female,2,4–6 hours,"Instagram, X (Twitter), LinkedIn, Reddit, TikTok",Agree,Agree,Agree,Disagree,3,4,2,5,1
+2024-03-02 6:51,Fili the Maid of Tarth,fili.the.maid.of.tarth@fantasyrealm.com,18,Female,1,4–6 hours,"TikTok, Snapchat, Instagram",Disagree,Strongly agree,Agree,Strongly disagree,4,1,5,3,2
+2024-01-23 7:12,Tanis Lord of Lorien,tanis.lord.of.lorien@fantasyrealm.com,18,Male,1,4–6 hours,"X (Twitter), TikTok, Instagram, Reddit",Agree,Agree,Neutral,Disagree,2,1,4,3,5
+2024-06-24 12:03,Demandred Elvenking,demandred.elvenking@fantasyrealm.com,20,Male,2,Less than 2 hours,"X (Twitter), LinkedIn, TikTok, Instagram, Reddit",Neutral,Disagree,Agree,Agree,2,5,1,3,4
+2024-04-09 16:59,Arwen Baggins,arwen.baggins@fantasyrealm.com,21,Male,2,Less than 2 hours,"Facebook, X (Twitter), TikTok, Instagram, Reddit",Neutral,Disagree,Strongly disagree,Strongly agree,2,1,5,4,3
+2024-03-21 16:19,Aule Lupin,aule.lupin@fantasyrealm.com,18,Female,1,4–6 hours,"Snapchat, Instagram, Reddit, TikTok, X (Twitter)",Agree,Strongly disagree,Agree,Neutral,4,3,1,5,2
+2024-04-26 0:38,Boromir Merrilin,boromir.merrilin@fantasyrealm.com,20,Male,2,4–6 hours,"Facebook, Snapchat, TikTok, Instagram, Reddit",Agree,Disagree,Neutral,Disagree,4,2,1,5,3
+2024-05-25 15:21,Bombur Son of Fundin,bombur.son.of.fundin@fantasyrealm.com,24,Male,4,2–4 hours,"Facebook, X (Twitter), TikTok, Instagram, Reddit",Strongly agree,Disagree,Strongly agree,Neutral,3,4,2,1,5
+2024-02-01 16:28,Ori King of Rohan,ori.king.of.rohan@fantasyrealm.com,24,Female,4,2–4 hours,"Facebook, TikTok, Instagram",Agree,Agree,Strongly agree,Neutral,5,2,4,1,3
+2024-02-17 23:07,Eddard Lupin,eddard.lupin@fantasyrealm.com,22,Male,3,2–4 hours,"Reddit, LinkedIn, TikTok, Instagram",Agree,Neutral,Disagree,Neutral,4,1,2,5,3
+2024-03-10 4:04,Haldir Skin-changer,haldir.skin-changer@fantasyrealm.com,20,Male,2,More than 6 hours,"Instagram, Reddit, Facebook, TikTok, X (Twitter)",Agree,Disagree,Agree,Disagree,3,2,5,1,4
+2024-03-31 8:46,Arya Stark,arya.stark@fantasyrealm.com,19,Non-binary/Other,1,2–4 hours,"X (Twitter), Reddit, Instagram, TikTok",Agree,Agree,Disagree,Disagree,5,4,2,1,3
+2024-06-04 4:47,Laurana King of Rohan,laurana.king.of.rohan@fantasyrealm.com,22,Non-binary/Other,3,Less than 2 hours,"LinkedIn, Instagram, TikTok",Neutral,Neutral,Agree,Strongly disagree,1,5,3,4,2
+2024-02-03 15:23,Dalamar the Dark Lord,dalamar.the.dark.lord@fantasyrealm.com,21,Male,3,4–6 hours,"Facebook, Instagram, Reddit",Agree,Disagree,Strongly agree,Strongly agree,2,5,3,4,1
+2024-05-30 1:07,Beorn Mandragoran,beorn.mandragoran@fantasyrealm.com,21,Male,3,Less than 2 hours,"Reddit, LinkedIn, TikTok, Instagram",Neutral,Disagree,Agree,Disagree,3,1,4,2,5
+2024-01-20 1:07,Melkor Lestrange,melkor.lestrange@fantasyrealm.com,20,Male,2,More than 6 hours,"Facebook, LinkedIn, TikTok, Instagram, Reddit",Agree,Neutral,Strongly agree,Neutral,4,5,2,3,1
+2024-02-12 21:12,Nynaeve McGonagall,nynaeve.mcgonagall@fantasyrealm.com,20,Female,2,Less than 2 hours,"LinkedIn, TikTok, Instagram",Neutral,Strongly disagree,Agree,Neutral,4,1,3,5,2
+2024-06-15 18:19,Demandred Targaryen,demandred.targaryen@fantasyrealm.com,19,Male,1,2–4 hours,"Reddit, TikTok, Instagram",Strongly agree,Agree,Neutral,Strongly disagree,3,2,4,1,5
+2024-01-10 11:36,Bifur the Spider,bifur.the.spider@fantasyrealm.com,25,Male,3,Less than 2 hours,"Instagram, Reddit, Facebook, TikTok, X (Twitter)",Disagree,Strongly disagree,Strongly disagree,Disagree,1,3,2,4,5
+2024-05-28 6:38,Smaug Lady of Light,smaug.lady.of.light@fantasyrealm.com,25,Male,4,2–4 hours,"X (Twitter), LinkedIn, TikTok, Reddit, Facebook",Agree,Neutral,Agree,Agree,3,1,2,5,4
+2024-03-23 21:27,Luna of the Nine Valleys,luna.of.the.nine.valleys@fantasyrealm.com,22,Female,3,2–4 hours,"X (Twitter), TikTok, Snapchat, Instagram",Neutral,Agree,Neutral,Neutral,2,5,3,1,4
+2024-02-24 6:55,Tyrion Lovegood,tyrion.lovegood@fantasyrealm.com,22,Female,3,4–6 hours,"Facebook, X (Twitter), Reddit, Instagram",Agree,Disagree,Agree,Agree,2,3,5,4,1
+2024-04-26 12:49,Balin Dwarf,balin.dwarf@fantasyrealm.com,19,Female,1,4–6 hours,"Reddit, LinkedIn, TikTok, Instagram",Disagree,Agree,Strongly agree,Agree,2,3,5,4,1
+2024-02-16 5:56,Dwalin Mandragoran,dwalin.mandragoran@fantasyrealm.com,18,Male,1,4–6 hours,"X (Twitter), Snapchat, Instagram, Reddit, TikTok",Disagree,Strongly agree,Neutral,Agree,3,4,5,2,1
+2024-04-15 5:55,Arya the Betrayer,arya.the.betrayer@fantasyrealm.com,21,Male,3,Less than 2 hours,"LinkedIn, TikTok, Instagram, Reddit",Neutral,Strongly agree,Strongly agree,Disagree,3,1,2,4,5
+2024-03-04 11:03,Demandred the Dark,demandred.the.dark@fantasyrealm.com,23,Male,4,2–4 hours,"X (Twitter), Reddit, TikTok, Instagram, Facebook",Strongly agree,Agree,Agree,Agree,3,4,2,1,5
+2024-06-11 16:27,Ancalagon the Marchwarden,ancalagon.the.marchwarden@fantasyrealm.com,22,Female,3,4–6 hours,"TikTok, Snapchat, Instagram",Neutral,Neutral,Agree,Disagree,1,3,4,5,2
+2024-02-16 15:05,Elayne Telmarine,elayne.telmarine@fantasyrealm.com,19,Male,2,2–4 hours,"Reddit, TikTok, Instagram",Neutral,Strongly disagree,Agree,Agree,1,5,2,4,3
+2024-05-09 20:03,Caramon al'Vere,caramon.al'vere@fantasyrealm.com,19,Male,1,4–6 hours,"TikTok, LinkedIn, Snapchat, Instagram, Reddit",Disagree,Agree,Agree,Disagree,1,3,4,2,5
+2024-04-30 6:48,Edmund Damodred,edmund.damodred@fantasyrealm.com,19,Male,1,4–6 hours,"X (Twitter), Instagram, Reddit, TikTok",Disagree,Neutral,Agree,Agree,2,3,5,1,4
+2024-02-01 12:57,Bombur Lord of Lorien,bombur.lord.of.lorien@fantasyrealm.com,18,Female,1,4–6 hours,"Facebook, Snapchat, Instagram, TikTok",Agree,Neutral,Neutral,Strongly agree,1,2,3,5,4
+2024-06-04 2:26,Este the Betrayer,este.the.betrayer@fantasyrealm.com,20,Female,3,4–6 hours,"Snapchat, Instagram, Facebook, TikTok, Reddit",Strongly disagree,Disagree,Agree,Neutral,1,5,4,3,2
+2024-01-02 5:03,Minerva Majere,minerva.majere@fantasyrealm.com,21,Female,3,2–4 hours,"X (Twitter), LinkedIn, TikTok, Instagram",Strongly agree,Agree,Neutral,Neutral,3,4,2,1,5
+2024-04-21 3:33,Ori Undómiel,ori.undómiel@fantasyrealm.com,23,Male,4,2–4 hours,"Facebook, X (Twitter), LinkedIn, Instagram, Reddit",Agree,Disagree,Disagree,Neutral,4,5,1,2,3
+2024-05-10 1:15,Severus Kanan,severus.kanan@fantasyrealm.com,20,Female,2,2–4 hours,"X (Twitter), Reddit, TikTok, Instagram",Neutral,Strongly agree,Neutral,Strongly disagree,2,3,1,4,5
+2024-06-11 8:02,Galadriel Half-elven,galadriel.half-elven@fantasyrealm.com,19,Male,1,4–6 hours,"Snapchat, Instagram, Facebook, TikTok, X (Twitter), Reddit",Neutral,Agree,Neutral,Strongly disagree,2,1,4,5,3
+2024-01-21 14:12,Ori of Winterfell,ori.of.winterfell@fantasyrealm.com,21,Female,3,4–6 hours,"Reddit, LinkedIn, TikTok, Instagram",Agree,Strongly agree,Agree,Agree,5,1,2,4,3
+2024-05-16 12:20,Melkor the Gentle,melkor.the.gentle@fantasyrealm.com,21,Female,2,2–4 hours,"Facebook, TikTok, Snapchat, Instagram",Strongly agree,Neutral,Neutral,Neutral,4,2,5,1,3
+2024-04-19 4:37,Nynaeve Lupin,nynaeve.lupin@fantasyrealm.com,22,Female,3,2–4 hours,"Facebook, TikTok, Instagram",Agree,Strongly agree,Agree,Disagree,2,4,1,5,3
+2024-06-02 1:44,Albus the Ogier,albus.the.ogier@fantasyrealm.com,19,Male,1,More than 6 hours,"Facebook, Reddit, TikTok, Instagram",Disagree,Agree,Disagree,Agree,3,2,4,1,5
+2024-05-28 1:31,Remus Baratheon,remus.baratheon@fantasyrealm.com,24,Female,4,Less than 2 hours,"LinkedIn, Snapchat, Instagram, Facebook, TikTok, X (Twitter)",Neutral,Neutral,Neutral,Strongly disagree,1,4,2,3,5
+2024-05-07 20:18,Cersei the Giver,cersei.the.giver@fantasyrealm.com,25,Female,4,2–4 hours,"Reddit, Snapchat, TikTok, Instagram, Facebook",Neutral,Disagree,Agree,Strongly disagree,2,3,5,1,4
+2024-02-19 7:29,Faramir the Marchwarden,faramir.the.marchwarden@fantasyrealm.com,20,Female,2,2–4 hours,"TikTok, LinkedIn, Snapchat, Instagram",Disagree,Disagree,Neutral,Neutral,5,3,1,4,2
+2024-03-06 18:48,Drizzt the Black,drizzt.the.black@fantasyrealm.com,22,Male,3,2–4 hours,"Instagram, Reddit, Facebook, TikTok, X (Twitter)",Agree,Strongly disagree,Strongly agree,Neutral,5,3,2,4,1
+2024-04-26 17:30,Frodo the Dark Lord,frodo.the.dark.lord@fantasyrealm.com,24,Female,4,2–4 hours,"Reddit, LinkedIn, TikTok, Instagram, Facebook",Neutral,Strongly disagree,Neutral,Strongly agree,1,2,5,4,3
+2024-01-23 21:48,Boromir Cauthon,boromir.cauthon@fantasyrealm.com,21,Non-binary/Other,3,2–4 hours,"Reddit, TikTok",Agree,Disagree,Strongly agree,Disagree,3,4,1,5,2
+2024-05-13 16:06,Kitiara Pevensie,kitiara.pevensie@fantasyrealm.com,21,Non-binary/Other,3,4–6 hours,"Reddit, TikTok, Instagram",Agree,Strongly disagree,Disagree,Strongly agree,2,4,1,5,3
+2024-06-11 10:05,Hermione Lord of Lorien,hermione.lord.of.lorien@fantasyrealm.com,24,Non-binary/Other,4,2–4 hours,"X (Twitter), TikTok, Instagram, Facebook",Disagree,Disagree,Strongly agree,Strongly agree,3,1,5,4,2
+2024-03-03 3:04,Lanfear McGonagall,lanfear.mcgonagall@fantasyrealm.com,23,Female,4,2–4 hours,"X (Twitter), Reddit, Snapchat, Instagram, Facebook",Strongly disagree,Agree,Agree,Strongly disagree,5,1,2,3,4
+2024-04-16 5:09,Arwen Dwarf,arwen.dwarf@fantasyrealm.com,21,Male,3,4–6 hours,"LinkedIn, Instagram, Facebook, TikTok, X (Twitter), Reddit",Agree,Disagree,Agree,Agree,1,3,4,5,2
+2024-06-15 1:48,Kili the Brave,kili.the.brave@fantasyrealm.com,23,Female,4,2–4 hours,"Facebook, X (Twitter), TikTok, Instagram",Disagree,Neutral,Strongly agree,Disagree,5,4,1,2,3
+2024-03-13 12:08,Aviendha the Dark Lord,aviendha.the.dark.lord@fantasyrealm.com,18,Male,1,4–6 hours,"Reddit, TikTok, Instagram",Disagree,Agree,Disagree,Agree,1,5,4,3,2
+2024-04-15 7:54,Flint Lannister,flint.lannister@fantasyrealm.com,22,Male,3,4–6 hours,"Snapchat, TikTok, Instagram, Reddit",Strongly agree,Disagree,Agree,Neutral,1,4,2,5,3
+2024-03-11 8:54,Mandos Oakenshield,mandos.oakenshield@fantasyrealm.com,21,Male,3,Less than 2 hours,"X (Twitter), Snapchat, TikTok, Instagram, Reddit",Disagree,Agree,Neutral,Agree,2,3,1,5,4
+2024-04-27 0:25,Bofur Granger,bofur.granger@fantasyrealm.com,18,Non-binary/Other,1,4–6 hours,"Facebook, LinkedIn, TikTok",Agree,Agree,Neutral,Agree,5,2,4,1,3
+2024-05-21 18:04,Theoden Majere,theoden.majere@fantasyrealm.com,18,Male,1,4–6 hours,"Facebook, X (Twitter), TikTok, Reddit",Disagree,Strongly disagree,Strongly agree,Agree,4,1,5,3,2
+2024-05-28 14:42,Aslan Lord of Waters,aslan.lord.of.waters@fantasyrealm.com,19,Male,1,4–6 hours,"Instagram, X (Twitter), LinkedIn, Reddit, TikTok",Strongly agree,Neutral,Disagree,Agree,1,2,5,4,3
+2024-05-18 0:23,Bellatrix Lady of Light,bellatrix.lady.of.light@fantasyrealm.com,22,Non-binary/Other,2,2–4 hours,"Facebook, TikTok, Snapchat, Instagram",Neutral,Neutral,Agree,Disagree,5,3,1,2,4
+2024-03-09 1:56,Este Pevensie,este.pevensie@fantasyrealm.com,22,Male,3,4–6 hours,"LinkedIn, Snapchat, Instagram, Reddit",Neutral,Strongly disagree,Strongly agree,Neutral,3,5,2,4,1
+2024-05-09 12:57,Dalamar the Ogier,dalamar.the.ogier@fantasyrealm.com,23,Female,4,2–4 hours,"LinkedIn, Instagram, Facebook, TikTok, X (Twitter)",Strongly agree,Neutral,Disagree,Disagree,4,1,5,2,3
+2024-01-11 6:57,Edmund Telmarine,edmund.telmarine@fantasyrealm.com,18,Female,1,4–6 hours,"X (Twitter), Instagram, TikTok",Neutral,Agree,Neutral,Disagree,5,3,2,4,1
+2024-03-06 8:48,Ungoliant Son of Dis,ungoliant.son.of.dis@fantasyrealm.com,25,Male,3,2–4 hours,"Reddit, TikTok, Facebook",Strongly agree,Neutral,Disagree,Agree,1,5,4,2,3
+2024-05-11 9:40,Tyrion the First Dark Lord,tyrion.the.first.dark.lord@fantasyrealm.com,20,Non-binary/Other,2,2–4 hours,"LinkedIn, Instagram, X (Twitter), TikTok, Reddit",Strongly agree,Strongly disagree,Agree,Neutral,2,5,3,1,4
+2024-05-26 10:36,Shelob the Spider,shelob.the.spider@fantasyrealm.com,18,Female,1,2–4 hours,"Instagram, X (Twitter), TikTok, Reddit",Strongly agree,Disagree,Agree,Neutral,4,1,2,3,5
+2024-04-25 6:23,Éowyn Lupin,éowyn.lupin@fantasyrealm.com,22,Female,3,2–4 hours,"TikTok, LinkedIn, Snapchat, Instagram",Agree,Agree,Agree,Neutral,5,4,2,3,1
+2024-01-21 0:03,Caramon the Weeper,caramon.the.weeper@fantasyrealm.com,20,Female,2,2–4 hours,"Facebook, X (Twitter), TikTok, Instagram",Agree,Disagree,Agree,Agree,1,3,2,5,4
+2024-02-29 16:42,Haldir Pevensie,haldir.pevensie@fantasyrealm.com,22,Female,3,2–4 hours,"Facebook, TikTok, Instagram",Agree,Disagree,Neutral,Agree,3,2,4,1,5
+2024-05-10 10:24,Thranduil the White Witch,thranduil.the.white.witch@fantasyrealm.com,19,Female,1,4–6 hours,"Reddit, Snapchat, TikTok, Instagram",Disagree,Neutral,Strongly agree,Agree,2,4,3,1,5
+2024-01-17 15:42,Arya Captain of Gondor,arya.captain.of.gondor@fantasyrealm.com,21,Female,3,4–6 hours,"Facebook, Snapchat, Instagram",Disagree,Neutral,Neutral,Neutral,1,2,3,4,5
+2024-03-31 16:03,Boromir Majere,boromir.majere@fantasyrealm.com,22,Female,3,Less than 2 hours,"Facebook, X (Twitter), TikTok, Snapchat, Instagram",Disagree,Disagree,Agree,Disagree,2,4,1,3,5
+2024-05-05 13:20,Celeborn Telmarine,celeborn.telmarine@fantasyrealm.com,18,Male,1,4–6 hours,"X (Twitter), Reddit, TikTok",Neutral,Agree,Agree,Strongly disagree,3,5,1,4,2
+2024-06-16 11:04,Ancalagon Tarly,ancalagon.tarly@fantasyrealm.com,18,Female,1,2–4 hours,"Facebook, X (Twitter), TikTok, Snapchat, Instagram",Agree,Strongly disagree,Strongly agree,Strongly agree,1,4,2,5,3
+2024-05-22 5:58,Faramir Telmarine,faramir.telmarine@fantasyrealm.com,18,Non-binary/Other,1,4–6 hours,"Facebook, X (Twitter), TikTok, Instagram",Neutral,Strongly agree,Agree,Strongly agree,3,5,1,2,4
+2024-05-21 3:51,Brienne Pevensie,brienne.pevensie@fantasyrealm.com,21,Non-binary/Other,2,4–6 hours,"Facebook, X (Twitter), LinkedIn, Instagram, TikTok",Agree,Neutral,Disagree,Agree,2,4,1,5,3
+2024-05-19 14:56,Sirius Lannister,sirius.lannister@fantasyrealm.com,24,Non-binary/Other,4,2–4 hours,"Facebook, Reddit, Instagram, TikTok",Neutral,Strongly agree,Agree,Neutral,5,3,4,2,1
+2024-02-21 12:09,Smaug the Weeper,smaug.the.weeper@fantasyrealm.com,19,Male,1,4–6 hours,"X (Twitter), LinkedIn, Snapchat, Instagram, Reddit, TikTok",Agree,Strongly agree,Disagree,Strongly disagree,5,1,2,3,4
+2024-05-20 22:22,Albus the Golden,albus.the.golden@fantasyrealm.com,21,Female,2,4–6 hours,"LinkedIn, Instagram, Facebook, TikTok, X (Twitter)",Neutral,Neutral,Strongly agree,Agree,4,2,3,5,1
+2024-04-22 12:47,Daenerys the First Dark Lord,daenerys.the.first.dark.lord@fantasyrealm.com,18,Female,1,4–6 hours,"LinkedIn, Snapchat, Instagram, TikTok, X (Twitter)",Disagree,Strongly disagree,Agree,Agree,4,1,5,3,2
+2024-01-30 3:45,Loial Son of Gondor,loial.son.of.gondor@fantasyrealm.com,19,Male,1,4–6 hours,"TikTok, Reddit, LinkedIn, Snapchat",Strongly disagree,Strongly agree,Disagree,Disagree,2,3,1,4,5
+2024-04-07 23:57,Mandos Mandragoran,mandos.mandragoran@fantasyrealm.com,18,Male,1,4–6 hours,"LinkedIn, Snapchat, Instagram, Reddit, TikTok, X (Twitter)",Neutral,Agree,Agree,Strongly disagree,1,3,5,2,4
+2024-04-04 22:51,Ishamael Snow,ishamael.snow@fantasyrealm.com,19,Non-binary/Other,1,2–4 hours,"Reddit, LinkedIn, TikTok, Instagram",Disagree,Strongly disagree,Agree,Agree,4,3,1,5,2
+2024-05-04 9:01,Arya Black,arya.black@fantasyrealm.com,20,Female,2,More than 6 hours,"Facebook, Snapchat, TikTok, Instagram",Strongly agree,Strongly agree,Strongly agree,Neutral,1,2,4,5,3
+2024-06-15 13:05,Aslan Lupin,aslan.lupin@fantasyrealm.com,18,Female,1,4–6 hours,"LinkedIn, Snapchat, Instagram, Facebook, TikTok",Neutral,Disagree,Disagree,Agree,5,2,3,4,1
+2024-03-11 21:16,Legolas the Brave,legolas.the.brave@fantasyrealm.com,18,Male,1,4–6 hours,"Facebook, Snapchat, TikTok, Instagram, Reddit",Strongly agree,Neutral,Neutral,Strongly agree,2,4,5,1,3
+2024-04-03 4:27,Ishamael Merrilin,ishamael.merrilin@fantasyrealm.com,22,Female,3,4–6 hours,"Reddit, Snapchat, TikTok, Instagram",Agree,Strongly disagree,Agree,Neutral,2,3,5,1,4
+2024-06-20 5:02,Dori Aybara,dori.aybara@fantasyrealm.com,19,Female,1,4–6 hours,"Facebook, X (Twitter), Snapchat, Instagram, TikTok",Disagree,Neutral,Neutral,Agree,2,1,4,3,5
+2024-03-06 7:26,Frodo the Gentle,frodo.the.gentle@fantasyrealm.com,19,Female,1,More than 6 hours,"Facebook, TikTok, Instagram",Agree,Strongly agree,Disagree,Disagree,2,4,3,1,5
+2024-01-28 23:20,Tyrion Lupin,tyrion.lupin@fantasyrealm.com,19,Female,1,4–6 hours,"Facebook, LinkedIn, TikTok, Instagram",Disagree,Neutral,Strongly agree,Strongly agree,1,5,4,3,2
+2024-04-28 16:15,Samwell the White,samwell.the.white@fantasyrealm.com,19,Male,1,4–6 hours,"X (Twitter), Snapchat, Instagram, Reddit, TikTok",Disagree,Agree,Disagree,Neutral,2,5,1,3,4
+2024-01-23 22:05,Tyrion the Ogier,tyrion.the.ogier@fantasyrealm.com,18,Female,1,4–6 hours,"Snapchat, TikTok, Instagram",Strongly agree,Strongly agree,Disagree,Neutral,3,2,5,4,1
+2024-03-29 2:31,Albus of Winterfell,albus.of.winterfell@fantasyrealm.com,23,Non-binary/Other,4,Less than 2 hours,"Reddit, Snapchat, Instagram, TikTok, Facebook",Disagree,Neutral,Disagree,Strongly agree,4,3,2,1,5
+2024-02-24 8:27,Galadriel Oakenshield,galadriel.oakenshield@fantasyrealm.com,21,Non-binary/Other,3,4–6 hours,"Facebook, X (Twitter), LinkedIn, Instagram, TikTok",Neutral,Agree,Neutral,Disagree,5,4,2,3,1
+2024-04-10 19:42,Aule Mandragoran,aule.mandragoran@fantasyrealm.com,22,Male,3,Less than 2 hours,"Facebook, X (Twitter), TikTok, Instagram, Reddit",Disagree,Neutral,Agree,Disagree,5,3,4,1,2
+2024-05-14 3:16,Smaug the Strong,smaug.the.strong@fantasyrealm.com,22,Non-binary/Other,4,Less than 2 hours,"Snapchat, Instagram, Facebook, TikTok, Reddit",Disagree,Disagree,Neutral,Strongly disagree,2,1,4,3,5
+2024-06-02 11:16,Hermione the First Dark Lord,hermione.the.first.dark.lord@fantasyrealm.com,24,Male,4,2–4 hours,"LinkedIn, Snapchat, Instagram, Facebook, X (Twitter), Reddit",Agree,Disagree,Strongly agree,Disagree,5,4,2,3,1
+2024-05-08 15:27,Shadowfax Lady of Light,shadowfax.lady.of.light@fantasyrealm.com,23,Male,4,More than 6 hours,"Facebook, X (Twitter), Snapchat, TikTok, Reddit",Neutral,Strongly agree,Strongly disagree,Disagree,5,3,4,1,2
+2024-01-29 0:59,Eddard Dwarf,eddard.dwarf@fantasyrealm.com,20,Female,1,2–4 hours,"Reddit, LinkedIn, TikTok, Instagram",Agree,Neutral,Disagree,Disagree,5,1,2,4,3
+2024-03-17 21:33,Elayne Son of Gondor,elayne.son.of.gondor@fantasyrealm.com,20,Female,2,Less than 2 hours,"X (Twitter), LinkedIn, Snapchat, Instagram, TikTok",Neutral,Neutral,Agree,Agree,4,2,3,1,5
+2024-02-08 8:20,Sauron Snape,sauron.snape@fantasyrealm.com,22,Male,2,4–6 hours,"Facebook, X (Twitter), TikTok, Reddit",Strongly agree,Strongly agree,Strongly agree,Agree,1,2,5,3,4
+2024-04-18 17:43,Sirius Pevensie,sirius.pevensie@fantasyrealm.com,22,Female,3,2–4 hours,"X (Twitter), TikTok, Instagram",Strongly agree,Strongly agree,Neutral,Agree,2,5,4,3,1
+2024-04-02 18:54,Nienna Lannister,nienna.lannister@fantasyrealm.com,24,Female,3,4–6 hours,"LinkedIn, Snapchat, Instagram, TikTok, Reddit, Facebook",Neutral,Strongly disagree,Agree,Strongly agree,2,5,1,3,4
+2024-02-19 9:34,Susan Lannister,susan.lannister@fantasyrealm.com,22,Male,3,4–6 hours,"LinkedIn, TikTok, Instagram, Reddit",Agree,Neutral,Disagree,Neutral,4,2,3,5,1
+2024-01-15 5:17,Demandred Stormcrow,demandred.stormcrow@fantasyrealm.com,18,Female,1,4–6 hours,"X (Twitter), LinkedIn, Instagram, TikTok",Agree,Strongly agree,Neutral,Agree,2,5,4,1,3
+2024-01-07 21:02,Ancalagon Dwarf,ancalagon.dwarf@fantasyrealm.com,20,Female,2,4–6 hours,"Snapchat, Instagram, Reddit, Facebook, X (Twitter), TikTok",Strongly agree,Disagree,Agree,Neutral,5,2,1,3,4
+2024-06-13 10:13,Aule Oakenshield,aule.oakenshield@fantasyrealm.com,18,Male,1,2–4 hours,"Facebook, LinkedIn, TikTok, Reddit",Agree,Agree,Strongly agree,Disagree,4,1,5,3,2
+2024-06-03 10:15,Yavanna Ba'alzamon,yavanna.ba'alzamon@fantasyrealm.com,22,Female,3,Less than 2 hours,"X (Twitter), LinkedIn, TikTok, Instagram",Neutral,Agree,Agree,Neutral,1,5,3,2,4
+2024-01-16 7:32,Legolas the Strong,legolas.the.strong@fantasyrealm.com,18,Male,1,4–6 hours,"LinkedIn, TikTok, Instagram, Reddit",Neutral,Agree,Strongly agree,Strongly agree,2,4,5,1,3
+2024-05-12 9:47,Mat Stormcrow,mat.stormcrow@fantasyrealm.com,18,Female,1,2–4 hours,"X (Twitter), Reddit, Facebook, Instagram, TikTok",Strongly disagree,Neutral,Strongly agree,Agree,4,2,3,1,5
+2024-06-21 22:13,Peter the Marchwarden,peter.the.marchwarden@fantasyrealm.com,18,Male,1,2–4 hours,"Facebook, TikTok, Instagram, Reddit",Neutral,Strongly agree,Disagree,Disagree,1,3,4,5,2
+2024-05-21 23:43,Fili Granger,fili.granger@fantasyrealm.com,18,Female,1,4–6 hours,"Reddit, Instagram, TikTok",Agree,Disagree,Neutral,Agree,4,3,1,5,2
+2024-02-20 1:41,Haldir Daughter of the Night,haldir.daughter.of.the.night@fantasyrealm.com,19,Female,2,Less than 2 hours,"X (Twitter), LinkedIn, Instagram, TikTok",Neutral,Disagree,Strongly agree,Agree,4,3,5,2,1
+2024-05-12 6:34,Boromir Undómiel,boromir.undómiel@fantasyrealm.com,18,Female,1,2–4 hours,"Facebook, X (Twitter), TikTok, Instagram",Neutral,Disagree,Disagree,Strongly agree,1,3,2,4,5
+2024-05-23 3:20,Shelob Son of Fundin,shelob.son.of.fundin@fantasyrealm.com,22,Male,3,Less than 2 hours,"Facebook, X (Twitter), TikTok, Instagram, Reddit",Disagree,Agree,Strongly disagree,Strongly disagree,4,5,3,1,2
+2024-06-29 7:58,Saruman the Betrayer,saruman.the.betrayer@fantasyrealm.com,22,Female,3,4–6 hours,"Reddit, Snapchat, Instagram",Neutral,Strongly disagree,Disagree,Disagree,3,4,1,5,2
+2024-01-17 18:46,Sauron King of Rohan,sauron.king.of.rohan@fantasyrealm.com,24,Non-binary/Other,4,Less than 2 hours,"Snapchat, Instagram, Reddit, TikTok, X (Twitter), Facebook",Neutral,Strongly disagree,Agree,Disagree,4,1,3,2,5
+2024-03-28 7:23,Smaug Dwarf,smaug.dwarf@fantasyrealm.com,19,Male,1,4–6 hours,"X (Twitter), Facebook, Reddit, Instagram, TikTok",Neutral,Agree,Strongly disagree,Disagree,2,1,3,5,4
+2024-01-16 12:09,Faile the Ogier,faile.the.ogier@fantasyrealm.com,23,Female,4,Less than 2 hours,"Facebook, Instagram",Neutral,Disagree,Agree,Agree,1,4,2,5,3
+2024-02-04 14:25,Brienne Snow,brienne.snow@fantasyrealm.com,19,Male,1,2–4 hours,"Snapchat, Instagram, Reddit, TikTok",Disagree,Strongly agree,Neutral,Agree,2,4,5,1,3
+2024-06-22 1:35,Frodo uth Matar,frodo.uth.matar@fantasyrealm.com,18,Male,1,4–6 hours,"Facebook, LinkedIn, Snapchat, Instagram, Reddit, TikTok",Neutral,Agree,Neutral,Neutral,1,2,3,4,5
+2024-06-08 5:51,Jon Lovegood,jon.lovegood@fantasyrealm.com,19,Female,1,4–6 hours,"LinkedIn, Snapchat, Instagram, Facebook, TikTok",Disagree,Neutral,Disagree,Agree,1,5,2,3,4
+2024-01-27 11:49,Egwene the Strong,egwene.the.strong@fantasyrealm.com,25,Male,4,Less than 2 hours,"Facebook, X (Twitter), Instagram, Reddit",Neutral,Neutral,Neutral,Disagree,3,5,4,1,2
+2024-02-07 17:22,Caspian Baggins,caspian.baggins@fantasyrealm.com,19,Female,1,2–4 hours,"X (Twitter), Snapchat, Instagram, TikTok",Agree,Disagree,Disagree,Disagree,4,1,2,5,3
+2024-01-09 13:39,Lucy Pevensie,lucy.pevensie@fantasyrealm.com,20,Female,2,Less than 2 hours,"X (Twitter), Snapchat, TikTok, Instagram",Disagree,Strongly disagree,Agree,Disagree,3,2,1,5,4
+2024-03-21 6:10,Saruman Lord of Horses,saruman.lord.of.horses@fantasyrealm.com,20,Male,2,Less than 2 hours,"Reddit, TikTok, Instagram",Neutral,Strongly agree,Disagree,Strongly disagree,1,2,4,5,3
+2024-06-16 23:34,Caspian the Marchwarden,caspian.the.marchwarden@fantasyrealm.com,19,Female,1,2–4 hours,"Facebook, X (Twitter), LinkedIn, TikTok, Instagram",Strongly agree,Agree,Agree,Disagree,4,2,1,3,5
+2024-05-22 4:36,Drizzt Greenleaf,drizzt.greenleaf@fantasyrealm.com,21,Non-binary/Other,4,2–4 hours,"TikTok, Instagram",Strongly disagree,Agree,Agree,Neutral,3,4,5,2,1
+2024-05-03 6:54,Nori Pevensie,nori.pevensie@fantasyrealm.com,20,Male,2,2–4 hours,"Reddit, Snapchat, TikTok, Instagram",Agree,Disagree,Strongly agree,Neutral,5,3,1,2,4
+2024-03-08 11:06,Legolas the Doomsman,legolas.the.doomsman@fantasyrealm.com,18,Male,1,2–4 hours,"Facebook, X (Twitter), TikTok, Instagram, Reddit",Strongly agree,Disagree,Strongly agree,Strongly agree,1,4,5,3,2
+2024-05-30 17:35,Hermione the Kindler,hermione.the.kindler@fantasyrealm.com,19,Male,1,2–4 hours,"LinkedIn, Instagram, Facebook, TikTok, X (Twitter), Reddit",Neutral,Disagree,Agree,Agree,2,1,3,5,4
+2024-06-01 6:12,Luna Ba'alzamon,luna.ba'alzamon@fantasyrealm.com,23,Male,4,Less than 2 hours,"Reddit, TikTok, Instagram, Facebook",Neutral,Strongly agree,Strongly agree,Neutral,4,2,1,5,3
+2024-05-29 4:55,Minerva Stormcrow,minerva.stormcrow@fantasyrealm.com,21,Non-binary/Other,3,Less than 2 hours,"Reddit, TikTok, Snapchat, Instagram",Neutral,Disagree,Strongly agree,Disagree,5,2,3,4,1
+2024-01-13 3:01,Fili of Rivia,fili.of.rivia@fantasyrealm.com,20,Female,2,Less than 2 hours,"Facebook, X (Twitter), Snapchat, TikTok, Instagram",Disagree,Neutral,Neutral,Disagree,1,3,2,5,4
+2024-01-10 3:49,Rand Pevensie,rand.pevensie@fantasyrealm.com,19,Female,1,4–6 hours,"Facebook, TikTok, Instagram",Neutral,Disagree,Strongly agree,Strongly agree,2,4,3,5,1
+2024-06-02 0:42,Sansa Baratheon,sansa.baratheon@fantasyrealm.com,24,Male,4,2–4 hours,"TikTok, LinkedIn, Snapchat, Reddit, Facebook",Agree,Strongly disagree,Strongly agree,Neutral,1,4,5,2,3
+2024-04-03 17:09,Celeborn Stormcrow,celeborn.stormcrow@fantasyrealm.com,19,Female,1,2–4 hours,"LinkedIn, Snapchat, Instagram, TikTok",Agree,Disagree,Disagree,Agree,5,1,2,3,4
+2024-05-27 9:06,Jon Half-elven,jon.half-elven@fantasyrealm.com,18,Male,1,4–6 hours,"Facebook, TikTok, Snapchat, Instagram, Reddit",Agree,Strongly agree,Strongly agree,Disagree,5,4,1,2,3
+2024-01-20 20:01,Aviendha Tarly,aviendha.tarly@fantasyrealm.com,19,Female,1,4–6 hours,"Facebook, X (Twitter), Instagram, TikTok",Neutral,Neutral,Neutral,Disagree,2,1,3,4,5
+2024-03-08 11:52,Minerva Lannister,minerva.lannister@fantasyrealm.com,25,Female,4,2–4 hours,"TikTok, Instagram, Facebook",Agree,Disagree,Disagree,Agree,5,4,3,1,2
+2024-04-19 22:26,Rand Majere,rand.majere@fantasyrealm.com,20,Female,2,Less than 2 hours,"LinkedIn, Snapchat, Instagram, Facebook, TikTok, Reddit",Neutral,Neutral,Disagree,Agree,2,5,3,4,1
+2024-05-24 1:20,Faile al'Thor,faile.al'thor@fantasyrealm.com,23,Non-binary/Other,4,2–4 hours,"LinkedIn, Instagram, TikTok, Facebook",Neutral,Agree,Agree,Strongly agree,5,1,2,3,4
+2024-04-18 3:30,Ulmo the Smith,ulmo.the.smith@fantasyrealm.com,20,Female,2,4–6 hours,"Facebook, Reddit, TikTok, Instagram",Strongly agree,Agree,Agree,Disagree,1,3,2,5,4
+2024-03-27 17:43,Shelob Ba'alzamon,shelob.ba'alzamon@fantasyrealm.com,18,Female,1,4–6 hours,"X (Twitter), Reddit, TikTok, Instagram",Agree,Agree,Disagree,Agree,1,5,2,4,3
+2024-01-17 15:18,Thranduil Trakand,thranduil.trakand@fantasyrealm.com,18,Female,1,4–6 hours,"Facebook, X (Twitter), Instagram, TikTok",Neutral,Disagree,Neutral,Disagree,1,2,5,3,4
+2024-04-26 13:19,Jadis the Lion,jadis.the.lion@fantasyrealm.com,20,Female,2,2–4 hours,"X (Twitter), LinkedIn, TikTok, Instagram",Agree,Agree,Neutral,Strongly disagree,5,4,1,2,3
+2024-06-21 4:15,Egwene Aybara,egwene.aybara@fantasyrealm.com,20,Female,1,2–4 hours,"Facebook, Reddit, TikTok, Instagram",Agree,Strongly disagree,Strongly agree,Neutral,3,5,2,1,4
+2024-06-24 9:06,Éowyn al'Vere,éowyn.al'vere@fantasyrealm.com,18,Female,1,4–6 hours,"Reddit, TikTok, Instagram",Neutral,Agree,Strongly agree,Neutral,5,2,1,3,4
+2024-03-25 20:25,Saruman Lovegood,saruman.lovegood@fantasyrealm.com,20,Female,3,2–4 hours,"Reddit, TikTok, Snapchat, Instagram",Agree,Neutral,Strongly agree,Neutral,1,3,5,2,4
+2024-01-19 5:03,Drizzt Do'Urden,drizzt.do'urden@fantasyrealm.com,18,Female,1,4–6 hours,"Facebook, TikTok, Snapchat, Instagram",Neutral,Agree,Neutral,Disagree,2,5,4,1,3
+2024-03-28 3:01,Caramon Lady of Light,caramon.lady.of.light@fantasyrealm.com,25,Male,4,2–4 hours,"LinkedIn, Instagram, Reddit, TikTok, X (Twitter), Facebook",Strongly agree,Disagree,Disagree,Strongly disagree,1,4,2,5,3
+2024-01-09 18:44,Tyrion Shieldmaiden of Rohan,tyrion.shieldmaiden.of.rohan@fantasyrealm.com,22,Male,3,4–6 hours,"X (Twitter), Snapchat, TikTok, Instagram, Reddit",Strongly agree,Agree,Agree,Agree,5,2,3,1,4
+2024-06-11 4:00,Sirius Trakand,sirius.trakand@fantasyrealm.com,18,Female,1,4–6 hours,"X (Twitter), Reddit, Snapchat, Instagram, TikTok",Disagree,Agree,Agree,Neutral,4,3,5,1,2
+2024-04-11 20:03,Thranduil Captain of Gondor,thranduil.captain.of.gondor@fantasyrealm.com,23,Male,4,2–4 hours,"X (Twitter), TikTok, Snapchat, Instagram, Reddit, Facebook",Strongly agree,Strongly agree,Strongly agree,Neutral,1,2,4,5,3
+2024-06-14 11:24,Éowyn Greenleaf,éowyn.greenleaf@fantasyrealm.com,19,Non-binary/Other,1,4–6 hours,"LinkedIn, TikTok, Instagram",Neutral,Strongly agree,Strongly agree,Neutral,2,5,3,1,4
+2024-06-01 11:16,Galadriel Black,galadriel.black@fantasyrealm.com,19,Female,1,4–6 hours,"TikTok, LinkedIn, Snapchat, Instagram",Neutral,Disagree,Strongly agree,Agree,4,1,5,3,2
+2024-01-27 10:04,Thorin Lovegood,thorin.lovegood@fantasyrealm.com,18,Male,2,More than 6 hours,"Facebook, TikTok, Reddit",Strongly agree,Agree,Strongly agree,Strongly agree,3,1,5,4,2
+2024-03-13 21:58,Aule the Giver,aule.the.giver@fantasyrealm.com,21,Male,3,Less than 2 hours,"X (Twitter), LinkedIn, Instagram, Reddit",Disagree,Disagree,Neutral,Agree,3,4,2,1,5
+2024-02-27 20:07,Celeborn Dwarf,celeborn.dwarf@fantasyrealm.com,18,Female,1,4–6 hours,"Facebook, X (Twitter), TikTok, Instagram",Neutral,Disagree,Agree,Neutral,1,3,4,5,2
+2024-02-12 11:47,Sansa Lady of Light,sansa.lady.of.light@fantasyrealm.com,20,Male,2,Less than 2 hours,"Reddit, LinkedIn, Instagram, TikTok",Neutral,Strongly disagree,Strongly agree,Strongly agree,2,5,4,1,3
+2024-05-08 1:42,Bofur Dwarf,bofur.dwarf@fantasyrealm.com,19,Male,1,4–6 hours,"Facebook, TikTok, Reddit",Disagree,Agree,Strongly agree,Neutral,1,2,4,5,3
+2024-02-05 4:09,Brienne Dwarf,brienne.dwarf@fantasyrealm.com,19,Female,2,2–4 hours,"Facebook, TikTok, Instagram",Neutral,Disagree,Agree,Neutral,1,3,4,5,2
+2024-06-28 22:33,Yavanna the Strong,yavanna.the.strong@fantasyrealm.com,18,Female,1,2–4 hours,"LinkedIn, Snapchat, Instagram, TikTok",Agree,Strongly agree,Strongly disagree,Neutral,5,3,4,2,1
+2024-03-31 19:39,Radagast Do'Urden,radagast.do'urden@fantasyrealm.com,18,Female,1,More than 6 hours,"Facebook, Reddit, LinkedIn, TikTok, Instagram",Neutral,Agree,Disagree,Agree,2,4,3,5,1
+2024-03-20 13:22,Ori High King,ori.high.king@fantasyrealm.com,19,Male,1,2–4 hours,"TikTok, Snapchat, Instagram, Reddit",Agree,Strongly disagree,Strongly disagree,Agree,3,1,2,4,5
+2024-06-28 14:45,Cersei of the Nine Valleys,cersei.of.the.nine.valleys@fantasyrealm.com,25,Female,4,2–4 hours,"X (Twitter), Facebook, Reddit, Instagram",Agree,Agree,Disagree,Strongly agree,5,3,4,2,1
+2024-04-11 19:37,Thranduil Cauthon,thranduil.cauthon@fantasyrealm.com,20,Male,2,4–6 hours,"Facebook, TikTok, LinkedIn, Snapchat, Reddit",Disagree,Disagree,Neutral,Neutral,4,2,1,5,3
+2024-06-11 4:31,Bellatrix Majere,bellatrix.majere@fantasyrealm.com,18,Male,1,4–6 hours,"LinkedIn, Snapchat, Instagram, Reddit, TikTok, X (Twitter)",Agree,Neutral,Strongly agree,Neutral,4,1,3,5,2
+2024-02-01 0:04,Reepicheep Dwarf,reepicheep.dwarf@fantasyrealm.com,20,Female,2,Less than 2 hours,"X (Twitter), LinkedIn, Instagram, TikTok",Disagree,Neutral,Neutral,Agree,3,5,2,4,1
+2024-03-09 13:04,Ungoliant Baratheon,ungoliant.baratheon@fantasyrealm.com,19,Female,1,4–6 hours,"LinkedIn, Snapchat, Instagram, TikTok",Disagree,Strongly agree,Strongly agree,Strongly disagree,3,2,4,5,1
+2024-02-25 14:24,Daenerys Cauthon,daenerys.cauthon@fantasyrealm.com,18,Male,1,More than 6 hours,"Facebook, Snapchat, Instagram, Reddit, TikTok",Agree,Strongly disagree,Strongly agree,Neutral,1,4,5,3,2
+2024-01-30 19:30,Celeborn Majere,celeborn.majere@fantasyrealm.com,22,Female,3,More than 6 hours,"Reddit, X (Twitter), TikTok, Instagram",Agree,Agree,Neutral,Strongly disagree,2,1,3,4,5
+2024-01-31 4:14,Aviendha Stark,aviendha.stark@fantasyrealm.com,18,Male,1,2–4 hours,"LinkedIn, Snapchat, Instagram, TikTok, Reddit",Neutral,Strongly agree,Disagree,Neutral,4,2,1,3,5
+2024-03-22 11:39,Este uth Matar,este.uth.matar@fantasyrealm.com,19,Non-binary/Other,1,4–6 hours,"X (Twitter), Reddit, TikTok, Instagram",Disagree,Neutral,Agree,Agree,3,2,5,4,1
+2024-05-24 22:57,Shelob Farshaw,shelob.farshaw@fantasyrealm.com,21,Female,2,2–4 hours,"Facebook, LinkedIn, Instagram",Disagree,Strongly agree,Neutral,Disagree,4,1,5,3,2
+2024-03-11 13:30,Perrin High King,perrin.high.king@fantasyrealm.com,21,Non-binary/Other,4,2–4 hours,"X (Twitter), Reddit, LinkedIn, TikTok",Neutral,Agree,Neutral,Strongly disagree,1,3,4,5,2
+2024-06-10 18:40,Eddard the Smith,eddard.the.smith@fantasyrealm.com,22,Non-binary/Other,4,2–4 hours,"LinkedIn, TikTok, Instagram",Agree,Strongly disagree,Neutral,Neutral,4,3,5,2,1
+2024-03-18 10:11,Legolas Dwarf,legolas.dwarf@fantasyrealm.com,18,Male,1,2–4 hours,"Snapchat, Instagram, Facebook, TikTok, X (Twitter), Reddit",Strongly agree,Agree,Agree,Neutral,4,1,2,5,3
+2024-06-12 7:41,Bard the First Dark Lord,bard.the.first.dark.lord@fantasyrealm.com,20,Female,2,2–4 hours,"LinkedIn, Snapchat, Instagram, Reddit, X (Twitter), TikTok",Strongly agree,Strongly disagree,Neutral,Agree,3,5,2,1,4
+2024-05-24 3:43,Bellatrix Son of Gondor,bellatrix.son.of.gondor@fantasyrealm.com,25,Female,4,Less than 2 hours,"LinkedIn, TikTok, Instagram, Facebook",Disagree,Disagree,Disagree,Neutral,2,4,5,1,3
+2024-05-22 13:33,Drizzt Dwarf,drizzt.dwarf@fantasyrealm.com,19,Female,1,More than 6 hours,"Snapchat, Reddit, LinkedIn, TikTok, Instagram",Agree,Agree,Agree,Strongly agree,4,3,1,5,2
+2024-04-04 9:58,Nynaeve the Gentle,nynaeve.the.gentle@fantasyrealm.com,18,Male,1,2–4 hours,"Facebook, X (Twitter), Instagram, Reddit, TikTok",Agree,Neutral,Disagree,Agree,5,1,2,3,4
+2024-03-07 12:20,Elrond Snow,elrond.snow@fantasyrealm.com,23,Female,4,Less than 2 hours,"TikTok, LinkedIn, Snapchat, Instagram, Facebook",Neutral,Disagree,Strongly agree,Strongly agree,3,4,5,1,2
+2024-02-05 3:59,Smaug the Hand,smaug.the.hand@fantasyrealm.com,20,Female,2,Less than 2 hours,"LinkedIn, Snapchat, Instagram, Facebook, TikTok, Reddit",Disagree,Agree,Agree,Strongly disagree,1,4,3,2,5
+2024-03-23 18:44,Ancalagon the Giver,ancalagon.the.giver@fantasyrealm.com,24,Male,4,2–4 hours,"LinkedIn, Snapchat, Instagram, TikTok, X (Twitter), Reddit, Facebook",Agree,Strongly disagree,Agree,Agree,4,2,1,3,5
+2024-06-23 23:46,Sirius McGonagall,sirius.mcgonagall@fantasyrealm.com,24,Female,4,Less than 2 hours,"X (Twitter), TikTok, Instagram, Facebook",Neutral,Strongly agree,Strongly agree,Strongly agree,1,4,2,5,3
+2024-04-24 3:31,Lan Stoor,lan.stoor@fantasyrealm.com,18,Male,1,2–4 hours,"X (Twitter), LinkedIn, Instagram, Reddit, TikTok",Neutral,Neutral,Strongly agree,Disagree,1,3,2,4,5
+2024-01-20 7:32,Éowyn Stormcrow,éowyn.stormcrow@fantasyrealm.com,22,Male,3,Less than 2 hours,"Instagram, X (Twitter), Reddit",Disagree,Strongly disagree,Agree,Agree,1,3,2,5,4
+2024-03-28 12:55,Haldir Son of Dis,haldir.son.of.dis@fantasyrealm.com,19,Female,1,4–6 hours,"X (Twitter), Snapchat, Instagram, TikTok",Neutral,Neutral,Neutral,Agree,4,2,1,3,5
+2024-02-03 19:38,Caspian the Black,caspian.the.black@fantasyrealm.com,18,Male,1,2–4 hours,"X (Twitter), LinkedIn, TikTok, Reddit",Agree,Strongly agree,Agree,Disagree,1,4,5,2,3
+2024-06-15 8:30,Legolas the Dark Lord,legolas.the.dark.lord@fantasyrealm.com,24,Female,4,2–4 hours,"X (Twitter), TikTok, Instagram, Facebook",Agree,Agree,Strongly agree,Disagree,1,4,5,2,3
+2024-03-01 17:26,Sauron the Spider,sauron.the.spider@fantasyrealm.com,20,Male,2,Less than 2 hours,"Facebook, Reddit, Instagram, TikTok",Disagree,Agree,Agree,Neutral,1,4,3,2,5
+2024-02-12 8:06,Lanfear Skin-changer,lanfear.skin-changer@fantasyrealm.com,20,Female,2,Less than 2 hours,"Reddit, Snapchat, Instagram, TikTok",Neutral,Strongly disagree,Agree,Strongly disagree,3,1,5,4,2
+2024-03-10 10:48,Kili Shieldmaiden of Rohan,kili.shieldmaiden.of.rohan@fantasyrealm.com,19,Male,1,4–6 hours,"LinkedIn, Snapchat, Instagram, Facebook, TikTok, Reddit",Neutral,Disagree,Strongly agree,Strongly disagree,1,5,3,2,4
+2024-01-12 18:09,Tulkas the Gentle,tulkas.the.gentle@fantasyrealm.com,19,Non-binary/Other,1,More than 6 hours,"LinkedIn, Instagram, Reddit, TikTok, X (Twitter)",Agree,Agree,Strongly agree,Neutral,2,3,4,5,1
+2024-05-26 5:21,Samwell Son of Gondor,samwell.son.of.gondor@fantasyrealm.com,20,Male,2,Less than 2 hours,"Snapchat, LinkedIn, TikTok, Instagram, Reddit",Disagree,Disagree,Agree,Neutral,4,5,1,2,3
+2024-04-05 8:48,Smaug King of Rohan,smaug.king.of.rohan@fantasyrealm.com,19,Non-binary/Other,1,2–4 hours,"X (Twitter), TikTok, Instagram",Strongly agree,Strongly disagree,Strongly disagree,Strongly agree,4,5,2,1,3
+2024-05-22 3:15,Elrond High King,elrond.high.king@fantasyrealm.com,18,Male,1,2–4 hours,"X (Twitter), Reddit, TikTok",Strongly disagree,Strongly disagree,Agree,Disagree,2,1,5,4,3
+2024-05-07 21:06,Sansa Half-elven,sansa.half-elven@fantasyrealm.com,18,Male,1,2–4 hours,"Reddit, LinkedIn, TikTok",Agree,Disagree,Neutral,Strongly disagree,4,2,3,1,5
+2024-05-16 23:31,Aslan Bashere,aslan.bashere@fantasyrealm.com,25,Male,4,Less than 2 hours,"TikTok, LinkedIn, Snapchat, Instagram, Reddit, Facebook",Neutral,Agree,Agree,Agree,4,5,1,3,2
+2024-02-13 14:06,Tulkas Aybara,tulkas.aybara@fantasyrealm.com,20,Non-binary/Other,2,Less than 2 hours,"Facebook, X (Twitter), LinkedIn, TikTok",Neutral,Strongly disagree,Disagree,Strongly disagree,5,3,1,4,2
+2024-05-07 14:35,Kitiara Trakand,kitiara.trakand@fantasyrealm.com,18,Female,1,4–6 hours,"Reddit, TikTok, Instagram",Disagree,Neutral,Agree,Agree,5,2,1,4,3
+2024-01-20 12:23,Bellatrix the Dark,bellatrix.the.dark@fantasyrealm.com,19,Female,1,2–4 hours,"Facebook, Reddit, LinkedIn, Instagram, TikTok",Strongly agree,Strongly agree,Agree,Agree,5,2,1,4,3
+2024-01-23 7:16,Morgoth the Maid of Tarth,morgoth.the.maid.of.tarth@fantasyrealm.com,18,Female,1,4–6 hours,"TikTok, Instagram",Strongly agree,Strongly agree,Strongly agree,Disagree,1,4,5,2,3
+2024-02-05 3:15,Morgoth Pevensie,morgoth.pevensie@fantasyrealm.com,20,Male,2,2–4 hours,"Snapchat, Instagram, Reddit, TikTok, X (Twitter)",Strongly agree,Disagree,Disagree,Disagree,3,1,2,4,5
+2024-02-06 22:16,Samwell the Kindler,samwell.the.kindler@fantasyrealm.com,18,Male,2,2–4 hours,"LinkedIn, Snapchat, Facebook, TikTok, X (Twitter), Reddit",Strongly agree,Strongly disagree,Disagree,Neutral,1,5,4,2,3
+2024-02-13 7:23,Aviendha the Golden,aviendha.the.golden@fantasyrealm.com,23,Female,4,2–4 hours,"Snapchat, Instagram, Reddit, TikTok, X (Twitter), Facebook",Agree,Disagree,Strongly agree,Neutral,5,1,2,4,3
+2024-05-10 11:56,Yavanna the Kindler,yavanna.the.kindler@fantasyrealm.com,22,Female,2,2–4 hours,"TikTok, X (Twitter), LinkedIn, Snapchat, Instagram",Neutral,Strongly agree,Disagree,Neutral,4,2,1,5,3
+2024-01-04 1:11,Thranduil the Black,thranduil.the.black@fantasyrealm.com,20,Male,2,4–6 hours,"Facebook, LinkedIn, Snapchat, Instagram, Reddit, TikTok",Agree,Strongly agree,Strongly agree,Agree,1,4,5,3,2
+2024-04-27 2:38,Thom Stoor,thom.stoor@fantasyrealm.com,19,Female,1,4–6 hours,"LinkedIn, TikTok, Instagram",Agree,Neutral,Neutral,Strongly agree,3,1,2,5,4
+2024-02-02 3:34,Susan al'Vere,susan.al'vere@fantasyrealm.com,20,Female,1,More than 6 hours,"Facebook, X (Twitter), Instagram, TikTok",Strongly agree,Neutral,Neutral,Strongly disagree,2,3,1,4,5
+2024-04-13 9:37,Caramon Aybara,caramon.aybara@fantasyrealm.com,18,Non-binary/Other,1,2–4 hours,"Instagram, Reddit, Facebook, TikTok, X (Twitter)",Neutral,Agree,Agree,Agree,4,5,2,1,3
+2024-06-04 11:27,Morgoth al'Meara,morgoth.al'meara@fantasyrealm.com,22,Female,3,2–4 hours,"Facebook, X (Twitter), Instagram",Agree,Strongly agree,Disagree,Disagree,4,2,5,3,1
+2024-04-19 18:22,Caspian Son of Gondor,caspian.son.of.gondor@fantasyrealm.com,21,Female,3,2–4 hours,"X (Twitter), Reddit, TikTok, Instagram",Disagree,Neutral,Strongly agree,Strongly disagree,5,1,2,4,3
+2024-02-03 8:52,Demandred the Doomsman,demandred.the.doomsman@fantasyrealm.com,18,Male,1,4–6 hours,"LinkedIn, Snapchat, Instagram, Facebook, X (Twitter), Reddit, TikTok",Disagree,Strongly disagree,Strongly agree,Disagree,5,1,4,2,3
+2024-04-18 13:18,Samwell Kanan,samwell.kanan@fantasyrealm.com,18,Male,1,4–6 hours,"Facebook, LinkedIn, Reddit, TikTok",Strongly disagree,Strongly disagree,Neutral,Disagree,1,2,3,4,5

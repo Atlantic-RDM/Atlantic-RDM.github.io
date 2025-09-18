@@ -453,7 +453,7 @@ survey_data_long <- survey_data |>
 **Step-by-step explanation**
 
 1) We start off by creating a new r object called `survey_data_long`, which is going to take on all the information that is passed to it from the right side of the assignment operator `<-`.
-2) The `survey_data` object is then the data that we want to pass through the pipe `|>` to manipulate it.
+2) The `survey_data` object represents our dataset that we want to pass through the pipe `|>` to manipulate it.
 3) The `sepearate_longer_delim` function is applied to the `platforms` column to create a new row for each of the values in the cell, and because the values separated by commas, the `delim = ","` function tells R to separate each new row after a comma.
 4) The data object with the separate rows is then piped into the next function, which uses the `mutate` function to tell R that we want to modify the newly updated `platforms` values, and the `trimsw` then removes any whitespace on either side of the values.
 5) Et voila!
@@ -465,7 +465,87 @@ If we take another look at the dataset, you'll see that the `platforms` variable
 
 ### More Tidying
 
-IN addition to the `platforms` variable, you'll probably notice that 
+In addition to the `platforms` variable, the survey contained two additional multiple-choice questions:
+
+* "Please indicate how much you agree or disagree with the following statements about social media and your mental health:"
+
+* "Rank the following reasons for using social media in order of importance to you (1 = most important, 5 = least important):"
+
+You'll notice that each of these questions create create 4 and 5 columns, respectively, to capture the responses.  This isn't necessarily a bad thing, but in the spirit of making our data tidy, let's see try to reduce the amount of variables to represent these values.
+
+:::question
+
+Take a look at the dataset, focusing on the variables that begin with `feel-` and `usage-`, and think about how you might make these variables tidy.
+
+:::
+
+These variables are a bit trickier to conceptualize than the platforms variable, but R has a function that is designed to handle things like this, and will hopefully make sense when you see it!
+
+:::walkthrough
+
+Here's the code to do this:
+
+```{r}
+survey_data_longer <- survey_data_long |>
+  pivot_longer(
+    cols = starts_with("feel-"),
+    names_to = "feel_question",
+    values_to = "feel_response"
+  )
+```
+
+**Step-by-step explanation:**
+
+1) We start by writing a new r object called `survey_data_longer`, that will hold everything to the left of the assignment operator `|>`.
+2) The `survey_data_long` object represents our dataset that we want to pass through the pipe `|>` to manipulate it.
+3) The `pivot_longer()` function reshapes the data from wide to long.  In this case we had several variables that started with `feel-`, and this function will gather them into two columns: one for the question name and one for the response value.
+4) The `cols = starts_with("feel-")` function tells `pivot_longer` which columns to gather. (You can see why variable naming can help with data cleaning!)
+5) `names_to = "feel_question"` names of the new column that will **hold the original column names** (ie. the question identifiers.  The new column will be called `feel_question`.
+6) `values_to "feel_response" names the new column that will **hold the values (answers) that used to sit in the `feel-` columns.  The new column will be called `feel_response`.
+7) Close the bracket, and take a look to see what the data looks like.
+
+:::
+
+## Your Turn!
+
+::: question
+
+Now that you've seen how the `pivot_long()` function works, see if you can create a new object called `survey_data_tidy`, that lenghthen the `usage-` columns just as we did with the `feel-` columns.
+
+Hint: The syntax is exactly the same as the example above, you just need to the values in quotations `""`.
+
+```{r, class.source = 'fold-hide', eval = FALSE}
+survey_data_tidy <- survey_data_longer |>
+  pivot_longer(
+  cols = starts_with("usage-"),
+  names_to = "usage_question",
+  values_to = "usage_response"
+)
+```
+
+:::
+
+Take a look at the data:
+
+```{r, eval=FALSE}
+View(survey_data_tidy)
+```
+
+It looks pretty weird!  As mentioned, tidy data is very hard to scan for a human, but really easy for R to scan. You might notice that there's over 26,000 rows, which may seem overwhelming and unnecessary.  The Tidy Data Principles are very much geared towards using R, and there are times when making your data completely tidy might not suite your purpose.  However, the purpose of the exercise was to get you to think about how you might want or need to structure your data, and you now have code that you can easily adapt to play with your surveys.
+
+
+### Save a copy of the data
+
+Now that we've fully tidied our dataset, save a copy of it:
+
+```{r, eval=FALSE}
+write_csv(survey_data_tidy, "survey_data_tidy.csv")
+```
+
+
+
+
+
 
 
 
