@@ -71,7 +71,7 @@ The first thing we need to do is to create a project folder to keep our files in
 
 **A quick note on folder and file naming**
 
-Much like naming objects in R, that was covered in the a href="/Block8-1_SUR_Intro-to-R.html">the Introduction to R</a>, when naming both **files and folders** follow these practices:
+Much like naming objects in R, that was covered in the <a href="/Block8-1_SUR_Intro-to-R.html">the Introduction to R</a>, when naming both **files and folders** follow these practices:
 
 * Only use letters in the English alphabet, number 0-9, dashes -, and underscores _
 * Do not use spaces or special characters such as: ~!@#$%^&*()+=…
