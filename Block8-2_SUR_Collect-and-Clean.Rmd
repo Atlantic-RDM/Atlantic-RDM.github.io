@@ -413,7 +413,7 @@ If you take a look at the `platforms` column, you'll see that the values are pre
 
 ### Long Data, Wide Data, and the Tidy Data Principles
 
-In R, and specifically the Tidyverse, the [Tidy Data Principles](https://cran.r-project.org/web/packages/tidyr/vignettes/tidy-data.html) specify qualities of what is considered "tidy data", with data that doesn't meet all criteria being "messy data". They provide a standard way to organize data to "facilitate initial exploration and analysis of the data, and to simplify the development of data analysis tools that work well together".  ([source](https://cran.r-project.org/web/packages/tidyr/vignettes/tidy-data.html)).  
+In R, and specifically the Tidyverse, the [Tidy Data Principles](https://cran.r-project.org/web/packages/tidyr/vignettes/tidy-data.html) specify qualities of what is considered "tidy data", with data that doesn't meet all criteria being "messy data". They provide a standard way to organize data to "facilitate initial exploration and analysis of the data, and to simplify the development of data analysis tools that work well together"  ([source](https://cran.r-project.org/web/packages/tidyr/vignettes/tidy-data.html)).  
 
 **Tidy Data Principles:**
 
@@ -513,7 +513,7 @@ survey_data_longer <- survey_data_long |>
 
 Now that you've seen how the `pivot_long()` function works, see if you can create a new object called `survey_data_tidy`, that lenghthen the `usage-` columns just as we did with the `feel-` columns.
 
-Hint: The syntax is exactly the same as the example above, you just need to the values in quotations `""`.
+Hint: The syntax is exactly the same as the example above, you just need to change the values in quotations `""`.
 
 ```{r, class.source = 'fold-hide', eval = FALSE}
 survey_data_tidy <- survey_data_longer |>
@@ -590,6 +590,21 @@ survey_data_wide <- survey_data |>
 This will end up with a wide dataset where each row is a survey entry, each platformat is a column, and the value `1` means a platform was listed, and `0` means a platform was not listed.
 
 ::: 
+
+## File Management
+
+With just a few steps of data cleaning, we now have 5 data files in our folder:
+
+- `social-media-survey.csv`
+- `social-media-survey_ORIGINAL.csv`
+- `survey-data_clean-cols_IDs.csv`
+- `survey-data_clean-cols_no-ID.csv`
+- `survey_data_tidy.csv`
+
+These names aren't necessarily bad, but you can see that there are some inconsistencies with the naming prefix `social-media-survey` vs `survey-data`, and some of the descriptors, `clean-cols_IDs` and `clean-cols_no-ID` might not be as evident as we might like.  
+
+It is always recommended to document and describe your files and naming convention in a README file, which is described in details in the [Documentation ](Block2-3_Documentation.html) session. You can also refer to the [Naming Conventions and Folder structre](Block2-2_Naming-Conventions.html) session for inspiration in how you might go about renaming and structuring these files.
+
 
 ## Finish
 
