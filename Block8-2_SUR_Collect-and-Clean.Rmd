@@ -603,7 +603,7 @@ With just a few steps of data cleaning, we now have 5 data files in our folder:
 
 These names aren't necessarily bad, but you can see that there are some inconsistencies with the naming prefix `social-media-survey` vs `survey-data`, and some of the descriptors, `clean-cols_IDs` and `clean-cols_no-ID` might not be as evident as we might like.  
 
-It is always recommended to document and describe your files and naming convention in a README file, which is described in details in the [Documentation ](Block2-3_Documentation.html) session. You can also refer to the [Naming Conventions and Folder structre](Block2-2_Naming-Conventions.html) session for inspiration in how you might go about renaming and structuring these files.
+It is always recommended to document and describe your files and naming convention in a README file, which is described in details in the [Documentation ](Block2-3_Documentation.html) session. You can also refer to the [Organizing Files and Folders](Block2-1_Files-and-Folders.html) session for inspiration in how you might go about renaming and structuring these files.
 
 
 ## Finish

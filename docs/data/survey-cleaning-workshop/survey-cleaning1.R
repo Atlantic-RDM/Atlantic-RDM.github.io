@@ -113,5 +113,17 @@ View(survey_data_double_long)
 write_csv(js_survey_wide, "js_survey_analysis.csv")
 
 
+View(survey_data)
 
+survey_data_wide <- survey_data |>
+  mutate(platforms = strsplit(platforms, ",")) |>
+  unnest_longer(platforms) |>
+  mutate(platforms = trimws(platforms), present = 1) |>
+  pivot_wider(
+    names_from = platforms,
+    values_from = present,
+    values_fill = 0
+  )
+
+View(survey_data_wide)
 
