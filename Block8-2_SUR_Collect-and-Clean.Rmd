@@ -381,7 +381,7 @@ See if you can remove the `name` and `email` columns, as we want to get rid of t
 Hint: To do this is a single command, see if you can figure out how to use the `c()` function that was introduced in the [Introduction to R session](Block8-1_SUR_Intro-to-R.html)
 ```{r, class.source = 'fold-hide', eval = FALSE}
 
-survey_data <- suvey_data |>
+survey_data <- survey_data |>
   select(-c(name, email))
 ```
 :::
