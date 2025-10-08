@@ -255,8 +255,8 @@ survey_data <- survey_data |>
 Next, try to change the following 3 column names:
 
 * Change `Which social media platforms do you use at least once a week?` to `platforms`
-* Change `Social media makes me feel connected` to `eel-connected`
-* Change `Social media increases my stress` to `province`
+* Change `Social media makes me feel connected` to `feel-connected`
+* Change `Social media increases my stress` to `feel-increase-stress`
 
 **Hint:** It can be tedious to do these changes one by one, but by using commas `,` you can rename column names with a single code chunk.  
 ```{r, class.source = 'fold-hide'}
