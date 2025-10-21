@@ -20,7 +20,7 @@ First, let's open up your forked OSF repository for the UVic RDM Jumpstart.  If 
 
 Now, let's start by looking at the README file that is embedded in the repository wiki, which describes all the files that we have, as well as how the files are organized in OSF storage.
 
-[https://osf.io/rx5a3/wiki/home/](https://osf.io/rx5a3/wiki/home/)
+[https://osf.io/rx5a3/wiki](https://osf.io/rx5a3/wiki)
 
 <br>
 
