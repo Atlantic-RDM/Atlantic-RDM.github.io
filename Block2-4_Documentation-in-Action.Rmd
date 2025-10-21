@@ -23,7 +23,7 @@ Here is a quick link to the template for you to quickly download, if needed: [RE
 
 A few things to note:
 
-* You may notice that the document looks a bit jittery and isn't the friendliest thing to read.  This is because it is a **plain text document**, meaning that it has none of the formatting of a Microsoft Word document, but can be opened by any operating system.  It might take a little bit of getting used to, but using plain text is an important factor in making out work FAIR.
+* You may notice that the document looks a bit jittery and isn't the friendliest thing to read.  This is because it is a **plain text document**, meaning that it has none of the formatting of a Microsoft Word document, but can be opened by any operating system.  It might take a little bit of getting used to, but using plain text is an important factor in making our work FAIR.
 
 * It's also possible that you might not be able to complete every section of a README at the start of a project - and that's ok!  This **should** be a living document that is regularly updated, and it's good to think of how you might implement an update schedule, either by yourself or among your project collaborators.
 
