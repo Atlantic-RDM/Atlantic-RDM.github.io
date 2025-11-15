@@ -116,7 +116,7 @@ h2, h3 {
 }
 
 .section h3 {
-  border-left: 2px solid #D6AB00;
+  border-left: 2px solid #005493;
 }
 
 .section h2 {
@@ -145,7 +145,7 @@ a:link, a:visited, a:hover, a:active {
 }
 
 .navbar a:hover {
-  color: #32322F !important;
+  color: #26A739 !important;
 }
 
 #rmd-show-all-code, #rmd-hide-all-code, #rmd-download-source {
@@ -157,15 +157,15 @@ a:link, a:visited, a:hover, a:active {
 }
 
 .dropdown-menu {
-  background-color: #D6AB00 !important;
+  background-color: #005493 !important;
 }
 
 .active {
-  background-color: #D6AB00 !important;
+  background-color: #005493 !important;
 }
 
 .active > a, .open > a {
-  background-color: #32322F !important;
+  background-color: #26A739 !important;
 }
 
 .navbar .active a:hover, .navbar .open a:hover {
@@ -173,11 +173,11 @@ a:link, a:visited, a:hover, a:active {
 }
 
 .dropdown-menu > li > a:hover {
-  background-color: #32322F !important;
+  background-color: #26A739 !important;
 }
 
 .navbar-default {
-  background-color: #D6AB00 !important;
+  background-color: #005493 !important;
 }
 
 .figure p {
@@ -228,7 +228,7 @@ img {
 }
 
 .lecture {
-  background-color: #D6AB00;
+  background-color: #005493;
   color: #32322F;
 }
 

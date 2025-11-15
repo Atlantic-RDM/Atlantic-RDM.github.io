@@ -12,8 +12,6 @@ output:
       smooth_scroll: false
 ---
 
-<img class="alliance-logo" src="images/institutions/Alliance_logo_Symbol.png" alt="Alliance Banner">
-
 ## Welcome
 
 Welcome to UVic RDM Jumpstart, 2025! Before going any further, [please read the code of conduct](codeOfConduct.html).
