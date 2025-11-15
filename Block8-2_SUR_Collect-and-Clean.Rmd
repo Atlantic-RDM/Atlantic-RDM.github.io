@@ -443,9 +443,20 @@ Now that we've cleaned up our headers, it's time to start looking at the values 
 
 If you take a look at the `platforms` column, you'll see that the values are pretty messy, and can include any combination of up to 6 options. This is very hard to work with, so we'll need to figure out the best way to format things.
 
-### Long Data, Wide Data, and the Tidy Data Principles
+### Wide Data, Long Data, and the Tidy Data Principles
 
-In R, and specifically the Tidyverse, the [Tidy Data Principles](https://cran.r-project.org/web/packages/tidyr/vignettes/tidy-data.html) specify qualities of what is considered "tidy data", with data that doesn't meet all criteria being "messy data". They provide a standard way to organize data to "facilitate initial exploration and analysis of the data, and to simplify the development of data analysis tools that work well together"  ([source](https://cran.r-project.org/web/packages/tidyr/vignettes/tidy-data.html)).  
+When considering these types of messy columns, there are two different strategies we can take to clean them up:
+
+1) Make the data **long, or tidy**, which aims to reduce columns but creates more rows.
+2) Make the data **wide**, which creates more columns and creates a wider spreadsheet.
+
+
+In the next session of this series, [Making Sense of Survey Data](Block8-3_SUR_Making-Sense.html), we will be looking at the pros and cons of wide vs long data, but in this session we will focus on the techniques to play with the shape of our data.
+
+
+### Making Data Long or "Tidy"
+
+In R, and specifically the Tidyverse, the [Tidy Data Principles](https://cran.r-project.org/web/packages/tidyr/vignettes/tidy-data.html) specify qualities of what is considered "tidy data", with data that doesn't meet all criteria being "messy data". They provide a standard way to organize data to "facilitate initial exploration and analysis of the data, and to simplify the development of data analysis tools that work well together"  ([source](https://cran.r-project.org/web/packages/tidyr/vignettes/tidy-data.html)). 
 
 **Tidy Data Principles:**
 
@@ -575,10 +586,9 @@ Now that we've fully tidied our dataset, save a copy of it:
 write_csv(survey_data_tidy, "survey_data_tidy.csv")
 ```
 
+## Making data wide
 
-## Making Data Wide
-
-In the next session of this series, [Making Sense of Survey Data](Block8-3_SUR_Making-Sense.html), we will be looking at the benefits of making data tidy, or longer.  However, it is worth noting that for certain surveys, keeping the wide structure might be preferable to make it easier for human eyes to scan and creating basic summary tables.  
+As mentioned, there are pros and cons to making data wide and long. The benefit of creating a wider structure is that it easier for human eyes to scan and creating basic summary tables.  
 
 If we revisit the R object `survey_data`, which was saved as the `survey-data_clean-cols_no-ID.csv` file, we can step back to a stage in which the `platforms` variable was still quite messy.
 
@@ -629,6 +639,7 @@ Let's save a copy of this dataset, and we'll be taking a look at it in the next 
 ```{r, eval=FALSE}
 write_csv(survey_data_widy, "survey_data_wide.csv")
 ```
+
 
 ### Save your script
 
