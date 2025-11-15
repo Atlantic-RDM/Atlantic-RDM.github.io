@@ -14,7 +14,7 @@ output:
 
 ## Welcome
 
-Welcome to UVic RDM Jumpstart, 2025! Before going any further, [please read the code of conduct](codeOfConduct.html).
+Welcome to UVic RDM Jumpstart! Before going any further, [please read the code of conduct](codeOfConduct.html).
 
 In this series you will be introduced to the practical applications of research data management (RDM) and computational reproducibility, with a focus on the connections between the tools and platforms that support good RDM practices. 
 
