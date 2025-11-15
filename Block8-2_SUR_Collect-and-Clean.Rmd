@@ -79,10 +79,11 @@ Much like naming objects in R, that was covered in the <a href="/Block8-1_SUR_In
 
 :::
 
+## R Projects & Working Directories
 
 ### Setting a Working Directory
 
-When working in a coding environment like RStudio, you need to let R (or other coding environments) know what folder you want to be working from so you can easily access your files.  This concept is know as **setting a working directory**.  For more information on file paths and directories, see a href="Block4-1_File-Paths.html">File and Directory Paths</a>
+When working in a coding environment like RStudio, you need to let R (or other coding environments) know what folder you want to be working from so you can easily access your files.  This concept is know as **setting a working directory**.  For more information on file paths and directories, see <a href="Block4-1_File-Paths.html">File and Directory Paths</a>
 
 There are two main ways of doing this in R:
 
@@ -93,6 +94,31 @@ There are two main ways of doing this in R:
 2) Selecting the `Session` tab in the toolbar, and selecting `Set Working Directory`:
 
 ![](images/Block8-2_set-wd.gif)
+
+But here’s the problem...
+
+Using `setwd()` can break your code when:
+
+ - Someone else tries to run it on their machine.
+ - You move your project folder.
+ - You're running your code on a server or in cloud environments like RStudio Cloud.
+
+Since file paths are hardcoded and depend on your machine, **it's not reproducible**.
+
+### Create an R Project
+
+An R Project is a feature in RStudio (and supported in base R too) that provides a self-contained working environment. When you create an R Project it creates a .Rproj file in a folder and that folder becomes the root directory of your project. Every time you open the project (via the .Rproj file), R automatically sets the working directory to that folder. You can reference files relative to the project root — no need to hardcode file paths.
+
+This is super useful when you're working on multiple analyses, sharing code with collaborators, or version-controlling with Git. **It is a good practice for reproducibility.**
+
+To create an R Project, select File > New Project
+
+![](images/day2_CreateProject.gif)
+
+
+:::question
+Let's create our first RProject. Let's figure out what we should call it!
+:::
 
 ## Let's Get Started!
 
@@ -135,8 +161,8 @@ To install a package we use the function `install.packages()`.
 
 When you install a package, you should do this in the **R console* because you don't need this saved in your script.
 
-```{r}
-#install.packages("tidyverse")
+```{r, eval=FALSE}
+install.packages("tidyverse")
 ```
 
 ### Load Libraries
@@ -178,6 +204,12 @@ survey_data <- read_csv("data/survey-cleaning-workshop/social-media-survey.csv")
 ## Exploring Data
 
 Before we start manipulating the data, it's good to get a sense of some ways to quickly explore the data.
+
+### Looking at the Dataset
+To look at a spreadsheet version of your data we can use the `View()` function.
+```{r, eval=TRUE}
+View(survey_data)
+```
 
 ### Listing Column Names
 To ask for a list of all the column names in our dataset we can use the `names()` function.
@@ -546,11 +578,10 @@ write_csv(survey_data_tidy, "survey_data_tidy.csv")
 
 ## Making Data Wide
 
-In the next session of this series, [Making Sense of Survey Data](Block8-3_SUR_Making-Sense.html), we will be using this tidied version of our data to dip our toes in analysis and visualization.  However, it is worth noting that for certain surveys, keeping the wide structure might be preferable to make it easier for human eyes to scan and creating basic summary tables.  
-
-We can take a quick look at an example of widening data, using the `platforms` variable that we previously made long.
+In the next session of this series, [Making Sense of Survey Data](Block8-3_SUR_Making-Sense.html), we will be looking at the benefits of making data tidy, or longer.  However, it is worth noting that for certain surveys, keeping the wide structure might be preferable to make it easier for human eyes to scan and creating basic summary tables.  
 
 If we revisit the R object `survey_data`, which was saved as the `survey-data_clean-cols_no-ID.csv` file, we can step back to a stage in which the `platforms` variable was still quite messy.
+
 
 ```{r, eval=FALSE}
 View(survey_data)
@@ -587,19 +618,37 @@ survey_data_wide <- survey_data |>
 9) `values_from = present` assigns values in the new columns to come from the `present` column, which is `1`.
 10) Finally, with `values_fill = 0`, if a platform wasn't present for a survey entry, that column will get the value of `0`.
 
-This will end up with a wide dataset where each row is a survey entry, each platformat is a column, and the value `1` means a platform was listed, and `0` means a platform was not listed.
+This will end up with a wide dataset where each row is a survey entry, each platform is a column, and the value `1` means a platform was listed, and `0` means a platform was not listed.
 
-::: 
+:::
+
+### Save a copy of the data
+
+Let's save a copy of this dataset, and we'll be taking a look at it in the next section.
+
+```{r, eval=FALSE}
+write_csv(survey_data_widy, "survey_data_wide.csv")
+```
+
+### Save your script
+
+Before we wrap up, we want to save our script. You can do this by clicking `file > Save As...`. Because we set up an RProject, R should automatically choose the correct directory to save your script.
+
+Let's save the script as `survey_cleaning_script.R`
 
 ## File Management
 
 With just a few steps of data cleaning, we now have 5 data files in our folder:
 
-- `social-media-survey.csv`
 - `social-media-survey_ORIGINAL.csv`
+- `social-media-survey.csv`
+- `survey_data_tidy.csv`
+- `survey_data_wide.csv`
+- `survey_data.Rproj`
+- `survey_cleaning_script.R`
 - `survey-data_clean-cols_IDs.csv`
 - `survey-data_clean-cols_no-ID.csv`
-- `survey_data_tidy.csv`
+
 
 These names aren't necessarily bad, but you can see that there are some inconsistencies with the naming prefix `social-media-survey` vs `survey-data`, and some of the descriptors, `clean-cols_IDs` and `clean-cols_no-ID` might not be as evident as we might like.  
 
