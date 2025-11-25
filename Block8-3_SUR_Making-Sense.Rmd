@@ -1,10 +1,182 @@
 ---
-title: "Untitled"
-output: html_document
+title: "Asking Questions from Survey Data"
+pagetitle: "Asking Questions from Survey Data"
+output:
+  html_document:
+    code_folding: show # allows toggling of showing and hiding code. Remove if not using code.
+    code_download: true # allows the user to download the source .Rmd file. Remove if not using code.
+    includes:
+      after_body: footer.html # include a custom footer.
+    toc: true
+    toc_depth: 3
+    toc_float:
+      collapsed: false
+      smooth_scroll: false
 ---
-
 ```{r setup, include=FALSE}
-knitr::opts_chunk$set(echo = TRUE)
+knitr::opts_chunk$set(message = FALSE, warnings = FALSE)
 ```
 
-## Coming Soon!
+## Asking Questions from Survey Data
+
+Now that we have cleaned up our survey data, we can start asking questions about it! By the end of the previous session, <a href="Block8-2_SUR_Collect-and_clean.html">Collecting and Cleaning Survey Data</a>, we generated two cleaned datasets:
+
+* `survey_data_tidy.csv`
+* `survey-data_wide.csv`
+
+Long, or "tidy" data and wide data each have their pros and cons, and in this session we're going to explore the benefits and drawbacks of each as we explore our data. But first, let's take a moment to do some thinking:
+
+To begin, let's open up our `.RProj` file, so that our working directory will be captured. Now, let's create a new R script, and call it `survey_analysis_script.R`. 
+
+### Load the Tidyverse
+
+Now that we've started a new script, we need to load the libraries that we'll be using, which in this case is just the Tidyverse.
+
+```{r, eval=TRUE}
+library(tidyverse)
+```
+
+### Load the data
+
+We can now load the two datasets that were generated in the previous session:
+
+```{r, eval=TRUE, include=FALSE}
+survey_data_tidy <- read_csv("data/survey-cleaning-workshop/survey_data_tidy.csv")
+```
+
+```{r, eval=TRUE, include=FALSE}
+survey_data_wide <- read_csv("data/survey-cleaning-workshop/survey_data_wide.csv")
+```
+
+```{r, eval=FALSE}
+survey_data_tidy <- read_csv("survey_data_tidy.csv")
+```
+
+```{r, eval=FALSE}
+survey_data_wide <- read_csv("survey_data_wide.csv")
+```
+
+
+:::question
+
+1) Take a look at `survey_data_tidy` and `survey-data_wide` using the `View()` command. 
+```{r, class.source = 'fold-hide', eval = FALSE}
+View(survey_data_tidy)
+View(survey_data_wide)
+```
+2) In groups, spend a few minutes talking about some things you'd like to know about the data (ie. groups you'd like to count, possible relationships, etc.).
+
+3) Taking a closer look at the `tidy` and `wide` datasets, can you think of reasons why certain questions might be better with either one of the datasets?
+
+:::
+
+## Exploring Wide Data
+
+Wide data is easier for humans to read and interpret, and lends itself well to asking simple questions from single variables, or columns, of data. Tidy data is better for asking more complicated questions, as well as asking about multiple variables and possible relationships between them. Let's first start with some simple questions we can ask from the **wide version** of our data.
+
+A simple first step when exploring a dataset is getting counts of individual variables. To do this, we can use the `count()` function:
+
+:::walkthrough
+
+**What does the sample breadkdown of gender?**
+```{r, eval=FALSE}
+survey_data_wide |>
+  count(gender)
+```
+
+**Step-by-step explanation:**
+
+1) We start with the `survey_data_wide` object and use the pipe, `|>`, to indicate we want to do something with it.
+2) We then use the `count()` function to give us a total sum of whatever variable/column name we put inside the brackets.
+:::
+
+**What is the sample breakdown of age?**
+```{r, eval=FALSE}
+survey_data_wide |>
+  count(age)
+```
+
+In addition to looking at single variables with the `count()` function, we can also generate quick summary tables across multiple variables by separating them with commas `,`:
+
+**What is the sample breakdown of age and gender?**
+```{r, eval=TRUE}
+survey_data_wide |>
+  count(age, gender)
+```
+
+You'll see the note that there are 14 more rows, and that you can use the `print()` function to view more. You can do this you can do this by specifiying the amount of rows (in this case there are 24)
+```{r, eval=FALSE}
+survey_data_wide |>
+  count(age, gender) |>
+  print(n = 24)
+```
+
+You can keep adding additional variables to these, noting that each variable will add additional rows. If you don't want to look at the values in the R console, you can use the `View()` function to open it in a separate tab.
+```{r, eval=FALSE}
+survey_data_wide |>
+  count(age, gender, year_of_study) |>
+  View()
+```
+
+If this is something you want to come back to, you can save it into an R object.
+```{r, eval=FALSE}
+demographics_count <- survey_data_wide |>
+  count(age, gender, year_of_study)
+
+View(demographics_count)
+```
+
+A final thing that can be helpful with the `count()` function is adding in the proportion that each sum represents in the total sample.
+
+:::walkthrough
+```{r, eval=FALSE}
+survey_wide |>
+  count(gender) |>
+  mutate(prop = n / sum(n))
+```
+
+**Step-by-step explanation:**
+
+1) Start by piping the `survey_wide` object to the `count()` function like we've been doing.
+2) Add another pipe to indicate we are passing that count to another function.
+3) `mutate(prop` creates a new column called `prop`, which stands for proportion (you can name this whatever you want).
+4) Everything on the right side of the `=` is assigned to the new `prop` column. 
+5) `n` is the count for each gender category, and `sum(n)` is the total number of every row/person in the sample.
+6) `n / sum(n))` calculates `"count of each category" / "total count"`, which gives a proportion.
+
+:::
+
+## Your Turn!
+
+:::question
+See if you can create the following from the `survey_data_wide` object:
+
+1) A count of each `gender` category.
+```{r, class.source = 'fold-hide', eval=FALSE}
+survey_wide |>
+  count(gender)
+```
+2) A count of each `age` and `year_of_study`.
+```{r, class.source = 'fold-hide', eval=FALSE}
+survey_wide |>
+  count(age, year_of_study)
+```
+3) The count of `age` and its proportion.
+```{r, class.source = 'fold-hide', eval=FALSE}
+survey_wide |>
+  count(age) |>
+  mutate(prop = n / sum(n))
+```
+4) The count of `age`, `year_of_study`, and the proportion
+```{r, class.source = 'fold-hide', eval=FALSE}
+survey_wide |>
+  count(age, year_of_study) |>
+  mutate(prop = n / sum(n))
+```
+:::
+
+
+
+
+
+

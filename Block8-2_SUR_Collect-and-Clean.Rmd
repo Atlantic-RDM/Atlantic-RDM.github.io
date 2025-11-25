@@ -637,7 +637,7 @@ This will end up with a wide dataset where each row is a survey entry, each plat
 Let's save a copy of this dataset, and we'll be taking a look at it in the next section.
 
 ```{r, eval=FALSE}
-write_csv(survey_data_widy, "survey_data_wide.csv")
+write_csv(survey_data_wide, "survey_data_wide.csv")
 ```
 
 

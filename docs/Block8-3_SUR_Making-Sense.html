@@ -11,9 +11,9 @@
 
 
 
-<title>Untitled</title>
+<title>Asking Questions from Survey Data</title>
 
-<script src="site_libs/header-attrs-2.29/header-attrs.js"></script>
+<script src="site_libs/header-attrs-2.28/header-attrs.js"></script>
 <script src="site_libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <link href="site_libs/bootstrap-3.3.5/css/flatly.min.css" rel="stylesheet" />
@@ -29,7 +29,12 @@
        h6 {font-size: 12px;}
        code {color: inherit; background-color: rgba(0, 0, 0, 0.04);}
        pre:not([class]) { background-color: white }</style>
+<script src="site_libs/jqueryui-1.13.2/jquery-ui.min.js"></script>
+<link href="site_libs/tocify-1.9.1/jquery.tocify.css" rel="stylesheet" />
+<script src="site_libs/tocify-1.9.1/jquery.tocify.js"></script>
 <script src="site_libs/navigation-1.1/tabsets.js"></script>
+<script src="site_libs/navigation-1.1/codefolding.js"></script>
+<script src="site_libs/navigation-1.1/sourceembed.js"></script>
 <link href="site_libs/highlightjs-9.12.0/textmate.css" rel="stylesheet" />
 <script src="site_libs/highlightjs-9.12.0/highlight.js"></script>
 <!-- Google tag (gtag.js) -->
@@ -65,6 +70,11 @@ if (window.hljs) {
 
 
 
+<style type="text/css">
+#rmd-source-code {
+  display: none;
+}
+</style>
 
 
 <link rel="stylesheet" href="styles.css" type="text/css" />
@@ -226,7 +236,79 @@ $(document).ready(function () {
 </style>
 
 <!-- code folding -->
+<style type="text/css">
+.code-folding-btn { margin-bottom: 4px; }
+</style>
 
+
+
+<style type="text/css">
+
+#TOC {
+  margin: 25px 0px 20px 0px;
+}
+@media (max-width: 768px) {
+#TOC {
+  position: relative;
+  width: 100%;
+}
+}
+
+@media print {
+.toc-content {
+  /* see https://github.com/w3c/csswg-drafts/issues/4434 */
+  float: right;
+}
+}
+
+.toc-content {
+  padding-left: 30px;
+  padding-right: 40px;
+}
+
+div.main-container {
+  max-width: 1200px;
+}
+
+div.tocify {
+  width: 20%;
+  max-width: 260px;
+  max-height: 85%;
+}
+
+@media (min-width: 768px) and (max-width: 991px) {
+  div.tocify {
+    width: 25%;
+  }
+}
+
+@media (max-width: 767px) {
+  div.tocify {
+    width: 100%;
+    max-width: none;
+  }
+}
+
+.tocify ul, .tocify li {
+  line-height: 20px;
+}
+
+.tocify-subheader .tocify-item {
+  font-size: 0.90em;
+}
+
+.tocify .list-group-item {
+  border-radius: 0px;
+}
+
+.tocify-subheader {
+  display: inline;
+}
+.tocify-subheader .tocify-item {
+  font-size: 0.95em;
+}
+
+</style>
 
 
 
@@ -236,6 +318,16 @@ $(document).ready(function () {
 
 
 <div class="container-fluid main-container">
+
+
+<!-- setup 3col/9col grid for toc_float and main content  -->
+<div class="row">
+<div class="col-xs-12 col-sm-4 col-md-3">
+<div id="TOC" class="tocify">
+</div>
+</div>
+
+<div class="toc-content col-xs-12 col-sm-8 col-md-9">
 
 
 
@@ -509,17 +601,199 @@ $(document).ready(function () {
 
 <div id="header">
 
+<div class="btn-group pull-right float-right">
+<button type="button" class="btn btn-default btn-xs btn-secondary btn-sm dropdown-toggle" data-toggle="dropdown" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><span>Code</span> <span class="caret"></span></button>
+<ul class="dropdown-menu dropdown-menu-right" style="min-width: 50px;">
+<li><a id="rmd-show-all-code" href="#">Show All Code</a></li>
+<li><a id="rmd-hide-all-code" href="#">Hide All Code</a></li>
+<li role="separator" class="divider"></li>
+<li><a id="rmd-download-source" href="#">Download Rmd</a></li>
+</ul>
+</div>
 
 
-<h1 class="title toc-ignore">Untitled</h1>
+
+<h1 class="title toc-ignore">Asking Questions from Survey Data</h1>
 
 </div>
 
 
-<div id="coming-soon" class="section level2">
-<h2>Coming Soon!</h2>
+<div id="asking-questions-from-survey-data" class="section level2">
+<h2>Asking Questions from Survey Data</h2>
+<p>Now that we have cleaned up our survey data, we can start asking
+questions about it! By the end of the previous session,
+<a href="Block8-2_SUR_Collect-and_clean.html">Collecting and Cleaning
+Survey Data</a>, we generated two cleaned datasets:</p>
+<ul>
+<li><code>survey_data_tidy.csv</code></li>
+<li><code>survey-data_wide.csv</code></li>
+</ul>
+<p>Long, or “tidy” data and wide data each have their pros and cons, and
+in this session we’re going to explore the benefits and drawbacks of
+each as we explore our data. But first, let’s take a moment to do some
+thinking:</p>
+<p>To begin, let’s open up our <code>.RProj</code> file, so that our
+working directory will be captured. Now, let’s create a new R script,
+and call it <code>survey_analysis_script.R</code>.</p>
+<div id="load-the-tidyverse" class="section level3">
+<h3>Load the Tidyverse</h3>
+<p>Now that we’ve started a new script, we need to load the libraries
+that we’ll be using, which in this case is just the Tidyverse.</p>
+<pre class="r"><code>library(tidyverse)</code></pre>
+</div>
+<div id="load-the-data" class="section level3">
+<h3>Load the data</h3>
+<p>We can now load the two datasets that were generated in the previous
+session:</p>
+<pre class="r"><code>survey_data_tidy &lt;- read_csv(&quot;survey_data_tidy.csv&quot;)</code></pre>
+<pre class="r"><code>survey_data_wide &lt;- read_csv(&quot;survey_data_wide.csv&quot;)</code></pre>
+<div class="question">
+<ol style="list-style-type: decimal">
+<li>Take a look at <code>survey_data_tidy</code> and
+<code>survey-data_wide</code> using the <code>View()</code>
+command.</li>
+</ol>
+<pre class="r fold-hide"><code>View(survey_data_tidy)
+View(survey_data_wide)</code></pre>
+<ol start="2" style="list-style-type: decimal">
+<li><p>In groups, spend a few minutes talking about some things you’d
+like to know about the data (ie. groups you’d like to count, possible
+relationships, etc.).</p></li>
+<li><p>Taking a closer look at the <code>tidy</code> and
+<code>wide</code> datasets, can you think of reasons why certain
+questions might be better with either one of the datasets?</p></li>
+</ol>
+</div>
+</div>
+</div>
+<div id="exploring-wide-data" class="section level2">
+<h2>Exploring Wide Data</h2>
+<p>Wide data is easier for humans to read and interpret, and lends
+itself well to asking simple questions from single variables, or
+columns, of data. Tidy data is better for asking more complicated
+questions, as well as asking about multiple variables and possible
+relationships between them. Let’s first start with some simple questions
+we can ask from the <strong>wide version</strong> of our data.</p>
+<p>A simple first step when exploring a dataset is getting counts of
+individual variables. To do this, we can use the <code>count()</code>
+function:</p>
+<div class="walkthrough">
+<p><strong>What does the sample breadkdown of gender?</strong></p>
+<pre class="r"><code>survey_data_wide |&gt;
+  count(gender)</code></pre>
+<p><strong>Step-by-step explanation:</strong></p>
+<ol style="list-style-type: decimal">
+<li>We start with the <code>survey_data_wide</code> object and use the
+pipe, <code>|&gt;</code>, to indicate we want to do something with
+it.</li>
+<li>We then use the <code>count()</code> function to give us a total sum
+of whatever variable/column name we put inside the brackets.</li>
+</ol>
+</div>
+<p><strong>What is the sample breakdown of age?</strong></p>
+<pre class="r"><code>survey_data_wide |&gt;
+  count(age)</code></pre>
+<p>In addition to looking at single variables with the
+<code>count()</code> function, we can also generate quick summary tables
+across multiple variables by separating them with commas
+<code>,</code>:</p>
+<p><strong>What is the sample breakdown of age and gender?</strong></p>
+<pre class="r"><code>survey_data_wide |&gt;
+  count(age, gender)</code></pre>
+<pre><code>## # A tibble: 24 × 3
+##      age gender               n
+##    &lt;dbl&gt; &lt;chr&gt;            &lt;int&gt;
+##  1    18 Female              31
+##  2    18 Male                34
+##  3    18 Non-binary/Other     3
+##  4    19 Female              25
+##  5    19 Male                24
+##  6    19 Non-binary/Other     6
+##  7    20 Female              28
+##  8    20 Male                17
+##  9    20 Non-binary/Other     3
+## 10    21 Female              12
+## # ℹ 14 more rows</code></pre>
+<p>You’ll see the note that there are 14 more rows, and that you can use
+the <code>print()</code> function to view more. You can do this you can
+do this by specifiying the amount of rows (in this case there are
+24)</p>
+<pre class="r"><code>survey_data_wide |&gt;
+  count(age, gender) |&gt;
+  print(n = 24)</code></pre>
+<p>You can keep adding additional variables to these, noting that each
+variable will add additional rows. If you don’t want to look at the
+values in the R console, you can use the <code>View()</code> function to
+open it in a separate tab.</p>
+<pre class="r"><code>survey_data_wide |&gt;
+  count(age, gender, year_of_study) |&gt;
+  View()</code></pre>
+<p>If this is something you want to come back to, you can save it into
+an R object.</p>
+<pre class="r"><code>demographics_count &lt;- survey_data_wide |&gt;
+  count(age, gender, year_of_study)
+
+View(demographics_count)</code></pre>
+<p>A final thing that can be helpful with the <code>count()</code>
+function is adding in the proportion that each sum represents in the
+total sample.</p>
+<div class="walkthrough">
+<pre class="r"><code>survey_wide |&gt;
+  count(gender) |&gt;
+  mutate(prop = n / sum(n))</code></pre>
+<p><strong>Step-by-step explanation:</strong></p>
+<ol style="list-style-type: decimal">
+<li>Start by piping the <code>survey_wide</code> object to the
+<code>count()</code> function like we’ve been doing.</li>
+<li>Add another pipe to indicate we are passing that count to another
+function.</li>
+<li><code>mutate(prop</code> creates a new column called
+<code>prop</code>, which stands for proportion (you can name this
+whatever you want).</li>
+<li>Everything on the right side of the <code>=</code> is assigned to
+the new <code>prop</code> column.</li>
+<li><code>n</code> is the count for each gender category, and
+<code>sum(n)</code> is the total number of every row/person in the
+sample.</li>
+<li><code>n / sum(n))</code> calculates
+<code>"count of each category" / "total count"</code>, which gives a
+proportion.</li>
+</ol>
+</div>
+</div>
+<div id="your-turn" class="section level2">
+<h2>Your Turn!</h2>
+<div class="question">
+<p>See if you can create the following from the
+<code>survey_data_wide</code> object:</p>
+<ol style="list-style-type: decimal">
+<li>A count of each <code>gender</code> category.</li>
+</ol>
+<pre class="r fold-hide"><code>survey_wide |&gt;
+  count(gender)</code></pre>
+<ol start="2" style="list-style-type: decimal">
+<li>A count of each <code>age</code> and
+<code>year_of_study</code>.</li>
+</ol>
+<pre class="r fold-hide"><code>survey_wide |&gt;
+  count(age, year_of_study)</code></pre>
+<ol start="3" style="list-style-type: decimal">
+<li>The count of <code>age</code> and its proportion.</li>
+</ol>
+<pre class="r fold-hide"><code>survey_wide |&gt;
+  count(age) |&gt;
+  mutate(prop = n / sum(n))</code></pre>
+<ol start="4" style="list-style-type: decimal">
+<li>The count of <code>age</code>, <code>year_of_study</code>, and the
+proportion</li>
+</ol>
+<pre class="r fold-hide"><code>survey_wide |&gt;
+  count(age, year_of_study) |&gt;
+  mutate(prop = n / sum(n))</code></pre>
+</div>
 </div>
 
+<div id="rmd-source-code">LS0tCnRpdGxlOiAiQXNraW5nIFF1ZXN0aW9ucyBmcm9tIFN1cnZleSBEYXRhIgpwYWdldGl0bGU6ICJBc2tpbmcgUXVlc3Rpb25zIGZyb20gU3VydmV5IERhdGEiCm91dHB1dDoKICBodG1sX2RvY3VtZW50OgogICAgY29kZV9mb2xkaW5nOiBzaG93ICMgYWxsb3dzIHRvZ2dsaW5nIG9mIHNob3dpbmcgYW5kIGhpZGluZyBjb2RlLiBSZW1vdmUgaWYgbm90IHVzaW5nIGNvZGUuCiAgICBjb2RlX2Rvd25sb2FkOiB0cnVlICMgYWxsb3dzIHRoZSB1c2VyIHRvIGRvd25sb2FkIHRoZSBzb3VyY2UgLlJtZCBmaWxlLiBSZW1vdmUgaWYgbm90IHVzaW5nIGNvZGUuCiAgICBpbmNsdWRlczoKICAgICAgYWZ0ZXJfYm9keTogZm9vdGVyLmh0bWwgIyBpbmNsdWRlIGEgY3VzdG9tIGZvb3Rlci4KICAgIHRvYzogdHJ1ZQogICAgdG9jX2RlcHRoOiAzCiAgICB0b2NfZmxvYXQ6CiAgICAgIGNvbGxhcHNlZDogZmFsc2UKICAgICAgc21vb3RoX3Njcm9sbDogZmFsc2UKLS0tCmBgYHtyIHNldHVwLCBpbmNsdWRlPUZBTFNFfQprbml0cjo6b3B0c19jaHVuayRzZXQobWVzc2FnZSA9IEZBTFNFLCB3YXJuaW5ncyA9IEZBTFNFKQpgYGAKCiMjIEFza2luZyBRdWVzdGlvbnMgZnJvbSBTdXJ2ZXkgRGF0YQoKTm93IHRoYXQgd2UgaGF2ZSBjbGVhbmVkIHVwIG91ciBzdXJ2ZXkgZGF0YSwgd2UgY2FuIHN0YXJ0IGFza2luZyBxdWVzdGlvbnMgYWJvdXQgaXQhIEJ5IHRoZSBlbmQgb2YgdGhlIHByZXZpb3VzIHNlc3Npb24sIDxhIGhyZWY9IkJsb2NrOC0yX1NVUl9Db2xsZWN0LWFuZF9jbGVhbi5odG1sIj5Db2xsZWN0aW5nIGFuZCBDbGVhbmluZyBTdXJ2ZXkgRGF0YTwvYT4sIHdlIGdlbmVyYXRlZCB0d28gY2xlYW5lZCBkYXRhc2V0czoKCiogYHN1cnZleV9kYXRhX3RpZHkuY3N2YAoqIGBzdXJ2ZXktZGF0YV93aWRlLmNzdmAKCkxvbmcsIG9yICJ0aWR5IiBkYXRhIGFuZCB3aWRlIGRhdGEgZWFjaCBoYXZlIHRoZWlyIHByb3MgYW5kIGNvbnMsIGFuZCBpbiB0aGlzIHNlc3Npb24gd2UncmUgZ29pbmcgdG8gZXhwbG9yZSB0aGUgYmVuZWZpdHMgYW5kIGRyYXdiYWNrcyBvZiBlYWNoIGFzIHdlIGV4cGxvcmUgb3VyIGRhdGEuIEJ1dCBmaXJzdCwgbGV0J3MgdGFrZSBhIG1vbWVudCB0byBkbyBzb21lIHRoaW5raW5nOgoKVG8gYmVnaW4sIGxldCdzIG9wZW4gdXAgb3VyIGAuUlByb2pgIGZpbGUsIHNvIHRoYXQgb3VyIHdvcmtpbmcgZGlyZWN0b3J5IHdpbGwgYmUgY2FwdHVyZWQuIE5vdywgbGV0J3MgY3JlYXRlIGEgbmV3IFIgc2NyaXB0LCBhbmQgY2FsbCBpdCBgc3VydmV5X2FuYWx5c2lzX3NjcmlwdC5SYC4gCgojIyMgTG9hZCB0aGUgVGlkeXZlcnNlCgpOb3cgdGhhdCB3ZSd2ZSBzdGFydGVkIGEgbmV3IHNjcmlwdCwgd2UgbmVlZCB0byBsb2FkIHRoZSBsaWJyYXJpZXMgdGhhdCB3ZSdsbCBiZSB1c2luZywgd2hpY2ggaW4gdGhpcyBjYXNlIGlzIGp1c3QgdGhlIFRpZHl2ZXJzZS4KCmBgYHtyLCBldmFsPVRSVUV9CmxpYnJhcnkodGlkeXZlcnNlKQpgYGAKCiMjIyBMb2FkIHRoZSBkYXRhCgpXZSBjYW4gbm93IGxvYWQgdGhlIHR3byBkYXRhc2V0cyB0aGF0IHdlcmUgZ2VuZXJhdGVkIGluIHRoZSBwcmV2aW91cyBzZXNzaW9uOgoKYGBge3IsIGV2YWw9VFJVRSwgaW5jbHVkZT1GQUxTRX0Kc3VydmV5X2RhdGFfdGlkeSA8LSByZWFkX2NzdigiZGF0YS9zdXJ2ZXktY2xlYW5pbmctd29ya3Nob3Avc3VydmV5X2RhdGFfdGlkeS5jc3YiKQpgYGAKCmBgYHtyLCBldmFsPVRSVUUsIGluY2x1ZGU9RkFMU0V9CnN1cnZleV9kYXRhX3dpZGUgPC0gcmVhZF9jc3YoImRhdGEvc3VydmV5LWNsZWFuaW5nLXdvcmtzaG9wL3N1cnZleV9kYXRhX3dpZGUuY3N2IikKYGBgCgpgYGB7ciwgZXZhbD1GQUxTRX0Kc3VydmV5X2RhdGFfdGlkeSA8LSByZWFkX2Nzdigic3VydmV5X2RhdGFfdGlkeS5jc3YiKQpgYGAKCmBgYHtyLCBldmFsPUZBTFNFfQpzdXJ2ZXlfZGF0YV93aWRlIDwtIHJlYWRfY3N2KCJzdXJ2ZXlfZGF0YV93aWRlLmNzdiIpCmBgYAoKCjo6OnF1ZXN0aW9uCgoxKSBUYWtlIGEgbG9vayBhdCBgc3VydmV5X2RhdGFfdGlkeWAgYW5kIGBzdXJ2ZXktZGF0YV93aWRlYCB1c2luZyB0aGUgYFZpZXcoKWAgY29tbWFuZC4gCmBgYHtyLCBjbGFzcy5zb3VyY2UgPSAnZm9sZC1oaWRlJywgZXZhbCA9IEZBTFNFfQpWaWV3KHN1cnZleV9kYXRhX3RpZHkpClZpZXcoc3VydmV5X2RhdGFfd2lkZSkKYGBgCjIpIEluIGdyb3Vwcywgc3BlbmQgYSBmZXcgbWludXRlcyB0YWxraW5nIGFib3V0IHNvbWUgdGhpbmdzIHlvdSdkIGxpa2UgdG8ga25vdyBhYm91dCB0aGUgZGF0YSAoaWUuIGdyb3VwcyB5b3UnZCBsaWtlIHRvIGNvdW50LCBwb3NzaWJsZSByZWxhdGlvbnNoaXBzLCBldGMuKS4KCjMpIFRha2luZyBhIGNsb3NlciBsb29rIGF0IHRoZSBgdGlkeWAgYW5kIGB3aWRlYCBkYXRhc2V0cywgY2FuIHlvdSB0aGluayBvZiByZWFzb25zIHdoeSBjZXJ0YWluIHF1ZXN0aW9ucyBtaWdodCBiZSBiZXR0ZXIgd2l0aCBlaXRoZXIgb25lIG9mIHRoZSBkYXRhc2V0cz8KCjo6OgoKIyMgRXhwbG9yaW5nIFdpZGUgRGF0YQoKV2lkZSBkYXRhIGlzIGVhc2llciBmb3IgaHVtYW5zIHRvIHJlYWQgYW5kIGludGVycHJldCwgYW5kIGxlbmRzIGl0c2VsZiB3ZWxsIHRvIGFza2luZyBzaW1wbGUgcXVlc3Rpb25zIGZyb20gc2luZ2xlIHZhcmlhYmxlcywgb3IgY29sdW1ucywgb2YgZGF0YS4gVGlkeSBkYXRhIGlzIGJldHRlciBmb3IgYXNraW5nIG1vcmUgY29tcGxpY2F0ZWQgcXVlc3Rpb25zLCBhcyB3ZWxsIGFzIGFza2luZyBhYm91dCBtdWx0aXBsZSB2YXJpYWJsZXMgYW5kIHBvc3NpYmxlIHJlbGF0aW9uc2hpcHMgYmV0d2VlbiB0aGVtLiBMZXQncyBmaXJzdCBzdGFydCB3aXRoIHNvbWUgc2ltcGxlIHF1ZXN0aW9ucyB3ZSBjYW4gYXNrIGZyb20gdGhlICoqd2lkZSB2ZXJzaW9uKiogb2Ygb3VyIGRhdGEuCgpBIHNpbXBsZSBmaXJzdCBzdGVwIHdoZW4gZXhwbG9yaW5nIGEgZGF0YXNldCBpcyBnZXR0aW5nIGNvdW50cyBvZiBpbmRpdmlkdWFsIHZhcmlhYmxlcy4gVG8gZG8gdGhpcywgd2UgY2FuIHVzZSB0aGUgYGNvdW50KClgIGZ1bmN0aW9uOgoKOjo6d2Fsa3Rocm91Z2gKCioqV2hhdCBkb2VzIHRoZSBzYW1wbGUgYnJlYWRrZG93biBvZiBnZW5kZXI/KioKYGBge3IsIGV2YWw9RkFMU0V9CnN1cnZleV9kYXRhX3dpZGUgfD4KICBjb3VudChnZW5kZXIpCmBgYAoKKipTdGVwLWJ5LXN0ZXAgZXhwbGFuYXRpb246KioKCjEpIFdlIHN0YXJ0IHdpdGggdGhlIGBzdXJ2ZXlfZGF0YV93aWRlYCBvYmplY3QgYW5kIHVzZSB0aGUgcGlwZSwgYHw+YCwgdG8gaW5kaWNhdGUgd2Ugd2FudCB0byBkbyBzb21ldGhpbmcgd2l0aCBpdC4KMikgV2UgdGhlbiB1c2UgdGhlIGBjb3VudCgpYCBmdW5jdGlvbiB0byBnaXZlIHVzIGEgdG90YWwgc3VtIG9mIHdoYXRldmVyIHZhcmlhYmxlL2NvbHVtbiBuYW1lIHdlIHB1dCBpbnNpZGUgdGhlIGJyYWNrZXRzLgo6OjoKCioqV2hhdCBpcyB0aGUgc2FtcGxlIGJyZWFrZG93biBvZiBhZ2U/KioKYGBge3IsIGV2YWw9RkFMU0V9CnN1cnZleV9kYXRhX3dpZGUgfD4KICBjb3VudChhZ2UpCmBgYAoKSW4gYWRkaXRpb24gdG8gbG9va2luZyBhdCBzaW5nbGUgdmFyaWFibGVzIHdpdGggdGhlIGBjb3VudCgpYCBmdW5jdGlvbiwgd2UgY2FuIGFsc28gZ2VuZXJhdGUgcXVpY2sgc3VtbWFyeSB0YWJsZXMgYWNyb3NzIG11bHRpcGxlIHZhcmlhYmxlcyBieSBzZXBhcmF0aW5nIHRoZW0gd2l0aCBjb21tYXMgYCxgOgoKKipXaGF0IGlzIHRoZSBzYW1wbGUgYnJlYWtkb3duIG9mIGFnZSBhbmQgZ2VuZGVyPyoqCmBgYHtyLCBldmFsPVRSVUV9CnN1cnZleV9kYXRhX3dpZGUgfD4KICBjb3VudChhZ2UsIGdlbmRlcikKYGBgCgpZb3UnbGwgc2VlIHRoZSBub3RlIHRoYXQgdGhlcmUgYXJlIDE0IG1vcmUgcm93cywgYW5kIHRoYXQgeW91IGNhbiB1c2UgdGhlIGBwcmludCgpYCBmdW5jdGlvbiB0byB2aWV3IG1vcmUuIFlvdSBjYW4gZG8gdGhpcyB5b3UgY2FuIGRvIHRoaXMgYnkgc3BlY2lmaXlpbmcgdGhlIGFtb3VudCBvZiByb3dzIChpbiB0aGlzIGNhc2UgdGhlcmUgYXJlIDI0KQpgYGB7ciwgZXZhbD1GQUxTRX0Kc3VydmV5X2RhdGFfd2lkZSB8PgogIGNvdW50KGFnZSwgZ2VuZGVyKSB8PgogIHByaW50KG4gPSAyNCkKYGBgCgpZb3UgY2FuIGtlZXAgYWRkaW5nIGFkZGl0aW9uYWwgdmFyaWFibGVzIHRvIHRoZXNlLCBub3RpbmcgdGhhdCBlYWNoIHZhcmlhYmxlIHdpbGwgYWRkIGFkZGl0aW9uYWwgcm93cy4gSWYgeW91IGRvbid0IHdhbnQgdG8gbG9vayBhdCB0aGUgdmFsdWVzIGluIHRoZSBSIGNvbnNvbGUsIHlvdSBjYW4gdXNlIHRoZSBgVmlldygpYCBmdW5jdGlvbiB0byBvcGVuIGl0IGluIGEgc2VwYXJhdGUgdGFiLgpgYGB7ciwgZXZhbD1GQUxTRX0Kc3VydmV5X2RhdGFfd2lkZSB8PgogIGNvdW50KGFnZSwgZ2VuZGVyLCB5ZWFyX29mX3N0dWR5KSB8PgogIFZpZXcoKQpgYGAKCklmIHRoaXMgaXMgc29tZXRoaW5nIHlvdSB3YW50IHRvIGNvbWUgYmFjayB0bywgeW91IGNhbiBzYXZlIGl0IGludG8gYW4gUiBvYmplY3QuCmBgYHtyLCBldmFsPUZBTFNFfQpkZW1vZ3JhcGhpY3NfY291bnQgPC0gc3VydmV5X2RhdGFfd2lkZSB8PgogIGNvdW50KGFnZSwgZ2VuZGVyLCB5ZWFyX29mX3N0dWR5KQoKVmlldyhkZW1vZ3JhcGhpY3NfY291bnQpCmBgYAoKQSBmaW5hbCB0aGluZyB0aGF0IGNhbiBiZSBoZWxwZnVsIHdpdGggdGhlIGBjb3VudCgpYCBmdW5jdGlvbiBpcyBhZGRpbmcgaW4gdGhlIHByb3BvcnRpb24gdGhhdCBlYWNoIHN1bSByZXByZXNlbnRzIGluIHRoZSB0b3RhbCBzYW1wbGUuCgo6Ojp3YWxrdGhyb3VnaApgYGB7ciwgZXZhbD1GQUxTRX0Kc3VydmV5X3dpZGUgfD4KICBjb3VudChnZW5kZXIpIHw+CiAgbXV0YXRlKHByb3AgPSBuIC8gc3VtKG4pKQpgYGAKCioqU3RlcC1ieS1zdGVwIGV4cGxhbmF0aW9uOioqCgoxKSBTdGFydCBieSBwaXBpbmcgdGhlIGBzdXJ2ZXlfd2lkZWAgb2JqZWN0IHRvIHRoZSBgY291bnQoKWAgZnVuY3Rpb24gbGlrZSB3ZSd2ZSBiZWVuIGRvaW5nLgoyKSBBZGQgYW5vdGhlciBwaXBlIHRvIGluZGljYXRlIHdlIGFyZSBwYXNzaW5nIHRoYXQgY291bnQgdG8gYW5vdGhlciBmdW5jdGlvbi4KMykgYG11dGF0ZShwcm9wYCBjcmVhdGVzIGEgbmV3IGNvbHVtbiBjYWxsZWQgYHByb3BgLCB3aGljaCBzdGFuZHMgZm9yIHByb3BvcnRpb24gKHlvdSBjYW4gbmFtZSB0aGlzIHdoYXRldmVyIHlvdSB3YW50KS4KNCkgRXZlcnl0aGluZyBvbiB0aGUgcmlnaHQgc2lkZSBvZiB0aGUgYD1gIGlzIGFzc2lnbmVkIHRvIHRoZSBuZXcgYHByb3BgIGNvbHVtbi4gCjUpIGBuYCBpcyB0aGUgY291bnQgZm9yIGVhY2ggZ2VuZGVyIGNhdGVnb3J5LCBhbmQgYHN1bShuKWAgaXMgdGhlIHRvdGFsIG51bWJlciBvZiBldmVyeSByb3cvcGVyc29uIGluIHRoZSBzYW1wbGUuCjYpIGBuIC8gc3VtKG4pKWAgY2FsY3VsYXRlcyBgImNvdW50IG9mIGVhY2ggY2F0ZWdvcnkiIC8gInRvdGFsIGNvdW50ImAsIHdoaWNoIGdpdmVzIGEgcHJvcG9ydGlvbi4KCjo6OgoKIyMgWW91ciBUdXJuIQoKOjo6cXVlc3Rpb24KU2VlIGlmIHlvdSBjYW4gY3JlYXRlIHRoZSBmb2xsb3dpbmcgZnJvbSB0aGUgYHN1cnZleV9kYXRhX3dpZGVgIG9iamVjdDoKCjEpIEEgY291bnQgb2YgZWFjaCBgZ2VuZGVyYCBjYXRlZ29yeS4KYGBge3IsIGNsYXNzLnNvdXJjZSA9ICdmb2xkLWhpZGUnLCBldmFsPUZBTFNFfQpzdXJ2ZXlfd2lkZSB8PgogIGNvdW50KGdlbmRlcikKYGBgCjIpIEEgY291bnQgb2YgZWFjaCBgYWdlYCBhbmQgYHllYXJfb2Zfc3R1ZHlgLgpgYGB7ciwgY2xhc3Muc291cmNlID0gJ2ZvbGQtaGlkZScsIGV2YWw9RkFMU0V9CnN1cnZleV93aWRlIHw+CiAgY291bnQoYWdlLCB5ZWFyX29mX3N0dWR5KQpgYGAKMykgVGhlIGNvdW50IG9mIGBhZ2VgIGFuZCBpdHMgcHJvcG9ydGlvbi4KYGBge3IsIGNsYXNzLnNvdXJjZSA9ICdmb2xkLWhpZGUnLCBldmFsPUZBTFNFfQpzdXJ2ZXlfd2lkZSB8PgogIGNvdW50KGFnZSkgfD4KICBtdXRhdGUocHJvcCA9IG4gLyBzdW0obikpCmBgYAo0KSBUaGUgY291bnQgb2YgYGFnZWAsIGB5ZWFyX29mX3N0dWR5YCwgYW5kIHRoZSBwcm9wb3J0aW9uCmBgYHtyLCBjbGFzcy5zb3VyY2UgPSAnZm9sZC1oaWRlJywgZXZhbD1GQUxTRX0Kc3VydmV5X3dpZGUgfD4KICBjb3VudChhZ2UsIHllYXJfb2Zfc3R1ZHkpIHw+CiAgbXV0YXRlKHByb3AgPSBuIC8gc3VtKG4pKQpgYGAKOjo6CgoKCgoKCg==</div>
 <div id="footer">
     <hr />
     <div class = "inst-logos">
@@ -540,6 +814,8 @@ Built and rendered courtesy of <a href="https://rmarkdown.rstudio.com/index.html
 
 
 
+</div>
+</div>
 
 </div>
 
@@ -571,7 +847,42 @@ $(document).ready(function () {
 </script>
 
 <!-- code folding -->
+<script>
+$(document).ready(function () {
+  window.initializeSourceEmbed("Block8-3_SUR_Making-Sense.Rmd");
+  window.initializeCodeFolding("show" === "show");
+});
+</script>
 
+<script>
+$(document).ready(function ()  {
+
+    // temporarily add toc-ignore selector to headers for the consistency with Pandoc
+    $('.unlisted.unnumbered').addClass('toc-ignore')
+
+    // move toc-ignore selectors from section div to header
+    $('div.section.toc-ignore')
+        .removeClass('toc-ignore')
+        .children('h1,h2,h3,h4,h5').addClass('toc-ignore');
+
+    // establish options
+    var options = {
+      selectors: "h1,h2,h3",
+      theme: "bootstrap3",
+      context: '.toc-content',
+      hashGenerator: function (text) {
+        return text.replace(/[.\\/?&!#<>]/g, '').replace(/\s/g, '_');
+      },
+      ignoreSelector: ".toc-ignore",
+      scrollTo: 0
+    };
+    options.showAndHide = false;
+    options.smoothScroll = false;
+
+    // tocify
+    var toc = $("#TOC").tocify(options).data("toc-tocify");
+});
+</script>
 
 <!-- dynamically load mathjax for compatibility with self-contained -->
 <script>
