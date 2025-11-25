@@ -1,4 +1,4 @@
-ID,age,gender,year_of_study,hours_per_day,feel_connected,feel_increase_stress,feel_distracted,feel_improved_mood,usage_stay_in_touch,usage_entertainment,usage_networking,usage_news,usage_expression,LinkedIn,Instagram,Reddit,Facebook,X (Twitter),TikTok,Snapchat
+ID,age,gender,year_of_study,hours-per-day,feel_connected,feel_increase_stress,feel_distracted,feel_improved_mood,usage_stay_in_touch,usage_entertainment,usage_networking,usage_news,usage_expression,LinkedIn,Instagram,Reddit,Facebook,X (Twitter),TikTok,Snapchat
 1,24,Male,4,Less than 2 hours,Neutral,Neutral,Agree,Agree,4,2,3,5,1,1,1,1,1,1,0,0
 2,24,Female,4,2–4 hours,Agree,Strongly agree,Strongly disagree,Agree,5,2,1,3,4,0,1,0,1,0,1,1
 3,20,Male,2,Less than 2 hours,Neutral,Neutral,Agree,Agree,3,5,2,4,1,1,0,1,0,1,1,1

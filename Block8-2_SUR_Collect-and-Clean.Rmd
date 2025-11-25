@@ -278,7 +278,7 @@ names(survey_data)
 Now, see if you can change the `How many hours per day do you spend on social media?` column name to `hours-per-day`
 ```{r, class.source = 'fold-hide'}
 survey_data <- survey_data |>
-  rename("hours-per-day" = "How many hours per day do you spend on social media?") 
+  rename("hours_per_day" = "How many hours per day do you spend on social media?") 
 ```
 
 :::
@@ -287,15 +287,15 @@ survey_data <- survey_data |>
 Next, try to change the following 3 column names:
 
 * Change `Which social media platforms do you use at least once a week?` to `platforms`
-* Change `Social media makes me feel connected` to `feel-connected`
-* Change `Social media increases my stress` to `feel-increase-stress`
+* Change `Social media makes me feel connected` to `feel_connected`
+* Change `Social media increases my stress` to `feel_increase_stress`
 
 **Hint:** It can be tedious to do these changes one by one, but by using commas `,` you can rename column names with a single code chunk.  
 ```{r, class.source = 'fold-hide'}
 survey_data <- survey_data |>
   rename("platforms" = "Which social media platforms do you use at least once a week?",
-          "feel-connected" = "Social media makes me feel connected",
-          "feel-increase-stress" = "Social media increases my stress") 
+          "feel_connected" = "Social media makes me feel connected",
+          "feel_increase_stress" = "Social media increases my stress") 
 ```
 :::
 
@@ -304,13 +304,13 @@ Now, let's change the rest of the column names copy the following code. (If you 
 
 ```{r, class.source = 'fold-hide'}
 survey_data <- survey_data |>
-  rename( "feel-distracted" = "I find social media distracting from studies",
-         "feel-improved-mood" = "Social media positively impacts my mood",
-         "usage-stay-in-touch" = "Staying connected with friends/family",
-         "usage-entertainment" = "Entertainment/passing time",
-         "usage-networking" = "Academic or professional networking",
-         "usage-news" = "Staying informed about news/events",
-         "usage-expression" = "Self-expression/creativity",
+  rename( "feel_distracted" = "I find social media distracting from studies",
+         "feel_improved_mood" = "Social media positively impacts my mood",
+         "usage_stay_in_touch" = "Staying connected with friends/family",
+         "usage_entertainment" = "Entertainment/passing time",
+         "usage_networking" = "Academic or professional networking",
+         "usage_news" = "Staying informed about news/events",
+         "usage_expression" = "Self-expression/creativity",
          "timestamp" = "Timestamp",
          "name" = "Name",
          "email" = "Email",
@@ -532,7 +532,7 @@ Here's the code to do this:
 ```{r}
 survey_data_longer <- survey_data_long |>
   pivot_longer(
-    cols = starts_with("feel-"),
+    cols = starts_with("feel_"),
     names_to = "feel_question",
     values_to = "feel_response"
   )
@@ -561,7 +561,7 @@ Hint: The syntax is exactly the same as the example above, you just need to chan
 ```{r, class.source = 'fold-hide', eval = FALSE}
 survey_data_tidy <- survey_data_longer |>
   pivot_longer(
-  cols = starts_with("usage-"),
+  cols = starts_with("usage_"),
   names_to = "usage_question",
   values_to = "usage_response"
 )

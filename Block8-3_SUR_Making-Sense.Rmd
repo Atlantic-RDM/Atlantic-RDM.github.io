@@ -32,7 +32,11 @@ To begin, let's open up our `.RProj` file, so that our working directory will be
 
 Now that we've started a new script, we need to load the libraries that we'll be using, which in this case is just the Tidyverse.
 
-```{r, eval=TRUE}
+```{r, eval=TRUE, include=FALSE}
+library(tidyverse)
+```
+
+```{r, eval=FALSE}
 library(tidyverse)
 ```
 
@@ -130,7 +134,7 @@ A final thing that can be helpful with the `count()` function is adding in the p
 
 :::walkthrough
 ```{r, eval=FALSE}
-survey_wide |>
+survey_data_wide |>
   count(gender) |>
   mutate(prop = n / sum(n))
 ```
@@ -153,30 +157,237 @@ See if you can create the following from the `survey_data_wide` object:
 
 1) A count of each `gender` category.
 ```{r, class.source = 'fold-hide', eval=FALSE}
-survey_wide |>
+survey_data_wide |>
   count(gender)
 ```
 2) A count of each `age` and `year_of_study`.
 ```{r, class.source = 'fold-hide', eval=FALSE}
-survey_wide |>
+survey_data_wide |>
   count(age, year_of_study)
 ```
 3) The count of `age` and its proportion.
 ```{r, class.source = 'fold-hide', eval=FALSE}
-survey_wide |>
+survey_data_wide |>
   count(age) |>
   mutate(prop = n / sum(n))
 ```
 4) The count of `age`, `year_of_study`, and the proportion
 ```{r, class.source = 'fold-hide', eval=FALSE}
-survey_wide |>
+survey_data_wide |>
   count(age, year_of_study) |>
   mutate(prop = n / sum(n))
 ```
 :::
 
+## Simple Barplots as Exploration
+
+In addition to creating summary tables to explore data, creating simple plots can be another way to explore your data.
+
+One way to do this, is using the base R `barplot()` function. This can be done in a few steps.
 
 
+In this example, we're going to plot the categories of the `hours_per_day` columns.
+
+First, let's look at the `$` operator. When placed after a data object in R, it allows you to isolate specified columns.
+
+```{r, eval=FALSE}
+survey_data_wide$hours_per_day
+```
+
+This will show all the values in that column in the R console. Give it a try with other columns!
+
+Next, we can also use the `table` function here, to generate a quick summary table of that column.
+
+```{r, eval=FALSE}
+table(survey_data_wide$hours_per_day)
+```
+
+Give this a try with some other columns!
+
+Now we're going to save this table as an object called `hours_table`.
+
+```{r, eval=TRUE}
+hours_table <- table(survey_data_wide$hours_per_day)
+```
+
+Finally, we can feed the `hours_table` object into the `barplot()` function to get our plot.
+
+```{r, eval=TRUE}
+barplot(hours_table)
+```
+
+You might notice that the bars aren't in any particular order, which can be a bit annoying. Let's clean this up by creating adding another step. 
+
+```{r, eval=TRUE}
+hours_sorted <- sort(hours_table, decreasing = TRUE)
+```
+
+```{r, eval=TRUE}
+barplot(hours_sorted)
+```
+
+The `sort` function is telling R that we want to reorder the values in `hours_table`, and the `decreasing = TRUE` allows us to see the values from biggest to smallest. You can change this to `decreasing = FALSE` to see smallest to biggest.
+
+When exploring data, it's not always necessary to add labels to our plots. However, this chart might be something you want to communicate, so let's add some labels!
+
+```{r, eval=TRUE}
+barplot(hours_sorted,
+        main = "Hours per day on social media",
+        xlab = "Hours per day",
+        ylab = "Number of students")
+```
+
+With the `barplot()` function:
+
+* `main` is the title of the chart.
+* `xlab` is the label on the x (horizontal) axis.
+* `ylad` is the label on the y (vertical) axis.
+
+## Your Turn!
+
+:::question
+
+1) Make a barplot for the `feel_increase_stress` variable, that orders the bars from biggest to smallest, and has labels for the title, and both axes.
+
+Hint: break this into 3 steps:
+
+* Create an object that creates a table of the `feel_increase_stress` column
+* Create another object that sorts the table in decreasing order
+* Create a barplot and add 3 layers of labels.
+
+```{r, class.source = 'fold-hide', eval=FALSE}
+stress_count <- table(survey_data_wide$feel_increase_stress)
+
+stress_sorted <- sort(stress_count, decreasing = TRUE)
+
+barplot(stress_sorted,
+        main = "Social media makes me feel anxious or stressed",
+        xlab = "Feeling anxious or stressed",
+        ylab = "Number of students")
+```
+
+2) Try this with another column!
+
+:::
 
 
+## Moving to Tidy Data
+
+As we've seen, working with wide data can be helpful for generating quick summaries and counts. But what if we want to ask something that's a bit more complicated?
+
+:::question
+
+In groups, take a look at the data and talk about how you might go about answering the question, **which platforms are most used?**
+
+:::
+
+There are certainly ways to do this with the wide data. One way would be to use the `count()` function for each individual column. However, this is a bit clunky, and then you would have to then deal with merging the responses into a table (not impossible, but it's more work). There is a way to do this is a single code chunk, but it becomes overly long and complicated:
+
+```{r, eval=FALSE}
+platform_counts_wide <- survey_wide |>
+  summarise(
+    across(
+      c(`LinkedIn`, Instagram, Reddit, Facebook,
+        `X (Twitter)`, TikTok, Snapchat),
+      ~ sum(.x)
+    )
+  ) |>
+  pivot_longer(
+    cols = everything(),
+    names_to = "platform",
+    values_to = "n_users"
+  ) |>
+  arrange(desc(n_users))
+
+platform_counts_wide
+```
+
+We don't need to understand this code chunk, it is just an example of what the code looks like. However, if we shift to **tidy** data, the code becomes much shorter and simpler.
+
+First, let's start by taking another look at the tidy data.
+
+```{r, eval=FALSE}
+View(survey_data_tidy)
+```
+
+You can see that there is the single `platforms` column that we are able to query.
+
+Now, let's do a count of the different categories in this column.
+
+```{r, eval=TRUE}
+survey_data_tidy |>
+  count(platforms, name = "n_students")
+```
+
+In this code, we are using the `count()` function like we just did, and the `name = "n_students"` creates a new column name for the number for each column. `"n_students"` was used to show this is the number of students, but you can put anything you want here, or leave it blank if preferred.
+
+You can see that this code is very simple, but there is a big problem with the numbers! Because our tidy data adds additional rows to data, we are seeing numbers in the thousands when our sample size is only 300. However, when we cleaned the data, we created a unique ID for each entry. This was to help with re-identifying responses if needed, but it can also help us with eliminating redundant rows.
+
+```{r, eval=TRUE}
+survey_data_tidy |>
+  distinct(ID, platforms) |>
+  count(platforms, name = "n_students")
+```
+
+The `distinct()` function is telling R that we only want to keep unique combinations of each student `ID` and `platform`, which eliminates any of the redundancy of the tidy data. As you can see, the numbers are now accurate to our sample.
+
+As with before, it can be nice to arrange the numbers from biggest to smallest.
+
+```{r, eval=TRUE}
+survey_data_tidy |>
+  distinct(ID, platforms) |>
+  count(platforms, name = "n_students") |>
+  arrange(desc(n_students))
+```
+
+In this case, the `arrange()` function tells R that we want to change the order of something, and `desc(n_students)` specifies that we want the `n_students` column, which is the values for each platform, to be listed in descending order (biggest to smallest).
+
+Finally, once we're happy with the output of this code chunk, we can save it as an R object to revisit. We'll call the object `platform_count`, and now we can easily view and work with it going forward.
+
+```{r, eval=TRUE}
+platform_count <- survey_data_tidy |>
+  distinct(ID, platforms) |>
+  count(platforms, name = "n_students") |>
+  arrange(desc(n_students))
+```
+
+## Going Deeper with Tidy Data
+
+Let's keep digging into the tidy data, and start asking questions that are related to our bigger research question, **"How does social media usage influence the mental health of university students?**
+
+### **Comparison Operators**
+
+Comparison operators allow us to look for specific criteria in our dataset. These return `TRUE` or `FALSE` based on whether the condition is met.
+
+| Operator | Meaning                  | Example  | Result |
+|----------|--------------------------|----------|--------|
+| `==`     | Equal to                 | `5 == 5` | `TRUE` |
+| `!=`     | Not equal to             | `5 != 3` | `TRUE` |
+| `<`      | Less than                | `3 < 5`  | `TRUE` |
+| `>`      | Greater than             | `5 > 3`  | `TRUE` |
+| `<=`     | Less than or equal to    | `3 <= 3` | `TRUE` |
+| `>=`     | Greater than or equal to | `5 >= 3` | `TRUE` |
+
+Once we understand these basic comparison operators, we can combine them using logical operators to create more complex filtering conditions.
+
+### **Logical Operators**
+
+Logical operators allow us to filter data based on multiple conditions.
+
+| Operator | Meaning                                          | Example             | Result  |
+|----------|---------------------------------|--------------|-------------|
+| `&`      | Logical AND (Both conditions must be TRUE)       | `(5 > 3) & (4 < 6)` | `TRUE`  |
+| `|`      | Logical OR (At least one condition must be TRUE) | `(5 > 3) | (4 > 6)` | `TRUE`  |
+| `!`      | Logical NOT (Reverses TRUE/FALSE)                | `!(5 > 3)`          | `FALSE` |
+
+
+### Asking Questions with Filtering
+
+:::note
+
+The `filter()` function returns only the rows that meet a specified condition.
+
+:::
+
+From the `feel-question` column in our tidy data, these are questions asking whether social media makes students feel connected to others (`feel_), anxious or stressed, 
 
