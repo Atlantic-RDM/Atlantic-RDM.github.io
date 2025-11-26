@@ -658,5 +658,77 @@ Let's take a look.
 feel_avgs
 ```
 
+### Plotting the Results
+
+Now that we have our data ready to go, we can now put it into a plot. Earlier in this session we used the `barplot()` function, which is great as a quick way to visualize data in bar charts. However, a much more powerful visualization package, that is part of the Tidyverse, is ggplot2. 
+
+This will not be a deep dive into ggplot2, but if you are interested in learning more, check out the session on <a href="Block5-2_ggplot.html">Visualization with ggplot</a>.
+
+ggplot offers a number of different visualization types, and as it works in "layers", you can keep adding more elements to your visualizations, making it an extremely powerful and precise tool. As mentioned, this won't be a deep dive, but we'll take a look at what visualizing our data in ggplot can do for our data.
+
+:::walkthrough
+
+Visualizing the questions "How does heavy usage of social media affect mental health compared to light usage?"
+
+```{r, eval=FALSE}
+ggplot(feel_avgs, aes(x = feel_question, y = avg_feel, fill = usage_group)) +
+  geom_col(position = "dodge")
+```
+
+**Step-by-step explanation:**
+
+* Every visualization with ggplot starts with the `ggplot()` command to tell R that we're going to make a plot.
+* The first element to go in the brackets is the data we want to plot, which in this case is `feel_avgs`.
+* After a comma `,` we use the `aes()` function to describe the aesthetics of what the plot will look like. In this case, we specify that the x-axis will contain `feel_question` column in the table, and the y-axis will contain `avg_feel`, which is the averages. `fill = usage_group` indicates that we want each usage group to be filled with a different colour.
+* Now that we've specified the aesthetics, we insert a plus sign `+` to add additional elements.
+* `geom_col()` specifies the geom, or type of chart we want to make (there are many!), and `position = "dodge"` tells R that we want a separate column for light and heavy users, instead of a stacked column.
+
+:::
+
+You'll see that there's now a plot in the viewer pane in RStudio (bottom right). Before we get to the data insights from the plot, it's worth noting that there's an issue with the chart. On the y-axis, we see numbers, which aren't very good at communicating the Likert scale we're visualizing, and the numbers end at 3 (they are chopped off because that's where the averages stop). To communicate these findings more effectively, let's update the y-axis to be more descriptive and easier to interpret.
+
+:::walkthrough
+
+Cleaning up the y-axis of our plot
+
+```{r, eval=FALSE}
+ggplot(feel_avgs, aes(x = feel_question, y = avg_feel, fill = usage_group)) +
+  geom_col(position = "dodge") +
+  scale_y_continuous(
+    breaks = 1:5,
+    labels = c(
+      "1 = Strongly disagree",
+      "2 = Disagree",
+      "3 = Neutral",
+      "4 = Agree",
+      "5 = Strongly agree"
+    )
+  ) +
+  expand_limits(y = 5)
+```
+
+**Step-by-step explanation:**
+
+Beginning where we left off at the first plot,
+
+* We and a plus sign `+` to tell R we want to add another layer.
+* `scale_y_continuous(` tells R we want to change how the y-axis looks, and everything in these brackets will add to this.
+* `breaks = 1:5` tells R that we want to put tick marks at the values 1, 2, 3, 4, 5. `1:5` is shorthand for all the numbers between 1-5. 
+* Don't forget to separate the line with the comma `,`!
+* `labels = c("1 = Strongly disagree, ...)` replaces the numbers on the y-axis with whatever textual labels are put in the quotation marks. Because we specified `breaks = 1:5`, it will accept five values. This can be expanded or reduced according to your plot.
+* There are two end brackets `))` that need to be closed. One for `scale_y_continuous(` command, and one for `labels = c(`.
+* Add another plus sign `+` to add another layer.
+* `expand_limits(y = 5)` expands the chart to five tick marks, to make sure we can show the full scale.
+
+:::
+
+
+
+
+
+
+
+
+
 
 
