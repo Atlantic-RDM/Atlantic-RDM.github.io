@@ -450,66 +450,213 @@ distracted_count
 
 :::
 
-## Subsetting with Filter and Select
+## Asking a Research Question
 
-Now that we've seen how the `filter()` function can help narrow down the row we want, we can add the `select()` function to narrow which columns to look at. This is an action called **subsetting**, and is where we can start asking more complex questions.
+So far the questions we have been asking of our data have related to counts, which can be very helpful, but may not get to the bigger research question we want to ask. As part of the bigger research question, we might want to ask, **"How does heavy usage of social media affect mental health compared to light usage?**
 
-![](images/3-ACT-3-Overview.png)
+There will be a few steps to answer this question, but let's break them down and take them one at a time:
 
-As part of our research question, we're interested in comparing the mental health responses (the `feel-` columns) in light users of social media vs. heavy users. 
+1) Define heavy vs. light users
+2) Because the `feel_response` values are in a Likert scale, we need to convert them to numbers to allow us to get averages.
+3) Get the average score for each `feel_question` for both light and heavy users.
+4) Combine the groups
+5) Plot the comparison
 
-* Light users are those that responded "Less than 2 hours" or "2-4 hours" per day.
+Let's get started!
 
-* Heavy users are those that responded "4-6 hours" or "More than 6 hours" per day.
+### Defining heavy vs. light users
 
+In the `hours_per_day` question, survey respondents were given four possible answers:
+
+* Less than 2 hours
+* 2-4 hours
+* 4-6 hours
+* More than 6 hours
+
+For the sake of our analysis, let's say that respondents that selected "Less than 2 hours" and "2-4 hours" are **light users**, and those that selected "4-6 hours" and "More than 6 hours" are **heavy users**. 
 
 :::walkthrough
 
-Let's start by isolating **heavy users** of social media. We'll want to choose **rows** that contain "4-6 hours" or "More than 6 hours", and the `ID`, `hours_per_day`, `feel_question`, and `feel_response` **columns**. 
+Let's create a new column in our data to classify respondents as "light" or "heavy" users based on this criteria.
 
 ```{r, eval=FALSE}
-heavy_users_feel <- survey_data_tidy |>
-  filter(
-    hours_per_day == "4–6 hours" |
-    hours_per_day == "More than 6 hours") |>
-  select(ID, hours_per_day, feel_question, feel_response)
 
-heavy_users_feel
+survey_data_tidy <- survey_data_tidy |>
+  mutate(
+    usage_group = case_when(
+      hours_per_day %in% c("Less than 2 hours", "2-4 hours") ~ "Light",
+      hours_per_day %in% c("4-6 hours", "More than 6 hours") ~ "Heavy",
+    )
+  )
+
 ```
 
 **Step-by-step explanation:**
 
-* Create a new R object called `heavy_users_feel` that will hold the data we subset.
-* Pipe `survey_data_tidy` into the `filter()` function, to isolate the rows we want.
-* `hours_per_day == "4-6 hours"` tells R we want the rows with "4-6 hours" in the `hours_per_day` column.
-* We use the or operator, `|`, to indicate that we **either** want "4-6 hours", or another response.
-* `hours_per_day == "More than 6 hours"` lets R know that this is the other response we want.
-* This is piped into the `select()` function, to tell R which columns we'd like in our subsetted data.
-* `heavy_users_feel` will then show what this data looks like.
+* `survey_data_tidy <- survey_data_tidy |>` is telling R that we want to add/do something new to `survey_data_tidy` object, and save it back into the object.
+* This data is piped into the `mutate()` function, which is going to create a new column in our data called `usage_group`.
+* Everything after the `=` will be where we define what goes into this new column.
+* The `case_when()` function works in the following way: "if X condition is true, then do Y".  
+* `hours_per_day %in%` checks for values that are in the `hours_per_day` column, which are specified in the following brackets.
+* The `c` in `c("Less than 2 hours", "2-4 hours")` tells R we are looking for multiple values in the `hours_per_day` column, which in this case is "Less than 2 hours" and "2-4 hours".
+* If `hours_per_day` equals either of these values, they will be give the value "Light" in the new column.
+* `hours_per_day %in% c("4-6 hours", "More than 6 hours") ~ "Heavy"` does this same process, but if these new conditions are met, they will be given the value "Heavy" in the new column.
 
 :::
+
+Let's take a look at `survey_data_tidy` to see this new column.
+
+```{r, eval=FALSE}
+View(survey_data_tidy)
+```
+
+
+
+### Convert Feel Responses to Numbers
+
+The feel responses are in a Likert/textual format, and calculating the average of text isn't something that is possible (the text must be counted or quantified, then calculated). To allow us to find the average, we're going to create another column that applies numerical values to each Likert response.
+
+:::walkthrough
+
+Converting Likert responses to numbers.
+
+```{r, eval=FALSE}
+survey_data_tidy <- survey_data_tidy |>
+  mutate(
+    feel_score = case_when(
+      feel_response == "Strongly disagree" ~ 1,
+      feel_response == "Disagree"          ~ 2,
+      feel_response == "Neutral"           ~ 3,
+      feel_response == "Agree"             ~ 4,
+      feel_response == "Strongly agree"    ~ 5,
+    )
+  )
+```
+
+**Step-by-step explanation:**
+
+* * `survey_data_tidy <- survey_data_tidy |>` is telling R that we want to add/do something new to `survey_data_tidy` object, and save it back into the object.
+* The data is piped into the `mutate()` function, which is going to create a new column.
+* The new column will be called `feel_score`, and will contain all the information after the `=`.
+* Much like the previous example, we are using `case_when()` to tell R that if X, then Y.
+* In this case `feel_response == "Strongly disagree" ~ 1`, we are saying, "if the `feel_response` column has a value that is "Strongly disagree", we want to add the value "1" in the new column.
+* Repeat for each value in the Likert scale, and we're ready to calculate!
+
+:::
+
+Let's take another look at `survey_data_tidy`.
+
+```{r, eval=FALSE}
+
+View(survey_data_tidy)
+
+```
+
+We're getting close! Let's now calculate the average for light users. We'll do this in two distinct steps.
+
+:::walkthrough
+
+Step 1: Isolate light users into their own grouping
+
+```{r, eval=FALSE}
+light_users <- survey_data_tidy |>
+  filter(usage_group == "Light")
+```
+
+**Step-by-step explanation:**
+
+* We're creating a new R object called `light_users`, that will help us easily calculate values in this group.
+* After piping  `survey_data_tidy`, we use the `filter(user_group == "Light")` to select only those rows in the `user_group` column that have the value "Light".
+
+:::
+
+We can view this new object:
+```{r, eval=FALSE}
+View(light_users)
+```
+
+:::walkthrough
+
+Step 2: Calculate the average of light users' feel responses
+
+```{r, eval=FALSE}
+light_avgs <- light_users |>
+  group_by(feel_question) |>
+  summarise(
+    avg_feel = mean(feel_score),
+    .groups = "drop") |>
+  mutate(usage_group = "Light")
+```
+
+**Step-by-step explanation:**
+
+* We are creating a new object called `light_avgs` that will hold the averages for all feel responses for light users.
+* Pipe the data from the `light_users` object into `group_by(feel_question)`, which tells R to calculate results separately for each feel question.
+* This is piped into the `summarise()` function, which sets up for the actual calculation we want to conduct.
+* `avg_feel` will create a new column with the values on the right side of the `=`.
+* `mean(feel_score)` calculates the average score for each feel response. This will give a table with one row per `feel_question`, and one column containing the average for each (`avg_feel`).
+* `.groups = "drop"` tells R to get rid of the grouping structure it uses to calculate the values. In plain language, "we're done grouping, give me a regular table now".
+* This is piped into `mutate(user_group = "Light")` to add a new column to the table called `user_group`, and every row will get the value "Light". This step is helpful because when we combine the light and heavy users into one dataset for plotting, this will keep all the values sorted by their usage groups.
+
+:::
+
+Let's take a look at the new table we created!
+
+```{r, eval=FALSE}
+light_avgs
+```
 
 ## Your Turn!
 
 :::question
 
-Now that we've isolated heavy users, see if you can do the same for **light users**.
+Now that you've seen how this works for the light users, see if you can do this for heavy users. This is a secret of using a coding language, where you don't need to write every line from scratch, and you just need to understand code chunks enough to know what parts to change.
 
-Hint: Look at the code above and see what bits can be changed to achieve the same result.
-
+1) Isolate heavy users into their own group, and save it as an object called `heavy_users`
 ```{r, class.source = 'fold-hide', eval=FALSE}
-light_users_feel <- survey_data_tidy |>
-  filter(
-    hours_per_day == "Less than 2 hours" |
-    hours_per_day == "2–4 hours") |>
-  select(ID, hours_per_day, feel_question, feel_response)
+heavy_users <- survey_data_tidy |>
+  filter(usage_group == "Heavy")
+```
 
-light_users_feel
+2) Calculate the average of heavy users' feel responses, and save it as an object called `heavy_avgs`.
+```{r, class.source = 'fold-hide', eval=FALSE}
+heavy_avgs <- heavy_users |>
+  group_by(feel_question) |>
+  summarise(
+    avg_feel = mean(feel_score),
+    .groups = "drop") |>
+  mutate(usage_group = "Heavy")
 ```
 
 :::
 
 
+### Combine the Groups
+
+We're getting close! The next step we need to do is combine the light and heavy usage groups to make it very easy to plot. This can be done with a single line of code.
+
+:::walkthrough
+
+Combining the light and heavy user averages.
+
+```{r, eval=FALSE}
+feel_avgs <- bind_rows(light_avgs, heavy_avgs)
+```
+
+**Step-by-step explanation:**
+
+* We're creating a new R object called `feel_avgs` that will have the averages for all feel responses for both light and heavy users.
+* the `bind_rows()` function takes two or more data frames that have the **same columns*, and combines them by stacking them vertically.
+* `lights_avgs` and `heavy_avgs` are the two objects that have the averages, and this will effectively combine them.
+
+:::
+
+
+Let's take a look.
+
+```{r, eval=FALSE}
+feel_avgs
+```
 
 
 
