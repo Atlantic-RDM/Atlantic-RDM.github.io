@@ -389,5 +389,127 @@ The `filter()` function returns only the rows that meet a specified condition.
 
 :::
 
-From the `feel-question` column in our tidy data, these are questions asking whether social media makes students feel connected to others (`feel_), anxious or stressed, 
+From the `feel-question` column in our tidy data, these values indicating whether social media makes students feel connected to others (`feel_connected`), anxious or stressed (`feel_increase_stress`), distracts them from academic work (`feel_distracted`), or improves their mood (`feel_improved_mood`). 
+
+As part of the bigger research question, "How does social media usage influence the mental health of university students?, we can use this variable to start asking the question, **"how many students feel X because of their social media use?**
+
+:::walkthrough
+
+Let's first start by asking, "how many students feel **anxious or stressed** because of social media?
+
+```{r, eval=TRUE}
+stressed_count <- survey_data_tidy |>
+  distinct(ID, feel_question, feel_response) |>
+  filter(feel_question == "feel_increase_stress") |>
+  count(feel_response, name = "feel_increase_stress") |>
+  arrange(desc(feel_increase_stress))
+
+stressed_count
+```
+
+**Step-by-step explanation:**
+
+* We start by creating a new R object that will save this information, called `stressed_count`.
+* We then pipe the `survey_data_tidy` object to indicate we will manipulate it in some way.
+* Next, `distinct(ID, feel_question, feel_response)` tells R to only keep unique combinations of `ID`, `feel-question`, and `feel_response`.
+* This is then piped through to the `filter()` command, and `feel_question == feel_increase_stress` looks for only for the stressed values in the `feel_question` column.
+* This is piped into the `count()` function, to indicate we want a count of every unique `feel_increase_stress` answer in the `feel_response` column, and gives names the new column of counts `feel_increase_stress`.
+* Finally, the `arrange(desc(feel_increase_stres))` line arranges the values from biggest to smallest.
+
+:::
+
+## Your Turn!
+
+:::question
+
+Hint: Use the code chunk above to guide your solution.
+
+1) How many students feel *more connected* because of their social media use?
+
+```{r, class.source = 'fold-hide', eval=FALSE}
+connected_count |>
+  distinct(ID, feel_question, feel_response) |>
+  filter(feel_question == "feel_connected") |>
+  count(feel_response, name = "feel_connected") |>
+  arrange(desc(feel_connected))
+
+connected_count
+```
+
+2) How many students feel *distracted* by their social media use?
+
+```{r, class.source = 'fold-hide', eval=FALSE}
+distracted_count |>
+  distinct(ID, feel_question, feel_response) |>
+  filter(feel_question == "feel_distracted") |>
+  count(feel_response, name = "feel_distracted") |>
+  arrange(desc(feel_distracted))
+
+distracted_count
+```
+
+:::
+
+## Subsetting with Filter and Select
+
+Now that we've seen how the `filter()` function can help narrow down the row we want, we can add the `select()` function to narrow which columns to look at. This is an action called **subsetting**, and is where we can start asking more complex questions.
+
+![](images/3-ACT-3-Overview.png)
+
+As part of our research question, we're interested in comparing the mental health responses (the `feel-` columns) in light users of social media vs. heavy users. 
+
+* Light users are those that responded "Less than 2 hours" or "2-4 hours" per day.
+
+* Heavy users are those that responded "4-6 hours" or "More than 6 hours" per day.
+
+
+:::walkthrough
+
+Let's start by isolating **heavy users** of social media. We'll want to choose **rows** that contain "4-6 hours" or "More than 6 hours", and the `ID`, `hours_per_day`, `feel_question`, and `feel_response` **columns**. 
+
+```{r, eval=FALSE}
+heavy_users_feel <- survey_data_tidy |>
+  filter(
+    hours_per_day == "4–6 hours" |
+    hours_per_day == "More than 6 hours") |>
+  select(ID, hours_per_day, feel_question, feel_response)
+
+heavy_users_feel
+```
+
+**Step-by-step explanation:**
+
+* Create a new R object called `heavy_users_feel` that will hold the data we subset.
+* Pipe `survey_data_tidy` into the `filter()` function, to isolate the rows we want.
+* `hours_per_day == "4-6 hours"` tells R we want the rows with "4-6 hours" in the `hours_per_day` column.
+* We use the or operator, `|`, to indicate that we **either** want "4-6 hours", or another response.
+* `hours_per_day == "More than 6 hours"` lets R know that this is the other response we want.
+* This is piped into the `select()` function, to tell R which columns we'd like in our subsetted data.
+* `heavy_users_feel` will then show what this data looks like.
+
+:::
+
+## Your Turn!
+
+:::question
+
+Now that we've isolated heavy users, see if you can do the same for **light users**.
+
+Hint: Look at the code above and see what bits can be changed to achieve the same result.
+
+```{r, class.source = 'fold-hide', eval=FALSE}
+light_users_feel <- survey_data_tidy |>
+  filter(
+    hours_per_day == "Less than 2 hours" |
+    hours_per_day == "2–4 hours") |>
+  select(ID, hours_per_day, feel_question, feel_response)
+
+light_users_feel
+```
+
+:::
+
+
+
+
 
