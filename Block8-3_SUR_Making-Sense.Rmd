@@ -479,7 +479,7 @@ For the sake of our analysis, let's say that respondents that selected "Less tha
 
 Let's create a new column in our data to classify respondents as "light" or "heavy" users based on this criteria.
 
-```{r, eval=FALSE}
+```{r, eval=TRUE, results="hide"}
 
 survey_data_tidy <- survey_data_tidy |>
   mutate(
@@ -520,7 +520,7 @@ The feel responses are in a Likert/textual format, and calculating the average o
 
 Converting Likert responses to numbers.
 
-```{r, eval=FALSE}
+```{r, eval=TRUE, results="hide"}
 survey_data_tidy <- survey_data_tidy |>
   mutate(
     feel_score = case_when(
@@ -558,7 +558,7 @@ We're getting close! Let's now calculate the average for light users. We'll do t
 
 Step 1: Isolate light users into their own grouping
 
-```{r, eval=FALSE}
+```{r, eval=TRUE, results="hide"}
 light_users <- survey_data_tidy |>
   filter(usage_group == "Light")
 ```
@@ -579,7 +579,7 @@ View(light_users)
 
 Step 2: Calculate the average of light users' feel responses
 
-```{r, eval=FALSE}
+```{r, eval=TRUE, results="hide"}
 light_avgs <- light_users |>
   group_by(feel_question) |>
   summarise(
@@ -613,13 +613,13 @@ light_avgs
 Now that you've seen how this works for the light users, see if you can do this for heavy users. This is a secret of using a coding language, where you don't need to write every line from scratch, and you just need to understand code chunks enough to know what parts to change.
 
 1) Isolate heavy users into their own group, and save it as an object called `heavy_users`
-```{r, class.source = 'fold-hide', eval=FALSE}
+```{r, class.source = 'fold-hide', eval=TRUE, results="hide"}
 heavy_users <- survey_data_tidy |>
   filter(usage_group == "Heavy")
 ```
 
 2) Calculate the average of heavy users' feel responses, and save it as an object called `heavy_avgs`.
-```{r, class.source = 'fold-hide', eval=FALSE}
+```{r, class.source = 'fold-hide', eval=TRUE, results="hide"}
 heavy_avgs <- heavy_users |>
   group_by(feel_question) |>
   summarise(
@@ -639,7 +639,7 @@ We're getting close! The next step we need to do is combine the light and heavy 
 
 Combining the light and heavy user averages.
 
-```{r, eval=FALSE}
+```{r, eval=TRUE, results="hide"}
 feel_avgs <- bind_rows(light_avgs, heavy_avgs)
 ```
 
@@ -722,9 +722,81 @@ Beginning where we left off at the first plot,
 
 :::
 
+This next part is beyond the scope of this lesson, but if you really want to get crazy, you can adjust any part of the plot you'd like. 
 
+:::question
 
+Copy + paste this code in your RStudio editor and run it to see the results.
 
+```{r, eval=FALSE}
+avg_feel_plot <- ggplot(feel_avgs, aes(x = feel_question, y = avg_feel, fill = usage_group)) +
+  geom_col(position = "dodge") +
+  scale_y_continuous(
+    breaks = 1:5,
+    labels = c(
+      "1 = Strongly disagree",
+      "2 = Disagree",
+      "3 = Neutral",
+      "4 = Agree",
+      "5 = Strongly agree"
+    )
+  ) +
+  expand_limits(y = 5) +
+  scale_x_discrete(
+    labels = c(
+      feel_connected      = "Makes me feel connected",
+      feel_distracted     = "Makes me feel distracted",
+      feel_improved_mood  = "Improves my mood",
+      feel_increase_stress = "Increases my stress")) +
+  scale_fill_discrete(
+    name   = NULL,
+    labels = c("Heavy users", "Light users")) +
+  labs(
+    x     = "Agree or disagree about social media and your mental health:",
+    y     = "Average feeling response",
+    title = "Social media and mental health across light and heavy users") +
+  theme( axis.title.y = element_text(angle = 0, vjust = 0.5))
+
+avg_feel_plot
+```
+
+:::
+
+## Wrapping Up
+
+### Saving files
+
+We haven't generated as many files as we did in the previous session, but you'll want to save two things:
+
+1) The R script for this session: `file > save`
+2) The `survey_data_tidy.csv` file that has new columns: `write_csv(survey_data_tidy, "survey_data_analyzed.csv")`
+3) The final plot we created:
+`ggsave(filename = "avg_feel_plot.pdf", 
+  plot = p, 
+  width = 8, 
+  height = 6)`
+
+In addition to these files, you can imagine that you might want to save other snapshots of the data (ie. `light_users`, `heavy_users`, etc.), or the plot you created.
+
+Revisiting our file list: 
+
+- `avg_feel_plot.pdf`
+- `social-media-survey_ORIGINAL.csv`
+- `social-media-survey.csv`
+- `survey_analysis_script.R`
+- `survey_data_analyzed.csv`
+- `survey_data_tidy.csv`
+- `survey_data_wide.csv`
+- `survey_data.Rproj`
+- `survey_cleaning_script.R`
+- `survey-data_clean-cols_IDs.csv`
+- `survey-data_clean-cols_no-ID.csv`
+
+You can see that there's some inconsistency with how files are named (hyphens `-` vs underscores `_`), and you might want to think about creating folders to start organizing things. While this is the end of the session, feel free to give this some thought and map out how you might want to structure these files in folders, and potentially rename then to better suit your use.
+
+## Finish
+
+And that's it for the workshop! We covered a lot of ground, but there is also a lot that we weren't able to cover. The hope is that these sessions helped build some confidence in your ability to work with R, and that you use this as a jumping off point for your learning journey.
 
 
 
