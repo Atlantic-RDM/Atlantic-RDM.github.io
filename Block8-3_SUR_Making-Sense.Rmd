@@ -1,6 +1,6 @@
 ---
-title: "Asking Questions from Survey Data"
-pagetitle: "Asking Questions from Survey Data"
+title: "Making Sense of Survey Data"
+pagetitle: "Making Sense of Survey Data"
 output:
   html_document:
     code_folding: show # allows toggling of showing and hiding code. Remove if not using code.
@@ -17,7 +17,7 @@ output:
 knitr::opts_chunk$set(message = FALSE, warnings = FALSE)
 ```
 
-## Asking Questions from Survey Data
+## Making Sense of Survey Data
 
 Now that we have cleaned up our survey data, we can start asking questions about it! By the end of the previous session, <a href="Block8-2_SUR_Collect-and_clean.html">Collecting and Cleaning Survey Data</a>, we generated two cleaned datasets:
 
