@@ -722,11 +722,16 @@ Beginning where we left off at the first plot,
 
 :::
 
-This next part is beyond the scope of this lesson, but if you really want to get crazy, you can adjust any part of the plot you'd like. 
+## Your Turn
 
 :::question
 
-Copy + paste this code in your RStudio editor and run it to see the results.
+The goal of this question is to test yourself in deciphering code that you might not be familiar with. 
+
+1) Copy + paste this code in your RStudio editor and run it to see the results.
+2) Try to determine what each part of the code is doing.
+
+Hint: Each functional element, or layer, of ggplot is separated by the plus sign `+`.
 
 ```{r, eval=FALSE}
 avg_feel_plot <- ggplot(feel_avgs, aes(x = feel_question, y = avg_feel, fill = usage_group)) +
@@ -760,6 +765,7 @@ avg_feel_plot <- ggplot(feel_avgs, aes(x = feel_question, y = avg_feel, fill = u
 avg_feel_plot
 ```
 
+
 :::
 
 ## Wrapping Up
@@ -776,9 +782,9 @@ We haven't generated as many files as we did in the previous session, but you'll
   width = 8, 
   height = 6)`
 
-In addition to these files, you can imagine that you might want to save other snapshots of the data (ie. `light_users`, `heavy_users`, etc.), or the plot you created.
+In addition to these files, you can imagine that you might want to save other snapshots of the data (ie. `light_users`, `heavy_users`, etc.).
 
-Revisiting our file list: 
+### Revisiting our file list: 
 
 - `avg_feel_plot.pdf`
 - `social-media-survey_ORIGINAL.csv`
