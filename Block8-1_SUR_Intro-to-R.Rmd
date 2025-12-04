@@ -325,7 +325,9 @@ You can save your script by selecting `file > save` or by clicking the flopping 
 Name your script `my-first-script.R`.
 
 
+## Temperature check
 
+Click the following link: [Intro to R Temperature Check](https://app.sli.do/event/dg1NTAPPPNXjDetZb7WB98/live/polls)
 
 
  

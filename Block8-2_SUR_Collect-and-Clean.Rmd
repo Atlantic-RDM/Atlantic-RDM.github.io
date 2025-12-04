@@ -671,6 +671,9 @@ It is always recommended to document and describe your files and naming conventi
 You have now seen some of the foundational functions to clean survey data, and the various types of data that a survey might create. The goal of this session is to give you a sense of how to approach your own survey data, and to be comfortable enough with these code chunks that you can switch out the data/variables for your own surveys, and work through them in quick and reproducible ways!
 
 
+## Temperature Check
+
+Click the following link: [Survey Cleaning Temperature Check](https://app.sli.do/event/4pXxFmSvNuvPwHnf5B8GR3)
 
 
 
