@@ -17,34 +17,28 @@ output:
 **Setup Pre-requisites:**
 
   * <a href="Block7_EXT-RRStudio.html">Download R and RStudio</a> 
-  
 
-In this 3-part course, we'll cover the fundamental steps of working with survey data, focusing on transparent and reproducible workflows.  The first section will be an interactive introduction to R and RStudio, including an introduction to the environment, basic syntax and foundational concepts, and creating our first reproducible R script.
+**Intended audience:** Those that work with surveys in any capacity (research, registration forms, user experience testing, etc.) that have little to no experience working in R.
+
+This workshop will focus on developing practical skills in data management that are broadly applicable to working with survey data. Using the R coding language, this day-long session is meant for those that have little to no experience with coding, with a goal to build comfort and confidence in using a coding language to make your survey workflows more efficient and reproducible.
 
 ### Overarching Learning Objectives
 
 By the end of this course, you will be able to:
 
+### Section Descriptions
 
+#### Part 1: Introduction to the R Coding Language 
 
+This first session will provide an introduction to the R coding language, and will cover foundational literacies for those that have never used a coding language before. This is designed as a slow and encouraging session for those that might be intimidated by the idea of coding, and will give plenty of time for questions and activities. 
 
-### Section Overviews
+#### Part 2: Collecting and Cleaning Survey Data 
 
-#### Section 1: Introduction to R
+This session will begin by introducing a mock research question, and attendees will complete a brief survey to get a sense of the data collection. We will then look at a mock dataset extracted by the survey tool, and will examine each column to see what needs to be cleaned up. Building on the skills learned in Part 1, we will explore the data in R, and go through some of the most common cleaning tasks for survey data. In addition to covering cleaning techniques, this session will also address best practices in data management, including file naming, versioning, and documentation.
 
-* Introduce R and RStudio
-* Setting up files in R
-  * File types in R
-  * Creating a project
-  * Setting a working directory
-* Create our first R script
-* Creating objects in R
-* Applying literate coding principles to make our code interpretable and reproducible
+#### Part 3: Making Sense of Survey Data 
 
-#### Section 2: Collecting and Cleaning Survey Data
-
-
-
+After cleaning up the data in Part 2, this session will focus on asking questions of the data and generating summaries. This will include comparing various presentations of the data that were created in Part 2, and using them to generate counts, summary tables, subsets, averages, and visualizations.
 
 
 

@@ -155,10 +155,10 @@ survey_data_wide |>
 :::question
 See if you can create the following from the `survey_data_wide` object:
 
-1) A count of each `gender` category.
+1) A count of each `age` category.
 ```{r, class.source = 'fold-hide', eval=FALSE}
 survey_data_wide |>
-  count(gender)
+  count(age)
 ```
 2) A count of each `age` and `year_of_study`.
 ```{r, class.source = 'fold-hide', eval=FALSE}
@@ -427,7 +427,7 @@ Hint: Use the code chunk above to guide your solution.
 1) How many students feel *more connected* because of their social media use?
 
 ```{r, class.source = 'fold-hide', eval=FALSE}
-connected_count |>
+connected_count <- survey_data_tidy |>
   distinct(ID, feel_question, feel_response) |>
   filter(feel_question == "feel_connected") |>
   count(feel_response, name = "feel_connected") |>
@@ -439,7 +439,7 @@ connected_count
 2) How many students feel *distracted* by their social media use?
 
 ```{r, class.source = 'fold-hide', eval=FALSE}
-distracted_count |>
+distracted_count <- survey_data_tidy |>
   distinct(ID, feel_question, feel_response) |>
   filter(feel_question == "feel_distracted") |>
   count(feel_response, name = "feel_distracted") |>
@@ -535,7 +535,7 @@ survey_data_tidy <- survey_data_tidy |>
 
 **Step-by-step explanation:**
 
-* * `survey_data_tidy <- survey_data_tidy |>` is telling R that we want to add/do something new to `survey_data_tidy` object, and save it back into the object.
+* `survey_data_tidy <- survey_data_tidy |>` is telling R that we want to add/do something new to `survey_data_tidy` object, and save it back into the object.
 * The data is piped into the `mutate()` function, which is going to create a new column.
 * The new column will be called `feel_score`, and will contain all the information after the `=`.
 * Much like the previous example, we are using `case_when()` to tell R that if X, then Y.
@@ -778,7 +778,7 @@ We haven't generated as many files as we did in the previous session, but you'll
 2) The `survey_data_tidy.csv` file that has new columns: `write_csv(survey_data_tidy, "survey_data_analyzed.csv")`
 3) The final plot we created:
 `ggsave(filename = "avg_feel_plot.pdf", 
-  plot = p, 
+  plot = avg_feel_plot, 
   width = 8, 
   height = 6)`
 
