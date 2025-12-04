@@ -246,18 +246,20 @@ Let's keep playing:
 
 **Answers**
 
-```{r class.source = 'fold-hide'}
+```{r class.source = 'fold-hide', eval=FALSE}
 
-# 1) w <- 100
-# 2) x <- 25
-# 3) y <- "basketball"
-# 4) z <- "baseball"
-# 5) w + x
-# 6) w/x
-# 7) Ex: w <- 500 
-#       x <- 9000
-# 8) This should show an error like the following: "Error in y + z : non-numeric argument to binary operator".  This is because R will only let you add numerical values together, and not character values.  This will be covered in more detail in the next section.
-# 9) Ex: movies <- c("Pulp Fiction", "Lord of the Rings: The Fellowship of the Ring", "Highlander")
+1) w <- 100
+2) x <- 25
+3) y <- "basketball"
+4) z <- "baseball"
+5) w + x
+6) w/x
+7) Ex: w <- 500 
+       x <- 9000
+       
+8) This should show an error like the following: "Error in y + z : non-numeric argument to binary operator".  This is because R will only let you add numerical values together, and not character values.  This is beyond the scope of this session, but for more information check out the session on [Data Types and Structures in R](Block4-3_Data-Types.html)
+
+9) Ex: movies <- c("Pulp Fiction", "Lord of the Rings: The Fellowship of the Ring", "Highlander")
 
 ```
 :::
