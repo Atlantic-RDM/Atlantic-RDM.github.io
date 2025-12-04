@@ -22,10 +22,6 @@ output:
 
 This workshop will focus on developing practical skills in data management that are broadly applicable to working with survey data. Using the R coding language, this day-long session is meant for those that have little to no experience with coding, with a goal to build comfort and confidence in using a coding language to make your survey workflows more efficient and reproducible.
 
-### Overarching Learning Objectives
-
-By the end of this course, you will be able to:
-
 ### Section Descriptions
 
 #### Part 1: Introduction to the R Coding Language 
@@ -39,6 +35,31 @@ This session will begin by introducing a mock research question, and attendees w
 #### Part 3: Making Sense of Survey Data 
 
 After cleaning up the data in Part 2, this session will focus on asking questions of the data and generating summaries. This will include comparing various presentations of the data that were created in Part 2, and using them to generate counts, summary tables, subsets, averages, and visualizations.
+
+
+### Overarching Learning Objectives
+
+By the end of this course, you will be able to:
+
+* Discuss pros and cons of using Excel for spreadsheet data
+* Articulate the difference between Excel files (.xlsx) and plain-test .csv files, and their role in reproducibility
+* Define scripting and the concept of literate programming
+* Begin applying the syntax of an R script to conduct basic actions
+* Create reproducible code by applying concepts of literate programming
+* Identify the types of survey questions that result in various data shapes
+* Utilize RProjects as a way to promote reproducibility
+* Employ the Tidyverse package as a tool to tackle data science activities
+* Import a dataset into RStudio
+* Explore data through a variety of functions
+* Change column names in a dataset
+* Add an ID column and remove columns with identifying information
+* Identify concepts of wide and tidy data, and use R to make columns both wide and tidy
+* Discuss considerations with data versioning, naming, and structuring
+* Generate counts and summary tables of data variables
+* Generate basic exploratory plots 
+* Filter datasets for specific criteria
+* Compare averages across multiple variables and plot the results for communication
+
 
 
 

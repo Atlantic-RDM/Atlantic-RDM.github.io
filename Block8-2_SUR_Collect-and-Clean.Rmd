@@ -649,7 +649,7 @@ Let's save the script as `survey_cleaning_script.R`
 
 ## File Management
 
-With just a few steps of data cleaning, we now have 5 data files in our folder:
+With just a few steps of data cleaning, we now have 6 data files in our folder:
 
 - `social-media-survey_ORIGINAL.csv`
 - `social-media-survey.csv`
