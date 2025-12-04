@@ -805,8 +805,9 @@ You can see that there's some inconsistency with how files are named (hyphens `-
 And that's it for the workshop! We covered a lot of ground, but there is also a lot that we weren't able to cover. The hope is that these sessions helped build some confidence in your ability to work with R, and that you use this as a jumping off point for your learning journey.
 
 
+## Session Feedback
 
-
+Click on the following link: [Session feedback](https://uvic.libwizard.com/f/survey-data-feedback)
 
 
 
