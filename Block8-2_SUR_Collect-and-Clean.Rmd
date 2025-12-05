@@ -50,28 +50,27 @@ Let's take a look at the dataset!
 
 :::
 
-#### A Quick Blurb on CSV files
-
-When downloading data from a survey tool, most platforms by default will export to a `.csv` file.  `.csv`, which stands for "comma separated values", are plain text, non-proprietary file formats, meaning that they can be opened by any plain text editor (like notepad, or textEdit), and do not rely on any paid-for software (this is also very helpful for others to access and reuse your data). `.csv` files are also the preferable file format when working with spreadsheet data in programming languages like R and Python.
-
-For more information on file formats, see <a href="Block3-1_Excel-to-R.html">Block 3: Reproducible Research and Moving from Excel to Scripting</a>
 
 ### Beginning Our Work
 
 Now that we have our data, we can start getting to work!  
 
+:::question
+
 The first thing we need to do is to create a project folder to keep our files in one place. To keep everything consistent, follow these steps:
 
-1) Go to your `Documents` folder
+1) Go to your `Desktop` folder
 2) Create a folder called `social_media_project`
 3) Move the file you just downloaded, called `social-media-survey.csv` to the `social_media_project` folder
 4) It is best practice to **save a copy of your original data and not to touch it**, to retain transparency and reproducibility. Make a copy of `social-media-survey.csv` and change the name of the copied file to `social-media-survey_ORIGINAL.csv`
+
+:::
 
 :::note
 
 **A quick note on folder and file naming**
 
-Much like naming objects in R, that was covered in the <a href="/Block8-1_SUR_Intro-to-R.html">the Introduction to R</a>, when naming both **files and folders** follow these practices:
+Much like naming objects in R, that was covered in the <a href="Block8-1_SUR_Intro-to-R.html">the Introduction to R</a>, when naming both **files and folders** follow these practices:
 
 * Only use letters in the English alphabet, number 0-9, dashes -, and underscores _
 * Do not use spaces or special characters such as: ~!@#$%^&*()+=…
@@ -329,7 +328,7 @@ Let's try this is a few steps:
 
 ### Add an ID column
 
-The `mutate()` function, that is part of the [dplyr package](https://dplyr.tidyverse.org/index.html) is useful when you want to create new columns that are functions of existing variables.
+The `mutate()` function, that is part of the [dplyr package](https://dplyr.tidyverse.org/index.html), is useful when you want to create new columns that are functions of existing variables.
 
 While not technically the function of an existing variable, we can use `mutuate` with the `row_number()` function to create a new column that will contain the number of each row, thus given entry a unique ID number.
 
