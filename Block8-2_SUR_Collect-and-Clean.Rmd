@@ -243,7 +243,7 @@ Pipes are used to chain steps of instructions or actions together, and often inv
 
 ### Changing Column Names
 
-You'll notice that the column names are reflective of the questions in the survey. Some of these will work, those that are very long and have spaces in the names can be annoying to work with.  The first step in our cleaning will be to get all of the column names in a way that will be easy to work with.
+You'll notice that the column names are reflective of the questions in the survey. While some of the shorter names will work, those that are very long and have spaces in the names can be annoying to work with.  The first step in our cleaning will be to get all of the column names in a way that will be easy to work with.
 
 To change column names we can use the function `rename()`.  The function `rename()` is part of the [dplyr package](https://dplyr.tidyverse.org/index.html) that was installed with tidyverse.
 
@@ -544,7 +544,7 @@ survey_data_longer <- survey_data_long |>
 3) The `pivot_longer()` function reshapes the data from wide to long.  In this case we had several variables that started with `feel-`, and this function will gather them into two columns: one for the question name and one for the response value.
 4) The `cols = starts_with("feel-")` function tells `pivot_longer` which columns to gather. (You can see why variable naming can help with data cleaning!)
 5) `names_to = "feel_question"` names of the new column that will **hold the original column names** (ie. the question identifiers.  The new column will be called `feel_question`.
-6) `values_to` "feel_response" names the new column that will **hold the values (answers) that used to sit in the `feel-` columns.  The new column will be called `feel_response`.
+6) `values_to` "feel_response" names the new column that will **hold the values (answers) that used to sit in the `feel-` columns**.  The new column will be called `feel_response`.
 7) Close the bracket, and take a look to see what the data looks like.
 
 :::
@@ -619,10 +619,10 @@ survey_data_wide <- survey_data |>
 1) We start by writing a new r object called `survey_data_wide`, that will hold everything to the left of the assignment operator `|>`.
 2) The `survey_data` object represents our dataset that we want to pass through the pipe `|>` to manipulate it.
 3) The `mutate` function is used to modify a column, which is applied to the `strsplit(platforms, ",")` function, to tell it to split the comma-separated strings in the `platforms` column into lists of individual platform names.
-4) We then pipe `|>` this into the `unnest_longer(platforms)` function to expand each element into its own row (which is like making the data longer)
+4) We then pipe `|>` this into the `unnest_longer(platforms)` function to expand each element into its own row (which is like making the data longer). At this point, new rows only exists for those that selected a platform.
 5) This is then piped `|>` into `mutate(platforms = trimws(platforms)` which continues to manipulate the `platforms` column, and much like we did when making this variable long, the `trimsw` removes white space surrounding the values.
-6) The `present = 1` function creates a new column called `present` that has a value of 1 for every row.  This is used as a temporary marker to indicate that the platform exists for that survey entry, and will not be there 
-7) Using another pipe `|>`, this information goes into the `pivot_wider` function, that works with a very similar syntax as `pivot_longer` that we used earlier.  
+6) The `present = 1` function creates a new column called `present` that applies a value of 1 for every row. This is a temporary column to help facilitate the next step.
+7) Using another pipe `|>`, this information goes into the `pivot_wider` function, that works with a very similar syntax as `pivot_longer` that we used earlier, but instead of making the data longer, it initiates data widening. 
 8) `names_from = platforms` assigns new columns to the unique platform names.
 9) `values_from = present` assigns values in the new columns to come from the `present` column, which is `1`.
 10) Finally, with `values_fill = 0`, if a platform wasn't present for a survey entry, that column will get the value of `0`.
@@ -637,6 +637,21 @@ Let's save a copy of this dataset, and we'll be taking a look at it in the next 
 
 ```{r, eval=FALSE}
 write_csv(survey_data_wide, "survey_data_wide.csv")
+```
+
+
+### RData Files
+
+In addition to saving data files as `.csv`, there is also the option to save files as `.RData` files. While a `.csv` file saves the data, `.RData` files preserve all the objects you have created in the data file, as well as data types and structures. We won't be focusing on this too much in this session, but this is how to save your data as an `.RData` file:
+
+```{r, eval=FALSE}
+save(survey_data_wide, "survey_data_wide.RData")
+```
+
+To read in a file saved `.RData` file, you can use the `load` command:
+
+```{r, eval=FALSE}
+load("survey_data_wide.RData")
 ```
 
 

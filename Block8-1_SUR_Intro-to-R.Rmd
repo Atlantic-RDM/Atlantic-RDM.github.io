@@ -191,7 +191,7 @@ b <- "Anna" # b is now an object that holds the character Anna
 
 **Note**
 
-* Since Anna is a series of characters (as opposed to numbers), it needs to be wrapped in quotations (we'll learn more about data types in the next session).
+* Since Anna is a series of characters (as opposed to numbers), it needs to be wrapped in quotations.
 
 You can overwrite a new value to the same object name.  When you do this, the original value is replaced by the new value you assign to it.
 
@@ -308,7 +308,7 @@ Looking again at the script that you've created, there are a lot of objects with
 
 Much like file naming, the following parameters apply:
 
-* Only use letters in the English alphabet, number 0-9, dashes -, and underscores _
+* Only use letters in the English alphabet, number 0-9, and underscores _
 * Do not use spaces or special characters such as: ~!@#$%^&*()+=...
 * Separate naming elements with dashes - and underscores _
 
