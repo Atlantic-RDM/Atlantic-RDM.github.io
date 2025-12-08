@@ -155,26 +155,26 @@ survey_data_wide |>
 :::question
 See if you can create the following from the `survey_data_wide` object:
 
-1) A count of each `age` category.
+1) A count of each `year_of_study` category.
 ```{r, class.source = 'fold-hide', eval=FALSE}
 survey_data_wide |>
-  count(age)
+  count(year_of_study)
 ```
-2) A count of each `age` and `year_of_study`.
+2) A count of each `year_of_study` and `hours_per_day`.
 ```{r, class.source = 'fold-hide', eval=FALSE}
 survey_data_wide |>
-  count(age, year_of_study)
+  count(year_of_study, hours_per_day)
 ```
-3) The count of `age` and its proportion.
+3) The count of `year_of_study` and its proportion.
 ```{r, class.source = 'fold-hide', eval=FALSE}
 survey_data_wide |>
-  count(age) |>
+  count(year_of_study) |>
   mutate(prop = n / sum(n))
 ```
-4) The count of `age`, `year_of_study`, and the proportion
+4) The count of `year_of_study`, `hours_per_day`, and the proportion
 ```{r, class.source = 'fold-hide', eval=FALSE}
 survey_data_wide |>
-  count(age, year_of_study) |>
+  count(year_of_study, hours_per_day) |>
   mutate(prop = n / sum(n))
 ```
 :::
@@ -289,14 +289,11 @@ platform_counts_wide <- survey_wide |>
     across(
       c(`LinkedIn`, Instagram, Reddit, Facebook,
         `X (Twitter)`, TikTok, Snapchat),
-      ~ sum(.x)
-    )
-  ) |>
+      ~ sum(.x))) |>
   pivot_longer(
     cols = everything(),
     names_to = "platform",
-    values_to = "n_users"
-  ) |>
+    values_to = "n_users") |>
   arrange(desc(n_users))
 
 platform_counts_wide
@@ -391,7 +388,7 @@ The `filter()` function returns only the rows that meet a specified condition.
 
 From the `feel-question` column in our tidy data, these values indicating whether social media makes students feel connected to others (`feel_connected`), anxious or stressed (`feel_increase_stress`), distracts them from academic work (`feel_distracted`), or improves their mood (`feel_improved_mood`). 
 
-As part of the bigger research question, "How does social media usage influence the mental health of university students?, we can use this variable to start asking the question, **"how many students feel X because of their social media use?**
+As part of the bigger research question, "How does social media usage influence the mental health of university students?", we can use this variable to start asking the question, **"how many students feel X because of their social media use?**
 
 :::walkthrough
 
