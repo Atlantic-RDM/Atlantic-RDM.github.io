@@ -728,7 +728,7 @@ The goal of this question is to test yourself in deciphering code that you might
 1) Copy + paste this code in your RStudio editor and run it to see the results.
 2) Try to determine what each part of the code is doing.
 
-Hint: Each functional element, or layer, of ggplot is separated by the plus sign `+`.
+Hint: Each functional element, or layer, of ggplot is separated by the plus sign `+`, and search engines are your friend!
 
 ```{r, eval=FALSE}
 avg_feel_plot <- ggplot(feel_avgs, aes(x = feel_question, y = avg_feel, fill = usage_group)) +

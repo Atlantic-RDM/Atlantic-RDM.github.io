@@ -158,7 +158,7 @@ Let's take a closer look!  [Tidyverse](https://www.tidyverse.org/packages/)
 ### Install Package
 To install a package we use the function `install.packages()`. 
 
-When you install a package, you should do this in the **R console* because you don't need this saved in your script.
+When you install a package, you should do this in the **R console** because you don't need this saved in your script.
 
 ```{r, eval=FALSE}
 install.packages("tidyverse")
