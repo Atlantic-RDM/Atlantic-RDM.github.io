@@ -639,22 +639,6 @@ Let's save a copy of this dataset, and we'll be taking a look at it in the next 
 write_csv(survey_data_wide, "survey_data_wide.csv")
 ```
 
-
-### RData Files
-
-In addition to saving data files as `.csv`, there is also the option to save files as `.RData` files. While a `.csv` file saves the data, `.RData` files preserve all the objects you have created in the data file, as well as data types and structures. We won't be focusing on this too much in this session, but this is how to save your data as an `.RData` file:
-
-```{r, eval=FALSE}
-save(survey_data_wide, "survey_data_wide.RData")
-```
-
-To read in a file saved `.RData` file, you can use the `load` command:
-
-```{r, eval=FALSE}
-load("survey_data_wide.RData")
-```
-
-
 ### Save your script
 
 Before we wrap up, we want to save our script. You can do this by clicking `file > Save As...`. Because we set up an RProject, R should automatically choose the correct directory to save your script.
