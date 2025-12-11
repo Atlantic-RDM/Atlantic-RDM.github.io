@@ -786,21 +786,6 @@ ggsave(filename = "avg_feel_plot.pdf",
 
 In addition to these files, you can imagine that you might want to save other snapshots of the data (ie. `light_users`, `heavy_users`, etc.).
 
-### RData Files
-
-In addition to saving data files as `.csv`, there is also the option to save files as `.RData` files. While a `.csv` file saves the data, `.RData` files preserve all the objects you have created in the data file, as well as data types and structures. This wasn't as useful in the previous session, because each data file we were saving was a snapshot of a version, but this dataset now has several objects that we might want to revisit and build upon. This is how you do this:
-
-```{r, eval=FALSE}
-save(survey_data_tidt, "survey_data_analyzed.RData")
-```
-
-To read in a file saved `.RData` file, you can use the `load` command:
-
-```{r, eval=FALSE}
-load("survey_data_analyzed.RData")
-```
-
-
 ### Revisiting our file list: 
 
 - `avg_feel_plot.pdf`
@@ -808,7 +793,6 @@ load("survey_data_analyzed.RData")
 - `social-media-survey.csv`
 - `survey_analysis_script.R`
 - `survey_data_analyzed.csv`
-- `survey_data_analyzed.RData`
 - `survey_data_tidy.csv`
 - `survey_data_wide.csv`
 - `survey_data.Rproj`
