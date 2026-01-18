@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <!DOCTYPE html>
 
 <html>
@@ -1572,3 +1573,1578 @@ $(document).ready(function ()  {
 
 </body>
 </html>
+=======
+<!DOCTYPE html>
+
+<html>
+
+<head>
+
+<meta charset="utf-8" />
+<meta name="generator" content="pandoc" />
+<meta http-equiv="X-UA-Compatible" content="IE=EDGE" />
+
+
+
+
+<title>Collecting and Cleaning Survey Data</title>
+
+<script src="site_libs/header-attrs-2.28/header-attrs.js"></script>
+<script src="site_libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<link href="site_libs/bootstrap-3.3.5/css/flatly.min.css" rel="stylesheet" />
+<script src="site_libs/bootstrap-3.3.5/js/bootstrap.min.js"></script>
+<script src="site_libs/bootstrap-3.3.5/shim/html5shiv.min.js"></script>
+<script src="site_libs/bootstrap-3.3.5/shim/respond.min.js"></script>
+<style>h1 {font-size: 34px;}
+       h1.title {font-size: 38px;}
+       h2 {font-size: 30px;}
+       h3 {font-size: 24px;}
+       h4 {font-size: 18px;}
+       h5 {font-size: 16px;}
+       h6 {font-size: 12px;}
+       code {color: inherit; background-color: rgba(0, 0, 0, 0.04);}
+       pre:not([class]) { background-color: white }</style>
+<script src="site_libs/jqueryui-1.13.2/jquery-ui.min.js"></script>
+<link href="site_libs/tocify-1.9.1/jquery.tocify.css" rel="stylesheet" />
+<script src="site_libs/tocify-1.9.1/jquery.tocify.js"></script>
+<script src="site_libs/navigation-1.1/tabsets.js"></script>
+<script src="site_libs/navigation-1.1/codefolding.js"></script>
+<script src="site_libs/navigation-1.1/sourceembed.js"></script>
+<link href="site_libs/highlightjs-9.12.0/textmate.css" rel="stylesheet" />
+<script src="site_libs/highlightjs-9.12.0/highlight.js"></script>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-KSGZ4ESKQ3"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  
+  gtag('config', 'G-KSGZ4ESKQ3');
+</script>
+
+<style type="text/css">
+  code{white-space: pre-wrap;}
+  span.smallcaps{font-variant: small-caps;}
+  span.underline{text-decoration: underline;}
+  div.column{display: inline-block; vertical-align: top; width: 50%;}
+  div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+  ul.task-list{list-style: none;}
+    </style>
+
+<style type="text/css">code{white-space: pre;}</style>
+<script type="text/javascript">
+if (window.hljs) {
+  hljs.configure({languages: []});
+  hljs.initHighlightingOnLoad();
+  if (document.readyState && document.readyState === "complete") {
+    window.setTimeout(function() { hljs.initHighlighting(); }, 0);
+  }
+}
+</script>
+
+
+
+
+<style type="text/css">
+#rmd-source-code {
+  display: none;
+}
+</style>
+
+
+<link rel="stylesheet" href="styles.css" type="text/css" />
+
+
+
+<style type = "text/css">
+.main-container {
+  max-width: 940px;
+  margin-left: auto;
+  margin-right: auto;
+}
+img {
+  max-width:100%;
+}
+.tabbed-pane {
+  padding-top: 12px;
+}
+.html-widget {
+  margin-bottom: 20px;
+}
+button.code-folding-btn:focus {
+  outline: none;
+}
+summary {
+  display: list-item;
+}
+details > summary > p:only-child {
+  display: inline;
+}
+pre code {
+  padding: 0;
+}
+</style>
+
+
+<style type="text/css">
+.dropdown-submenu {
+  position: relative;
+}
+.dropdown-submenu>.dropdown-menu {
+  top: 0;
+  left: 100%;
+  margin-top: -6px;
+  margin-left: -1px;
+  border-radius: 0 6px 6px 6px;
+}
+.dropdown-submenu:hover>.dropdown-menu {
+  display: block;
+}
+.dropdown-submenu>a:after {
+  display: block;
+  content: " ";
+  float: right;
+  width: 0;
+  height: 0;
+  border-color: transparent;
+  border-style: solid;
+  border-width: 5px 0 5px 5px;
+  border-left-color: #cccccc;
+  margin-top: 5px;
+  margin-right: -10px;
+}
+.dropdown-submenu:hover>a:after {
+  border-left-color: #adb5bd;
+}
+.dropdown-submenu.pull-left {
+  float: none;
+}
+.dropdown-submenu.pull-left>.dropdown-menu {
+  left: -100%;
+  margin-left: 10px;
+  border-radius: 6px 0 6px 6px;
+}
+</style>
+
+<script type="text/javascript">
+// manage active state of menu based on current page
+$(document).ready(function () {
+  // active menu anchor
+  href = window.location.pathname
+  href = href.substr(href.lastIndexOf('/') + 1)
+  if (href === "")
+    href = "index.html";
+  var menuAnchor = $('a[href="' + href + '"]');
+
+  // mark the anchor link active (and if it's in a dropdown, also mark that active)
+  var dropdown = menuAnchor.closest('li.dropdown');
+  if (window.bootstrap) { // Bootstrap 4+
+    menuAnchor.addClass('active');
+    dropdown.find('> .dropdown-toggle').addClass('active');
+  } else { // Bootstrap 3
+    menuAnchor.parent().addClass('active');
+    dropdown.addClass('active');
+  }
+
+  // Navbar adjustments
+  var navHeight = $(".navbar").first().height() + 15;
+  var style = document.createElement('style');
+  var pt = "padding-top: " + navHeight + "px; ";
+  var mt = "margin-top: -" + navHeight + "px; ";
+  var css = "";
+  // offset scroll position for anchor links (for fixed navbar)
+  for (var i = 1; i <= 6; i++) {
+    css += ".section h" + i + "{ " + pt + mt + "}\n";
+  }
+  style.innerHTML = "body {" + pt + "padding-bottom: 40px; }\n" + css;
+  document.head.appendChild(style);
+});
+</script>
+
+<!-- tabsets -->
+
+<style type="text/css">
+.tabset-dropdown > .nav-tabs {
+  display: inline-table;
+  max-height: 500px;
+  min-height: 44px;
+  overflow-y: auto;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+
+.tabset-dropdown > .nav-tabs > li.active:before, .tabset-dropdown > .nav-tabs.nav-tabs-open:before {
+  content: "\e259";
+  font-family: 'Glyphicons Halflings';
+  display: inline-block;
+  padding: 10px;
+  border-right: 1px solid #ddd;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open > li.active:before {
+  content: "\e258";
+  font-family: 'Glyphicons Halflings';
+  border: none;
+}
+
+.tabset-dropdown > .nav-tabs > li.active {
+  display: block;
+}
+
+.tabset-dropdown > .nav-tabs > li > a,
+.tabset-dropdown > .nav-tabs > li > a:focus,
+.tabset-dropdown > .nav-tabs > li > a:hover {
+  border: none;
+  display: inline-block;
+  border-radius: 4px;
+  background-color: transparent;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open > li {
+  display: block;
+  float: none;
+}
+
+.tabset-dropdown > .nav-tabs > li {
+  display: none;
+}
+</style>
+
+<!-- code folding -->
+<style type="text/css">
+.code-folding-btn { margin-bottom: 4px; }
+</style>
+
+
+
+<style type="text/css">
+
+#TOC {
+  margin: 25px 0px 20px 0px;
+}
+@media (max-width: 768px) {
+#TOC {
+  position: relative;
+  width: 100%;
+}
+}
+
+@media print {
+.toc-content {
+  /* see https://github.com/w3c/csswg-drafts/issues/4434 */
+  float: right;
+}
+}
+
+.toc-content {
+  padding-left: 30px;
+  padding-right: 40px;
+}
+
+div.main-container {
+  max-width: 1200px;
+}
+
+div.tocify {
+  width: 20%;
+  max-width: 260px;
+  max-height: 85%;
+}
+
+@media (min-width: 768px) and (max-width: 991px) {
+  div.tocify {
+    width: 25%;
+  }
+}
+
+@media (max-width: 767px) {
+  div.tocify {
+    width: 100%;
+    max-width: none;
+  }
+}
+
+.tocify ul, .tocify li {
+  line-height: 20px;
+}
+
+.tocify-subheader .tocify-item {
+  font-size: 0.90em;
+}
+
+.tocify .list-group-item {
+  border-radius: 0px;
+}
+
+.tocify-subheader {
+  display: inline;
+}
+.tocify-subheader .tocify-item {
+  font-size: 0.95em;
+}
+
+</style>
+
+
+
+</head>
+
+<body>
+
+
+<div class="container-fluid main-container">
+
+
+<!-- setup 3col/9col grid for toc_float and main content  -->
+<div class="row">
+<div class="col-xs-12 col-sm-4 col-md-3">
+<div id="TOC" class="tocify">
+</div>
+</div>
+
+<div class="toc-content col-xs-12 col-sm-8 col-md-9">
+
+
+
+
+<div class="navbar navbar-default  navbar-fixed-top" role="navigation">
+  <div class="container">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-bs-toggle="collapse" data-target="#navbar" data-bs-target="#navbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="index.html">RDM Jumpstart</a>
+    </div>
+    <div id="navbar" class="navbar-collapse collapse">
+      <ul class="nav navbar-nav">
+        <li class="dropdown">
+  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+    Block 1
+     
+    <span class="caret"></span>
+  </a>
+  <ul class="dropdown-menu" role="menu">
+    <li>
+      <a href="Block1_Overview.html">Overview</a>
+    </li>
+    <li>
+      <a href="Block1-1_Intro-RDM.html">Introduction to Research Data Management</a>
+    </li>
+    <li>
+      <a href="Block1-2_Intro-DMP.html">Introduction to Data Management Plans</a>
+    </li>
+    <li>
+      <a href="Block1-3_OSF.html">Introduction to OSF</a>
+    </li>
+  </ul>
+</li>
+<li class="dropdown">
+  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+    Block 2
+     
+    <span class="caret"></span>
+  </a>
+  <ul class="dropdown-menu" role="menu">
+    <li>
+      <a href="Block2_Overview.html">Overview</a>
+    </li>
+    <li>
+      <a href="Block2-1_Files-and-Folders.html">Organizing Files and Folders</a>
+    </li>
+    <li>
+      <a href="Block2-2_Naming-Conventions.html">Naming Conventions and Folder Structure</a>
+    </li>
+    <li>
+      <a href="Block2-3_Documentation.html">Documentation</a>
+    </li>
+    <li>
+      <a href="Block2-4_Documentation-in-Action.html">Documentation in Action</a>
+    </li>
+  </ul>
+</li>
+<li class="dropdown">
+  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+    Block 3
+     
+    <span class="caret"></span>
+  </a>
+  <ul class="dropdown-menu" role="menu">
+    <li>
+      <a href="Block3_Overview.html">Overview</a>
+    </li>
+    <li>
+      <a href="Block3-1_Excel-to-R.html">Reproducible Research and Moving from Excel to Scripting</a>
+    </li>
+    <li>
+      <a href="Block3-2_Intro-to-R.html">Introduction to R</a>
+    </li>
+  </ul>
+</li>
+<li class="dropdown">
+  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+    Block 4
+     
+    <span class="caret"></span>
+  </a>
+  <ul class="dropdown-menu" role="menu">
+    <li>
+      <a href="Block4_Overview.html">Overview</a>
+    </li>
+    <li>
+      <a href="Block4-1_File-Paths.html">File and Directory Paths</a>
+    </li>
+    <li>
+      <a href="Block4-2_First-Steps.html">First Steps in R</a>
+    </li>
+    <li>
+      <a href="Block4-3_Data-Types.html">Data Types and Structures in R</a>
+    </li>
+    <li>
+      <a href="Block4-4_Updating-Documentation.html">Updating Documentation</a>
+    </li>
+  </ul>
+</li>
+<li class="dropdown">
+  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+    Block 5
+     
+    <span class="caret"></span>
+  </a>
+  <ul class="dropdown-menu" role="menu">
+    <li>
+      <a href="Block5_Overview.html">Overview</a>
+    </li>
+    <li>
+      <a href="Block5-1_Viz-Types.html">Types of Visualizations</a>
+    </li>
+    <li>
+      <a href="Block5-2_ggplot.html">Visualizations with ggplot</a>
+    </li>
+  </ul>
+</li>
+<li class="dropdown">
+  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+    Block 6
+     
+    <span class="caret"></span>
+  </a>
+  <ul class="dropdown-menu" role="menu">
+    <li>
+      <a href="Block6_Overview.html">Overview</a>
+    </li>
+    <li>
+      <a href="Block6-1_Sharing-and-Deposit.html">Sharing and Depositing Data</a>
+    </li>
+    <li>
+      <a href="Block6-2_DMP-wrap.html">DMP and Project Wrap-Up</a>
+    </li>
+    <li>
+      <a href="Block6-3_Borealis.html">Borealis Deposit</a>
+    </li>
+  </ul>
+</li>
+<li class="dropdown">
+  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+    Bonus Blocks
+     
+    <span class="caret"></span>
+  </a>
+  <ul class="dropdown-menu" role="menu">
+    <li>
+      <a href="Block7_Bonus_Filter-and-Select.html">R: Filter and Select</a>
+    </li>
+    <li>
+      <a href="Block7_Bonus_Saving-Output.html">R: Saving Outputs</a>
+    </li>
+    <li>
+      <a href="Block7_Bonus_Troubleshooting.html">R: Troubleshooting</a>
+    </li>
+  </ul>
+</li>
+<li class="dropdown">
+  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+    Working with a Survey
+     
+    <span class="caret"></span>
+  </a>
+  <ul class="dropdown-menu" role="menu">
+    <li>
+      <a href="Block8_Overview.html">Overview</a>
+    </li>
+    <li>
+      <a href="Block8-1_SUR_Intro-to-R.html">Introduction to R</a>
+    </li>
+    <li>
+      <a href="Block8-2_SUR_Collect-and-Clean.html">Collecting and Cleaning Survey Data</a>
+    </li>
+    <li>
+      <a href="Block8-3_SUR_Making-Sense.html">Making Sense of Survey Data</a>
+    </li>
+  </ul>
+</li>
+<li class="dropdown">
+  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+    Extras
+     
+    <span class="caret"></span>
+  </a>
+  <ul class="dropdown-menu" role="menu">
+    <li class="dropdown-submenu">
+      <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">Resources</a>
+      <ul class="dropdown-menu" role="menu">
+        <li>
+          <a href="codeOfConduct.html">Code of Conduct</a>
+        </li>
+        <li>
+          <a href="Block7_EXT-RCheatsheet.html">R Cheatsheet</a>
+        </li>
+      </ul>
+    </li>
+    <li class="dropdown-submenu">
+      <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">Roadmaps</a>
+      <ul class="dropdown-menu" role="menu">
+        <li>
+          <a href="Block7_EXT-RDMRoadmap.html">RDM Roadmap</a>
+        </li>
+        <li>
+          <a href="Block7_EXT-CRRoadmap.html">Reproducible Roadmap</a>
+        </li>
+      </ul>
+    </li>
+    <li class="dropdown-submenu">
+      <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">Concetps in Reproduciblity</a>
+      <ul class="dropdown-menu" role="menu">
+        <li>
+          <a href="Block7_EXT-BaseRtidyverse.html">Base R &amp; Tidyverse</a>
+        </li>
+        <li>
+          <a href="Block7_EXT-ScriptsNotebooks.html">Scripts &amp; Notebooks</a>
+        </li>
+        <li>
+          <a href="Block7_EXT-idePaths.html">IDEs &amp; Relative Paths</a>
+        </li>
+        <li>
+          <a href="Block7_EXT-ChallengesToRDM.html">Challenges to Good RDM Practices</a>
+        </li>
+      </ul>
+    </li>
+    <li class="dropdown-submenu">
+      <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">Additional Content</a>
+      <ul class="dropdown-menu" role="menu">
+        <li>
+          <a href="Block7_EXT-dd.html">Creating a data dictionary</a>
+        </li>
+        <li>
+          <a href="Block7_EXT-dirsFiles.html">Directories and files</a>
+        </li>
+      </ul>
+    </li>
+    <li class="dropdown-submenu">
+      <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">Setup</a>
+      <ul class="dropdown-menu" role="menu">
+        <li>
+          <a href="Block7_EXT-DMP-setup.html">DMP Assistant Setup</a>
+        </li>
+        <li>
+          <a href="Block7_EXT-osfSetup.html">OSF Setup</a>
+        </li>
+        <li>
+          <a href="Block7_EXT-RRStudio.html">R &amp; RStudio Setup</a>
+        </li>
+        <li>
+          <a href="Block7_EXT-Borealis.html">Borealis Setup</a>
+        </li>
+      </ul>
+    </li>
+    <li>
+      <a href="contributors.html">Contributors</a>
+    </li>
+    <li>
+      <a href="Feedback.html">Feedback</a>
+    </li>
+  </ul>
+</li>
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+        
+      </ul>
+    </div><!--/.nav-collapse -->
+  </div><!--/.container -->
+</div><!--/.navbar -->
+
+<div id="header">
+
+<div class="btn-group pull-right float-right">
+<button type="button" class="btn btn-default btn-xs btn-secondary btn-sm dropdown-toggle" data-toggle="dropdown" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><span>Code</span> <span class="caret"></span></button>
+<ul class="dropdown-menu dropdown-menu-right" style="min-width: 50px;">
+<li><a id="rmd-show-all-code" href="#">Show All Code</a></li>
+<li><a id="rmd-hide-all-code" href="#">Hide All Code</a></li>
+<li role="separator" class="divider"></li>
+<li><a id="rmd-download-source" href="#">Download Rmd</a></li>
+</ul>
+</div>
+
+
+
+<h1 class="title toc-ignore">Collecting and Cleaning Survey Data</h1>
+
+</div>
+
+
+<div id="collecting-and-cleaning-survey-data" class="section level2">
+<h2>Collecting and Cleaning Survey Data</h2>
+<p>Before we jump into cleaning survey data, it’s helpful to get a sense
+of what the survey actually looks like. Ideas of survey and study design
+are a bit beyond the focus of this course, but you’re encouraged to
+think about these concepts as you go through these materials. If you’re
+attending a session live, please feel free to ask questions and offer
+insights!</p>
+<div id="our-research-question" class="section level3">
+<h3>Our Research Question:</h3>
+</div>
+<div
+id="how-does-social-media-usage-influence-the-mental-health-of-university-students"
+class="section level3">
+<h3><strong>How does social media usage influence the mental health of
+university students?</strong></h3>
+<p>There could be a number of ways to address this question, but for the
+purpose of this course we’re going to focus on a fairly short survey as
+a way to get a sense managing this type of data.</p>
+</div>
+<div id="our-survey" class="section level3">
+<h3>Our Survey</h3>
+<p>The survey we’re going to be working with was created using Google
+Forms because it is an open platform that is freely accessible to anyone
+with a computer. The survey was designed in such a way to use the main
+question types offered by survey tools. This will allow us to see how
+these different question types produce different types of data, and then
+explore how to work with these different data types. Despite using
+Google Forms, the actions we’ll perform in this workshop apply to any
+survey tool that you might use.</p>
+<p>So to start things off, take a couple minutes to go through the
+survey: <a
+href="https://docs.google.com/forms/d/e/1FAIpQLScZEp7MPaCz6G9TgiiZ-q4LjAgfMFsAAa-3RhNZqHFUfrREaw/viewform?usp=header">survey
+link</a></p>
+</div>
+<div id="our-data" class="section level3">
+<h3>Our Data</h3>
+<p>Now that we know what the survey / data collection looks like, let’s
+take a look at the data. The dataset that we’ll be using contains mock
+entries that resemble some general trends you might find in a real
+survey of this kind.</p>
+<p><a href="https://nickrochlin.github.io/rdm-jumpstart2/data/survey-cleaning-workshop/social-media-survey.csv" download>
+Download the dataset </a></p>
+<div class="question">
+<p>Let’s take a look at the dataset!</p>
+<ul>
+<li>Is it what you expected to see?</li>
+<li>Are there any fields that you think might be tricky to work
+with?</li>
+<li>Can you imagine how the data might need to change in order to ask
+questions of it?</li>
+</ul>
+</div>
+</div>
+<div id="beginning-our-work" class="section level3">
+<h3>Beginning Our Work</h3>
+<p>Now that we have our data, we can start getting to work!</p>
+<div class="question">
+<p>The first thing we need to do is to create a project folder to keep
+our files in one place. To keep everything consistent, follow these
+steps:</p>
+<ol style="list-style-type: decimal">
+<li>Go to your <code>Desktop</code> folder</li>
+<li>Create a folder called <code>social_media_project</code></li>
+<li>Move the file you just downloaded, called
+<code>social-media-survey.csv</code> to the
+<code>social_media_project</code> folder</li>
+<li>It is best practice to <strong>save a copy of your original data and
+not to touch it</strong>, to retain transparency and reproducibility.
+Make a copy of <code>social-media-survey.csv</code> and change the name
+of the copied file to <code>social-media-survey_ORIGINAL.csv</code></li>
+</ol>
+</div>
+<div class="note">
+<p><strong>A quick note on folder and file naming</strong></p>
+<p>Much like naming objects in R, that was covered in the
+<a href="Block8-1_SUR_Intro-to-R.html">the Introduction to R</a>, when
+naming both <strong>files and folders</strong> follow these
+practices:</p>
+<ul>
+<li>Only use letters in the English alphabet, number 0-9, dashes -, and
+underscores _</li>
+<li>Do not use spaces or special characters such as:
+~!@#$%^&amp;*()+=…</li>
+<li>Separate naming elements with dashes - and underscores _</li>
+</ul>
+</div>
+</div>
+</div>
+<div id="r-projects-working-directories" class="section level2">
+<h2>R Projects &amp; Working Directories</h2>
+<div id="setting-a-working-directory" class="section level3">
+<h3>Setting a Working Directory</h3>
+<p>When working in a coding environment like RStudio, you need to let R
+(or other coding environments) know what folder you want to be working
+from so you can easily access your files. This concept is know as
+<strong>setting a working directory</strong>. For more information on
+file paths and directories, see <a href="Block4-1_File-Paths.html">File
+and Directory Paths</a></p>
+<p>There are two main ways of doing this in R:</p>
+<ol style="list-style-type: decimal">
+<li>You can use the <code>setwd()</code> function, by manually inserting
+your file path in the brackets like this:</li>
+</ol>
+<ul>
+<li><code>setwd("directory-name/secondary-directory/etc...")</code></li>
+<li>See section on <a href="Block4-1_File-Paths.html">File and Directory
+Paths</a> for more information on paths.</li>
+</ul>
+<ol start="2" style="list-style-type: decimal">
+<li>Selecting the <code>Session</code> tab in the toolbar, and selecting
+<code>Set Working Directory</code>:</li>
+</ol>
+<p><img src="images/Block8-2_set-wd.gif" /></p>
+<p>But here’s the problem…</p>
+<p>Using <code>setwd()</code> can break your code when:</p>
+<ul>
+<li>Someone else tries to run it on their machine.</li>
+<li>You move your project folder.</li>
+<li>You’re running your code on a server or in cloud environments like
+RStudio Cloud.</li>
+</ul>
+<p>Since file paths are hardcoded and depend on your machine,
+<strong>it’s not reproducible</strong>.</p>
+</div>
+<div id="create-an-r-project" class="section level3">
+<h3>Create an R Project</h3>
+<p>An R Project is a feature in RStudio (and supported in base R too)
+that provides a self-contained working environment. When you create an R
+Project it creates a .Rproj file in a folder and that folder becomes the
+root directory of your project. Every time you open the project (via the
+.Rproj file), R automatically sets the working directory to that folder.
+You can reference files relative to the project root — no need to
+hardcode file paths.</p>
+<p>This is super useful when you’re working on multiple analyses,
+sharing code with collaborators, or version-controlling with Git.
+<strong>It is a good practice for reproducibility.</strong></p>
+<p>To create an R Project, select File &gt; New Project</p>
+<p><img src="images/day2_CreateProject.gif" /></p>
+<div class="question">
+<p>Let’s create our first RProject. Let’s figure out what we should call
+it!</p>
+</div>
+</div>
+</div>
+<div id="lets-get-started" class="section level2">
+<h2>Let’s Get Started!</h2>
+<p>Let’s get started by opening a new R script.</p>
+<p>To create an R script file, select File &gt; New File &gt; R
+Script</p>
+<p><img src="images/block3_create-r-script.gif" /></p>
+<div id="packages-and-libraries" class="section level3">
+<h3>Packages and Libraries</h3>
+<p>Now that we’ve set our working directory, there’s one more thing to
+cover before we jump into the data, which is the ideas of
+<strong>packages and libraries</strong> in R.</p>
+<p>When you first download R, it comes equipped with a number of
+pre-installed functions, or capabilities, that you can start using
+immediately. This is often called “Base R”. However, for certain tasks
+and workflows, it can be beneficial to use more specialized tools, or
+functions, to accomplish work and facilitate workflows more efficiently.
+This is where packages and libraries come into play.</p>
+<div class="note">
+<ul>
+<li><p><strong>Packages</strong>: Packages are an extension of the
+pre-built functions in R, and can be installed to bring in specific
+functions to accomplish tasks, among many other things. There are
+<strong>tons</strong> of R packages out there, but here is a list of
+some of the most common/useful ones: <a
+href="https://support.posit.co/hc/en-us/articles/201057987-Quick-list-of-useful-R-packages">Quick
+list of useful R packages</a></p></li>
+<li><p><strong>Libraries</strong>: Once you have installed a package,
+they are stored as libraries in R. You only have to install them once,
+and anytime you want to use the package you can use the
+<code>library()</code> function, which is described below.</p></li>
+</ul>
+</div>
+</div>
+<div id="tidyverse" class="section level3">
+<h3>Tidyverse</h3>
+<p>The Tidyverse is a very commonly used package for research and data
+science activities, and instead of being a single package, it is a
+collection of packages that are designed to work together and that focus
+on the connections between activities in the data science workflow. Each
+package follows the same syntax, which makes learning them easier, and
+the website functions as a really good reference point if you’re
+struggling with how to approach a specific task.</p>
+<p><img src="images/block8-2_data-science-workflow.jpg" /></p>
+<p>Let’s take a closer look! <a
+href="https://www.tidyverse.org/packages/">Tidyverse</a></p>
+<p><br></p>
+</div>
+<div id="install-package" class="section level3">
+<h3>Install Package</h3>
+<p>To install a package we use the function
+<code>install.packages()</code>.</p>
+<p>When you install a package, you should do this in the <strong>R
+console</strong> because you don’t need this saved in your script.</p>
+<pre class="r"><code>install.packages(&quot;tidyverse&quot;)</code></pre>
+</div>
+<div id="load-libraries" class="section level3">
+<h3>Load Libraries</h3>
+<p>Packages are stored in libraries. Once a package is installed, we
+need to call the library with the function <code>library()</code>.</p>
+<p>It’s best practice to load libraries in your script so that others
+can see what libraries need to be loaded to run the script.</p>
+<pre class="r"><code>library(tidyverse)</code></pre>
+<div class="flag">
+<p>Note that the package name needs to be in quotations when installing
+the package, but not when loading the library.</p>
+<p>Because packages only need to be installed once, we can do this in
+the R console as opposed to in the script.</p>
+<p>Because libraries need to be loaded in each working session, we can
+do this in the R script so that others can see what libraries we are
+using and need to be loaded.</p>
+</div>
+</div>
+</div>
+<div id="reading-data" class="section level2">
+<h2>Reading Data</h2>
+<p><img src="images/Block8-2_import.png" /></p>
+<p>In order to start working with a dataset in R, we first need to
+import, or “read in”, the data. To do this, we will be using the <a
+href="https://readr.tidyverse.org/">readr package</a> in the
+Tidyverse.</p>
+<div id="read-a-csv-file" class="section level3">
+<h3>Read a csv file</h3>
+<p>Because our data is in <code>.csv</code> format, we’ll be using the
+<code>read_csv()</code> fuction.</p>
+<p>To import a csv file we can use the <code>read_csv()</code> function
+and assign it to a new object we will call <code>survey_data</code>. We
+create a new object to be able to call it in different functions later
+on.</p>
+<pre class="r"><code>survey_data &lt;- read_csv(&quot;social-media-survey.csv&quot;)</code></pre>
+</div>
+</div>
+<div id="exploring-data" class="section level2">
+<h2>Exploring Data</h2>
+<p>Before we start manipulating the data, it’s good to get a sense of
+some ways to quickly explore the data.</p>
+<div id="looking-at-the-dataset" class="section level3">
+<h3>Looking at the Dataset</h3>
+<p>To look at a spreadsheet version of your data we can use the
+<code>View()</code> function.</p>
+<pre class="r"><code>View(survey_data)</code></pre>
+</div>
+<div id="listing-column-names" class="section level3">
+<h3>Listing Column Names</h3>
+<p>To ask for a list of all the column names in our dataset we can use
+the <code>names()</code> function.</p>
+<pre class="r"><code>names(survey_data)</code></pre>
+<pre><code>##  [1] &quot;Timestamp&quot;                                                    
+##  [2] &quot;Name&quot;                                                         
+##  [3] &quot;Email&quot;                                                        
+##  [4] &quot;Age&quot;                                                          
+##  [5] &quot;Gender&quot;                                                       
+##  [6] &quot;Year of Study&quot;                                                
+##  [7] &quot;How many hours per day do you spend on social media?&quot;         
+##  [8] &quot;Which social media platforms do you use at least once a week?&quot;
+##  [9] &quot;Social media makes me feel connected&quot;                         
+## [10] &quot;Social media increases my stress&quot;                             
+## [11] &quot;I find social media distracting from studies&quot;                 
+## [12] &quot;Social media positively impacts my mood&quot;                      
+## [13] &quot;Staying connected with friends/family&quot;                        
+## [14] &quot;Entertainment/passing time&quot;                                   
+## [15] &quot;Academic or professional networking&quot;                          
+## [16] &quot;Staying informed about news/events&quot;                           
+## [17] &quot;Self-expression/creativity&quot;</code></pre>
+</div>
+<div id="head-function" class="section level3">
+<h3>Head Function</h3>
+<p>The head function will display the top rows of the dataset. It will
+include information about the default data type assigned to each
+column.</p>
+<pre class="r"><code>head(survey_data)</code></pre>
+<pre><code>## # A tibble: 6 × 17
+##   Timestamp      Name  Email   Age Gender `Year of Study` How many hours per d…¹
+##   &lt;chr&gt;          &lt;chr&gt; &lt;chr&gt; &lt;dbl&gt; &lt;chr&gt;            &lt;dbl&gt; &lt;chr&gt;                 
+## 1 2024-01-20 1:… Tulk… tulk…    24 Male                 4 Less than 2 hours     
+## 2 2024-01-24 22… Lanf… lanf…    24 Female               4 2-4 hours             
+## 3 2024-04-30 10… Mat … mat.…    20 Male                 2 Less than 2 hours     
+## 4 2024-06-06 15… Bifu… bifu…    23 Female               4 2-4 hours             
+## 5 2024-02-07 5:… Remu… remu…    21 Male                 2 4-6 hours             
+## 6 2024-01-05 21… Moir… moir…    19 Male                 1 4-6 hours             
+## # ℹ abbreviated name: ¹​`How many hours per day do you spend on social media?`
+## # ℹ 10 more variables:
+## #   `Which social media platforms do you use at least once a week?` &lt;chr&gt;,
+## #   `Social media makes me feel connected` &lt;chr&gt;,
+## #   `Social media increases my stress` &lt;chr&gt;,
+## #   `I find social media distracting from studies` &lt;chr&gt;,
+## #   `Social media positively impacts my mood` &lt;chr&gt;, …</code></pre>
+</div>
+</div>
+<div id="cleaning-data" class="section level2">
+<h2>Cleaning Data</h2>
+<p>When we talk about “cleaning data”, we’re talking about manipulating
+the original data so that it’s easier to start exploring trends,
+analyzing, and visualizing. As we go through this process, it can be
+helpful to save different versions, or stages of the data, to help
+promote a transparent and reproducible process. In this session, we’re
+going to focus on some common cleaning techniques that are used on
+survey data.</p>
+<p>In the <a href="Block8-1_SUR_Intro-to-R.html">Introduction to R
+session</a> we discussed <strong>objects</strong> and
+<strong>functions</strong>, and played with the idea of objects storing
+information, and functions manipulating the object/data.</p>
+<p>Now we’re going to start implementing <strong>pipes</strong> as a way
+to connect objects to <strong>functions</strong> and
+<strong>arguments</strong>.</p>
+<div id="pipes" class="section level4">
+<h4>Pipes</h4>
+<p>Pipes are used to chain steps of instructions or actions together,
+and often involve writing over an object to give it a new value. We’ll
+walk through some examples of how this works, and start to see how the
+full syntax of R comes together.</p>
+<p><img src="images/day2_RSyntax.png" /></p>
+<p><br></p>
+</div>
+<div id="changing-column-names" class="section level3">
+<h3>Changing Column Names</h3>
+<p>You’ll notice that the column names are reflective of the questions
+in the survey. While some of the shorter names will work, those that are
+very long and have spaces in the names can be annoying to work with. The
+first step in our cleaning will be to get all of the column names in a
+way that will be easy to work with.</p>
+<p>To change column names we can use the function <code>rename()</code>.
+The function <code>rename()</code> is part of the <a
+href="https://dplyr.tidyverse.org/index.html">dplyr package</a> that was
+installed with tidyverse.</p>
+<div class="walkthrough">
+<p>Type the following code to change the column name from “Year of
+Study” to “year_of_study”</p>
+<pre class="r"><code>survey_data &lt;- survey_data |&gt;
+  rename(&quot;year_of_study&quot; = &quot;Year of Study&quot;)</code></pre>
+<p><strong>Step-by-step explanation:</strong></p>
+<ul>
+<li>This command first starts off with the <code>survey_data</code>
+object, which is our dataset.</li>
+<li>The assignment operator comes next, and will re-write the
+information stored in <code>survey_data</code> with all the information
+that is to the right side of the operator.</li>
+<li>We then use the <code>survey_data</code> object and the pipe
+<code>|&gt;</code> to tell R that we want to take the data that is
+stored in <code>survey_data</code>, and then do something to it (which
+is what comes after the pipe).</li>
+<li>The <code>rename</code> function is used to rename columns, and is
+always followed by brackets. Inside those brackets, we’ll put the new
+column name that we want in quotation marks <code>""</code>, followed by
+an equal sign <code>=</code>, followed by the existing column name in
+quotation marks <code>""</code>.</li>
+<li>We then run the command and hope it works!</li>
+</ul>
+</div>
+</div>
+</div>
+<div id="your-turn" class="section level2">
+<h2>Your Turn!</h2>
+<div class="question">
+<p>First, use the function<code>names()</code> to display the column
+names.</p>
+<pre class="r"><code>names(survey_data)</code></pre>
+</div>
+<div class="question">
+<p>Now, see if you can change the
+<code>How many hours per day do you spend on social media?</code> column
+name to <code>hours-per-day</code></p>
+<pre class="r fold-hide"><code>survey_data &lt;- survey_data |&gt;
+  rename(&quot;hours_per_day&quot; = &quot;How many hours per day do you spend on social media?&quot;) </code></pre>
+</div>
+<div class="question">
+<p>Next, try to change the following 3 column names:</p>
+<ul>
+<li>Change
+<code>Which social media platforms do you use at least once a week?</code>
+to <code>platforms</code></li>
+<li>Change <code>Social media makes me feel connected</code> to
+<code>feel_connected</code></li>
+<li>Change <code>Social media increases my stress</code> to
+<code>feel_increase_stress</code></li>
+</ul>
+<p><strong>Hint:</strong> It can be tedious to do these changes one by
+one, but by using commas <code>,</code> you can rename column names with
+a single code chunk.</p>
+<pre class="r fold-hide"><code>survey_data &lt;- survey_data |&gt;
+  rename(&quot;platforms&quot; = &quot;Which social media platforms do you use at least once a week?&quot;,
+          &quot;feel_connected&quot; = &quot;Social media makes me feel connected&quot;,
+          &quot;feel_increase_stress&quot; = &quot;Social media increases my stress&quot;) </code></pre>
+</div>
+<div class="question">
+<p>Now, let’s change the rest of the column names copy the following
+code. (If you feel you’re starting to understand how this works, you can
+show the code below and <code>cope + paste</code> it into your script,
+or if you want some more practice, feel free to do it yourself!</p>
+<pre class="r fold-hide"><code>survey_data &lt;- survey_data |&gt;
+  rename( &quot;feel_distracted&quot; = &quot;I find social media distracting from studies&quot;,
+         &quot;feel_improved_mood&quot; = &quot;Social media positively impacts my mood&quot;,
+         &quot;usage_stay_in_touch&quot; = &quot;Staying connected with friends/family&quot;,
+         &quot;usage_entertainment&quot; = &quot;Entertainment/passing time&quot;,
+         &quot;usage_networking&quot; = &quot;Academic or professional networking&quot;,
+         &quot;usage_news&quot; = &quot;Staying informed about news/events&quot;,
+         &quot;usage_expression&quot; = &quot;Self-expression/creativity&quot;,
+         &quot;timestamp&quot; = &quot;Timestamp&quot;,
+         &quot;name&quot; = &quot;Name&quot;,
+         &quot;email&quot; = &quot;Email&quot;,
+         &quot;age&quot; = &quot;Age&quot;,
+         &quot;gender&quot; = &quot;Gender&quot;)</code></pre>
+</div>
+</div>
+<div id="personal-idenfiers-id-codes-and-data-versioning"
+class="section level2">
+<h2>Personal Idenfiers, ID Codes, and Data Versioning</h2>
+<p>You probably noticed that in this survey we collected names and email
+addresses. This can be necessary for several reasons, but it also poses
+ethical issues with respect to who is able to see this information. It
+is common practice to remove personal identifiers from survey data, but
+you may also wish to create a code for each entry should you ever need
+to connect information back to the respondent.</p>
+<p>Let’s try this is a few steps:</p>
+<div id="add-an-id-column" class="section level3">
+<h3>Add an ID column</h3>
+<p>The <code>mutate()</code> function, that is part of the <a
+href="https://dplyr.tidyverse.org/index.html">dplyr package</a>, is
+useful when you want to create new columns that are functions of
+existing variables.</p>
+<p>While not technically the function of an existing variable, we can
+use <code>mutuate</code> with the <code>row_number()</code> function to
+create a new column that will contain the number of each row, thus given
+entry a unique ID number.</p>
+<pre class="r"><code>survey_data &lt;- survey_data |&gt;
+  mutate(ID = row_number())</code></pre>
+<div class="walkthrough">
+<p>You can see that the grammar works in the same way as the
+<code>rename</code> function, which is one of the strengths of using the
+Tidyverse.</p>
+<ul>
+<li>The mutate function is followed by brackets, and the first value
+that is entered is what you want the new column to be called.</li>
+<li>After the <code>=</code> sign, insert what is to go in the rows of
+the new column.</li>
+<li>In this case, <code>row_number()</code> is adding the number of the
+corresponding row to the column.</li>
+</ul>
+<p>We’ll play with more uses of <code>mutate</code> in just a little
+bit!</p>
+</div>
+<p><br></p>
+</div>
+<div id="move-the-id-column-to-the-left-most-position-of-the-data"
+class="section level3">
+<h3>Move the ID column to the left-most position of the data</h3>
+<p>Having an ID column as the left-most, or first, column in your
+dataset makes things generally easier to keep track of.</p>
+<p>The <code>relocate()</code> function, which is also part of the
+<strong>dplyr</strong> package, which does just what its name implies:
+it relocates columns in a dataset.</p>
+<p>The default of <code>relocate</code> is to put the specified column
+in the first position, so we don’t need to specify location for this
+task.</p>
+<pre class="r"><code>survey_data &lt;- survey_data |&gt;
+  relocate(ID)</code></pre>
+<div class="note">
+<p>Every time you make a change to your data, you can use the
+<code>View(survey_data)</code> function to check what was done.</p>
+</div>
+<p>Before we go any further, let’s save another copy of this data. This
+will allow the data holder to have a copy of the data that has both the
+personal identifiers and the ID codes. We won’t be analyzing this
+dataset, but it will be necessary should you need to reconnect with
+respondents.</p>
+<p><br></p>
+<div id="saving-a-dataset" class="section level4">
+<h4>Saving a dataset</h4>
+<p>Much like we did with reading <code>.csv</code> data into R, there is
+a similar command to save, or “write” <code>.csv</code> data back to
+your computer called <code>write_csv()</code>. The syntax is as
+follows:</p>
+<p><code>write_csv(data-object-name, file="file-path/datafile-name.csv")</code></p>
+<p>If you use the same file name as the one you are working on, it will
+change that file based on what you’ve done. However, <strong>we don’t
+want to touch our original data</strong>, so we’re going to make a new
+file to indicate that it has clean columns, ID codes, and personal
+identifiers.</p>
+<pre class="r"><code>write_csv(survey_data, &quot;survey-data_clean-cols_IDs.csv&quot;)</code></pre>
+</div>
+</div>
+<div id="back-to-cleaning" class="section level3">
+<h3>Back to Cleaning!</h3>
+<p>Now that we’ve saved that version of the data, let’s now remove the
+<code>email</code> and <code>name</code> columns to de-identify the
+dataset, and also remove some unnecessary columns.</p>
+<div id="removing-columns" class="section level4">
+<h4>Removing Columns</h4>
+<p>There are a number of ways to remove columns in R, we’ll focus on the
+the <code>select</code> function from the <code>dplyr</code> package in
+Tidyverse.</p>
+<p>This follows the same syntax that we’ve been using, and after the
+<code>select</code> function, you insert a dash <code>-</code>, or minus
+symbol, plus the name of the column you want to remove.</p>
+<p>Let’s start be removing the <code>timestamp</code> column by using
+its column name.</p>
+<pre class="r"><code>survey_data &lt;- survey_data |&gt;
+  select(-timestamp)</code></pre>
+<p>You can take a look at the dataset and now see that the
+<code>timestamp</code> column is now gone.</p>
+<p>Let’s now remove the identifiers <code>name</code> and
+<code>email</code>.</p>
+<div class="question">
+<p>See if you can remove the <code>name</code> and <code>email</code>
+columns, as we want to get rid of the identifying variables.</p>
+<p>Hint: To do this is a single command, see if you can figure out how
+to use the <code>c()</code> function that was introduced in the <a
+href="Block8-1_SUR_Intro-to-R.html">Introduction to R session</a></p>
+<pre class="r fold-hide"><code>survey_data &lt;- survey_data |&gt;
+  select(-c(name, email))</code></pre>
+</div>
+<p><br></p>
+</div>
+<div id="save-another-version-of-the-data" class="section level4">
+<h4>Save Another Version of the Data</h4>
+<p>Now that we have a dataset that has cleaned columns, no identifiers,
+and no unnecessary columns, let’s save a copy of this should we ever
+need to go back to the beginning.</p>
+<pre class="r"><code>write_csv(survey_data, &quot;survey-data_clean-cols_no-ID.csv&quot;)</code></pre>
+</div>
+</div>
+<div id="cleaning-values" class="section level3">
+<h3>Cleaning Values</h3>
+<p>Now that we’ve cleaned up the variables/columns, let’s take a look at
+our dataset and see what values might need some work.</p>
+<pre class="r"><code>View(survey_data)</code></pre>
+</div>
+</div>
+<div id="cleaning-survey-values" class="section level2">
+<h2>Cleaning Survey Values</h2>
+<p>Now that we’ve cleaned up our headers, it’s time to start looking at
+the values to see if we’ll be easily able to analyze them, or if they
+need cleaning too.</p>
+<p>If you take a look at the <code>platforms</code> column, you’ll see
+that the values are pretty messy, and can include any combination of up
+to 6 options. This is very hard to work with, so we’ll need to figure
+out the best way to format things.</p>
+<div id="wide-data-long-data-and-the-tidy-data-principles"
+class="section level3">
+<h3>Wide Data, Long Data, and the Tidy Data Principles</h3>
+<p>When considering these types of messy columns, there are two
+different strategies we can take to clean them up:</p>
+<ol style="list-style-type: decimal">
+<li>Make the data <strong>long, or tidy</strong>, which aims to reduce
+columns but creates more rows.</li>
+<li>Make the data <strong>wide</strong>, which creates more columns and
+creates a wider spreadsheet.</li>
+</ol>
+<p>In the next session of this series, <a
+href="Block8-3_SUR_Making-Sense.html">Making Sense of Survey Data</a>,
+we will be looking at the pros and cons of wide vs long data, but in
+this session we will focus on the techniques to play with the shape of
+our data.</p>
+</div>
+<div id="making-data-long-or-tidy" class="section level3">
+<h3>Making Data Long or “Tidy”</h3>
+<p>In R, and specifically the Tidyverse, the <a
+href="https://cran.r-project.org/web/packages/tidyr/vignettes/tidy-data.html">Tidy
+Data Principles</a> specify qualities of what is considered “tidy data”,
+with data that doesn’t meet all criteria being “messy data”. They
+provide a standard way to organize data to “facilitate initial
+exploration and analysis of the data, and to simplify the development of
+data analysis tools that work well together” (<a
+href="https://cran.r-project.org/web/packages/tidyr/vignettes/tidy-data.html">source</a>).</p>
+<p><strong>Tidy Data Principles:</strong></p>
+<ul>
+<li>Each variable is a column.</li>
+<li>Each observation is a row.</li>
+<li>Each value is a cell.</li>
+</ul>
+<p>Here is an example of what would be considered a messy dataset:</p>
+<p><img src="images/block8-2_tidy-data1.png" /></p>
+<p>While structuring data in this way is much easier for a human to scan
+and for summary tables, it’s trickier for a coding language to parse and
+work with. The various packages of the Tidyverse are specifically geared
+towards working with tidy data, and making your data tidy will make
+faceting, grouping, modelling, and visualizing much easier.</p>
+<p>Here’s an example of what a tidy version of this data would look
+like:</p>
+<p><img src="images/block8-2_tidy-data2.png" /></p>
+<p>As you’ll notice, the repeating values in the <code>Name</code>
+column seems clunky and weird to scan. But a way to think about think
+about why this might be useful would be if instead of 3 quizs, there
+were 50. Having a unique column for each would be tedious in its own
+way, and this is just a single variable. There could be several sets of
+wide spanning columns to capture what could be captured in a single
+variable. The concept of tidy data focuses on minimizing the amount of
+columns in favour of fewer columns with rich amounts of
+observations.</p>
+</div>
+</div>
+<div id="making-a-dataset-tidy" class="section level2">
+<h2>Making a Dataset Tidy</h2>
+<p>The <a href="https://tidyr.tidyverse.org/">tidyr</a> package in the
+Tidyverse specializes in making data tidy.</p>
+<p>The <code>seperate_longer_delim()</code> function specializes in
+dealing with the messy values in our <code>platforms</code> column.</p>
+<p>The <code>trimsw</code> function is useful to add with the
+<code>sepearate_longer_delim()</code> function, because it removes all
+the white space surrounding on either side of a value, avoiding any
+complications this could bring up.</p>
+<div class="walkthrough">
+<p>Let’s give this a try!</p>
+<pre class="r"><code>survey_data_long &lt;- survey_data |&gt;
+  separate_longer_delim(cols = platforms, delim = &quot;,&quot;) |&gt; 
+  mutate(platforms = trimws(platforms)) </code></pre>
+<p><strong>Step-by-step explanation</strong></p>
+<ol style="list-style-type: decimal">
+<li>We start off by creating a new r object called
+<code>survey_data_long</code>, which is going to take on all the
+information that is passed to it from the right side of the assignment
+operator <code>&lt;-</code>.</li>
+<li>The <code>survey_data</code> object represents our dataset that we
+want to pass through the pipe <code>|&gt;</code> to manipulate it.</li>
+<li>The <code>sepearate_longer_delim</code> function is applied to the
+<code>platforms</code> column to create a new row for each of the values
+in the cell, and because the values separated by commas, the
+<code>delim = ","</code> function tells R to separate each new row after
+a comma.</li>
+<li>The data object with the separate rows is then piped into the next
+function, which uses the <code>mutate</code> function to tell R that we
+want to modify the newly updated <code>platforms</code> values, and the
+<code>trimsw</code> then removes any whitespace on either side of the
+values.</li>
+<li>Et voila!</li>
+</ol>
+</div>
+<p>If we take another look at the dataset, you’ll see that the
+<code>platforms</code> variable now has single observations in each
+cell.</p>
+<div id="more-tidying" class="section level3">
+<h3>More Tidying</h3>
+<p>In addition to the <code>platforms</code> variable, the survey
+contained two additional multiple-choice questions:</p>
+<ul>
+<li><p>“Please indicate how much you agree or disagree with the
+following statements about social media and your mental
+health:”</p></li>
+<li><p>“Rank the following reasons for using social media in order of
+importance to you (1 = most important, 5 = least important):”</p></li>
+</ul>
+<p>You’ll notice that each of these questions create create 4 and 5
+columns, respectively, to capture the responses. This isn’t necessarily
+a bad thing, but in the spirit of making our data tidy, let’s see try to
+reduce the amount of variables to represent these values.</p>
+<div class="question">
+<p>Take a look at the dataset, focusing on the variables that begin with
+<code>feel-</code> and <code>usage-</code>, and think about how you
+might make these variables tidy.</p>
+</div>
+<p>These variables are a bit trickier to conceptualize than the
+platforms variable, but R has a function that is designed to handle
+things like this, and will hopefully make sense when you see it!</p>
+<div class="walkthrough">
+<p>Here’s the code to do this:</p>
+<pre class="r"><code>survey_data_longer &lt;- survey_data_long |&gt;
+  pivot_longer(
+    cols = starts_with(&quot;feel_&quot;),
+    names_to = &quot;feel_question&quot;,
+    values_to = &quot;feel_response&quot;
+  )</code></pre>
+<p><strong>Step-by-step explanation:</strong></p>
+<ol style="list-style-type: decimal">
+<li>We start by writing a new r object called
+<code>survey_data_longer</code>, that will hold everything to the left
+of the assignment operator <code>|&gt;</code>.</li>
+<li>The <code>survey_data_long</code> object represents our dataset that
+we want to pass through the pipe <code>|&gt;</code> to manipulate
+it.</li>
+<li>The <code>pivot_longer()</code> function reshapes the data from wide
+to long. In this case we had several variables that started with
+<code>feel-</code>, and this function will gather them into two columns:
+one for the question name and one for the response value.</li>
+<li>The <code>cols = starts_with("feel-")</code> function tells
+<code>pivot_longer</code> which columns to gather. (You can see why
+variable naming can help with data cleaning!)</li>
+<li><code>names_to = "feel_question"</code> names of the new column that
+will <strong>hold the original column names</strong> (ie. the question
+identifiers. The new column will be called
+<code>feel_question</code>.</li>
+<li><code>values_to</code> “feel_response” names the new column that
+will <strong>hold the values (answers) that used to sit in the
+<code>feel-</code> columns</strong>. The new column will be called
+<code>feel_response</code>.</li>
+<li>Close the bracket, and take a look to see what the data looks
+like.</li>
+</ol>
+</div>
+</div>
+</div>
+<div id="your-turn-1" class="section level2">
+<h2>Your Turn!</h2>
+<div class="question">
+<p>Now that you’ve seen how the <code>pivot_long()</code> function
+works, see if you can create a new object called
+<code>survey_data_tidy</code>, that lenghthen the <code>usage-</code>
+columns just as we did with the <code>feel-</code> columns.</p>
+<p>Hint: The syntax is exactly the same as the example above, you just
+need to change the values in quotations <code>""</code>.</p>
+<pre class="r fold-hide"><code>survey_data_tidy &lt;- survey_data_longer |&gt;
+  pivot_longer(
+  cols = starts_with(&quot;usage_&quot;),
+  names_to = &quot;usage_question&quot;,
+  values_to = &quot;usage_response&quot;
+)</code></pre>
+</div>
+<p>Take a look at the data:</p>
+<pre class="r"><code>View(survey_data_tidy)</code></pre>
+<p>It looks pretty weird! As mentioned, tidy data is very hard to scan
+for a human, but really easy for R to scan. You might notice that
+there’s over 26,000 rows, which may seem overwhelming and unnecessary.
+The Tidy Data Principles are very much geared towards using R, and there
+are times when making your data completely tidy might not suite your
+purpose. However, the purpose of the exercise was to get you to think
+about how you might want or need to structure your data, and you now
+have code that you can easily adapt to play with your surveys.</p>
+<div id="save-a-copy-of-the-data" class="section level3">
+<h3>Save a copy of the data</h3>
+<p>Now that we’ve fully tidied our dataset, save a copy of it:</p>
+<pre class="r"><code>write_csv(survey_data_tidy, &quot;survey_data_tidy.csv&quot;)</code></pre>
+</div>
+</div>
+<div id="making-data-wide" class="section level2">
+<h2>Making data wide</h2>
+<p>As mentioned, there are pros and cons to making data wide and long.
+The benefit of creating a wider structure is that it easier for human
+eyes to scan and creating basic summary tables.</p>
+<p>If we revisit the R object <code>survey_data</code>, which was saved
+as the <code>survey-data_clean-cols_no-ID.csv</code> file, we can step
+back to a stage in which the <code>platforms</code> variable was still
+quite messy.</p>
+<pre class="r"><code>View(survey_data)</code></pre>
+<p>Instead of creating a new row for each of the platforms via the Tidy
+Data Principles, we can make the data wider and create a new column for
+each of the platforms.</p>
+<div class="walkthrough">
+<p>Here’s how to do this:</p>
+<pre class="r"><code>survey_data_wide &lt;- survey_data |&gt;
+  mutate(platforms = strsplit(platforms, &quot;,&quot;)) |&gt;
+  unnest_longer(platforms) |&gt;
+  mutate(platforms = trimws(platforms), present = 1) |&gt;
+  pivot_wider(
+    names_from = platforms,
+    values_from = present,
+    values_fill = 0
+  )</code></pre>
+<p><strong>Step-by-step explanation:</strong></p>
+<ol style="list-style-type: decimal">
+<li>We start by writing a new r object called
+<code>survey_data_wide</code>, that will hold everything to the left of
+the assignment operator <code>|&gt;</code>.</li>
+<li>The <code>survey_data</code> object represents our dataset that we
+want to pass through the pipe <code>|&gt;</code> to manipulate it.</li>
+<li>The <code>mutate</code> function is used to modify a column, which
+is applied to the <code>strsplit(platforms, ",")</code> function, to
+tell it to split the comma-separated strings in the
+<code>platforms</code> column into lists of individual platform
+names.</li>
+<li>We then pipe <code>|&gt;</code> this into the
+<code>unnest_longer(platforms)</code> function to expand each element
+into its own row (which is like making the data longer). At this point,
+new rows only exists for those that selected a platform.</li>
+<li>This is then piped <code>|&gt;</code> into
+<code>mutate(platforms = trimws(platforms)</code> which continues to
+manipulate the <code>platforms</code> column, and much like we did when
+making this variable long, the <code>trimsw</code> removes white space
+surrounding the values.</li>
+<li>The <code>present = 1</code> function creates a new column called
+<code>present</code> that applies a value of 1 for every row. This is a
+temporary column to help facilitate the next step.</li>
+<li>Using another pipe <code>|&gt;</code>, this information goes into
+the <code>pivot_wider</code> function, that works with a very similar
+syntax as <code>pivot_longer</code> that we used earlier, but instead of
+making the data longer, it initiates data widening.</li>
+<li><code>names_from = platforms</code> assigns new columns to the
+unique platform names.</li>
+<li><code>values_from = present</code> assigns values in the new columns
+to come from the <code>present</code> column, which is
+<code>1</code>.</li>
+<li>Finally, with <code>values_fill = 0</code>, if a platform wasn’t
+present for a survey entry, that column will get the value of
+<code>0</code>.</li>
+</ol>
+<p>This will end up with a wide dataset where each row is a survey
+entry, each platform is a column, and the value <code>1</code> means a
+platform was listed, and <code>0</code> means a platform was not
+listed.</p>
+</div>
+<div id="save-a-copy-of-the-data-1" class="section level3">
+<h3>Save a copy of the data</h3>
+<p>Let’s save a copy of this dataset, and we’ll be taking a look at it
+in the next section.</p>
+<pre class="r"><code>write_csv(survey_data_wide, &quot;survey_data_wide.csv&quot;)</code></pre>
+</div>
+<div id="save-your-script" class="section level3">
+<h3>Save your script</h3>
+<p>Before we wrap up, we want to save our script. You can do this by
+clicking <code>file &gt; Save As...</code>. Because we set up an
+RProject, R should automatically choose the correct directory to save
+your script.</p>
+<p>Let’s save the script as <code>survey_cleaning_script.R</code></p>
+</div>
+</div>
+<div id="file-management" class="section level2">
+<h2>File Management</h2>
+<p>With just a few steps of data cleaning, we now have 6 data files in
+our folder:</p>
+<ul>
+<li><code>social-media-survey_ORIGINAL.csv</code></li>
+<li><code>social-media-survey.csv</code></li>
+<li><code>survey_data_tidy.csv</code></li>
+<li><code>survey_data_wide.csv</code></li>
+<li><code>survey_data.Rproj</code></li>
+<li><code>survey_cleaning_script.R</code></li>
+<li><code>survey-data_clean-cols_IDs.csv</code></li>
+<li><code>survey-data_clean-cols_no-ID.csv</code></li>
+</ul>
+<p>These names aren’t necessarily bad, but you can see that there are
+some inconsistencies with the naming prefix
+<code>social-media-survey</code> vs <code>survey-data</code>, and some
+of the descriptors, <code>clean-cols_IDs</code> and
+<code>clean-cols_no-ID</code> might not be as evident as we might
+like.</p>
+<p>It is always recommended to document and describe your files and
+naming convention in a README file, which is described in details in the
+<a href="Block2-3_Documentation.html">Documentation</a> session. You can
+also refer to the <a href="Block2-1_Files-and-Folders.html">Organizing
+Files and Folders</a> session for inspiration in how you might go about
+renaming and structuring these files.</p>
+</div>
+<div id="finish" class="section level2">
+<h2>Finish</h2>
+<p>You have now seen some of the foundational functions to clean survey
+data, and the various types of data that a survey might create. The goal
+of this session is to give you a sense of how to approach your own
+survey data, and to be comfortable enough with these code chunks that
+you can switch out the data/variables for your own surveys, and work
+through them in quick and reproducible ways!</p>
+</div>
+<div id="temperature-check" class="section level2">
+<h2>Temperature Check</h2>
+<p>Click the following link: <a
+href="https://app.sli.do/event/4pXxFmSvNuvPwHnf5B8GR3">Survey Cleaning
+Temperature Check</a></p>
+</div>
+
+<div id="rmd-source-code">LS0tCnRpdGxlOiAiQ29sbGVjdGluZyBhbmQgQ2xlYW5pbmcgU3VydmV5IERhdGEiCnBhZ2V0aXRsZTogIkNvbGxlY3RpbmcgYW5kIENsZWFuaW5nIFN1cnZleSBEYXRhIgpvdXRwdXQ6CiAgaHRtbF9kb2N1bWVudDoKICAgIGNvZGVfZm9sZGluZzogc2hvdyAjIGFsbG93cyB0b2dnbGluZyBvZiBzaG93aW5nIGFuZCBoaWRpbmcgY29kZS4gUmVtb3ZlIGlmIG5vdCB1c2luZyBjb2RlLgogICAgY29kZV9kb3dubG9hZDogdHJ1ZSAjIGFsbG93cyB0aGUgdXNlciB0byBkb3dubG9hZCB0aGUgc291cmNlIC5SbWQgZmlsZS4gUmVtb3ZlIGlmIG5vdCB1c2luZyBjb2RlLgogICAgaW5jbHVkZXM6CiAgICAgIGFmdGVyX2JvZHk6IGZvb3Rlci5odG1sICMgaW5jbHVkZSBhIGN1c3RvbSBmb290ZXIuCiAgICB0b2M6IHRydWUKICAgIHRvY19kZXB0aDogMwogICAgdG9jX2Zsb2F0OgogICAgICBjb2xsYXBzZWQ6IGZhbHNlCiAgICAgIHNtb290aF9zY3JvbGw6IGZhbHNlCi0tLQpgYGB7ciBzZXR1cCwgaW5jbHVkZT1GQUxTRX0Ka25pdHI6Om9wdHNfY2h1bmskc2V0KG1lc3NhZ2UgPSBGQUxTRSwgd2FybmluZ3MgPSBGQUxTRSkKYGBgCgojIyBDb2xsZWN0aW5nIGFuZCBDbGVhbmluZyBTdXJ2ZXkgRGF0YQoKQmVmb3JlIHdlIGp1bXAgaW50byBjbGVhbmluZyBzdXJ2ZXkgZGF0YSwgaXQncyBoZWxwZnVsIHRvIGdldCBhIHNlbnNlIG9mIHdoYXQgdGhlIHN1cnZleSBhY3R1YWxseSBsb29rcyBsaWtlLiBJZGVhcyBvZiBzdXJ2ZXkgYW5kIHN0dWR5IGRlc2lnbiBhcmUgYSBiaXQgYmV5b25kIHRoZSBmb2N1cyBvZiB0aGlzIGNvdXJzZSwgYnV0IHlvdSdyZSBlbmNvdXJhZ2VkIHRvIHRoaW5rIGFib3V0IHRoZXNlIGNvbmNlcHRzIGFzIHlvdSBnbyB0aHJvdWdoIHRoZXNlIG1hdGVyaWFscy4gSWYgeW91J3JlIGF0dGVuZGluZyBhIHNlc3Npb24gbGl2ZSwgcGxlYXNlIGZlZWwgZnJlZSB0byBhc2sgcXVlc3Rpb25zIGFuZCBvZmZlciBpbnNpZ2h0cyEKCiMjIyBPdXIgUmVzZWFyY2ggUXVlc3Rpb246IAojIyMgKipIb3cgZG9lcyBzb2NpYWwgbWVkaWEgdXNhZ2UgaW5mbHVlbmNlIHRoZSBtZW50YWwgaGVhbHRoIG9mIHVuaXZlcnNpdHkgc3R1ZGVudHM/KioKClRoZXJlIGNvdWxkIGJlIGEgbnVtYmVyIG9mIHdheXMgdG8gYWRkcmVzcyB0aGlzIHF1ZXN0aW9uLCBidXQgZm9yIHRoZSBwdXJwb3NlIG9mIHRoaXMgY291cnNlIHdlJ3JlIGdvaW5nIHRvIGZvY3VzIG9uIGEgZmFpcmx5IHNob3J0IHN1cnZleSBhcyBhIHdheSB0byBnZXQgYSBzZW5zZSBtYW5hZ2luZyB0aGlzIHR5cGUgb2YgZGF0YS4gIAoKIyMjIE91ciBTdXJ2ZXkKClRoZSBzdXJ2ZXkgd2UncmUgZ29pbmcgdG8gYmUgd29ya2luZyB3aXRoIHdhcyBjcmVhdGVkIHVzaW5nIEdvb2dsZSBGb3JtcyBiZWNhdXNlIGl0IGlzIGFuIG9wZW4gcGxhdGZvcm0gdGhhdCBpcyBmcmVlbHkgYWNjZXNzaWJsZSB0byBhbnlvbmUgd2l0aCBhIGNvbXB1dGVyLiAgVGhlIHN1cnZleSB3YXMgZGVzaWduZWQgaW4gc3VjaCBhIHdheSB0byB1c2UgdGhlIG1haW4gcXVlc3Rpb24gdHlwZXMgb2ZmZXJlZCBieSBzdXJ2ZXkgdG9vbHMuICBUaGlzIHdpbGwgYWxsb3cgdXMgdG8gc2VlIGhvdyB0aGVzZSBkaWZmZXJlbnQgcXVlc3Rpb24gdHlwZXMgcHJvZHVjZSBkaWZmZXJlbnQgdHlwZXMgb2YgZGF0YSwgYW5kIHRoZW4gZXhwbG9yZSBob3cgdG8gd29yayB3aXRoIHRoZXNlIGRpZmZlcmVudCBkYXRhIHR5cGVzLiAgRGVzcGl0ZSB1c2luZyBHb29nbGUgRm9ybXMsIHRoZSBhY3Rpb25zIHdlJ2xsIHBlcmZvcm0gaW4gdGhpcyB3b3Jrc2hvcCBhcHBseSB0byBhbnkgc3VydmV5IHRvb2wgdGhhdCB5b3UgbWlnaHQgdXNlLgoKU28gdG8gc3RhcnQgdGhpbmdzIG9mZiwgdGFrZSBhIGNvdXBsZSBtaW51dGVzIHRvIGdvIHRocm91Z2ggdGhlIHN1cnZleTogW3N1cnZleSBsaW5rXShodHRwczovL2RvY3MuZ29vZ2xlLmNvbS9mb3Jtcy9kL2UvMUZBSXBRTFNjWkVwN01QYUN6Nkc5VGdpaVotcTRMakFnZk1Gc0FBYS0zUmhOWnFIRlVmclJFYXcvdmlld2Zvcm0/dXNwPWhlYWRlcikKCiMjIyBPdXIgRGF0YQoKTm93IHRoYXQgd2Uga25vdyB3aGF0IHRoZSBzdXJ2ZXkgLyBkYXRhIGNvbGxlY3Rpb24gbG9va3MgbGlrZSwgbGV0J3MgdGFrZSBhIGxvb2sgYXQgdGhlIGRhdGEuICBUaGUgZGF0YXNldCB0aGF0IHdlJ2xsIGJlIHVzaW5nIGNvbnRhaW5zIG1vY2sgZW50cmllcyB0aGF0IHJlc2VtYmxlIHNvbWUgZ2VuZXJhbCB0cmVuZHMgeW91IG1pZ2h0IGZpbmQgaW4gYSByZWFsIHN1cnZleSBvZiB0aGlzIGtpbmQuCgo8YSBocmVmPSJodHRwczovL25pY2tyb2NobGluLmdpdGh1Yi5pby9yZG0tanVtcHN0YXJ0Mi9kYXRhL3N1cnZleS1jbGVhbmluZy13b3Jrc2hvcC9zb2NpYWwtbWVkaWEtc3VydmV5LmNzdiIgZG93bmxvYWQ+CiAgRG93bmxvYWQgdGhlIGRhdGFzZXQKPC9hPgoKOjo6cXVlc3Rpb24KCkxldCdzIHRha2UgYSBsb29rIGF0IHRoZSBkYXRhc2V0IQoKKiBJcyBpdCB3aGF0IHlvdSBleHBlY3RlZCB0byBzZWU/CiogQXJlIHRoZXJlIGFueSBmaWVsZHMgdGhhdCB5b3UgdGhpbmsgbWlnaHQgYmUgdHJpY2t5IHRvIHdvcmsgd2l0aD8KKiBDYW4geW91IGltYWdpbmUgaG93IHRoZSBkYXRhIG1pZ2h0IG5lZWQgdG8gY2hhbmdlIGluIG9yZGVyIHRvIGFzayBxdWVzdGlvbnMgb2YgaXQ/Cgo6OjoKCgojIyMgQmVnaW5uaW5nIE91ciBXb3JrCgpOb3cgdGhhdCB3ZSBoYXZlIG91ciBkYXRhLCB3ZSBjYW4gc3RhcnQgZ2V0dGluZyB0byB3b3JrISAgCgo6OjpxdWVzdGlvbgoKVGhlIGZpcnN0IHRoaW5nIHdlIG5lZWQgdG8gZG8gaXMgdG8gY3JlYXRlIGEgcHJvamVjdCBmb2xkZXIgdG8ga2VlcCBvdXIgZmlsZXMgaW4gb25lIHBsYWNlLiBUbyBrZWVwIGV2ZXJ5dGhpbmcgY29uc2lzdGVudCwgZm9sbG93IHRoZXNlIHN0ZXBzOgoKMSkgR28gdG8geW91ciBgRGVza3RvcGAgZm9sZGVyCjIpIENyZWF0ZSBhIGZvbGRlciBjYWxsZWQgYHNvY2lhbF9tZWRpYV9wcm9qZWN0YAozKSBNb3ZlIHRoZSBmaWxlIHlvdSBqdXN0IGRvd25sb2FkZWQsIGNhbGxlZCBgc29jaWFsLW1lZGlhLXN1cnZleS5jc3ZgIHRvIHRoZSBgc29jaWFsX21lZGlhX3Byb2plY3RgIGZvbGRlcgo0KSBJdCBpcyBiZXN0IHByYWN0aWNlIHRvICoqc2F2ZSBhIGNvcHkgb2YgeW91ciBvcmlnaW5hbCBkYXRhIGFuZCBub3QgdG8gdG91Y2ggaXQqKiwgdG8gcmV0YWluIHRyYW5zcGFyZW5jeSBhbmQgcmVwcm9kdWNpYmlsaXR5LiBNYWtlIGEgY29weSBvZiBgc29jaWFsLW1lZGlhLXN1cnZleS5jc3ZgIGFuZCBjaGFuZ2UgdGhlIG5hbWUgb2YgdGhlIGNvcGllZCBmaWxlIHRvIGBzb2NpYWwtbWVkaWEtc3VydmV5X09SSUdJTkFMLmNzdmAKCjo6OgoKOjo6bm90ZQoKKipBIHF1aWNrIG5vdGUgb24gZm9sZGVyIGFuZCBmaWxlIG5hbWluZyoqCgpNdWNoIGxpa2UgbmFtaW5nIG9iamVjdHMgaW4gUiwgdGhhdCB3YXMgY292ZXJlZCBpbiB0aGUgPGEgaHJlZj0iQmxvY2s4LTFfU1VSX0ludHJvLXRvLVIuaHRtbCI+dGhlIEludHJvZHVjdGlvbiB0byBSPC9hPiwgd2hlbiBuYW1pbmcgYm90aCAqKmZpbGVzIGFuZCBmb2xkZXJzKiogZm9sbG93IHRoZXNlIHByYWN0aWNlczoKCiogT25seSB1c2UgbGV0dGVycyBpbiB0aGUgRW5nbGlzaCBhbHBoYWJldCwgbnVtYmVyIDAtOSwgZGFzaGVzIC0sIGFuZCB1bmRlcnNjb3JlcyBfCiogRG8gbm90IHVzZSBzcGFjZXMgb3Igc3BlY2lhbCBjaGFyYWN0ZXJzIHN1Y2ggYXM6IH4hQCMkJV4mKigpKz3igKYKKiBTZXBhcmF0ZSBuYW1pbmcgZWxlbWVudHMgd2l0aCBkYXNoZXMgLSBhbmQgdW5kZXJzY29yZXMgXwoKOjo6CgojIyBSIFByb2plY3RzICYgV29ya2luZyBEaXJlY3RvcmllcwoKIyMjIFNldHRpbmcgYSBXb3JraW5nIERpcmVjdG9yeQoKV2hlbiB3b3JraW5nIGluIGEgY29kaW5nIGVudmlyb25tZW50IGxpa2UgUlN0dWRpbywgeW91IG5lZWQgdG8gbGV0IFIgKG9yIG90aGVyIGNvZGluZyBlbnZpcm9ubWVudHMpIGtub3cgd2hhdCBmb2xkZXIgeW91IHdhbnQgdG8gYmUgd29ya2luZyBmcm9tIHNvIHlvdSBjYW4gZWFzaWx5IGFjY2VzcyB5b3VyIGZpbGVzLiAgVGhpcyBjb25jZXB0IGlzIGtub3cgYXMgKipzZXR0aW5nIGEgd29ya2luZyBkaXJlY3RvcnkqKi4gIEZvciBtb3JlIGluZm9ybWF0aW9uIG9uIGZpbGUgcGF0aHMgYW5kIGRpcmVjdG9yaWVzLCBzZWUgPGEgaHJlZj0iQmxvY2s0LTFfRmlsZS1QYXRocy5odG1sIj5GaWxlIGFuZCBEaXJlY3RvcnkgUGF0aHM8L2E+CgpUaGVyZSBhcmUgdHdvIG1haW4gd2F5cyBvZiBkb2luZyB0aGlzIGluIFI6CgoxKSBZb3UgY2FuIHVzZSB0aGUgYHNldHdkKClgIGZ1bmN0aW9uLCBieSBtYW51YWxseSBpbnNlcnRpbmcgeW91ciBmaWxlIHBhdGggaW4gdGhlIGJyYWNrZXRzIGxpa2UgdGhpczoKICAqIGBzZXR3ZCgiZGlyZWN0b3J5LW5hbWUvc2Vjb25kYXJ5LWRpcmVjdG9yeS9ldGMuLi4iKWAgCiAgKiBTZWUgc2VjdGlvbiBvbiBbRmlsZSBhbmQgRGlyZWN0b3J5IFBhdGhzXShCbG9jazQtMV9GaWxlLVBhdGhzLmh0bWwpIGZvciBtb3JlIGluZm9ybWF0aW9uIG9uIHBhdGhzLgogIAoyKSBTZWxlY3RpbmcgdGhlIGBTZXNzaW9uYCB0YWIgaW4gdGhlIHRvb2xiYXIsIGFuZCBzZWxlY3RpbmcgYFNldCBXb3JraW5nIERpcmVjdG9yeWA6CgohW10oaW1hZ2VzL0Jsb2NrOC0yX3NldC13ZC5naWYpCgpCdXQgaGVyZeKAmXMgdGhlIHByb2JsZW0uLi4KClVzaW5nIGBzZXR3ZCgpYCBjYW4gYnJlYWsgeW91ciBjb2RlIHdoZW46CgogLSBTb21lb25lIGVsc2UgdHJpZXMgdG8gcnVuIGl0IG9uIHRoZWlyIG1hY2hpbmUuCiAtIFlvdSBtb3ZlIHlvdXIgcHJvamVjdCBmb2xkZXIuCiAtIFlvdSdyZSBydW5uaW5nIHlvdXIgY29kZSBvbiBhIHNlcnZlciBvciBpbiBjbG91ZCBlbnZpcm9ubWVudHMgbGlrZSBSU3R1ZGlvIENsb3VkLgoKU2luY2UgZmlsZSBwYXRocyBhcmUgaGFyZGNvZGVkIGFuZCBkZXBlbmQgb24geW91ciBtYWNoaW5lLCAqKml0J3Mgbm90IHJlcHJvZHVjaWJsZSoqLgoKIyMjIENyZWF0ZSBhbiBSIFByb2plY3QKCkFuIFIgUHJvamVjdCBpcyBhIGZlYXR1cmUgaW4gUlN0dWRpbyAoYW5kIHN1cHBvcnRlZCBpbiBiYXNlIFIgdG9vKSB0aGF0IHByb3ZpZGVzIGEgc2VsZi1jb250YWluZWQgd29ya2luZyBlbnZpcm9ubWVudC4gV2hlbiB5b3UgY3JlYXRlIGFuIFIgUHJvamVjdCBpdCBjcmVhdGVzIGEgLlJwcm9qIGZpbGUgaW4gYSBmb2xkZXIgYW5kIHRoYXQgZm9sZGVyIGJlY29tZXMgdGhlIHJvb3QgZGlyZWN0b3J5IG9mIHlvdXIgcHJvamVjdC4gRXZlcnkgdGltZSB5b3Ugb3BlbiB0aGUgcHJvamVjdCAodmlhIHRoZSAuUnByb2ogZmlsZSksIFIgYXV0b21hdGljYWxseSBzZXRzIHRoZSB3b3JraW5nIGRpcmVjdG9yeSB0byB0aGF0IGZvbGRlci4gWW91IGNhbiByZWZlcmVuY2UgZmlsZXMgcmVsYXRpdmUgdG8gdGhlIHByb2plY3Qgcm9vdCDigJQgbm8gbmVlZCB0byBoYXJkY29kZSBmaWxlIHBhdGhzLgoKVGhpcyBpcyBzdXBlciB1c2VmdWwgd2hlbiB5b3UncmUgd29ya2luZyBvbiBtdWx0aXBsZSBhbmFseXNlcywgc2hhcmluZyBjb2RlIHdpdGggY29sbGFib3JhdG9ycywgb3IgdmVyc2lvbi1jb250cm9sbGluZyB3aXRoIEdpdC4gKipJdCBpcyBhIGdvb2QgcHJhY3RpY2UgZm9yIHJlcHJvZHVjaWJpbGl0eS4qKgoKVG8gY3JlYXRlIGFuIFIgUHJvamVjdCwgc2VsZWN0IEZpbGUgPiBOZXcgUHJvamVjdAoKIVtdKGltYWdlcy9kYXkyX0NyZWF0ZVByb2plY3QuZ2lmKQoKCjo6OnF1ZXN0aW9uCkxldCdzIGNyZWF0ZSBvdXIgZmlyc3QgUlByb2plY3QuIExldCdzIGZpZ3VyZSBvdXQgd2hhdCB3ZSBzaG91bGQgY2FsbCBpdCEKOjo6CgojIyBMZXQncyBHZXQgU3RhcnRlZCEKCkxldCdzIGdldCBzdGFydGVkIGJ5IG9wZW5pbmcgYSBuZXcgUiBzY3JpcHQuCgpUbyBjcmVhdGUgYW4gUiBzY3JpcHQgZmlsZSwgc2VsZWN0IEZpbGUgPiBOZXcgRmlsZSA+IFIgU2NyaXB0CgohW10oaW1hZ2VzL2Jsb2NrM19jcmVhdGUtci1zY3JpcHQuZ2lmKQoKCiMjIyBQYWNrYWdlcyBhbmQgTGlicmFyaWVzCgpOb3cgdGhhdCB3ZSd2ZSBzZXQgb3VyIHdvcmtpbmcgZGlyZWN0b3J5LCB0aGVyZSdzIG9uZSBtb3JlIHRoaW5nIHRvIGNvdmVyIGJlZm9yZSB3ZSBqdW1wIGludG8gdGhlIGRhdGEsIHdoaWNoIGlzIHRoZSBpZGVhcyBvZiAqKnBhY2thZ2VzIGFuZCBsaWJyYXJpZXMqKiBpbiBSLgoKV2hlbiB5b3UgZmlyc3QgZG93bmxvYWQgUiwgaXQgY29tZXMgZXF1aXBwZWQgd2l0aCBhIG51bWJlciBvZiBwcmUtaW5zdGFsbGVkIGZ1bmN0aW9ucywgb3IgY2FwYWJpbGl0aWVzLCB0aGF0IHlvdSBjYW4gc3RhcnQgdXNpbmcgaW1tZWRpYXRlbHkuICBUaGlzIGlzIG9mdGVuIGNhbGxlZCAiQmFzZSBSIi4gIEhvd2V2ZXIsIGZvciBjZXJ0YWluIHRhc2tzIGFuZCB3b3JrZmxvd3MsIGl0IGNhbiBiZSBiZW5lZmljaWFsIHRvIHVzZSBtb3JlIHNwZWNpYWxpemVkIHRvb2xzLCBvciBmdW5jdGlvbnMsIHRvIGFjY29tcGxpc2ggd29yayBhbmQgZmFjaWxpdGF0ZSB3b3JrZmxvd3MgbW9yZSBlZmZpY2llbnRseS4gIFRoaXMgaXMgd2hlcmUgcGFja2FnZXMgYW5kIGxpYnJhcmllcyBjb21lIGludG8gcGxheS4KCjo6Om5vdGUKCiogKipQYWNrYWdlcyoqOiBQYWNrYWdlcyBhcmUgYW4gZXh0ZW5zaW9uIG9mIHRoZSBwcmUtYnVpbHQgZnVuY3Rpb25zIGluIFIsIGFuZCBjYW4gYmUgaW5zdGFsbGVkIHRvIGJyaW5nIGluIHNwZWNpZmljIGZ1bmN0aW9ucyB0byBhY2NvbXBsaXNoIHRhc2tzLCBhbW9uZyBtYW55IG90aGVyIHRoaW5ncy4gIFRoZXJlIGFyZSAqKnRvbnMqKiBvZiBSIHBhY2thZ2VzIG91dCB0aGVyZSwgYnV0IGhlcmUgaXMgYSBsaXN0IG9mIHNvbWUgb2YgdGhlIG1vc3QgY29tbW9uL3VzZWZ1bCBvbmVzOiBbUXVpY2sgbGlzdCBvZiB1c2VmdWwgUiBwYWNrYWdlc10oaHR0cHM6Ly9zdXBwb3J0LnBvc2l0LmNvL2hjL2VuLXVzL2FydGljbGVzLzIwMTA1Nzk4Ny1RdWljay1saXN0LW9mLXVzZWZ1bC1SLXBhY2thZ2VzKQoKKiAqKkxpYnJhcmllcyoqOiBPbmNlIHlvdSBoYXZlIGluc3RhbGxlZCBhIHBhY2thZ2UsIHRoZXkgYXJlIHN0b3JlZCBhcyBsaWJyYXJpZXMgaW4gUi4gIFlvdSBvbmx5IGhhdmUgdG8gaW5zdGFsbCB0aGVtIG9uY2UsIGFuZCBhbnl0aW1lIHlvdSB3YW50IHRvIHVzZSB0aGUgcGFja2FnZSB5b3UgY2FuIHVzZSB0aGUgYGxpYnJhcnkoKWAgZnVuY3Rpb24sIHdoaWNoIGlzIGRlc2NyaWJlZCBiZWxvdy4KCjo6OgoKCiMjIyBUaWR5dmVyc2UKClRoZSBUaWR5dmVyc2UgaXMgYSB2ZXJ5IGNvbW1vbmx5IHVzZWQgcGFja2FnZSBmb3IgcmVzZWFyY2ggYW5kIGRhdGEgc2NpZW5jZSBhY3Rpdml0aWVzLCBhbmQgaW5zdGVhZCBvZiBiZWluZyBhIHNpbmdsZSBwYWNrYWdlLCBpdCBpcyBhIGNvbGxlY3Rpb24gb2YgcGFja2FnZXMgdGhhdCBhcmUgZGVzaWduZWQgdG8gd29yayB0b2dldGhlciBhbmQgdGhhdCBmb2N1cyBvbiB0aGUgY29ubmVjdGlvbnMgYmV0d2VlbiBhY3Rpdml0aWVzIGluIHRoZSBkYXRhIHNjaWVuY2Ugd29ya2Zsb3cuICBFYWNoIHBhY2thZ2UgZm9sbG93cyB0aGUgc2FtZSBzeW50YXgsIHdoaWNoIG1ha2VzIGxlYXJuaW5nIHRoZW0gZWFzaWVyLCBhbmQgdGhlIHdlYnNpdGUgZnVuY3Rpb25zIGFzIGEgcmVhbGx5IGdvb2QgcmVmZXJlbmNlIHBvaW50IGlmIHlvdSdyZSBzdHJ1Z2dsaW5nIHdpdGggaG93IHRvIGFwcHJvYWNoIGEgc3BlY2lmaWMgdGFzay4KCiFbXShpbWFnZXMvYmxvY2s4LTJfZGF0YS1zY2llbmNlLXdvcmtmbG93LmpwZykKCgoKTGV0J3MgdGFrZSBhIGNsb3NlciBsb29rISAgW1RpZHl2ZXJzZV0oaHR0cHM6Ly93d3cudGlkeXZlcnNlLm9yZy9wYWNrYWdlcy8pCgo8YnI+CgojIyMgSW5zdGFsbCBQYWNrYWdlClRvIGluc3RhbGwgYSBwYWNrYWdlIHdlIHVzZSB0aGUgZnVuY3Rpb24gYGluc3RhbGwucGFja2FnZXMoKWAuIAoKV2hlbiB5b3UgaW5zdGFsbCBhIHBhY2thZ2UsIHlvdSBzaG91bGQgZG8gdGhpcyBpbiB0aGUgKipSIGNvbnNvbGUqKiBiZWNhdXNlIHlvdSBkb24ndCBuZWVkIHRoaXMgc2F2ZWQgaW4geW91ciBzY3JpcHQuCgpgYGB7ciwgZXZhbD1GQUxTRX0KaW5zdGFsbC5wYWNrYWdlcygidGlkeXZlcnNlIikKYGBgCgojIyMgTG9hZCBMaWJyYXJpZXMKUGFja2FnZXMgYXJlIHN0b3JlZCBpbiBsaWJyYXJpZXMuIE9uY2UgYSBwYWNrYWdlIGlzIGluc3RhbGxlZCwgd2UgbmVlZCB0byBjYWxsIHRoZSBsaWJyYXJ5IHdpdGggdGhlIGZ1bmN0aW9uIGBsaWJyYXJ5KClgLiAgCgpJdCdzIGJlc3QgcHJhY3RpY2UgdG8gbG9hZCBsaWJyYXJpZXMgaW4geW91ciBzY3JpcHQgc28gdGhhdCBvdGhlcnMgY2FuIHNlZSB3aGF0IGxpYnJhcmllcyBuZWVkIHRvIGJlIGxvYWRlZCB0byBydW4gdGhlIHNjcmlwdC4KCmBgYHtyfQpsaWJyYXJ5KHRpZHl2ZXJzZSkKYGBgCgo6OjpmbGFnCk5vdGUgdGhhdCB0aGUgcGFja2FnZSBuYW1lIG5lZWRzIHRvIGJlIGluIHF1b3RhdGlvbnMgd2hlbiBpbnN0YWxsaW5nIHRoZSBwYWNrYWdlLCBidXQgbm90IHdoZW4gbG9hZGluZyB0aGUgbGlicmFyeS4KCkJlY2F1c2UgcGFja2FnZXMgb25seSBuZWVkIHRvIGJlIGluc3RhbGxlZCBvbmNlLCB3ZSBjYW4gZG8gdGhpcyBpbiB0aGUgUiBjb25zb2xlIGFzIG9wcG9zZWQgdG8gaW4gdGhlIHNjcmlwdC4KCkJlY2F1c2UgbGlicmFyaWVzIG5lZWQgdG8gYmUgbG9hZGVkIGluIGVhY2ggd29ya2luZyBzZXNzaW9uLCB3ZSBjYW4gZG8gdGhpcyBpbiB0aGUgUiBzY3JpcHQgc28gdGhhdCBvdGhlcnMgY2FuIHNlZSB3aGF0IGxpYnJhcmllcyB3ZSBhcmUgdXNpbmcgYW5kIG5lZWQgdG8gYmUgbG9hZGVkLgo6OjoKCiMjIFJlYWRpbmcgRGF0YQoKIVtdKGltYWdlcy9CbG9jazgtMl9pbXBvcnQucG5nKQoKSW4gb3JkZXIgdG8gc3RhcnQgd29ya2luZyB3aXRoIGEgZGF0YXNldCBpbiBSLCB3ZSBmaXJzdCBuZWVkIHRvIGltcG9ydCwgb3IgInJlYWQgaW4iLCB0aGUgZGF0YS4gIFRvIGRvIHRoaXMsIHdlIHdpbGwgYmUgdXNpbmcgdGhlIFtyZWFkciBwYWNrYWdlXShodHRwczovL3JlYWRyLnRpZHl2ZXJzZS5vcmcvKSBpbiB0aGUgVGlkeXZlcnNlLiAKCiMjIyBSZWFkIGEgY3N2IGZpbGUKQmVjYXVzZSBvdXIgZGF0YSBpcyBpbiBgLmNzdmAgZm9ybWF0LCB3ZSdsbCBiZSB1c2luZyB0aGUgYHJlYWRfY3N2KClgIGZ1Y3Rpb24uCgpUbyBpbXBvcnQgYSBjc3YgZmlsZSB3ZSBjYW4gdXNlIHRoZSBgcmVhZF9jc3YoKWAgZnVuY3Rpb24gYW5kIGFzc2lnbiBpdCB0byBhIG5ldyBvYmplY3Qgd2Ugd2lsbCBjYWxsIGBzdXJ2ZXlfZGF0YWAuIFdlIGNyZWF0ZSBhIG5ldyBvYmplY3QgdG8gYmUgYWJsZSB0byBjYWxsIGl0IGluIGRpZmZlcmVudCBmdW5jdGlvbnMgbGF0ZXIgb24uCmBgYHtyLCBldmFsPUZBTFNFfQpzdXJ2ZXlfZGF0YSA8LSByZWFkX2Nzdigic29jaWFsLW1lZGlhLXN1cnZleS5jc3YiKQpgYGAKCmBgYHtyLCBpbmNsdWRlPUZBTFNFfQpzdXJ2ZXlfZGF0YSA8LSByZWFkX2NzdigiZGF0YS9zdXJ2ZXktY2xlYW5pbmctd29ya3Nob3Avc29jaWFsLW1lZGlhLXN1cnZleS5jc3YiKQpgYGAKCgojIyBFeHBsb3JpbmcgRGF0YQoKQmVmb3JlIHdlIHN0YXJ0IG1hbmlwdWxhdGluZyB0aGUgZGF0YSwgaXQncyBnb29kIHRvIGdldCBhIHNlbnNlIG9mIHNvbWUgd2F5cyB0byBxdWlja2x5IGV4cGxvcmUgdGhlIGRhdGEuCgojIyMgTG9va2luZyBhdCB0aGUgRGF0YXNldApUbyBsb29rIGF0IGEgc3ByZWFkc2hlZXQgdmVyc2lvbiBvZiB5b3VyIGRhdGEgd2UgY2FuIHVzZSB0aGUgYFZpZXcoKWAgZnVuY3Rpb24uCmBgYHtyLCBldmFsPVRSVUV9ClZpZXcoc3VydmV5X2RhdGEpCmBgYAoKIyMjIExpc3RpbmcgQ29sdW1uIE5hbWVzClRvIGFzayBmb3IgYSBsaXN0IG9mIGFsbCB0aGUgY29sdW1uIG5hbWVzIGluIG91ciBkYXRhc2V0IHdlIGNhbiB1c2UgdGhlIGBuYW1lcygpYCBmdW5jdGlvbi4KYGBge3IsIGV2YWw9VFJVRX0KbmFtZXMoc3VydmV5X2RhdGEpCmBgYAoKCiMjIyBIZWFkIEZ1bmN0aW9uClRoZSBoZWFkIGZ1bmN0aW9uIHdpbGwgZGlzcGxheSB0aGUgdG9wIHJvd3Mgb2YgdGhlIGRhdGFzZXQuIEl0IHdpbGwgaW5jbHVkZSBpbmZvcm1hdGlvbiBhYm91dCB0aGUgZGVmYXVsdCBkYXRhIHR5cGUgYXNzaWduZWQgdG8gZWFjaCBjb2x1bW4uCmBgYHtyLCBldmFsPVRSVUV9CmhlYWQoc3VydmV5X2RhdGEpCmBgYAoKCiMjIENsZWFuaW5nIERhdGEKCldoZW4gd2UgdGFsayBhYm91dCAiY2xlYW5pbmcgZGF0YSIsIHdlJ3JlIHRhbGtpbmcgYWJvdXQgbWFuaXB1bGF0aW5nIHRoZSBvcmlnaW5hbCBkYXRhIHNvIHRoYXQgaXQncyBlYXNpZXIgdG8gc3RhcnQgZXhwbG9yaW5nIHRyZW5kcywgYW5hbHl6aW5nLCBhbmQgdmlzdWFsaXppbmcuICBBcyB3ZSBnbyB0aHJvdWdoIHRoaXMgcHJvY2VzcywgaXQgY2FuIGJlIGhlbHBmdWwgdG8gc2F2ZSBkaWZmZXJlbnQgdmVyc2lvbnMsIG9yIHN0YWdlcyBvZiB0aGUgZGF0YSwgdG8gaGVscCBwcm9tb3RlIGEgdHJhbnNwYXJlbnQgYW5kIHJlcHJvZHVjaWJsZSBwcm9jZXNzLiAgSW4gdGhpcyBzZXNzaW9uLCB3ZSdyZSBnb2luZyB0byBmb2N1cyBvbiBzb21lIGNvbW1vbiBjbGVhbmluZyB0ZWNobmlxdWVzIHRoYXQgYXJlIHVzZWQgb24gc3VydmV5IGRhdGEuICAKCkluIHRoZSBbSW50cm9kdWN0aW9uIHRvIFIgc2Vzc2lvbl0oQmxvY2s4LTFfU1VSX0ludHJvLXRvLVIuaHRtbCkgd2UgZGlzY3Vzc2VkICoqb2JqZWN0cyoqIGFuZCAqKmZ1bmN0aW9ucyoqLCBhbmQgcGxheWVkIHdpdGggdGhlIGlkZWEgb2Ygb2JqZWN0cyBzdG9yaW5nIGluZm9ybWF0aW9uLCBhbmQgZnVuY3Rpb25zIG1hbmlwdWxhdGluZyB0aGUgb2JqZWN0L2RhdGEuCgpOb3cgd2UncmUgZ29pbmcgdG8gc3RhcnQgaW1wbGVtZW50aW5nICoqcGlwZXMqKiBhcyBhIHdheSB0byBjb25uZWN0IG9iamVjdHMgdG8gKipmdW5jdGlvbnMqKiBhbmQgKiphcmd1bWVudHMqKi4KCiMjIyMgUGlwZXMKClBpcGVzIGFyZSB1c2VkIHRvIGNoYWluIHN0ZXBzIG9mIGluc3RydWN0aW9ucyBvciBhY3Rpb25zIHRvZ2V0aGVyLCBhbmQgb2Z0ZW4gaW52b2x2ZSB3cml0aW5nIG92ZXIgYW4gb2JqZWN0IHRvIGdpdmUgaXQgYSBuZXcgdmFsdWUuIFdlJ2xsIHdhbGsgdGhyb3VnaCBzb21lIGV4YW1wbGVzIG9mIGhvdyB0aGlzIHdvcmtzLCBhbmQgc3RhcnQgdG8gc2VlIGhvdyB0aGUgZnVsbCBzeW50YXggb2YgUiBjb21lcyB0b2dldGhlci4KCiFbXShpbWFnZXMvZGF5Ml9SU3ludGF4LnBuZykKCgo8YnI+CgojIyMgQ2hhbmdpbmcgQ29sdW1uIE5hbWVzCgpZb3UnbGwgbm90aWNlIHRoYXQgdGhlIGNvbHVtbiBuYW1lcyBhcmUgcmVmbGVjdGl2ZSBvZiB0aGUgcXVlc3Rpb25zIGluIHRoZSBzdXJ2ZXkuIFdoaWxlIHNvbWUgb2YgdGhlIHNob3J0ZXIgbmFtZXMgd2lsbCB3b3JrLCB0aG9zZSB0aGF0IGFyZSB2ZXJ5IGxvbmcgYW5kIGhhdmUgc3BhY2VzIGluIHRoZSBuYW1lcyBjYW4gYmUgYW5ub3lpbmcgdG8gd29yayB3aXRoLiAgVGhlIGZpcnN0IHN0ZXAgaW4gb3VyIGNsZWFuaW5nIHdpbGwgYmUgdG8gZ2V0IGFsbCBvZiB0aGUgY29sdW1uIG5hbWVzIGluIGEgd2F5IHRoYXQgd2lsbCBiZSBlYXN5IHRvIHdvcmsgd2l0aC4KClRvIGNoYW5nZSBjb2x1bW4gbmFtZXMgd2UgY2FuIHVzZSB0aGUgZnVuY3Rpb24gYHJlbmFtZSgpYC4gIFRoZSBmdW5jdGlvbiBgcmVuYW1lKClgIGlzIHBhcnQgb2YgdGhlIFtkcGx5ciBwYWNrYWdlXShodHRwczovL2RwbHlyLnRpZHl2ZXJzZS5vcmcvaW5kZXguaHRtbCkgdGhhdCB3YXMgaW5zdGFsbGVkIHdpdGggdGlkeXZlcnNlLgoKOjo6d2Fsa3Rocm91Z2gKVHlwZSB0aGUgZm9sbG93aW5nIGNvZGUgdG8gY2hhbmdlIHRoZSBjb2x1bW4gbmFtZSBmcm9tICJZZWFyIG9mIFN0dWR5IiB0byAieWVhcl9vZl9zdHVkeSIKYGBge3J9CnN1cnZleV9kYXRhIDwtIHN1cnZleV9kYXRhIHw+CiAgcmVuYW1lKCJ5ZWFyX29mX3N0dWR5IiA9ICJZZWFyIG9mIFN0dWR5IikKYGBgCgoqKlN0ZXAtYnktc3RlcCBleHBsYW5hdGlvbjoqKgoKKiBUaGlzIGNvbW1hbmQgZmlyc3Qgc3RhcnRzIG9mZiB3aXRoIHRoZSBgc3VydmV5X2RhdGFgIG9iamVjdCwgd2hpY2ggaXMgb3VyIGRhdGFzZXQuCiogVGhlIGFzc2lnbm1lbnQgb3BlcmF0b3IgY29tZXMgbmV4dCwgYW5kIHdpbGwgcmUtd3JpdGUgdGhlIGluZm9ybWF0aW9uIHN0b3JlZCBpbiBgc3VydmV5X2RhdGFgIHdpdGggYWxsIHRoZSBpbmZvcm1hdGlvbiB0aGF0IGlzIHRvIHRoZSByaWdodCBzaWRlIG9mIHRoZSBvcGVyYXRvci4KKiBXZSB0aGVuIHVzZSB0aGUgYHN1cnZleV9kYXRhYCBvYmplY3QgYW5kIHRoZSBwaXBlIGB8PmAgdG8gdGVsbCBSIHRoYXQgd2Ugd2FudCB0byB0YWtlIHRoZSBkYXRhIHRoYXQgaXMgc3RvcmVkIGluIGBzdXJ2ZXlfZGF0YWAsIGFuZCB0aGVuIGRvIHNvbWV0aGluZyB0byBpdCAod2hpY2ggaXMgd2hhdCBjb21lcyBhZnRlciB0aGUgcGlwZSkuCiogVGhlIGByZW5hbWVgIGZ1bmN0aW9uIGlzIHVzZWQgdG8gcmVuYW1lIGNvbHVtbnMsIGFuZCBpcyBhbHdheXMgZm9sbG93ZWQgYnkgYnJhY2tldHMuICBJbnNpZGUgdGhvc2UgYnJhY2tldHMsIHdlJ2xsIHB1dCB0aGUgbmV3IGNvbHVtbiBuYW1lIHRoYXQgd2Ugd2FudCBpbiBxdW90YXRpb24gbWFya3MgYCIiYCwgZm9sbG93ZWQgYnkgYW4gZXF1YWwgc2lnbiBgPWAsIGZvbGxvd2VkIGJ5IHRoZSBleGlzdGluZyBjb2x1bW4gbmFtZSBpbiBxdW90YXRpb24gbWFya3MgYCIiYC4KKiBXZSB0aGVuIHJ1biB0aGUgY29tbWFuZCBhbmQgaG9wZSBpdCB3b3JrcyEKOjo6CgoKIyMgWW91ciBUdXJuIQoKOjo6cXVlc3Rpb24KRmlyc3QsIHVzZSB0aGUgZnVuY3Rpb25gbmFtZXMoKWAgdG8gZGlzcGxheSB0aGUgY29sdW1uIG5hbWVzLgpgYGB7ciwgZXZhbD1GQUxTRX0KbmFtZXMoc3VydmV5X2RhdGEpCmBgYAo6OjoKCjo6OnF1ZXN0aW9uCk5vdywgc2VlIGlmIHlvdSBjYW4gY2hhbmdlIHRoZSBgSG93IG1hbnkgaG91cnMgcGVyIGRheSBkbyB5b3Ugc3BlbmQgb24gc29jaWFsIG1lZGlhP2AgY29sdW1uIG5hbWUgdG8gYGhvdXJzLXBlci1kYXlgCmBgYHtyLCBjbGFzcy5zb3VyY2UgPSAnZm9sZC1oaWRlJ30Kc3VydmV5X2RhdGEgPC0gc3VydmV5X2RhdGEgfD4KICByZW5hbWUoImhvdXJzX3Blcl9kYXkiID0gIkhvdyBtYW55IGhvdXJzIHBlciBkYXkgZG8geW91IHNwZW5kIG9uIHNvY2lhbCBtZWRpYT8iKSAKYGBgCgo6OjoKCjo6OnF1ZXN0aW9uCk5leHQsIHRyeSB0byBjaGFuZ2UgdGhlIGZvbGxvd2luZyAzIGNvbHVtbiBuYW1lczoKCiogQ2hhbmdlIGBXaGljaCBzb2NpYWwgbWVkaWEgcGxhdGZvcm1zIGRvIHlvdSB1c2UgYXQgbGVhc3Qgb25jZSBhIHdlZWs/YCB0byBgcGxhdGZvcm1zYAoqIENoYW5nZSBgU29jaWFsIG1lZGlhIG1ha2VzIG1lIGZlZWwgY29ubmVjdGVkYCB0byBgZmVlbF9jb25uZWN0ZWRgCiogQ2hhbmdlIGBTb2NpYWwgbWVkaWEgaW5jcmVhc2VzIG15IHN0cmVzc2AgdG8gYGZlZWxfaW5jcmVhc2Vfc3RyZXNzYAoKKipIaW50OioqIEl0IGNhbiBiZSB0ZWRpb3VzIHRvIGRvIHRoZXNlIGNoYW5nZXMgb25lIGJ5IG9uZSwgYnV0IGJ5IHVzaW5nIGNvbW1hcyBgLGAgeW91IGNhbiByZW5hbWUgY29sdW1uIG5hbWVzIHdpdGggYSBzaW5nbGUgY29kZSBjaHVuay4gIApgYGB7ciwgY2xhc3Muc291cmNlID0gJ2ZvbGQtaGlkZSd9CnN1cnZleV9kYXRhIDwtIHN1cnZleV9kYXRhIHw+CiAgcmVuYW1lKCJwbGF0Zm9ybXMiID0gIldoaWNoIHNvY2lhbCBtZWRpYSBwbGF0Zm9ybXMgZG8geW91IHVzZSBhdCBsZWFzdCBvbmNlIGEgd2Vlaz8iLAogICAgICAgICAgImZlZWxfY29ubmVjdGVkIiA9ICJTb2NpYWwgbWVkaWEgbWFrZXMgbWUgZmVlbCBjb25uZWN0ZWQiLAogICAgICAgICAgImZlZWxfaW5jcmVhc2Vfc3RyZXNzIiA9ICJTb2NpYWwgbWVkaWEgaW5jcmVhc2VzIG15IHN0cmVzcyIpIApgYGAKOjo6Cgo6OjpxdWVzdGlvbgpOb3csIGxldCdzIGNoYW5nZSB0aGUgcmVzdCBvZiB0aGUgY29sdW1uIG5hbWVzIGNvcHkgdGhlIGZvbGxvd2luZyBjb2RlLiAoSWYgeW91IGZlZWwgeW91J3JlIHN0YXJ0aW5nIHRvIHVuZGVyc3RhbmQgaG93IHRoaXMgd29ya3MsIHlvdSBjYW4gc2hvdyB0aGUgY29kZSBiZWxvdyBhbmQgYGNvcGUgKyBwYXN0ZWAgaXQgaW50byB5b3VyIHNjcmlwdCwgb3IgaWYgeW91IHdhbnQgc29tZSBtb3JlIHByYWN0aWNlLCBmZWVsIGZyZWUgdG8gZG8gaXQgeW91cnNlbGYhCgpgYGB7ciwgY2xhc3Muc291cmNlID0gJ2ZvbGQtaGlkZSd9CnN1cnZleV9kYXRhIDwtIHN1cnZleV9kYXRhIHw+CiAgcmVuYW1lKCAiZmVlbF9kaXN0cmFjdGVkIiA9ICJJIGZpbmQgc29jaWFsIG1lZGlhIGRpc3RyYWN0aW5nIGZyb20gc3R1ZGllcyIsCiAgICAgICAgICJmZWVsX2ltcHJvdmVkX21vb2QiID0gIlNvY2lhbCBtZWRpYSBwb3NpdGl2ZWx5IGltcGFjdHMgbXkgbW9vZCIsCiAgICAgICAgICJ1c2FnZV9zdGF5X2luX3RvdWNoIiA9ICJTdGF5aW5nIGNvbm5lY3RlZCB3aXRoIGZyaWVuZHMvZmFtaWx5IiwKICAgICAgICAgInVzYWdlX2VudGVydGFpbm1lbnQiID0gIkVudGVydGFpbm1lbnQvcGFzc2luZyB0aW1lIiwKICAgICAgICAgInVzYWdlX25ldHdvcmtpbmciID0gIkFjYWRlbWljIG9yIHByb2Zlc3Npb25hbCBuZXR3b3JraW5nIiwKICAgICAgICAgInVzYWdlX25ld3MiID0gIlN0YXlpbmcgaW5mb3JtZWQgYWJvdXQgbmV3cy9ldmVudHMiLAogICAgICAgICAidXNhZ2VfZXhwcmVzc2lvbiIgPSAiU2VsZi1leHByZXNzaW9uL2NyZWF0aXZpdHkiLAogICAgICAgICAidGltZXN0YW1wIiA9ICJUaW1lc3RhbXAiLAogICAgICAgICAibmFtZSIgPSAiTmFtZSIsCiAgICAgICAgICJlbWFpbCIgPSAiRW1haWwiLAogICAgICAgICAiYWdlIiA9ICJBZ2UiLAogICAgICAgICAiZ2VuZGVyIiA9ICJHZW5kZXIiKQpgYGAKCjo6OgoKCiMjIFBlcnNvbmFsIElkZW5maWVycywgSUQgQ29kZXMsIGFuZCBEYXRhIFZlcnNpb25pbmcKCllvdSBwcm9iYWJseSBub3RpY2VkIHRoYXQgaW4gdGhpcyBzdXJ2ZXkgd2UgY29sbGVjdGVkIG5hbWVzIGFuZCBlbWFpbCBhZGRyZXNzZXMuIFRoaXMgY2FuIGJlIG5lY2Vzc2FyeSBmb3Igc2V2ZXJhbCByZWFzb25zLCBidXQgaXQgYWxzbyBwb3NlcyBldGhpY2FsIGlzc3VlcyB3aXRoIHJlc3BlY3QgdG8gd2hvIGlzIGFibGUgdG8gc2VlIHRoaXMgaW5mb3JtYXRpb24uIEl0IGlzIGNvbW1vbiBwcmFjdGljZSB0byByZW1vdmUgcGVyc29uYWwgaWRlbnRpZmllcnMgZnJvbSBzdXJ2ZXkgZGF0YSwgYnV0IHlvdSBtYXkgYWxzbyB3aXNoIHRvIGNyZWF0ZSBhIGNvZGUgZm9yIGVhY2ggZW50cnkgc2hvdWxkIHlvdSBldmVyIG5lZWQgdG8gY29ubmVjdCBpbmZvcm1hdGlvbiBiYWNrIHRvIHRoZSByZXNwb25kZW50LgoKTGV0J3MgdHJ5IHRoaXMgaXMgYSBmZXcgc3RlcHM6CgojIyMgQWRkIGFuIElEIGNvbHVtbgoKVGhlIGBtdXRhdGUoKWAgZnVuY3Rpb24sIHRoYXQgaXMgcGFydCBvZiB0aGUgW2RwbHlyIHBhY2thZ2VdKGh0dHBzOi8vZHBseXIudGlkeXZlcnNlLm9yZy9pbmRleC5odG1sKSwgaXMgdXNlZnVsIHdoZW4geW91IHdhbnQgdG8gY3JlYXRlIG5ldyBjb2x1bW5zIHRoYXQgYXJlIGZ1bmN0aW9ucyBvZiBleGlzdGluZyB2YXJpYWJsZXMuCgpXaGlsZSBub3QgdGVjaG5pY2FsbHkgdGhlIGZ1bmN0aW9uIG9mIGFuIGV4aXN0aW5nIHZhcmlhYmxlLCB3ZSBjYW4gdXNlIGBtdXR1YXRlYCB3aXRoIHRoZSBgcm93X251bWJlcigpYCBmdW5jdGlvbiB0byBjcmVhdGUgYSBuZXcgY29sdW1uIHRoYXQgd2lsbCBjb250YWluIHRoZSBudW1iZXIgb2YgZWFjaCByb3csIHRodXMgZ2l2ZW4gZW50cnkgYSB1bmlxdWUgSUQgbnVtYmVyLgoKCmBgYHtyLCBldmFsPUZBTFNFfQpzdXJ2ZXlfZGF0YSA8LSBzdXJ2ZXlfZGF0YSB8PgogIG11dGF0ZShJRCA9IHJvd19udW1iZXIoKSkKYGBgCgo6Ojp3YWxrdGhyb3VnaApZb3UgY2FuIHNlZSB0aGF0IHRoZSBncmFtbWFyIHdvcmtzIGluIHRoZSBzYW1lIHdheSBhcyB0aGUgYHJlbmFtZWAgZnVuY3Rpb24sIHdoaWNoIGlzIG9uZSBvZiB0aGUgc3RyZW5ndGhzIG9mIHVzaW5nIHRoZSBUaWR5dmVyc2UuICAKCiogVGhlIG11dGF0ZSBmdW5jdGlvbiBpcyBmb2xsb3dlZCBieSBicmFja2V0cywgYW5kIHRoZSBmaXJzdCB2YWx1ZSB0aGF0IGlzIGVudGVyZWQgaXMgd2hhdCB5b3Ugd2FudCB0aGUgbmV3IGNvbHVtbiB0byBiZSBjYWxsZWQuCiogQWZ0ZXIgdGhlIGA9YCBzaWduLCBpbnNlcnQgd2hhdCBpcyB0byBnbyBpbiB0aGUgcm93cyBvZiB0aGUgbmV3IGNvbHVtbi4KKiBJbiB0aGlzIGNhc2UsIGByb3dfbnVtYmVyKClgIGlzIGFkZGluZyB0aGUgbnVtYmVyIG9mIHRoZSBjb3JyZXNwb25kaW5nIHJvdyB0byB0aGUgY29sdW1uLgoKV2UnbGwgcGxheSB3aXRoIG1vcmUgdXNlcyBvZiBgbXV0YXRlYCBpbiBqdXN0IGEgbGl0dGxlIGJpdCEKOjo6Cgo8YnI+CgojIyMgTW92ZSB0aGUgSUQgY29sdW1uIHRvIHRoZSBsZWZ0LW1vc3QgcG9zaXRpb24gb2YgdGhlIGRhdGEKCkhhdmluZyBhbiBJRCBjb2x1bW4gYXMgdGhlIGxlZnQtbW9zdCwgb3IgZmlyc3QsIGNvbHVtbiBpbiB5b3VyIGRhdGFzZXQgbWFrZXMgdGhpbmdzIGdlbmVyYWxseSBlYXNpZXIgdG8ga2VlcCB0cmFjayBvZi4KClRoZSBgcmVsb2NhdGUoKWAgZnVuY3Rpb24sIHdoaWNoIGlzIGFsc28gcGFydCBvZiB0aGUgKipkcGx5cioqIHBhY2thZ2UsIHdoaWNoIGRvZXMganVzdCB3aGF0IGl0cyBuYW1lIGltcGxpZXM6IGl0IHJlbG9jYXRlcyBjb2x1bW5zIGluIGEgZGF0YXNldC4KClRoZSBkZWZhdWx0IG9mIGByZWxvY2F0ZWAgaXMgdG8gcHV0IHRoZSBzcGVjaWZpZWQgY29sdW1uIGluIHRoZSBmaXJzdCBwb3NpdGlvbiwgc28gd2UgZG9uJ3QgbmVlZCB0byBzcGVjaWZ5IGxvY2F0aW9uIGZvciB0aGlzIHRhc2suCgpgYGB7ciwgZXZhbD1GQUxTRX0Kc3VydmV5X2RhdGEgPC0gc3VydmV5X2RhdGEgfD4KICByZWxvY2F0ZShJRCkKYGBgCgo6Ojpub3RlCkV2ZXJ5IHRpbWUgeW91IG1ha2UgYSBjaGFuZ2UgdG8geW91ciBkYXRhLCB5b3UgY2FuIHVzZSB0aGUgYFZpZXcoc3VydmV5X2RhdGEpYCBmdW5jdGlvbiB0byBjaGVjayB3aGF0IHdhcyBkb25lLgo6OjoKCkJlZm9yZSB3ZSBnbyBhbnkgZnVydGhlciwgbGV0J3Mgc2F2ZSBhbm90aGVyIGNvcHkgb2YgdGhpcyBkYXRhLiAgVGhpcyB3aWxsIGFsbG93IHRoZSBkYXRhIGhvbGRlciB0byBoYXZlIGEgY29weSBvZiB0aGUgZGF0YSB0aGF0IGhhcyBib3RoIHRoZSBwZXJzb25hbCBpZGVudGlmaWVycyBhbmQgdGhlIElEIGNvZGVzLiAgV2Ugd29uJ3QgYmUgYW5hbHl6aW5nIHRoaXMgZGF0YXNldCwgYnV0IGl0IHdpbGwgYmUgbmVjZXNzYXJ5IHNob3VsZCB5b3UgbmVlZCB0byByZWNvbm5lY3Qgd2l0aCByZXNwb25kZW50cy4gIAoKPGJyPgoKIyMjIyBTYXZpbmcgYSBkYXRhc2V0CgpNdWNoIGxpa2Ugd2UgZGlkIHdpdGggcmVhZGluZyBgLmNzdmAgZGF0YSBpbnRvIFIsIHRoZXJlIGlzIGEgc2ltaWxhciBjb21tYW5kIHRvIHNhdmUsIG9yICJ3cml0ZSIgYC5jc3ZgIGRhdGEgYmFjayB0byB5b3VyIGNvbXB1dGVyIGNhbGxlZCBgd3JpdGVfY3N2KClgLiAgVGhlIHN5bnRheCBpcyBhcyBmb2xsb3dzOgoKYHdyaXRlX2NzdihkYXRhLW9iamVjdC1uYW1lLCBmaWxlPSJmaWxlLXBhdGgvZGF0YWZpbGUtbmFtZS5jc3YiKWAKCklmIHlvdSB1c2UgdGhlIHNhbWUgZmlsZSBuYW1lIGFzIHRoZSBvbmUgeW91IGFyZSB3b3JraW5nIG9uLCBpdCB3aWxsIGNoYW5nZSB0aGF0IGZpbGUgYmFzZWQgb24gd2hhdCB5b3UndmUgZG9uZS4gIEhvd2V2ZXIsICoqd2UgZG9uJ3Qgd2FudCB0byB0b3VjaCBvdXIgb3JpZ2luYWwgZGF0YSoqLCBzbyB3ZSdyZSBnb2luZyB0byBtYWtlIGEgbmV3IGZpbGUgdG8gaW5kaWNhdGUgdGhhdCBpdCBoYXMgY2xlYW4gY29sdW1ucywgSUQgY29kZXMsIGFuZCBwZXJzb25hbCBpZGVudGlmaWVycy4KCmBgYHtyLCBldmFsPUZBTFNFfQp3cml0ZV9jc3Yoc3VydmV5X2RhdGEsICJzdXJ2ZXktZGF0YV9jbGVhbi1jb2xzX0lEcy5jc3YiKQpgYGAKCgojIyMgQmFjayB0byBDbGVhbmluZyEKCk5vdyB0aGF0IHdlJ3ZlIHNhdmVkIHRoYXQgdmVyc2lvbiBvZiB0aGUgZGF0YSwgbGV0J3Mgbm93IHJlbW92ZSB0aGUgYGVtYWlsYCBhbmQgYG5hbWVgIGNvbHVtbnMgdG8gZGUtaWRlbnRpZnkgdGhlIGRhdGFzZXQsIGFuZCBhbHNvIHJlbW92ZSBzb21lIHVubmVjZXNzYXJ5IGNvbHVtbnMuCgojIyMjIFJlbW92aW5nIENvbHVtbnMKClRoZXJlIGFyZSBhIG51bWJlciBvZiB3YXlzIHRvIHJlbW92ZSBjb2x1bW5zIGluIFIsIHdlJ2xsIGZvY3VzIG9uIHRoZSB0aGUgYHNlbGVjdGAgZnVuY3Rpb24gZnJvbSB0aGUgYGRwbHlyYCBwYWNrYWdlIGluIFRpZHl2ZXJzZS4KClRoaXMgZm9sbG93cyB0aGUgc2FtZSBzeW50YXggdGhhdCB3ZSd2ZSBiZWVuIHVzaW5nLCBhbmQgYWZ0ZXIgdGhlIGBzZWxlY3RgIGZ1bmN0aW9uLCB5b3UgaW5zZXJ0IGEgZGFzaCBgLWAsIG9yIG1pbnVzIHN5bWJvbCwgcGx1cyB0aGUgbmFtZSBvZiB0aGUgY29sdW1uIHlvdSB3YW50IHRvIHJlbW92ZS4KCkxldCdzIHN0YXJ0IGJlIHJlbW92aW5nIHRoZSBgdGltZXN0YW1wYCBjb2x1bW4gYnkgdXNpbmcgaXRzIGNvbHVtbiBuYW1lLgoKYGBge3IsIGV2YWw9RkFMU0V9CnN1cnZleV9kYXRhIDwtIHN1cnZleV9kYXRhIHw+CiAgc2VsZWN0KC10aW1lc3RhbXApCmBgYAoKWW91IGNhbiB0YWtlIGEgbG9vayBhdCB0aGUgZGF0YXNldCBhbmQgbm93IHNlZSB0aGF0IHRoZSBgdGltZXN0YW1wYCBjb2x1bW4gaXMgbm93IGdvbmUuCgpMZXQncyBub3cgcmVtb3ZlIHRoZSBpZGVudGlmaWVycyBgbmFtZWAgYW5kIGBlbWFpbGAuICAKCjo6OnF1ZXN0aW9uCgpTZWUgaWYgeW91IGNhbiByZW1vdmUgdGhlIGBuYW1lYCBhbmQgYGVtYWlsYCBjb2x1bW5zLCBhcyB3ZSB3YW50IHRvIGdldCByaWQgb2YgdGhlIGlkZW50aWZ5aW5nIHZhcmlhYmxlcy4KCkhpbnQ6IFRvIGRvIHRoaXMgaXMgYSBzaW5nbGUgY29tbWFuZCwgc2VlIGlmIHlvdSBjYW4gZmlndXJlIG91dCBob3cgdG8gdXNlIHRoZSBgYygpYCBmdW5jdGlvbiB0aGF0IHdhcyBpbnRyb2R1Y2VkIGluIHRoZSBbSW50cm9kdWN0aW9uIHRvIFIgc2Vzc2lvbl0oQmxvY2s4LTFfU1VSX0ludHJvLXRvLVIuaHRtbCkKYGBge3IsIGNsYXNzLnNvdXJjZSA9ICdmb2xkLWhpZGUnLCBldmFsID0gRkFMU0V9CgpzdXJ2ZXlfZGF0YSA8LSBzdXJ2ZXlfZGF0YSB8PgogIHNlbGVjdCgtYyhuYW1lLCBlbWFpbCkpCmBgYAo6OjoKCgo8YnI+CgojIyMjIFNhdmUgQW5vdGhlciBWZXJzaW9uIG9mIHRoZSBEYXRhCgpOb3cgdGhhdCB3ZSBoYXZlIGEgZGF0YXNldCB0aGF0IGhhcyBjbGVhbmVkIGNvbHVtbnMsIG5vIGlkZW50aWZpZXJzLCBhbmQgbm8gdW5uZWNlc3NhcnkgY29sdW1ucywgbGV0J3Mgc2F2ZSBhIGNvcHkgb2YgdGhpcyBzaG91bGQgd2UgZXZlciBuZWVkIHRvIGdvIGJhY2sgdG8gdGhlIGJlZ2lubmluZy4KCmBgYHtyLCBldmFsPUZBTFNFfQp3cml0ZV9jc3Yoc3VydmV5X2RhdGEsICJzdXJ2ZXktZGF0YV9jbGVhbi1jb2xzX25vLUlELmNzdiIpCmBgYAoKIyMjIENsZWFuaW5nIFZhbHVlcwoKTm93IHRoYXQgd2UndmUgY2xlYW5lZCB1cCB0aGUgdmFyaWFibGVzL2NvbHVtbnMsIGxldCdzIHRha2UgYSBsb29rIGF0IG91ciBkYXRhc2V0IGFuZCBzZWUgd2hhdCB2YWx1ZXMgbWlnaHQgbmVlZCBzb21lIHdvcmsuCgpgYGB7ciwgZXZhbD1GQUxTRX0KVmlldyhzdXJ2ZXlfZGF0YSkKYGBgCgojIyBDbGVhbmluZyBTdXJ2ZXkgVmFsdWVzCgpOb3cgdGhhdCB3ZSd2ZSBjbGVhbmVkIHVwIG91ciBoZWFkZXJzLCBpdCdzIHRpbWUgdG8gc3RhcnQgbG9va2luZyBhdCB0aGUgdmFsdWVzIHRvIHNlZSBpZiB3ZSdsbCBiZSBlYXNpbHkgYWJsZSB0byBhbmFseXplIHRoZW0sIG9yIGlmIHRoZXkgbmVlZCBjbGVhbmluZyB0b28uICAKCklmIHlvdSB0YWtlIGEgbG9vayBhdCB0aGUgYHBsYXRmb3Jtc2AgY29sdW1uLCB5b3UnbGwgc2VlIHRoYXQgdGhlIHZhbHVlcyBhcmUgcHJldHR5IG1lc3N5LCBhbmQgY2FuIGluY2x1ZGUgYW55IGNvbWJpbmF0aW9uIG9mIHVwIHRvIDYgb3B0aW9ucy4gVGhpcyBpcyB2ZXJ5IGhhcmQgdG8gd29yayB3aXRoLCBzbyB3ZSdsbCBuZWVkIHRvIGZpZ3VyZSBvdXQgdGhlIGJlc3Qgd2F5IHRvIGZvcm1hdCB0aGluZ3MuCgojIyMgV2lkZSBEYXRhLCBMb25nIERhdGEsIGFuZCB0aGUgVGlkeSBEYXRhIFByaW5jaXBsZXMKCldoZW4gY29uc2lkZXJpbmcgdGhlc2UgdHlwZXMgb2YgbWVzc3kgY29sdW1ucywgdGhlcmUgYXJlIHR3byBkaWZmZXJlbnQgc3RyYXRlZ2llcyB3ZSBjYW4gdGFrZSB0byBjbGVhbiB0aGVtIHVwOgoKMSkgTWFrZSB0aGUgZGF0YSAqKmxvbmcsIG9yIHRpZHkqKiwgd2hpY2ggYWltcyB0byByZWR1Y2UgY29sdW1ucyBidXQgY3JlYXRlcyBtb3JlIHJvd3MuCjIpIE1ha2UgdGhlIGRhdGEgKip3aWRlKiosIHdoaWNoIGNyZWF0ZXMgbW9yZSBjb2x1bW5zIGFuZCBjcmVhdGVzIGEgd2lkZXIgc3ByZWFkc2hlZXQuCgoKSW4gdGhlIG5leHQgc2Vzc2lvbiBvZiB0aGlzIHNlcmllcywgW01ha2luZyBTZW5zZSBvZiBTdXJ2ZXkgRGF0YV0oQmxvY2s4LTNfU1VSX01ha2luZy1TZW5zZS5odG1sKSwgd2Ugd2lsbCBiZSBsb29raW5nIGF0IHRoZSBwcm9zIGFuZCBjb25zIG9mIHdpZGUgdnMgbG9uZyBkYXRhLCBidXQgaW4gdGhpcyBzZXNzaW9uIHdlIHdpbGwgZm9jdXMgb24gdGhlIHRlY2huaXF1ZXMgdG8gcGxheSB3aXRoIHRoZSBzaGFwZSBvZiBvdXIgZGF0YS4KCgojIyMgTWFraW5nIERhdGEgTG9uZyBvciAiVGlkeSIKCkluIFIsIGFuZCBzcGVjaWZpY2FsbHkgdGhlIFRpZHl2ZXJzZSwgdGhlIFtUaWR5IERhdGEgUHJpbmNpcGxlc10oaHR0cHM6Ly9jcmFuLnItcHJvamVjdC5vcmcvd2ViL3BhY2thZ2VzL3RpZHlyL3ZpZ25ldHRlcy90aWR5LWRhdGEuaHRtbCkgc3BlY2lmeSBxdWFsaXRpZXMgb2Ygd2hhdCBpcyBjb25zaWRlcmVkICJ0aWR5IGRhdGEiLCB3aXRoIGRhdGEgdGhhdCBkb2Vzbid0IG1lZXQgYWxsIGNyaXRlcmlhIGJlaW5nICJtZXNzeSBkYXRhIi4gVGhleSBwcm92aWRlIGEgc3RhbmRhcmQgd2F5IHRvIG9yZ2FuaXplIGRhdGEgdG8gImZhY2lsaXRhdGUgaW5pdGlhbCBleHBsb3JhdGlvbiBhbmQgYW5hbHlzaXMgb2YgdGhlIGRhdGEsIGFuZCB0byBzaW1wbGlmeSB0aGUgZGV2ZWxvcG1lbnQgb2YgZGF0YSBhbmFseXNpcyB0b29scyB0aGF0IHdvcmsgd2VsbCB0b2dldGhlciIgIChbc291cmNlXShodHRwczovL2NyYW4uci1wcm9qZWN0Lm9yZy93ZWIvcGFja2FnZXMvdGlkeXIvdmlnbmV0dGVzL3RpZHktZGF0YS5odG1sKSkuIAoKKipUaWR5IERhdGEgUHJpbmNpcGxlczoqKgoKKiBFYWNoIHZhcmlhYmxlIGlzIGEgY29sdW1uLgoqIEVhY2ggb2JzZXJ2YXRpb24gaXMgYSByb3cuCiogRWFjaCB2YWx1ZSBpcyBhIGNlbGwuIAoKSGVyZSBpcyBhbiBleGFtcGxlIG9mIHdoYXQgd291bGQgYmUgY29uc2lkZXJlZCBhIG1lc3N5IGRhdGFzZXQ6CgohW10oaW1hZ2VzL2Jsb2NrOC0yX3RpZHktZGF0YTEucG5nKQoKV2hpbGUgc3RydWN0dXJpbmcgZGF0YSBpbiB0aGlzIHdheSBpcyBtdWNoIGVhc2llciBmb3IgYSBodW1hbiB0byBzY2FuIGFuZCBmb3Igc3VtbWFyeSB0YWJsZXMsIGl0J3MgdHJpY2tpZXIgZm9yIGEgY29kaW5nIGxhbmd1YWdlIHRvIHBhcnNlIGFuZCB3b3JrIHdpdGguICBUaGUgdmFyaW91cyBwYWNrYWdlcyBvZiB0aGUgVGlkeXZlcnNlIGFyZSBzcGVjaWZpY2FsbHkgZ2VhcmVkIHRvd2FyZHMgd29ya2luZyB3aXRoIHRpZHkgZGF0YSwgYW5kIG1ha2luZyB5b3VyIGRhdGEgdGlkeSB3aWxsIG1ha2UgZmFjZXRpbmcsIGdyb3VwaW5nLCBtb2RlbGxpbmcsIGFuZCB2aXN1YWxpemluZyBtdWNoIGVhc2llci4KCkhlcmUncyBhbiBleGFtcGxlIG9mIHdoYXQgYSB0aWR5IHZlcnNpb24gb2YgdGhpcyBkYXRhIHdvdWxkIGxvb2sgbGlrZToKCiFbXShpbWFnZXMvYmxvY2s4LTJfdGlkeS1kYXRhMi5wbmcpCgpBcyB5b3UnbGwgbm90aWNlLCB0aGUgcmVwZWF0aW5nIHZhbHVlcyBpbiB0aGUgYE5hbWVgIGNvbHVtbiBzZWVtcyBjbHVua3kgYW5kIHdlaXJkIHRvIHNjYW4uICBCdXQgYSB3YXkgdG8gdGhpbmsgYWJvdXQgdGhpbmsgYWJvdXQgd2h5IHRoaXMgbWlnaHQgYmUgdXNlZnVsIHdvdWxkIGJlIGlmIGluc3RlYWQgb2YgMyBxdWl6cywgdGhlcmUgd2VyZSA1MC4gIEhhdmluZyBhIHVuaXF1ZSBjb2x1bW4gZm9yIGVhY2ggd291bGQgYmUgdGVkaW91cyBpbiBpdHMgb3duIHdheSwgYW5kIHRoaXMgaXMganVzdCBhIHNpbmdsZSB2YXJpYWJsZS4gVGhlcmUgY291bGQgYmUgc2V2ZXJhbCBzZXRzIG9mIHdpZGUgc3Bhbm5pbmcgY29sdW1ucyB0byBjYXB0dXJlIHdoYXQgY291bGQgYmUgY2FwdHVyZWQgaW4gYSBzaW5nbGUgdmFyaWFibGUuICBUaGUgY29uY2VwdCBvZiB0aWR5IGRhdGEgZm9jdXNlcyBvbiBtaW5pbWl6aW5nIHRoZSBhbW91bnQgb2YgY29sdW1ucyBpbiBmYXZvdXIgb2YgZmV3ZXIgY29sdW1ucyB3aXRoIHJpY2ggYW1vdW50cyBvZiBvYnNlcnZhdGlvbnMuCgojIyBNYWtpbmcgYSBEYXRhc2V0IFRpZHkKClRoZSBbdGlkeXJdKGh0dHBzOi8vdGlkeXIudGlkeXZlcnNlLm9yZy8pIHBhY2thZ2UgaW4gdGhlIFRpZHl2ZXJzZSBzcGVjaWFsaXplcyBpbiBtYWtpbmcgZGF0YSB0aWR5LgoKVGhlIGBzZXBlcmF0ZV9sb25nZXJfZGVsaW0oKWAgZnVuY3Rpb24gc3BlY2lhbGl6ZXMgaW4gZGVhbGluZyB3aXRoIHRoZSBtZXNzeSB2YWx1ZXMgaW4gb3VyIGBwbGF0Zm9ybXNgIGNvbHVtbi4KClRoZSBgdHJpbXN3YCBmdW5jdGlvbiBpcyB1c2VmdWwgdG8gYWRkIHdpdGggdGhlIGBzZXBlYXJhdGVfbG9uZ2VyX2RlbGltKClgIGZ1bmN0aW9uLCBiZWNhdXNlIGl0IHJlbW92ZXMgYWxsIHRoZSB3aGl0ZSBzcGFjZSBzdXJyb3VuZGluZyBvbiBlaXRoZXIgc2lkZSBvZiBhIHZhbHVlLCBhdm9pZGluZyBhbnkgY29tcGxpY2F0aW9ucyB0aGlzIGNvdWxkIGJyaW5nIHVwLgoKOjo6d2Fsa3Rocm91Z2gKCkxldCdzIGdpdmUgdGhpcyBhIHRyeSEKCmBgYHtyfQpzdXJ2ZXlfZGF0YV9sb25nIDwtIHN1cnZleV9kYXRhIHw+CiAgc2VwYXJhdGVfbG9uZ2VyX2RlbGltKGNvbHMgPSBwbGF0Zm9ybXMsIGRlbGltID0gIiwiKSB8PiAKICBtdXRhdGUocGxhdGZvcm1zID0gdHJpbXdzKHBsYXRmb3JtcykpIApgYGAKCioqU3RlcC1ieS1zdGVwIGV4cGxhbmF0aW9uKioKCjEpIFdlIHN0YXJ0IG9mZiBieSBjcmVhdGluZyBhIG5ldyByIG9iamVjdCBjYWxsZWQgYHN1cnZleV9kYXRhX2xvbmdgLCB3aGljaCBpcyBnb2luZyB0byB0YWtlIG9uIGFsbCB0aGUgaW5mb3JtYXRpb24gdGhhdCBpcyBwYXNzZWQgdG8gaXQgZnJvbSB0aGUgcmlnaHQgc2lkZSBvZiB0aGUgYXNzaWdubWVudCBvcGVyYXRvciBgPC1gLgoyKSBUaGUgYHN1cnZleV9kYXRhYCBvYmplY3QgcmVwcmVzZW50cyBvdXIgZGF0YXNldCB0aGF0IHdlIHdhbnQgdG8gcGFzcyB0aHJvdWdoIHRoZSBwaXBlIGB8PmAgdG8gbWFuaXB1bGF0ZSBpdC4KMykgVGhlIGBzZXBlYXJhdGVfbG9uZ2VyX2RlbGltYCBmdW5jdGlvbiBpcyBhcHBsaWVkIHRvIHRoZSBgcGxhdGZvcm1zYCBjb2x1bW4gdG8gY3JlYXRlIGEgbmV3IHJvdyBmb3IgZWFjaCBvZiB0aGUgdmFsdWVzIGluIHRoZSBjZWxsLCBhbmQgYmVjYXVzZSB0aGUgdmFsdWVzIHNlcGFyYXRlZCBieSBjb21tYXMsIHRoZSBgZGVsaW0gPSAiLCJgIGZ1bmN0aW9uIHRlbGxzIFIgdG8gc2VwYXJhdGUgZWFjaCBuZXcgcm93IGFmdGVyIGEgY29tbWEuCjQpIFRoZSBkYXRhIG9iamVjdCB3aXRoIHRoZSBzZXBhcmF0ZSByb3dzIGlzIHRoZW4gcGlwZWQgaW50byB0aGUgbmV4dCBmdW5jdGlvbiwgd2hpY2ggdXNlcyB0aGUgYG11dGF0ZWAgZnVuY3Rpb24gdG8gdGVsbCBSIHRoYXQgd2Ugd2FudCB0byBtb2RpZnkgdGhlIG5ld2x5IHVwZGF0ZWQgYHBsYXRmb3Jtc2AgdmFsdWVzLCBhbmQgdGhlIGB0cmltc3dgIHRoZW4gcmVtb3ZlcyBhbnkgd2hpdGVzcGFjZSBvbiBlaXRoZXIgc2lkZSBvZiB0aGUgdmFsdWVzLgo1KSBFdCB2b2lsYSEKCjo6OgoKCklmIHdlIHRha2UgYW5vdGhlciBsb29rIGF0IHRoZSBkYXRhc2V0LCB5b3UnbGwgc2VlIHRoYXQgdGhlIGBwbGF0Zm9ybXNgIHZhcmlhYmxlIG5vdyBoYXMgc2luZ2xlIG9ic2VydmF0aW9ucyBpbiBlYWNoIGNlbGwuCgojIyMgTW9yZSBUaWR5aW5nCgpJbiBhZGRpdGlvbiB0byB0aGUgYHBsYXRmb3Jtc2AgdmFyaWFibGUsIHRoZSBzdXJ2ZXkgY29udGFpbmVkIHR3byBhZGRpdGlvbmFsIG11bHRpcGxlLWNob2ljZSBxdWVzdGlvbnM6CgoqICJQbGVhc2UgaW5kaWNhdGUgaG93IG11Y2ggeW91IGFncmVlIG9yIGRpc2FncmVlIHdpdGggdGhlIGZvbGxvd2luZyBzdGF0ZW1lbnRzIGFib3V0IHNvY2lhbCBtZWRpYSBhbmQgeW91ciBtZW50YWwgaGVhbHRoOiIKCiogIlJhbmsgdGhlIGZvbGxvd2luZyByZWFzb25zIGZvciB1c2luZyBzb2NpYWwgbWVkaWEgaW4gb3JkZXIgb2YgaW1wb3J0YW5jZSB0byB5b3UgKDEgPSBtb3N0IGltcG9ydGFudCwgNSA9IGxlYXN0IGltcG9ydGFudCk6IgoKWW91J2xsIG5vdGljZSB0aGF0IGVhY2ggb2YgdGhlc2UgcXVlc3Rpb25zIGNyZWF0ZSBjcmVhdGUgNCBhbmQgNSBjb2x1bW5zLCByZXNwZWN0aXZlbHksIHRvIGNhcHR1cmUgdGhlIHJlc3BvbnNlcy4gIFRoaXMgaXNuJ3QgbmVjZXNzYXJpbHkgYSBiYWQgdGhpbmcsIGJ1dCBpbiB0aGUgc3Bpcml0IG9mIG1ha2luZyBvdXIgZGF0YSB0aWR5LCBsZXQncyBzZWUgdHJ5IHRvIHJlZHVjZSB0aGUgYW1vdW50IG9mIHZhcmlhYmxlcyB0byByZXByZXNlbnQgdGhlc2UgdmFsdWVzLgoKOjo6cXVlc3Rpb24KClRha2UgYSBsb29rIGF0IHRoZSBkYXRhc2V0LCBmb2N1c2luZyBvbiB0aGUgdmFyaWFibGVzIHRoYXQgYmVnaW4gd2l0aCBgZmVlbC1gIGFuZCBgdXNhZ2UtYCwgYW5kIHRoaW5rIGFib3V0IGhvdyB5b3UgbWlnaHQgbWFrZSB0aGVzZSB2YXJpYWJsZXMgdGlkeS4KCjo6OgoKVGhlc2UgdmFyaWFibGVzIGFyZSBhIGJpdCB0cmlja2llciB0byBjb25jZXB0dWFsaXplIHRoYW4gdGhlIHBsYXRmb3JtcyB2YXJpYWJsZSwgYnV0IFIgaGFzIGEgZnVuY3Rpb24gdGhhdCBpcyBkZXNpZ25lZCB0byBoYW5kbGUgdGhpbmdzIGxpa2UgdGhpcywgYW5kIHdpbGwgaG9wZWZ1bGx5IG1ha2Ugc2Vuc2Ugd2hlbiB5b3Ugc2VlIGl0IQoKOjo6d2Fsa3Rocm91Z2gKCkhlcmUncyB0aGUgY29kZSB0byBkbyB0aGlzOgoKYGBge3J9CnN1cnZleV9kYXRhX2xvbmdlciA8LSBzdXJ2ZXlfZGF0YV9sb25nIHw+CiAgcGl2b3RfbG9uZ2VyKAogICAgY29scyA9IHN0YXJ0c193aXRoKCJmZWVsXyIpLAogICAgbmFtZXNfdG8gPSAiZmVlbF9xdWVzdGlvbiIsCiAgICB2YWx1ZXNfdG8gPSAiZmVlbF9yZXNwb25zZSIKICApCmBgYAoKKipTdGVwLWJ5LXN0ZXAgZXhwbGFuYXRpb246KioKCjEpIFdlIHN0YXJ0IGJ5IHdyaXRpbmcgYSBuZXcgciBvYmplY3QgY2FsbGVkIGBzdXJ2ZXlfZGF0YV9sb25nZXJgLCB0aGF0IHdpbGwgaG9sZCBldmVyeXRoaW5nIHRvIHRoZSBsZWZ0IG9mIHRoZSBhc3NpZ25tZW50IG9wZXJhdG9yIGB8PmAuCjIpIFRoZSBgc3VydmV5X2RhdGFfbG9uZ2Agb2JqZWN0IHJlcHJlc2VudHMgb3VyIGRhdGFzZXQgdGhhdCB3ZSB3YW50IHRvIHBhc3MgdGhyb3VnaCB0aGUgcGlwZSBgfD5gIHRvIG1hbmlwdWxhdGUgaXQuCjMpIFRoZSBgcGl2b3RfbG9uZ2VyKClgIGZ1bmN0aW9uIHJlc2hhcGVzIHRoZSBkYXRhIGZyb20gd2lkZSB0byBsb25nLiAgSW4gdGhpcyBjYXNlIHdlIGhhZCBzZXZlcmFsIHZhcmlhYmxlcyB0aGF0IHN0YXJ0ZWQgd2l0aCBgZmVlbC1gLCBhbmQgdGhpcyBmdW5jdGlvbiB3aWxsIGdhdGhlciB0aGVtIGludG8gdHdvIGNvbHVtbnM6IG9uZSBmb3IgdGhlIHF1ZXN0aW9uIG5hbWUgYW5kIG9uZSBmb3IgdGhlIHJlc3BvbnNlIHZhbHVlLgo0KSBUaGUgYGNvbHMgPSBzdGFydHNfd2l0aCgiZmVlbC0iKWAgZnVuY3Rpb24gdGVsbHMgYHBpdm90X2xvbmdlcmAgd2hpY2ggY29sdW1ucyB0byBnYXRoZXIuIChZb3UgY2FuIHNlZSB3aHkgdmFyaWFibGUgbmFtaW5nIGNhbiBoZWxwIHdpdGggZGF0YSBjbGVhbmluZyEpCjUpIGBuYW1lc190byA9ICJmZWVsX3F1ZXN0aW9uImAgbmFtZXMgb2YgdGhlIG5ldyBjb2x1bW4gdGhhdCB3aWxsICoqaG9sZCB0aGUgb3JpZ2luYWwgY29sdW1uIG5hbWVzKiogKGllLiB0aGUgcXVlc3Rpb24gaWRlbnRpZmllcnMuICBUaGUgbmV3IGNvbHVtbiB3aWxsIGJlIGNhbGxlZCBgZmVlbF9xdWVzdGlvbmAuCjYpIGB2YWx1ZXNfdG9gICJmZWVsX3Jlc3BvbnNlIiBuYW1lcyB0aGUgbmV3IGNvbHVtbiB0aGF0IHdpbGwgKipob2xkIHRoZSB2YWx1ZXMgKGFuc3dlcnMpIHRoYXQgdXNlZCB0byBzaXQgaW4gdGhlIGBmZWVsLWAgY29sdW1ucyoqLiAgVGhlIG5ldyBjb2x1bW4gd2lsbCBiZSBjYWxsZWQgYGZlZWxfcmVzcG9uc2VgLgo3KSBDbG9zZSB0aGUgYnJhY2tldCwgYW5kIHRha2UgYSBsb29rIHRvIHNlZSB3aGF0IHRoZSBkYXRhIGxvb2tzIGxpa2UuCgo6OjoKCiMjIFlvdXIgVHVybiEKCjo6OiBxdWVzdGlvbgoKTm93IHRoYXQgeW91J3ZlIHNlZW4gaG93IHRoZSBgcGl2b3RfbG9uZygpYCBmdW5jdGlvbiB3b3Jrcywgc2VlIGlmIHlvdSBjYW4gY3JlYXRlIGEgbmV3IG9iamVjdCBjYWxsZWQgYHN1cnZleV9kYXRhX3RpZHlgLCB0aGF0IGxlbmdodGhlbiB0aGUgYHVzYWdlLWAgY29sdW1ucyBqdXN0IGFzIHdlIGRpZCB3aXRoIHRoZSBgZmVlbC1gIGNvbHVtbnMuCgpIaW50OiBUaGUgc3ludGF4IGlzIGV4YWN0bHkgdGhlIHNhbWUgYXMgdGhlIGV4YW1wbGUgYWJvdmUsIHlvdSBqdXN0IG5lZWQgdG8gY2hhbmdlIHRoZSB2YWx1ZXMgaW4gcXVvdGF0aW9ucyBgIiJgLgoKYGBge3IsIGNsYXNzLnNvdXJjZSA9ICdmb2xkLWhpZGUnLCBldmFsID0gRkFMU0V9CnN1cnZleV9kYXRhX3RpZHkgPC0gc3VydmV5X2RhdGFfbG9uZ2VyIHw+CiAgcGl2b3RfbG9uZ2VyKAogIGNvbHMgPSBzdGFydHNfd2l0aCgidXNhZ2VfIiksCiAgbmFtZXNfdG8gPSAidXNhZ2VfcXVlc3Rpb24iLAogIHZhbHVlc190byA9ICJ1c2FnZV9yZXNwb25zZSIKKQpgYGAKCjo6OgoKVGFrZSBhIGxvb2sgYXQgdGhlIGRhdGE6CgpgYGB7ciwgZXZhbD1GQUxTRX0KVmlldyhzdXJ2ZXlfZGF0YV90aWR5KQpgYGAKCkl0IGxvb2tzIHByZXR0eSB3ZWlyZCEgIEFzIG1lbnRpb25lZCwgdGlkeSBkYXRhIGlzIHZlcnkgaGFyZCB0byBzY2FuIGZvciBhIGh1bWFuLCBidXQgcmVhbGx5IGVhc3kgZm9yIFIgdG8gc2Nhbi4gWW91IG1pZ2h0IG5vdGljZSB0aGF0IHRoZXJlJ3Mgb3ZlciAyNiwwMDAgcm93cywgd2hpY2ggbWF5IHNlZW0gb3ZlcndoZWxtaW5nIGFuZCB1bm5lY2Vzc2FyeS4gIFRoZSBUaWR5IERhdGEgUHJpbmNpcGxlcyBhcmUgdmVyeSBtdWNoIGdlYXJlZCB0b3dhcmRzIHVzaW5nIFIsIGFuZCB0aGVyZSBhcmUgdGltZXMgd2hlbiBtYWtpbmcgeW91ciBkYXRhIGNvbXBsZXRlbHkgdGlkeSBtaWdodCBub3Qgc3VpdGUgeW91ciBwdXJwb3NlLiAgSG93ZXZlciwgdGhlIHB1cnBvc2Ugb2YgdGhlIGV4ZXJjaXNlIHdhcyB0byBnZXQgeW91IHRvIHRoaW5rIGFib3V0IGhvdyB5b3UgbWlnaHQgd2FudCBvciBuZWVkIHRvIHN0cnVjdHVyZSB5b3VyIGRhdGEsIGFuZCB5b3Ugbm93IGhhdmUgY29kZSB0aGF0IHlvdSBjYW4gZWFzaWx5IGFkYXB0IHRvIHBsYXkgd2l0aCB5b3VyIHN1cnZleXMuCgoKIyMjIFNhdmUgYSBjb3B5IG9mIHRoZSBkYXRhCgpOb3cgdGhhdCB3ZSd2ZSBmdWxseSB0aWRpZWQgb3VyIGRhdGFzZXQsIHNhdmUgYSBjb3B5IG9mIGl0OgoKYGBge3IsIGV2YWw9RkFMU0V9CndyaXRlX2NzdihzdXJ2ZXlfZGF0YV90aWR5LCAic3VydmV5X2RhdGFfdGlkeS5jc3YiKQpgYGAKCiMjIE1ha2luZyBkYXRhIHdpZGUKCkFzIG1lbnRpb25lZCwgdGhlcmUgYXJlIHByb3MgYW5kIGNvbnMgdG8gbWFraW5nIGRhdGEgd2lkZSBhbmQgbG9uZy4gVGhlIGJlbmVmaXQgb2YgY3JlYXRpbmcgYSB3aWRlciBzdHJ1Y3R1cmUgaXMgdGhhdCBpdCBlYXNpZXIgZm9yIGh1bWFuIGV5ZXMgdG8gc2NhbiBhbmQgY3JlYXRpbmcgYmFzaWMgc3VtbWFyeSB0YWJsZXMuICAKCklmIHdlIHJldmlzaXQgdGhlIFIgb2JqZWN0IGBzdXJ2ZXlfZGF0YWAsIHdoaWNoIHdhcyBzYXZlZCBhcyB0aGUgYHN1cnZleS1kYXRhX2NsZWFuLWNvbHNfbm8tSUQuY3N2YCBmaWxlLCB3ZSBjYW4gc3RlcCBiYWNrIHRvIGEgc3RhZ2UgaW4gd2hpY2ggdGhlIGBwbGF0Zm9ybXNgIHZhcmlhYmxlIHdhcyBzdGlsbCBxdWl0ZSBtZXNzeS4KCgpgYGB7ciwgZXZhbD1GQUxTRX0KVmlldyhzdXJ2ZXlfZGF0YSkKYGBgCgpJbnN0ZWFkIG9mIGNyZWF0aW5nIGEgbmV3IHJvdyBmb3IgZWFjaCBvZiB0aGUgcGxhdGZvcm1zIHZpYSB0aGUgVGlkeSBEYXRhIFByaW5jaXBsZXMsIHdlIGNhbiBtYWtlIHRoZSBkYXRhIHdpZGVyIGFuZCBjcmVhdGUgYSBuZXcgY29sdW1uIGZvciBlYWNoIG9mIHRoZSBwbGF0Zm9ybXMuCgo6Ojp3YWxrdGhyb3VnaAoKSGVyZSdzIGhvdyB0byBkbyB0aGlzOgoKYGBge3J9CnN1cnZleV9kYXRhX3dpZGUgPC0gc3VydmV5X2RhdGEgfD4KICBtdXRhdGUocGxhdGZvcm1zID0gc3Ryc3BsaXQocGxhdGZvcm1zLCAiLCIpKSB8PgogIHVubmVzdF9sb25nZXIocGxhdGZvcm1zKSB8PgogIG11dGF0ZShwbGF0Zm9ybXMgPSB0cmltd3MocGxhdGZvcm1zKSwgcHJlc2VudCA9IDEpIHw+CiAgcGl2b3Rfd2lkZXIoCiAgICBuYW1lc19mcm9tID0gcGxhdGZvcm1zLAogICAgdmFsdWVzX2Zyb20gPSBwcmVzZW50LAogICAgdmFsdWVzX2ZpbGwgPSAwCiAgKQpgYGAKCioqU3RlcC1ieS1zdGVwIGV4cGxhbmF0aW9uOioqCgoxKSBXZSBzdGFydCBieSB3cml0aW5nIGEgbmV3IHIgb2JqZWN0IGNhbGxlZCBgc3VydmV5X2RhdGFfd2lkZWAsIHRoYXQgd2lsbCBob2xkIGV2ZXJ5dGhpbmcgdG8gdGhlIGxlZnQgb2YgdGhlIGFzc2lnbm1lbnQgb3BlcmF0b3IgYHw+YC4KMikgVGhlIGBzdXJ2ZXlfZGF0YWAgb2JqZWN0IHJlcHJlc2VudHMgb3VyIGRhdGFzZXQgdGhhdCB3ZSB3YW50IHRvIHBhc3MgdGhyb3VnaCB0aGUgcGlwZSBgfD5gIHRvIG1hbmlwdWxhdGUgaXQuCjMpIFRoZSBgbXV0YXRlYCBmdW5jdGlvbiBpcyB1c2VkIHRvIG1vZGlmeSBhIGNvbHVtbiwgd2hpY2ggaXMgYXBwbGllZCB0byB0aGUgYHN0cnNwbGl0KHBsYXRmb3JtcywgIiwiKWAgZnVuY3Rpb24sIHRvIHRlbGwgaXQgdG8gc3BsaXQgdGhlIGNvbW1hLXNlcGFyYXRlZCBzdHJpbmdzIGluIHRoZSBgcGxhdGZvcm1zYCBjb2x1bW4gaW50byBsaXN0cyBvZiBpbmRpdmlkdWFsIHBsYXRmb3JtIG5hbWVzLgo0KSBXZSB0aGVuIHBpcGUgYHw+YCB0aGlzIGludG8gdGhlIGB1bm5lc3RfbG9uZ2VyKHBsYXRmb3JtcylgIGZ1bmN0aW9uIHRvIGV4cGFuZCBlYWNoIGVsZW1lbnQgaW50byBpdHMgb3duIHJvdyAod2hpY2ggaXMgbGlrZSBtYWtpbmcgdGhlIGRhdGEgbG9uZ2VyKS4gQXQgdGhpcyBwb2ludCwgbmV3IHJvd3Mgb25seSBleGlzdHMgZm9yIHRob3NlIHRoYXQgc2VsZWN0ZWQgYSBwbGF0Zm9ybS4KNSkgVGhpcyBpcyB0aGVuIHBpcGVkIGB8PmAgaW50byBgbXV0YXRlKHBsYXRmb3JtcyA9IHRyaW13cyhwbGF0Zm9ybXMpYCB3aGljaCBjb250aW51ZXMgdG8gbWFuaXB1bGF0ZSB0aGUgYHBsYXRmb3Jtc2AgY29sdW1uLCBhbmQgbXVjaCBsaWtlIHdlIGRpZCB3aGVuIG1ha2luZyB0aGlzIHZhcmlhYmxlIGxvbmcsIHRoZSBgdHJpbXN3YCByZW1vdmVzIHdoaXRlIHNwYWNlIHN1cnJvdW5kaW5nIHRoZSB2YWx1ZXMuCjYpIFRoZSBgcHJlc2VudCA9IDFgIGZ1bmN0aW9uIGNyZWF0ZXMgYSBuZXcgY29sdW1uIGNhbGxlZCBgcHJlc2VudGAgdGhhdCBhcHBsaWVzIGEgdmFsdWUgb2YgMSBmb3IgZXZlcnkgcm93LiBUaGlzIGlzIGEgdGVtcG9yYXJ5IGNvbHVtbiB0byBoZWxwIGZhY2lsaXRhdGUgdGhlIG5leHQgc3RlcC4KNykgVXNpbmcgYW5vdGhlciBwaXBlIGB8PmAsIHRoaXMgaW5mb3JtYXRpb24gZ29lcyBpbnRvIHRoZSBgcGl2b3Rfd2lkZXJgIGZ1bmN0aW9uLCB0aGF0IHdvcmtzIHdpdGggYSB2ZXJ5IHNpbWlsYXIgc3ludGF4IGFzIGBwaXZvdF9sb25nZXJgIHRoYXQgd2UgdXNlZCBlYXJsaWVyLCBidXQgaW5zdGVhZCBvZiBtYWtpbmcgdGhlIGRhdGEgbG9uZ2VyLCBpdCBpbml0aWF0ZXMgZGF0YSB3aWRlbmluZy4gCjgpIGBuYW1lc19mcm9tID0gcGxhdGZvcm1zYCBhc3NpZ25zIG5ldyBjb2x1bW5zIHRvIHRoZSB1bmlxdWUgcGxhdGZvcm0gbmFtZXMuCjkpIGB2YWx1ZXNfZnJvbSA9IHByZXNlbnRgIGFzc2lnbnMgdmFsdWVzIGluIHRoZSBuZXcgY29sdW1ucyB0byBjb21lIGZyb20gdGhlIGBwcmVzZW50YCBjb2x1bW4sIHdoaWNoIGlzIGAxYC4KMTApIEZpbmFsbHksIHdpdGggYHZhbHVlc19maWxsID0gMGAsIGlmIGEgcGxhdGZvcm0gd2Fzbid0IHByZXNlbnQgZm9yIGEgc3VydmV5IGVudHJ5LCB0aGF0IGNvbHVtbiB3aWxsIGdldCB0aGUgdmFsdWUgb2YgYDBgLgoKVGhpcyB3aWxsIGVuZCB1cCB3aXRoIGEgd2lkZSBkYXRhc2V0IHdoZXJlIGVhY2ggcm93IGlzIGEgc3VydmV5IGVudHJ5LCBlYWNoIHBsYXRmb3JtIGlzIGEgY29sdW1uLCBhbmQgdGhlIHZhbHVlIGAxYCBtZWFucyBhIHBsYXRmb3JtIHdhcyBsaXN0ZWQsIGFuZCBgMGAgbWVhbnMgYSBwbGF0Zm9ybSB3YXMgbm90IGxpc3RlZC4KCjo6OgoKIyMjIFNhdmUgYSBjb3B5IG9mIHRoZSBkYXRhCgpMZXQncyBzYXZlIGEgY29weSBvZiB0aGlzIGRhdGFzZXQsIGFuZCB3ZSdsbCBiZSB0YWtpbmcgYSBsb29rIGF0IGl0IGluIHRoZSBuZXh0IHNlY3Rpb24uCgpgYGB7ciwgZXZhbD1GQUxTRX0Kd3JpdGVfY3N2KHN1cnZleV9kYXRhX3dpZGUsICJzdXJ2ZXlfZGF0YV93aWRlLmNzdiIpCmBgYAoKIyMjIFNhdmUgeW91ciBzY3JpcHQKCkJlZm9yZSB3ZSB3cmFwIHVwLCB3ZSB3YW50IHRvIHNhdmUgb3VyIHNjcmlwdC4gWW91IGNhbiBkbyB0aGlzIGJ5IGNsaWNraW5nIGBmaWxlID4gU2F2ZSBBcy4uLmAuIEJlY2F1c2Ugd2Ugc2V0IHVwIGFuIFJQcm9qZWN0LCBSIHNob3VsZCBhdXRvbWF0aWNhbGx5IGNob29zZSB0aGUgY29ycmVjdCBkaXJlY3RvcnkgdG8gc2F2ZSB5b3VyIHNjcmlwdC4KCkxldCdzIHNhdmUgdGhlIHNjcmlwdCBhcyBgc3VydmV5X2NsZWFuaW5nX3NjcmlwdC5SYAoKIyMgRmlsZSBNYW5hZ2VtZW50CgpXaXRoIGp1c3QgYSBmZXcgc3RlcHMgb2YgZGF0YSBjbGVhbmluZywgd2Ugbm93IGhhdmUgNiBkYXRhIGZpbGVzIGluIG91ciBmb2xkZXI6CgotIGBzb2NpYWwtbWVkaWEtc3VydmV5X09SSUdJTkFMLmNzdmAKLSBgc29jaWFsLW1lZGlhLXN1cnZleS5jc3ZgCi0gYHN1cnZleV9kYXRhX3RpZHkuY3N2YAotIGBzdXJ2ZXlfZGF0YV93aWRlLmNzdmAKLSBgc3VydmV5X2RhdGEuUnByb2pgCi0gYHN1cnZleV9jbGVhbmluZ19zY3JpcHQuUmAKLSBgc3VydmV5LWRhdGFfY2xlYW4tY29sc19JRHMuY3N2YAotIGBzdXJ2ZXktZGF0YV9jbGVhbi1jb2xzX25vLUlELmNzdmAKCgpUaGVzZSBuYW1lcyBhcmVuJ3QgbmVjZXNzYXJpbHkgYmFkLCBidXQgeW91IGNhbiBzZWUgdGhhdCB0aGVyZSBhcmUgc29tZSBpbmNvbnNpc3RlbmNpZXMgd2l0aCB0aGUgbmFtaW5nIHByZWZpeCBgc29jaWFsLW1lZGlhLXN1cnZleWAgdnMgYHN1cnZleS1kYXRhYCwgYW5kIHNvbWUgb2YgdGhlIGRlc2NyaXB0b3JzLCBgY2xlYW4tY29sc19JRHNgIGFuZCBgY2xlYW4tY29sc19uby1JRGAgbWlnaHQgbm90IGJlIGFzIGV2aWRlbnQgYXMgd2UgbWlnaHQgbGlrZS4gIAoKSXQgaXMgYWx3YXlzIHJlY29tbWVuZGVkIHRvIGRvY3VtZW50IGFuZCBkZXNjcmliZSB5b3VyIGZpbGVzIGFuZCBuYW1pbmcgY29udmVudGlvbiBpbiBhIFJFQURNRSBmaWxlLCB3aGljaCBpcyBkZXNjcmliZWQgaW4gZGV0YWlscyBpbiB0aGUgW0RvY3VtZW50YXRpb24gXShCbG9jazItM19Eb2N1bWVudGF0aW9uLmh0bWwpIHNlc3Npb24uIFlvdSBjYW4gYWxzbyByZWZlciB0byB0aGUgW09yZ2FuaXppbmcgRmlsZXMgYW5kIEZvbGRlcnNdKEJsb2NrMi0xX0ZpbGVzLWFuZC1Gb2xkZXJzLmh0bWwpIHNlc3Npb24gZm9yIGluc3BpcmF0aW9uIGluIGhvdyB5b3UgbWlnaHQgZ28gYWJvdXQgcmVuYW1pbmcgYW5kIHN0cnVjdHVyaW5nIHRoZXNlIGZpbGVzLgoKCiMjIEZpbmlzaAoKWW91IGhhdmUgbm93IHNlZW4gc29tZSBvZiB0aGUgZm91bmRhdGlvbmFsIGZ1bmN0aW9ucyB0byBjbGVhbiBzdXJ2ZXkgZGF0YSwgYW5kIHRoZSB2YXJpb3VzIHR5cGVzIG9mIGRhdGEgdGhhdCBhIHN1cnZleSBtaWdodCBjcmVhdGUuIFRoZSBnb2FsIG9mIHRoaXMgc2Vzc2lvbiBpcyB0byBnaXZlIHlvdSBhIHNlbnNlIG9mIGhvdyB0byBhcHByb2FjaCB5b3VyIG93biBzdXJ2ZXkgZGF0YSwgYW5kIHRvIGJlIGNvbWZvcnRhYmxlIGVub3VnaCB3aXRoIHRoZXNlIGNvZGUgY2h1bmtzIHRoYXQgeW91IGNhbiBzd2l0Y2ggb3V0IHRoZSBkYXRhL3ZhcmlhYmxlcyBmb3IgeW91ciBvd24gc3VydmV5cywgYW5kIHdvcmsgdGhyb3VnaCB0aGVtIGluIHF1aWNrIGFuZCByZXByb2R1Y2libGUgd2F5cyEKCgojIyBUZW1wZXJhdHVyZSBDaGVjawoKQ2xpY2sgdGhlIGZvbGxvd2luZyBsaW5rOiBbU3VydmV5IENsZWFuaW5nIFRlbXBlcmF0dXJlIENoZWNrXShodHRwczovL2FwcC5zbGkuZG8vZXZlbnQvNHBYeEZtU3ZOdXZQd0huZjVCOEdSMykKCgoK</div>
+<div id="footer">
+    <hr />
+    <div class = "inst-logos">
+      <img src="images/institutions/carleton.png" />
+      <img src="images/institutions/calgary.png" />
+      <img src="images/institutions/ubc.png" />
+      <img class="uvic"  src="images/institutions/uvic.png" />
+    </div>
+
+<br>
+    <div>
+      <img class = "cc-licence" src="images/institutions/CC-License.png" />
+      <p>This work is licensed under a <a href="https://creativecommons.org/licenses/by-nc/4.0/" target ="blank">Creative Commons Attribution-NonCommercial 4.0 International License</p>
+</div>
+<br>
+Built and rendered courtesy of <a href="https://rmarkdown.rstudio.com/index.html" target ="blank">RMarkdown from RStudio</a></p>
+</div>
+
+
+
+</div>
+</div>
+
+</div>
+
+<script>
+
+// add bootstrap table styles to pandoc tables
+function bootstrapStylePandocTables() {
+  $('tr.odd').parent('tbody').parent('table').addClass('table table-condensed');
+}
+$(document).ready(function () {
+  bootstrapStylePandocTables();
+});
+
+
+</script>
+
+<!-- tabsets -->
+
+<script>
+$(document).ready(function () {
+  window.buildTabsets("TOC");
+});
+
+$(document).ready(function () {
+  $('.tabset-dropdown > .nav-tabs > li').click(function () {
+    $(this).parent().toggleClass('nav-tabs-open');
+  });
+});
+</script>
+
+<!-- code folding -->
+<script>
+$(document).ready(function () {
+  window.initializeSourceEmbed("Block8-2_SUR_Collect-and-Clean.Rmd");
+  window.initializeCodeFolding("show" === "show");
+});
+</script>
+
+<script>
+$(document).ready(function ()  {
+
+    // temporarily add toc-ignore selector to headers for the consistency with Pandoc
+    $('.unlisted.unnumbered').addClass('toc-ignore')
+
+    // move toc-ignore selectors from section div to header
+    $('div.section.toc-ignore')
+        .removeClass('toc-ignore')
+        .children('h1,h2,h3,h4,h5').addClass('toc-ignore');
+
+    // establish options
+    var options = {
+      selectors: "h1,h2,h3",
+      theme: "bootstrap3",
+      context: '.toc-content',
+      hashGenerator: function (text) {
+        return text.replace(/[.\\/?&!#<>]/g, '').replace(/\s/g, '_');
+      },
+      ignoreSelector: ".toc-ignore",
+      scrollTo: 0
+    };
+    options.showAndHide = false;
+    options.smoothScroll = false;
+
+    // tocify
+    var toc = $("#TOC").tocify(options).data("toc-tocify");
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    script.src  = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML";
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+
+</body>
+</html>
+>>>>>>> 73007c30b100fa3bde8e5d7339de0b38410a3f52
