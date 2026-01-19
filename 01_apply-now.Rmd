@@ -12,5 +12,7 @@ output:
       smooth_scroll: false
 ---
 
-## Apply to attend the RDM in Atlantic Canada event
+## Application Process
+
+Stay tuned for more content!
 
