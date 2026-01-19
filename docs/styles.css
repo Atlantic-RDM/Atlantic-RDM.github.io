@@ -10,7 +10,7 @@
 }
 
 .note {
-  border: 1pt solid #0d4a7b;
+  border: 1pt solid #728FCE;
   background-color: #f0f7fd;
   background-image: url("images/icons/note.png");
 }
@@ -57,7 +57,7 @@ pre {
 }
 
 .bg-danger {
-    background-color: #e74c3c80 !important;
+    background-color: #728FCE !important;
     border: 1px solid #e74c3c !important;
 }
 
@@ -116,7 +116,7 @@ h2, h3 {
 }
 
 .section h3 {
-  border-left: 2px solid #005493;
+  border-left: 2px solid #728FCE;
 }
 
 .section h2 {
@@ -145,7 +145,7 @@ a:link, a:visited, a:hover, a:active {
 }
 
 .navbar a:hover {
-  color: #26A739 !important;
+  color: #FA8072 !important;
 }
 
 #rmd-show-all-code, #rmd-hide-all-code, #rmd-download-source {
@@ -157,15 +157,15 @@ a:link, a:visited, a:hover, a:active {
 }
 
 .dropdown-menu {
-  background-color: #005493 !important;
+  background-color: #728FCE!important;
 }
 
 .active {
-  background-color: #005493 !important;
+  background-color: #728FCE!important;
 }
 
 .active > a, .open > a {
-  background-color: #26A739 !important;
+  background-color: #FA8072 !important;
 }
 
 .navbar .active a:hover, .navbar .open a:hover {
@@ -173,11 +173,11 @@ a:link, a:visited, a:hover, a:active {
 }
 
 .dropdown-menu > li > a:hover {
-  background-color: #26A739 !important;
+  background-color:#FA8072!important;
 }
 
 .navbar-default {
-  background-color: #005493 !important;
+  background-color: #728FCE!important;
 }
 
 .figure p {
@@ -228,7 +228,7 @@ img {
 }
 
 .lecture {
-  background-color: #005493;
+  background-color: #728FCE;
   color: #32322F;
 }
 

@@ -1,0 +1,16 @@
+---
+title: "Apply Now"
+pagetitle: "Apply Now"
+output:
+  html_document:
+    includes:
+      after_body: footer.html # include a custom footer.
+    toc: true
+    toc_depth: 3
+    toc_float:
+      collapsed: false
+      smooth_scroll: false
+---
+
+## Apply to attend the RDM in Atlantic Canada event
+

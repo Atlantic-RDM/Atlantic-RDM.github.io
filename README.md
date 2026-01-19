@@ -1,4 +1,4 @@
-This is the delivery content for the pilot RDM Jumpstart, scheduled to run May 12-16, 2025.
+This is the website for the RDM in Atlantic Candaa event happening in September 2026.
 
 **Make sure your `.gitignore` file is properly configured. We don't want to see your `.Rproj.user` file, your `.DS_Store` file if you're on a mac, or any other hidden or personal files you may have in your directory :)**
 
@@ -67,17 +67,4 @@ navbar:
 ---
 ```
 
-# Naming Convention
-
-Format: # (of the day)-LEC/ACT-sequence-ShortTopic
-*sequence number starts at 1 for lecture sections and re-starts at 1 for activities sections in a given day
-
-Examples:
-2-Overview
-2-LEC-1-ConsequencesPoorDRM
-2-ACT-1-RSetup
-2-ACT-2-FirstSteps
-3-ACT-1-DataTypes
-3-ACT-2-FilterSelect
-3-ExtraExercises
 

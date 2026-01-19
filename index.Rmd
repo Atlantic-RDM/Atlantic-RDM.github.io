@@ -1,6 +1,6 @@
 ---
-Title: "RDM Jumpstart"
-pagetitle: "RDM Jumpstart"
+Title: "RDM in Atlantic Canada"
+pagetitle: "RDM in Atlantic Canada"
 output:
   html_document:
     includes:
@@ -14,34 +14,7 @@ output:
 
 ## Welcome
 
-Welcome to UVic RDM Jumpstart! Before going any further, [please read the code of conduct](codeOfConduct.html).
+Welcome to the Research Data Management (RDM) in Atlantic Canada portal!
 
-In this series you will be introduced to the practical applications of research data management (RDM) and computational reproducibility, with a focus on the connections between the tools and platforms that support good RDM practices. 
+More content to come!
 
-### Program Content 
-
-The series is broken up into 6 blocks.  On the menu bar at the top of the webpage, you will see a drop-down menu for each of the 6 blocks and their content.  Each block begins with an **Overview** that covers any technical pre-requisites, a textual description of the block, learning objectives, and an overview for each individual session.  Each session's content is listed on their respective pages. The session content will guide the live instruction, and is also meant to function as asynchronous materials for those wanting to revisit the content after attending live delivery, or if people want to guide themselves through the content on their own.
-
-The blocks are built in such a way that they are meant to be taken in sequential order, with each block functioning as a pre-requisite for subsequent blocks.  However, acknowledging that everybody might not have the capacity or interest to take every block, they can also function as stand-alone sessions that will (hopefully!) be valuable on their own.
-
-### Bonus Blocks
-
-The bonus blocks feature 3 additional sessions on coding in the R programming language.  These sessions are a continuation of the content covered in Block 4, and are there for anybody who's feeling excited about R and wants to keep learning!
-
-### Extras
-
-This tab features supplementary content to the program, including setup pages for each of the tools that we'll be using, as well as a number of additional concepts and resources that can support additional learning.  Please feel free to poke around and see if you find anything of interest.
-
-### Certificate of Completion
-
-As mentioned above, learning objectives for each block are listed in the **Overview** page.  In addition to the learning objectives, for all those that complete every block, by the end of the program you will:
-
-* Complete a Data Management Plan (DMP) for a mock project 
-* Complete a README document for a mock project
-* Create 3-4 R coding scripts (depending on decisions made by the group) to manipulate a dataset
-
-If you are interested in receiving a certificate from the Digital Research Alliance of Canada, whether you attend live or work through some/all the content asynchronously, please submit these files for review to Nick Rochlin.  If you are not interested in receiving the certificate but are interested in seeing the completed documents, please reach out to Nick and he will forward them to you.
-
-## Contact
-
-Please reach out to Nick Rochlin if you need to get in touch or have questions about the program.
