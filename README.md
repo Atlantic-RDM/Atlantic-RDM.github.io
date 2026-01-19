@@ -8,7 +8,6 @@ This website uses the [RMarkdown Website Generator](https://bookdown.org/yihui/r
 
 The website is fed from the `docs/` directory. During development, output will be directed to the `website/` directory, so that `docs/` can hold the 'save the date' information.
 
-**Refer to the `template.Rmd` file for RMarkdown markup and the requisite YAML information.**
 
 ## RMarkdown Package
 
