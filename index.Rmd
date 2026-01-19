@@ -12,6 +12,8 @@ output:
       smooth_scroll: false
 ---
 
+![](images/event-logo.png)
+
 ## Welcome
 
 Welcome to the Research Data Management (RDM) in Atlantic Canada portal!
