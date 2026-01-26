@@ -14,7 +14,7 @@ output:
 
 ![](images/event-logo.png)
 
-## Research Data Management (RDM) As a Service: Connecting Research Data Support in Atlantic Canada
+### Welcome!
 
 This two-day event will bring together librarians, research ethics officers, research office staff, and research computing/IT specialists from post-secondary institutions in Atlantic Canada. Each of these groups play a key role in providing RDM support, and offer services that are inherently related, but are oftentimes disconnected due to a lack of coordination. Featuring case-study presentations and facilitated design sessions, the goal of this event will be to collaboratively create a practical set of tools and shared strategies to transform how the Atlantic region delivers RDM support. 
 
