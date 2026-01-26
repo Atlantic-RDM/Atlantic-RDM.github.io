@@ -44,8 +44,8 @@ We acknowledge the support of the Social Sciences and Humanities Research Counci
 
 ### Project Team
 
-* Sandra Sawchuk, Research Data and Assessment Librarian, Mount Saint Vincent University 
-* Nick Rochlin, Data Science Librarian, University of Victoria 
+* Sandra Sawchuk, Mount Saint Vincent University 
+* Nick Rochlin, University of Victoria 
 
 
 
