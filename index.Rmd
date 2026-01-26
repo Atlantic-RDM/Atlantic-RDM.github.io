@@ -20,7 +20,7 @@ This two-day event will bring together librarians, research ethics officers, res
 
 ### Key Dates
 
-The event will occur on **September 22-23 in Halifax, NS**. 
+The event will occur on **September 22-23, 2026 in Halifax, NS**. 
 
 ### Attending
 
@@ -28,7 +28,7 @@ We know that budgets to attend events are becoming more limited, and to ensure r
 
 ### Contact
 
-If you have any questions about the event, please reach out to Sandra Sawchuk at: [sandra.sawchuk@msvu.ca](mailto:sandra.sawchuk@msvu.ca)
+If you have any questions about the event, please reach out to Sandra Sawchuk at: [rdm@msvu.ca](mailto:rdm@msvu.ca)
 
 ### Funding
 
@@ -41,6 +41,11 @@ We acknowledge the support of the Social Sciences and Humanities Research Counci
 * Mount Saint Vincent University Centre on Aging
 * Mount Saint Vincent University Library and Archives
 * Mount Saint Vincent Univeristy Research Office
+
+### Project Team
+
+* Sandra Sawchuk, Research Data and Assessment Librarian, Mount Saint Vincent University 
+* Nick Rochlin, Data Science Librarian, University of Victoria 
 
 
 
