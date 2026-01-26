@@ -12,7 +12,7 @@ output:
       smooth_scroll: false
 ---
 
-## Application Process
+## Application 
 
-Stay tuned for more content!
+We're still working on this, but stay tuned for more information regarding the application process.
 
