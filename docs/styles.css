@@ -10,7 +10,7 @@
 }
 
 .note {
-  border: 1pt solid #728FCE;
+  border: 1pt solid #5A82AA;
   background-color: #f0f7fd;
   background-image: url("images/icons/note.png");
 }
@@ -28,8 +28,8 @@ pre {
 }
 
 .bg-danger {
-    background-color: #728FCE !important;
-    border: 1px solid #e74c3c !important;
+    background-color: #5A82AA !important;
+    border: 1px solid #E13D12!important;
 }
 
 .bg-warning {
@@ -76,11 +76,11 @@ h2, h3 {
 }
 
 .section h3 {
-  border-left: 2px solid #728FCE;
+  border-left: 2px solid #5A82AA;
 }
 
 .section h2 {
-  border-left: 3px solid #728FCE;
+  border-left: 3px solid #5A82AA;
 }
 
 
@@ -105,7 +105,7 @@ a:link, a:visited, a:hover, a:active {
 }
 
 .navbar a:hover {
-  color: #FA8072 !important;
+  color: #E13D12!important;
 }
 
 #rmd-show-all-code, #rmd-hide-all-code, #rmd-download-source {
@@ -117,15 +117,15 @@ a:link, a:visited, a:hover, a:active {
 }
 
 .dropdown-menu {
-  background-color: #728FCE!important;
+  background-color: #5A82AA!important;
 }
 
 .active {
-  background-color: #728FCE!important;
+  background-color: #5A82AA!important;
 }
 
 .active > a, .open > a {
-  background-color: #FA8072 !important;
+  background-color: #E13D12 !important;
 }
 
 .navbar .active a:hover, .navbar .open a:hover {
@@ -133,11 +133,11 @@ a:link, a:visited, a:hover, a:active {
 }
 
 .dropdown-menu > li > a:hover {
-  background-color:#FA8072!important;
+  background-color:#E13D12!important;
 }
 
 .navbar-default {
-  background-color: #728FCE!important;
+  background-color:#5A82AA!important;
 }
 
 .figure p {
