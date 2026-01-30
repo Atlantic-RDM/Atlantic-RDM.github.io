@@ -4,7 +4,7 @@ pagetitle: "RDM in Atlantic Canada"
 output:
   html_document:
     includes:
-      after_body: [footer.html, scripts/schedule.js]
+      after_body: [footer.html]
     toc: true
     toc_depth: 3
     toc_float:
