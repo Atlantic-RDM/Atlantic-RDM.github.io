@@ -1,7 +1,6 @@
 name: "RDM in Atlantic Canada"
 output_dir: "docs"
 
-title: "RDM in Atlantic Canada"
 navbar:
 left:
     - text: "Apply Now!"
