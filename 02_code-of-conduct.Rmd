@@ -1,0 +1,45 @@
+---
+title: "Code of Conduct"
+pagetitle: "Code of Conduct"
+output:
+  html_document:
+    includes:
+      after_body: footer.html # include a custom footer.
+    toc: true
+    toc_depth: 3
+    toc_float:
+      collapsed: false
+      smooth_scroll: false
+---
+
+## Code of Conduct 
+
+We are dedicated to providing a welcoming and supportive environment for all people, regardless of background or identity. By attending this event, participants agree to abide by this Code of Conduct and accept the procedures by which any Code of Conduct incidents are resolved. Any behaviour that excludes, intimidates, or causes discomfort is a violation of the Code of Conduct. In order to foster a positive and professional learning environment we encourage the following kinds of behaviours in all platforms and events:
+
+* Use welcoming and inclusive language
+* Be respectful of different viewpoints and experiences
+* Gracefully accept constructive criticism
+* Focus on what is best for the event community
+* Show courtesy and respect towards other event community members
+
+We recognize a shared responsibility to create and hold that environment for the benefit of all. Harassment, therefore, is specifically prohibited.
+
+Harassment is any verbal or non-verbal behaviour that threatens another person or group and that reinforces social structures of domination related to gender, gender identity and expression, sexual orientation, disability, physical appearance, body size, race, age and/or religion. 
+
+Examples of harassing behaviour include (but are not limited to):
+
+* deliberate intimidation,
+* stalking,
+* following,
+* harassing photography or recording,
+* sustained disruption of talks or other events,
+* inappropriate physical contact, and,
+* unwelcome sexual attention.
+
+Speakers and participants are asked to frame discussions as openly and inclusively as possible and to be aware of how language or images may be perceived by others.
+
+All participants are expected to observe these rules and behaviors in all event venues and social activities. Event participants seek to learn, network, and have fun. Please do so responsibly and with respect for the right of others to do likewise. If a participant engages in behaviour that violates this Code of Conduct, the organizers may warn the offender, or ask them to leave the event.
+
+
+
+
