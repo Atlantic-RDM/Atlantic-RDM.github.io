@@ -1,8 +1,9 @@
 name: "RDM in Atlantic Canada"
 output_dir: "docs"
+
+title: "RDM in Atlantic Canada"
 navbar:
-  title: "RDM in Atlantic Canada"
-  left:
+left:
     - text: "Apply Now!"
       href: 01_apply-now.html
     - text: "Code of Conduct"
