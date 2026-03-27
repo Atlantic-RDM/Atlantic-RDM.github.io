@@ -5,6 +5,9 @@ navbar:
   left:
     - text: "Apply Now!"
       href: 01_apply-now.html
+    - text: "Code of Conduct"
+      href: 02_code-of-conduct.html
+
   
 output:
   html_document:
