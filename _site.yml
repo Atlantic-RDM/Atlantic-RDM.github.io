@@ -6,8 +6,10 @@ navbar:
   left:
     - text: "Apply Now!"
       href: 01_apply-now.html
+    - text: "Program Schedule"
+      href: 02_program-schedule.html
     - text: "Code of Conduct"
-      href: 02_code-of-conduct.html
+      href: 03_code-of-conduct.html
 
   
 output:

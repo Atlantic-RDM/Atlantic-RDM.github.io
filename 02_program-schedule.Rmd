@@ -1,0 +1,17 @@
+---
+title: "Program Schedule"
+pagetitle: "Program Schedule"
+output:
+  html_document:
+    includes:
+      after_body: footer.html # include a custom footer.
+    toc: true
+    toc_depth: 3
+    toc_float:
+      collapsed: false
+      smooth_scroll: false
+---
+
+## Program Schedule
+
+![](images/event-schedule.png)
