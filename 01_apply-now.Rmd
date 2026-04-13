@@ -16,7 +16,7 @@ output:
 
 Before you apply, please read the description and expectations below to ensure that this event is the right fit for you.
 
-### What you can expect from this event:
+### What you can expect
 
 The goal of this event is to build meaningful and sustainable connections across departments and institutions that deliver RDM in Atlantic Canada. To accomplish this, the event will:
 
@@ -26,7 +26,7 @@ The goal of this event is to build meaningful and sustainable connections across
 * Share co-created resources and to mobilize the ideas generated during the event;
 * Aim to develop a sustainable community of practice supported by the <a href="https://www.alliancecan.ca/en" target="_blank">Digital Research Alliance of Canada (“the Alliance”)</a> and <a href="https://ace-net.ca/" target="_blank">ACENET</a>
 
-### What is expected from event participants:
+### What we expect from you
 
 **Successful applicants residing more than 175 km outside of the Halifax Regional Municipality will have their travel (flight or driving) and accommodation sponsored by the event organizers.** As such, participants are expected to:
 
@@ -38,4 +38,4 @@ The goal of this event is to build meaningful and sustainable connections across
 
 If the event structure and expectations from you as a participant sound good, we encourage your to apply following the link below:
 
-### <a href="https://ace-net.ca/" target="_blank">APPLY HERE!</a>
+### <a href="https://docs.google.com/forms/d/e/1FAIpQLSeTAGJ_IE4zZtYuyEUG3z6xemKUQTMCJf0K38S_syeeLfsDSg/viewform?usp=header" target="_blank">APPLY HERE!</a>
