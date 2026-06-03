@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>RDM Forum Schedule</title>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600&family=DM+Serif+Display&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --navy: #1e3a5f;
+    --blue: #2d6a9f;
+    --blue-light: #4a90c4;
+    --slate: #4a5568;
+    --muted: #718096;
+    --border: #e2e8f0;
+    --bg: #f7f9fc;
+    --white: #ffffff;
+    --break-bg: #e8f0f8;
+    --break-text: #2d6a9f;
+    --lunch-bg: #e6f4ea;
+    --lunch-text: #276749;
+    --tag-radius: 6px;
+  }
+
+  body {
+    font-family: 'DM Sans', sans-serif;
+    background: var(--bg);
+    color: #2d3748;
+    min-height: 100vh;
+    padding: 48px 24px;
+  }
+
+  .page {
+    max-width: 780px;
+    margin: 0 auto;
+  }
+
+  .header {
+    text-align: center;
+    margin-bottom: 48px;
+  }
+
+  .header h1 {
+    font-family: 'DM Serif Display', serif;
+    font-size: 2rem;
+    color: var(--navy);
+    letter-spacing: -0.01em;
+    margin-bottom: 8px;
+  }
+
+  .header p {
+    color: var(--muted);
+    font-size: 0.9rem;
+    font-weight: 400;
+  }
+
+  .day-block {
+    background: var(--white);
+    border-radius: 16px;
+    box-shadow: 0 2px 16px rgba(30,58,95,0.07), 0 1px 4px rgba(30,58,95,0.05);
+    margin-bottom: 36px;
+    overflow: hidden;
+  }
+
+  .day-header {
+    background: var(--navy);
+    padding: 14px 28px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .day-label {
+    font-family: 'DM Sans', sans-serif;
+    font-weight: 600;
+    font-size: 0.85rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: white;
+    background: var(--blue-light);
+    padding: 5px 14px;
+    border-radius: 6px;
+  }
+
+  .sessions {
+    padding: 0;
+  }
+
+  .session {
+    display: grid;
+    grid-template-columns: 130px 1fr;
+    align-items: start;
+    padding: 16px 28px;
+    border-bottom: 1px solid var(--border);
+    gap: 16px;
+    transition: background 0.15s;
+  }
+
+  .session:last-child { border-bottom: none; }
+
+  .session:hover:not(.break-row):not(.lunch-row) {
+    background: #f8fafd;
+  }
+
+  .time {
+    font-size: 0.78rem;
+    font-weight: 500;
+    color: var(--muted);
+    padding-top: 3px;
+    white-space: nowrap;
+    letter-spacing: 0.02em;
+  }
+
+  .session-body { display: flex; flex-direction: column; gap: 4px; }
+
+  .session-title {
+    font-size: 0.92rem;
+    font-weight: 600;
+    color: #1a2e45;
+    line-height: 1.35;
+  }
+
+  .session-desc {
+    font-size: 0.8rem;
+    color: var(--slate);
+    line-height: 1.55;
+    font-weight: 400;
+  }
+
+  /* Break */
+  .break-row { background: var(--break-bg); }
+  .break-row:hover { background: var(--break-bg); }
+  .break-tag {
+    display: inline-block;
+    background: var(--blue);
+    color: white;
+    font-size: 0.72rem;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    padding: 4px 12px;
+    border-radius: var(--tag-radius);
+  }
+
+  /* Lunch */
+  .lunch-row { background: var(--lunch-bg); }
+  .lunch-row:hover { background: var(--lunch-bg); }
+  .lunch-tag {
+    display: inline-block;
+    background: #276749;
+    color: white;
+    font-size: 0.72rem;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    padding: 4px 12px;
+    border-radius: var(--tag-radius);
+  }
+
+  @media (max-width: 520px) {
+    .session { grid-template-columns: 1fr; gap: 4px; padding: 14px 18px; }
+    .day-header { padding: 12px 18px; }
+    body { padding: 24px 12px; }
+    .header h1 { font-size: 1.5rem; }
+  }
+</style>
+</head>
+<body>
+<div class="page">
+
+  <div class="header">
+    <h1>RDM Forum Schedule</h1>
+    <p>Research Data Management — Atlantic Region</p>
+  </div>
+
+  <!-- DAY 1 -->
+  <div class="day-block">
+    <div class="day-header">
+      <span class="day-label">Day 1</span>
+    </div>
+    <div class="sessions">
+
+      <div class="session">
+        <div class="time">8:00 – 9:00</div>
+        <div class="session-body">
+          <div class="session-title">Registration</div>
+        </div>
+      </div>
+
+      <div class="session">
+        <div class="time">9:00 – 9:15</div>
+        <div class="session-body">
+          <div class="session-title">Welcome and Opening Remarks</div>
+          <div class="session-desc">The presentation will open the forum by providing a rationale for the importance of the event and outlining activities and expectations. It will introduce the team of presenters and facilitators, thank the sponsors, and describe the current state of research data management in the Atlantic region.</div>
+        </div>
+      </div>
+
+      <div class="session">
+        <div class="time">9:15 – 10:00</div>
+        <div class="session-body">
+          <div class="session-title">Setting the Stage: The Canadian RDM Policy Landscape</div>
+          <div class="session-desc">This presentation will be an overview of the current state of the Tri-Agency Research Data Management Policy implementation, with a focus on up-to-date requirements for funding opportunities, including data management plans and data deposit.</div>
+        </div>
+      </div>
+
+      <div class="session break-row">
+        <div class="time">10:00 – 10:15</div>
+        <div class="session-body">
+          <span class="break-tag">Break</span>
+        </div>
+      </div>
+
+      <div class="session">
+        <div class="time">10:15 – 11:30</div>
+        <div class="session-body">
+          <div class="session-title">Panel Discussion: RDM Across Academic Units</div>
+          <div class="session-desc">This 75-minute panel discussion establishes a shared baseline for institutional RDM practice. Four practitioners — a librarian, a research computing/IT specialist, a research lab project manager, and a research ethics officer — will briefly define RDM from their unit's perspective, present common challenges, and discuss concrete approaches that have worked locally.</div>
+        </div>
+      </div>
+
+      <div class="session">
+        <div class="time">11:30 – 12:30</div>
+        <div class="session-body">
+          <div class="session-title">Facilitated Breakout Session 1 – Demystifying RDM Across Units</div>
+        </div>
+      </div>
+
+      <div class="session">
+        <div class="time">12:30 – 1:00</div>
+        <div class="session-body">
+          <div class="session-title">Group Discussion with the Digital Research Alliance of Canada</div>
+        </div>
+      </div>
+
+      <div class="session lunch-row">
+        <div class="time">1:00 – 2:00</div>
+        <div class="session-body">
+          <span class="lunch-tag">Lunch</span>
+        </div>
+      </div>
+
+      <div class="session">
+        <div class="time">2:00 – 3:00</div>
+        <div class="session-body">
+          <div class="session-title">Facilitated Breakout Session 2 – "Blue Sky" Opportunities and Priority Areas</div>
+        </div>
+      </div>
+
+      <div class="session break-row">
+        <div class="time">3:00 – 3:15</div>
+        <div class="session-body">
+          <span class="break-tag">Break</span>
+        </div>
+      </div>
+
+      <div class="session">
+        <div class="time">3:15 – 4:15</div>
+        <div class="session-body">
+          <div class="session-title">Facilitated Breakout Session 3 – RDM Priority Areas Within and Across Units</div>
+        </div>
+      </div>
+
+      <div class="session">
+        <div class="time">4:15 – 4:30</div>
+        <div class="session-body">
+          <div class="session-title">End of Day Wrap-up</div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- DAY 2 -->
+  <div class="day-block">
+    <div class="day-header">
+      <span class="day-label">Day 2</span>
+    </div>
+    <div class="sessions">
+
+      <div class="session">
+        <div class="time">9:00 – 9:20</div>
+        <div class="session-body">
+          <div class="session-title">Welcome and Recap</div>
+        </div>
+      </div>
+
+      <div class="session">
+        <div class="time">9:20 – 10:35</div>
+        <div class="session-body">
+          <div class="session-title">Collaborative RDM Initiatives</div>
+          <div class="session-desc">This 75-minute session showcases concise case studies from institutions that have implemented cross-unit and, where relevant, cross-institutional RDM coordination. Each presenter will outline their institutional context, the first steps taken, key challenges encountered, and concrete outcomes. A moderated discussion will draw out common themes, with attention to applicability across institution sizes.</div>
+        </div>
+      </div>
+
+      <div class="session break-row">
+        <div class="time">10:35 – 10:50</div>
+        <div class="session-body">
+          <span class="break-tag">Break</span>
+        </div>
+      </div>
+
+      <div class="session">
+        <div class="time">10:50 – 11:10</div>
+        <div class="session-body">
+          <div class="session-title">Priority Synthesis</div>
+          <div class="session-desc">Organizers present a consolidated list of 4 forum-wide priorities drawn from Day 1 outputs.</div>
+        </div>
+      </div>
+
+      <div class="session">
+        <div class="time">11:10 – 12:30</div>
+        <div class="session-body">
+          <div class="session-title">Facilitated Breakout Session 4: Workshopping RDM Priorities</div>
+        </div>
+      </div>
+
+      <div class="session lunch-row">
+        <div class="time">12:30 – 1:30</div>
+        <div class="session-body">
+          <span class="lunch-tag">Lunch</span>
+        </div>
+      </div>
+
+      <div class="session">
+        <div class="time">1:30 – 2:30</div>
+        <div class="session-body">
+          <div class="session-title">Facilitated Breakout Session 4: Workshopping RDM Priorities <span style="font-weight:400;color:var(--muted);">(continued)</span></div>
+        </div>
+      </div>
+
+      <div class="session break-row">
+        <div class="time">2:30 – 2:50</div>
+        <div class="session-body">
+          <span class="break-tag">Break</span>
+        </div>
+      </div>
+
+      <div class="session">
+        <div class="time">2:50 – 3:45</div>
+        <div class="session-body">
+          <div class="session-title">Group Sharing</div>
+          <div class="session-desc">Each group shares their outlined priority, with opportunities for feedback from the larger group.</div>
+        </div>
+      </div>
+
+      <div class="session">
+        <div class="time">3:45 – 4:00</div>
+        <div class="session-body">
+          <div class="session-title">Closing Reflections and Next Steps</div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+</div>
+</body>
+</html>
