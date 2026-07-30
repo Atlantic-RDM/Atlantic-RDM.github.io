@@ -4,8 +4,6 @@ output_dir: "docs"
 navbar:
   title: "RDM in Atlantic Canada"
   left:
-    - text: "Apply Now!"
-      href: 01_apply-now.html
     - text: "Program Schedule"
       href: 02_program-schedule.html
     - text: "Code of Conduct"
