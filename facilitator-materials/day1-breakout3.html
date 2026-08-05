@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Breakout 3 · Prioritizing Directions</title>
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+html,body{height:100%;background:#faf9f7;color:#1c1c1a;
+ font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+ -webkit-font-smoothing:antialiased;overflow:hidden}
+#bar{position:fixed;top:0;left:0;right:0;height:52px;display:flex;align-items:center;
+ gap:22px;padding:0 28px;border-bottom:1px solid #e2ded6;background:#f3f1ec;font-size:15px;z-index:10}
+#clock{font-variant-numeric:tabular-nums;font-size:26px;font-weight:500;min-width:104px;letter-spacing:-.5px}
+#win{font-variant-numeric:tabular-nums;color:#6b6862}
+#state{margin-left:auto;font-size:13px;color:#8a867e;letter-spacing:.03em;text-transform:uppercase}
+#bar.warn{background:#fdf3e0;border-bottom-color:#e8c98a}
+#bar.warn #clock{color:#8a5a00}
+#bar.over{background:#fbe9e7;border-bottom-color:#e9a99f}
+#bar.over #clock{color:#a3271a}
+#stage{position:absolute;top:52px;bottom:46px;left:0;right:0;display:flex;
+ align-items:center;justify-content:center;padding:22px 52px;overflow:hidden}
+.slide{display:none;width:100%;max-width:1020px;transform-origin:center center}
+.slide.on{display:block}
+.kicker{font-size:15px;letter-spacing:.09em;text-transform:uppercase;color:#8a867e;margin-bottom:6px}
+h1{font-size:26px;font-weight:500;letter-spacing:-.4px;margin-bottom:20px;line-height:1.2}
+h1 .t{color:#8a867e;font-weight:400;margin-left:12px;font-size:19px;font-variant-numeric:tabular-nums}
+.ask{font-size:27px;line-height:1.4;font-weight:400;letter-spacing:-.3px;
+ border-left:4px solid #c9c3b6;padding-left:20px;margin-bottom:22px}
+.ask em{font-style:normal;background:#f0ece1;padding:0 4px}
+.ask .then{display:block;font-size:21px;color:#4a4741;margin-top:12px}
+.meta{display:grid;grid-template-columns:112px 1fr;gap:8px 20px;font-size:17px;line-height:1.45}
+.meta dt{font-size:12px;letter-spacing:.07em;text-transform:uppercase;color:#8a867e;padding-top:4px;line-height:1.3}
+.meta dd .q{background:#eef1ea;padding:2px 7px;border-radius:3px;display:inline-block;margin:2px 0}
+.note{margin-top:20px;font-size:16px;color:#4a4741;line-height:1.5;border-top:1px solid #e2ded6;padding-top:14px}
+.help h1{color:#a3271a}
+ol.fb{font-size:20px;line-height:1.45;padding-left:24px}
+ol.fb li{margin-bottom:12px}
+ul.cut{font-size:19px;line-height:1.45;list-style:none}
+ul.cut li{margin-bottom:12px;padding-left:24px;position:relative}
+ul.cut li:before{content:"·";position:absolute;left:6px;font-size:26px;line-height:.9;color:#8a867e}
+ul.cut li b{font-weight:500}
+.big{font-size:24px;line-height:1.5}
+.dim{color:#6b6862}
+#nav{position:fixed;bottom:0;left:0;right:0;height:44px;display:flex;align-items:center;
+ gap:26px;padding:0 28px;border-top:1px solid #e2ded6;background:#f3f1ec;font-size:13px;color:#8a867e}
+kbd{background:#fff;border:1px solid #d6d1c7;border-bottom-width:2px;border-radius:4px;
+ padding:1px 6px;font-family:inherit;font-size:12px;color:#4a4741}
+#dots{margin-left:auto;display:flex;gap:6px;align-items:center}
+.dot{width:7px;height:7px;border-radius:50%;background:#d6d1c7}
+.dot.on{background:#4a4741;transform:scale(1.35)}
+.hint{position:fixed;bottom:58px;right:26px;display:none;align-items:center;gap:9px;
+ background:#fdf3e0;border:1px solid #e8c98a;color:#7a4f00;border-radius:7px;
+ padding:8px 15px;font-size:17px;font-weight:500;z-index:9}
+.hint.on{display:flex}
+#tod{font-size:14px;color:#8a867e;font-variant-numeric:tabular-nums;margin-left:10px}
+.chip{position:fixed;top:64px;right:26px;z-index:9;display:none;align-items:center;gap:8px;
+ border-radius:7px;padding:8px 15px;font-size:16px;font-weight:500}
+.chip.on{display:flex}
+#behind{background:#fdf3e0;border:1px solid #e8c98a;color:#7a4f00}
+#resetchip{background:#fbe9e7;border:1px solid #e9a99f;color:#a3271a;top:110px}
+.ovclock{position:fixed;top:16px;left:46px;font-size:20px;color:#8a867e;font-variant-numeric:tabular-nums}
+#room{position:fixed;inset:0;background:#faf9f7;z-index:50;display:none;padding:56px 46px 30px;overflow:auto}
+#room.on{display:block}
+#ref{position:fixed;inset:0;background:#faf9f7;z-index:50;display:none;padding:56px 46px 30px;overflow:auto}
+#ref.on{display:block}
+#ref h2,#room h2{font-size:15px;letter-spacing:.09em;text-transform:uppercase;color:#8a867e;font-weight:500;margin-bottom:12px}
+#ref .cols,#room .cols{display:grid;grid-template-columns:1.15fr 1fr;gap:38px}
+#ref table,#room table{width:100%;border-collapse:collapse;font-size:16px}
+#ref td,#room td{padding:6px 0;vertical-align:top;line-height:1.35}
+#ref td.k,#room td.k{font-weight:500;white-space:nowrap;padding-right:16px}
+#ref .q,#room .q{font-size:19px;line-height:1.4;background:#f0ece1;padding:9px 14px;border-radius:6px;margin-bottom:14px}
+#ref .say,#room .say{font-size:20px;line-height:1.9}
+#ref .say b,#room .say b{background:#eef1ea;padding:2px 8px;border-radius:3px;font-weight:400}
+#ref .close,#room .close{position:fixed;top:16px;right:26px;font-size:14px;color:#8a867e}
+#ref .never,#room .never{margin-top:18px;padding-top:14px;border-top:1px solid #e2ded6;font-size:15px;color:#4a4741;line-height:1.5}
+.hint kbd{background:#fff;border-color:#e0c690;color:#7a4f00;font-size:15px;padding:2px 8px}
+@media(max-width:900px){.ask{font-size:22px}h1{font-size:22px}.meta{font-size:15px}#stage{padding:16px 24px}}
+</style></head><body>
+<div id="bar"><div id="clock">–:––</div><div id="win"></div><div id="tod"></div><div id="state">→ to begin</div></div>
+<div id="stage"><div class="slide" id="S0_0"><div class="kicker">Breakout 3 · 3:30 to 4:30</div><h1>Prioritizing Directions</h1><div class="big"><p style="margin-bottom:22px"><b>This is the session everything else is built from.</b> What leaves this room, complete and consistent, is what all of Day 2 works from.</p><p class="dim">Five fields per priority: name · description · why · units · tier. An entry missing one cannot be used tomorrow.</p></div><div class="note"><b>In the break, before this session:</b> write the Breakout 2 candidates onto blank cards, one per card. Four to eight cards, three minutes. Without them you are clustering physical cards against a list in your head.<br><br>SUPPORT/CONCERN cards out · numbered folders 1 to 5, plus a spare · backup slip on the table. Press <b>T</b> for tags and tiers, <b>D</b> for the room lines. Press <b>→</b> when the session starts; the clock starts itself.</div></div>
+<div class="slide" id="S1_0"><div class="kicker">Opening</div><h1>Set it up<span class="t">0 → 1</span></h1><div class="ask">“This morning we mapped the landscape, found the overlaps and gaps, and imagined some solutions. This session is where we narrow.<span class="then">The goal isn’t to solve everything. It’s to land on a small number of directions this table thinks are worth carrying into tomorrow.”</span></div></div>
+<div class="slide" id="S2_0"><div class="kicker">Bridge</div><h1>From Breakout 2<span class="t">1 → 3</span></h1><div class="ask">Read out the full Breakout 2 candidate list, <em>from the cards you wrote in the break</em>, and lay them on the table as you go.<span class="then">Coordination only first, then light lift, then the bigger asks.</span></div><div class="note">Tier order matters. The group hears a shaped list rather than a flat one, and the clustering that follows goes much faster.</div></div>
+<div class="slide" id="S3_0"><div class="kicker">Q1</div><h1>Name your priority<span class="t">3 → 8</span></h1><div class="ask">“Take out your Breakout 3 card. On the front, write the one thing from today you think is a genuine priority, as a short phrase.<span class="then">Then turn it over and write one other thing you’d be happy to work on tomorrow. Two and a half minutes, then put it face up in the middle, <em>front side showing</em>.”</span></div><dl class="meta"><dt>Numbers</dt><dd>Pre-printed. Nothing to police.</dd><dt>The back</dt><dd>Never clustered, never discussed. Sandra and Nick read it tonight.</dd></dl><div class="note">If anyone uses a blank spare, get their number on it before it goes in the middle.</div></div>
+<div class="slide" id="S4_0"><div class="kicker">Q2</div><h1>Clustering<span class="t">8 → 23</span></h1><div class="ask">“Let’s sort these. What goes together?”</div><dl class="meta"><dt>On the table</dt><dd>11 to 15 cards: the ones you wrote in the break, plus the seven the group just wrote. All physical, all movable.</dd><dt>Format</dt><dd>You move the cards into piles. The group tells you where.</dd><dt>Critical</dt><dd><b>Number each pile out loud as it forms.</b> 1, 2, 3…</dd><dt>Aim for</dt><dd>Three to five piles. More than five and tomorrow gets diluted.</dd><dt>Say aloud</dt><dd><span class="q">“Pile two is ___”</span><span class="q">“Let’s tag that as ___”</span></dd></dl><div class="note">If a pile gets renamed, say so: <i>“pile two is now X.”</i> The notetaker’s entries and the folders both hang off those numbers. A sixth pile that will not merge gets a hand-numbered spare folder; <b>never merge two piles to stay at five</b>.</div></div>
+<div class="slide help" id="S4_1"><div class="kicker">If it stalls</div><h1>Q2 · Clustering</h1><ol class="fb"><li>Put two cards side by side and ask: <i>“same thing, or different things?”</i></li></ol><div class="note">Faster than asking the room to sort in the abstract. Watch for the card sitting alone; don’t resolve it here, Q4 does that.</div></div>
+<div class="slide" id="S5_0"><div class="kicker">Q3</div><h1>Pressure-test<span class="t">23 → 45</span></h1><div class="ask">For each pile in turn, <em>biggest first</em>: “What would a real first step for this look like? And what would it take to get there?”</div><dl class="meta"><dt>Order</dt><dd>Biggest pile first. If you run short, the least-supported one is what gets cut.</dd><dt>Per pile</dt><dd>~5 minutes</dd><dt>Say aloud</dt><dd><span class="q">“That one’s ___”</span><span class="q">“So that’s ___ and ___”</span><span class="q">“This one’s a recurring problem / a knowledge gap / genuine interest”</span></dd></dl><div class="note">Needing real backing does <b>not</b> weaken a priority: that is what tomorrow is for. Losing its energy under questioning does. If that happens, let it drop.</div></div>
+<div class="slide help" id="S5_1"><div class="kicker">If it stalls</div><h1>Q3 · Pressure-test</h1><ol class="fb"><li><i>“If this existed tomorrow morning, who would use it first?”</i></li></ol><div class="note">By the end of Q3 every surviving priority needs all five fields. Ask the notetaker if any are thin.</div></div>
+<div class="slide" id="S6_0"><div class="kicker">Q4</div><h1>Consensus<span class="t">45 → 53</span></h1><div class="ask">“Which of these go forward to tomorrow? For one to move, the table needs to be behind it. If one person thinks it matters and nobody else does, it doesn’t go.”<span class="then">“Green if you support it, red if you have a real concern.”</span></div><dl class="meta"><dt>Format</dt><dd>Cards up, one pile at a time</dd><dt>Mostly green</dt><dd>Moves forward. No discussion needed.</dd><dt>One or two red</dt><dd>Stop. “What’s the concern?” Thirty seconds.</dd><dt>Say aloud</dt><dd>Confirm out loud which ones are moving</dd></dl><div class="note">Quiet indifference is not disagreement; green without enthusiasm still counts. If a real objection doesn’t resolve in thirty seconds, it doesn’t move. That is the rule working.</div></div>
+<div class="slide" id="S7_0"><div class="kicker">Wrap · 1 of 2</div><h1>Close it out<span class="t">53 → 58</span></h1><div class="ask"><em>Accomplishment first:</em> “This table is sending [X] priorities to tomorrow. Things this room actually believes in.”</div><dl class="meta"><dt>Then</dt><dd>Check every forwarded entry has all five fields</dd><dt>Cards</dt><dd>Pile 1 → folder 1, pile 2 → folder 2. <b>Never merge piles.</b></dd></dl><div class="note">Say the accomplishment <b>before</b> you check the data. Energy first, admin second. This is the only moment the group hears its own day named as work that mattered.</div></div>
+<div class="slide" id="S8_0"><div class="kicker">Wrap · 2 of 2 · do not skip</div><h1>Fill in the backup slip<span class="t">58 → 60</span></h1><div class="ask">The small printed form on your table. <em>Group letter, and one line per priority you are sending forward.</em><span class="then">Thirty seconds. Then hand it to Nick or Sandra <em>before you leave the room</em>.</span></div><dl class="meta"><dt>Why</dt><dd>If your notetaker’s capture is thin or their laptop died, Nick and Sandra find out at 7pm, when this room is long gone</dd><dt>This is the only</dt><dd>handwritten record in the whole event. Breakout 3 is the only session whose output has to survive overnight</dd><dt>Your window</dt><dd>Participants leave at 4:30; the plenary wrap-up starts at 4:35. Arriving there a few minutes late is expected of you</dd><dt>Do not</dt><dd>Put it in a folder or your bag. Hand it over.</dd></dl><div class="note">If everything worked, nobody will ever read it. Fill it in anyway.</div></div></div>
+<div class="hint" id="hint"><kbd>↓</kbd> if it stalls</div>
+<div class="chip" id="behind"></div>
+<div class="chip" id="resetchip">press R twice: reset the clock for Part 2</div>
+<div id="ref"><div class="close"><kbd>T</kbd> or <kbd>esc</kbd> to close</div><div class="ovclock" id="refclock"></div>
+<div class="cols"><div>
+<h2>The six tags</h2>
+<div style="font-size:15px;color:#4a4741;line-height:1.45;margin-bottom:12px">A tag names <b>the subject</b>, not the problem. So a gap and an overlap take the <b>same</b> tag: “nobody owns the handoff” and “we both do it and never compare notes” are both ownership and referral. Same question, opposite answer.</div>
+<table>
+<tr><td class="k">Ownership and referral</td><td>whose job is it, and where does someone go first</td></tr>
+<tr><td class="k">Training and awareness</td><td>they don’t know it exists, or don’t know how</td></tr>
+<tr><td class="k">Capacity and staffing</td><td>nobody has the time or the position</td></tr>
+<tr><td class="k">Infrastructure and tools</td><td>storage, platforms, software, documentation and deposit</td></tr>
+<tr><td class="k">Policy and compliance</td><td>Tri-Agency, institutional policy, ethics and sensitive data</td></tr>
+<tr><td class="k">Regional community</td><td>shared resources, contacts, community of practice</td></tr>
+<tr><td class="k" style="color:#8a867e">Other</td><td style="color:#8a867e">say it, the notetaker writes it in</td></tr>
+</table>
+<div class="never"><b>Unsure?</b> Say “other”, or say nothing. A blank is honest; a wrong tag is worse, because nobody downstream can tell.</div>
+</div><div>
+<h2>The three tiers</h2>
+<div class="q">“Could we start this next month, with the people in this room, and no new money?”</div>
+<table>
+<tr><td class="k">Yes</td><td>coordination only</td></tr>
+<tr><td class="k">No, but a unit head could say yes</td><td>light lift</td></tr>
+<tr><td class="k">No: budget, a position, or a decision from above</td><td>needs real backing</td></tr>
+</table>
+<h2 style="margin-top:26px">Say these out loud</h2>
+<div class="say"><b>“Let’s tag that as ___”</b><br><b>“That one’s ___”</b> <span style="font-size:15px;color:#8a867e">tier</span><br><b>“So that’s ___ and ___”</b> <span style="font-size:15px;color:#8a867e">units</span></div>
+<div class="never"><b>Never</b> a name in the capture. Units only. Asked to be quoted by name? “Let me follow up after the session.”</div>
+</div></div></div>
+<div id="room"><div class="close"><kbd>D</kbd> or <kbd>esc</kbd> to close</div><div class="ovclock" id="roomclock"></div>
+<div class="cols"><div>
+<h2>Someone is taking up too much room</h2>
+<div class="say"><b>“That’s useful, and I want to hear how that lands for a smaller shop.”</b></div>
+<div class="never">Thank them <b>specifically</b>, then redirect. The cleanest move there is.</div>
+<h2 style="margin-top:26px">Someone hasn’t spoken</h2>
+<div class="say"><b>“Number 5, you’ve been thinking about something.”</b></div>
+<div class="never">Numbers are less exposing than names. And after any card write, <b>go round in order</b>: nobody has to volunteer, and the quiet people have already written their answer.</div>
+<h2 style="margin-top:26px">Keep a round short</h2>
+<div class="say"><b>“Just read them out, no explaining yet. The next question is where we dig in.”</b></div>
+<div class="never">A constraint with a promise attached reads as a plan, not a brush-off.</div>
+</div><div>
+<h2>Big-institution voices</h2>
+<div class="never" style="margin-top:0;padding-top:0;border-top:none">Seat them <b>sixth or seventh</b> in any go-around. Give them one planned moment:</div>
+<div class="say" style="margin-top:10px"><b>“I’ll come to number 6 near the end, for the view from a bigger shop.”</b></div>
+<h2 style="margin-top:26px">Yellow card is up</h2>
+<div class="say"><b>“Hold that thought a second.”</b></div>
+<div class="never">The notetaker is losing content. Fifteen seconds now saves the capture.</div>
+<h2 style="margin-top:26px">Gone somewhere difficult</h2>
+<div class="never" style="margin-top:0;padding-top:0;border-top:none">If it drifts from the Code of Conduct, step in. Unsure, or it continues? Catch Nick or Sandra at the next transition; they are walking the rooms. <b>You will not be second-guessed for flagging.</b></div>
+</div></div></div>
+<div id="nav"><a href="../index.html" style="color:#4a4741;text-decoration:none;border-bottom:1px solid #c9c3b6">← Back to site</a><span><kbd>←</kbd><kbd>→</kbd> or click edges</span><span><kbd>↓</kbd> if it stalls</span>
+<span><kbd>S</kbd> start/pause</span><span><kbd>R</kbd><kbd>R</kbd> reset · <kbd>U</kbd> undo</span><span><kbd>−</kbd><kbd>+</kbd> adjust clock</span><span><kbd>T</kbd> tags &amp; tiers</span><span><kbd>D</kbd> the room</span><span><kbd>F</kbd> full screen</span>
+<div id="dots"></div></div>
+<script>
+var GRID=[{"win": null, "rows": 1, "reset": false}, {"win": [0, 1], "rows": 1, "reset": false}, {"win": [1, 3], "rows": 1, "reset": false}, {"win": [3, 8], "rows": 1, "reset": false}, {"win": [8, 23], "rows": 2, "reset": false}, {"win": [23, 45], "rows": 2, "reset": false}, {"win": [45, 53], "rows": 1, "reset": false}, {"win": [53, 58], "rows": 1, "reset": false}, {"win": [58, 60], "rows": 1, "reset": false}],c=0,r=0,t0=null,acc=0,running=false;
+var prevAcc=null,rArm=0,undoUntil=0;
+var slides=document.querySelectorAll('.slide');
+function key(c,r){return 'S'+c+'_'+r}
+function pad(n){return (n<10?'0':'')+n}
+function overlayOpen(){return document.getElementById('ref').className!=='' || document.getElementById('room').className!==''}
+function show(){
+  slides.forEach(function(s){s.classList.remove('on')});
+  var el=document.getElementById(key(c,r));
+  if(!el){r=0;el=document.getElementById(key(c,0))}
+  el.classList.add('on');
+  var w=GRID[c].win;
+  document.getElementById('win').textContent = w ? (w[0]+' → '+w[1]+' min') : '';
+  var d=document.getElementById('dots');d.innerHTML='';
+  for(var i=0;i<GRID.length;i++){var s=document.createElement('div');
+    s.className='dot'+(i===c?' on':'');d.appendChild(s)}
+  document.getElementById('hint').className='hint'+((GRID[c].rows>1&&r===0)?' on':'');
+  var bc=document.getElementById('behind'), m=Math.floor(elapsed()/60000);
+  if(w && (t0||acc) && m>=w[0]+2 && m<w[1]){
+    bc.textContent='≈ '+(m-w[0])+' min behind · cut sheet';bc.className='chip on';
+  } else bc.className='chip';
+  fit(); tick();
+}
+function fit(){
+  var el=document.querySelector('.slide.on'); if(!el) return;
+  el.style.transform='none';
+  var st=document.getElementById('stage');
+  var ah=st.clientHeight-44, aw=st.clientWidth-104;
+  var s=Math.min(1, ah/el.offsetHeight, aw/el.offsetWidth);
+  if(s<0.999) el.style.transform='scale('+(Math.floor(s*1000)/1000)+')';
+}
+window.addEventListener('resize',fit);
+function elapsed(){return acc + (running && t0 ? (Date.now()-t0) : 0)}
+function startClock(){if(!running){t0=Date.now();running=true}}
+function tick(){
+  var ms=elapsed(),m=Math.floor(ms/60000),s=Math.floor(ms/1000)%60;
+  var tstr = (t0||acc) ? (m+':'+pad(s)) : '–:––';
+  document.getElementById('clock').textContent = tstr;
+  document.getElementById('refclock').textContent = tstr;
+  document.getElementById('roomclock').textContent = tstr;
+  var d=new Date();
+  document.getElementById('tod').textContent = pad(d.getHours())+':'+pad(d.getMinutes());
+  var bar=document.getElementById('bar');bar.className='';
+  var w=GRID[c].win;
+  if(w && (t0||acc)){
+    var lead=Math.min(2, Math.max(0.5, (w[1]-w[0])*0.2))*60000;
+    var rem=w[1]*60000-ms;
+    if(rem<=0) bar.className='over';
+    else if(rem<=lead) bar.className='warn';
+  }
+  var st=document.getElementById('state'), now=Date.now();
+  if(rArm && now-rArm<1500){st.textContent='press R again to reset'}
+  else if(undoUntil && now<undoUntil){st.textContent='reset · press U to undo'}
+  else if(!running && !acc && c>0 && w){bar.className='warn';st.textContent='timer not running · press S'}
+  else if(bar.className==='over'){st.textContent='over · catch up or cut'}
+  else if(bar.className==='warn'){st.textContent='wrap this segment'}
+  else st.textContent = running?'running':(acc?'paused':'→ to begin');
+  var rc=document.getElementById('resetchip');
+  rc.className='chip'+((GRID[c].reset && (t0||acc) && w && m>w[1])?' on':'');
+}
+setInterval(tick,500);
+function nav(d){
+  if(overlayOpen()) return;
+  if(d>0 && c<GRID.length-1){
+    if(c===0 && !running && !acc) startClock();
+    c++;r=0;show();
+  } else if(d<0 && c>0){c--;r=0;show()}
+}
+document.addEventListener('keydown',function(e){
+  var k=e.key;
+  var ref=document.getElementById('ref'), room=document.getElementById('room');
+  if(k==='t'||k==='T'){room.className='';ref.className=ref.className?'':'on';e.preventDefault();return}
+  if(k==='d'||k==='D'){ref.className='';room.className=room.className?'':'on';e.preventDefault();return}
+  if(k==='Escape'){ref.className='';room.className='';return}
+  if(overlayOpen()){e.preventDefault();return}
+  if(k==='ArrowRight'||k==='PageDown'){nav(1);e.preventDefault()}
+  else if(k==='ArrowLeft'||k==='PageUp'){nav(-1);e.preventDefault()}
+  else if(k===' '){e.preventDefault()}
+  else if(k==='ArrowDown'){if(GRID[c].rows>1){r=1;show()}e.preventDefault()}
+  else if(k==='ArrowUp'){if(r>0){r=0;show()}e.preventDefault()}
+  else if(k==='s'||k==='S'){if(running){acc=elapsed();running=false;t0=null}else{startClock()}tick()}
+  else if(k==='r'||k==='R'){
+    var now=Date.now();
+    if(now-rArm<1500){prevAcc=elapsed();acc=0;t0=running?Date.now():null;rArm=0;undoUntil=now+8000;tick()}
+    else{rArm=now;tick()}
+  }
+  else if(k==='u'||k==='U'){if(prevAcc!==null && Date.now()<undoUntil){acc=prevAcc;t0=running?Date.now():null;prevAcc=null;undoUntil=0;tick()}}
+  else if(k==='-'||k==='_'){acc=Math.max(0,elapsed()-60000);t0=running?Date.now():null;tick();show()}
+  else if(k==='='||k==='+'){acc=elapsed()+60000;t0=running?Date.now():null;tick();show()}
+  else if(k==='f'||k==='F'){if(document.fullscreenElement)document.exitFullscreen();else document.documentElement.requestFullscreen()}
+  else if(k==='Home'){c=0;r=0;show()}
+  else if(k==='End'){c=GRID.length-1;r=0;show()}
+});
+document.getElementById('stage').addEventListener('click',function(e){
+  if(overlayOpen()) return;
+  var w=window.innerWidth, x=e.clientX;
+  if(x<w*0.3) nav(-1); else if(x>w*0.7) nav(1);
+});
+document.getElementById('ref').addEventListener('click',function(){this.className=''});
+document.getElementById('room').addEventListener('click',function(){this.className=''});
+show();
+</script></body></html>

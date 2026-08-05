@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Breakout 1 · Demystifying RDM Across Units</title>
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+html,body{height:100%;background:#faf9f7;color:#1c1c1a;
+ font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+ -webkit-font-smoothing:antialiased;overflow:hidden}
+#bar{position:fixed;top:0;left:0;right:0;height:52px;display:flex;align-items:center;
+ gap:22px;padding:0 28px;border-bottom:1px solid #e2ded6;background:#f3f1ec;font-size:15px;z-index:10}
+#clock{font-variant-numeric:tabular-nums;font-size:26px;font-weight:500;min-width:104px;letter-spacing:-.5px}
+#win{font-variant-numeric:tabular-nums;color:#6b6862}
+#state{margin-left:auto;font-size:13px;color:#8a867e;letter-spacing:.03em;text-transform:uppercase}
+#bar.warn{background:#fdf3e0;border-bottom-color:#e8c98a}
+#bar.warn #clock{color:#8a5a00}
+#bar.over{background:#fbe9e7;border-bottom-color:#e9a99f}
+#bar.over #clock{color:#a3271a}
+#stage{position:absolute;top:52px;bottom:46px;left:0;right:0;display:flex;
+ align-items:center;justify-content:center;padding:22px 52px;overflow:hidden}
+.slide{display:none;width:100%;max-width:1020px;transform-origin:center center}
+.slide.on{display:block}
+.kicker{font-size:15px;letter-spacing:.09em;text-transform:uppercase;color:#8a867e;margin-bottom:6px}
+h1{font-size:26px;font-weight:500;letter-spacing:-.4px;margin-bottom:20px;line-height:1.2}
+h1 .t{color:#8a867e;font-weight:400;margin-left:12px;font-size:19px;font-variant-numeric:tabular-nums}
+.ask{font-size:27px;line-height:1.4;font-weight:400;letter-spacing:-.3px;
+ border-left:4px solid #c9c3b6;padding-left:20px;margin-bottom:22px}
+.ask em{font-style:normal;background:#f0ece1;padding:0 4px}
+.ask .then{display:block;font-size:21px;color:#4a4741;margin-top:12px}
+.meta{display:grid;grid-template-columns:112px 1fr;gap:8px 20px;font-size:17px;line-height:1.45}
+.meta dt{font-size:12px;letter-spacing:.07em;text-transform:uppercase;color:#8a867e;padding-top:4px;line-height:1.3}
+.meta dd .q{background:#eef1ea;padding:2px 7px;border-radius:3px;display:inline-block;margin:2px 0}
+.note{margin-top:20px;font-size:16px;color:#4a4741;line-height:1.5;border-top:1px solid #e2ded6;padding-top:14px}
+.help h1{color:#a3271a}
+ol.fb{font-size:20px;line-height:1.45;padding-left:24px}
+ol.fb li{margin-bottom:12px}
+ul.cut{font-size:19px;line-height:1.45;list-style:none}
+ul.cut li{margin-bottom:12px;padding-left:24px;position:relative}
+ul.cut li:before{content:"·";position:absolute;left:6px;font-size:26px;line-height:.9;color:#8a867e}
+ul.cut li b{font-weight:500}
+.big{font-size:24px;line-height:1.5}
+.dim{color:#6b6862}
+#nav{position:fixed;bottom:0;left:0;right:0;height:44px;display:flex;align-items:center;
+ gap:26px;padding:0 28px;border-top:1px solid #e2ded6;background:#f3f1ec;font-size:13px;color:#8a867e}
+kbd{background:#fff;border:1px solid #d6d1c7;border-bottom-width:2px;border-radius:4px;
+ padding:1px 6px;font-family:inherit;font-size:12px;color:#4a4741}
+#dots{margin-left:auto;display:flex;gap:6px;align-items:center}
+.dot{width:7px;height:7px;border-radius:50%;background:#d6d1c7}
+.dot.on{background:#4a4741;transform:scale(1.35)}
+.hint{position:fixed;bottom:58px;right:26px;display:none;align-items:center;gap:9px;
+ background:#fdf3e0;border:1px solid #e8c98a;color:#7a4f00;border-radius:7px;
+ padding:8px 15px;font-size:17px;font-weight:500;z-index:9}
+.hint.on{display:flex}
+#tod{font-size:14px;color:#8a867e;font-variant-numeric:tabular-nums;margin-left:10px}
+.chip{position:fixed;top:64px;right:26px;z-index:9;display:none;align-items:center;gap:8px;
+ border-radius:7px;padding:8px 15px;font-size:16px;font-weight:500}
+.chip.on{display:flex}
+#behind{background:#fdf3e0;border:1px solid #e8c98a;color:#7a4f00}
+#resetchip{background:#fbe9e7;border:1px solid #e9a99f;color:#a3271a;top:110px}
+.ovclock{position:fixed;top:16px;left:46px;font-size:20px;color:#8a867e;font-variant-numeric:tabular-nums}
+#room{position:fixed;inset:0;background:#faf9f7;z-index:50;display:none;padding:56px 46px 30px;overflow:auto}
+#room.on{display:block}
+#ref{position:fixed;inset:0;background:#faf9f7;z-index:50;display:none;padding:56px 46px 30px;overflow:auto}
+#ref.on{display:block}
+#ref h2,#room h2{font-size:15px;letter-spacing:.09em;text-transform:uppercase;color:#8a867e;font-weight:500;margin-bottom:12px}
+#ref .cols,#room .cols{display:grid;grid-template-columns:1.15fr 1fr;gap:38px}
+#ref table,#room table{width:100%;border-collapse:collapse;font-size:16px}
+#ref td,#room td{padding:6px 0;vertical-align:top;line-height:1.35}
+#ref td.k,#room td.k{font-weight:500;white-space:nowrap;padding-right:16px}
+#ref .q,#room .q{font-size:19px;line-height:1.4;background:#f0ece1;padding:9px 14px;border-radius:6px;margin-bottom:14px}
+#ref .say,#room .say{font-size:20px;line-height:1.9}
+#ref .say b,#room .say b{background:#eef1ea;padding:2px 8px;border-radius:3px;font-weight:400}
+#ref .close,#room .close{position:fixed;top:16px;right:26px;font-size:14px;color:#8a867e}
+#ref .never,#room .never{margin-top:18px;padding-top:14px;border-top:1px solid #e2ded6;font-size:15px;color:#4a4741;line-height:1.5}
+.hint kbd{background:#fff;border-color:#e0c690;color:#7a4f00;font-size:15px;padding:2px 8px}
+@media(max-width:900px){.ask{font-size:22px}h1{font-size:22px}.meta{font-size:15px}#stage{padding:16px 24px}}
+</style></head><body>
+<div id="bar"><div id="clock">–:––</div><div id="win"></div><div id="tod"></div><div id="state">→ to begin</div></div>
+<div id="stage"><div class="slide" id="S0_0"><div class="kicker">Breakout 1 · 12:15 to 1:15</div><h1>Demystifying RDM Across Units</h1><div class="big"><p style="margin-bottom:22px">Seven or six people. Sixty minutes. It runs into lunch, so a small overrun costs nobody anything.</p><p class="dim">Before you start: packages on the table · folders and triad sheets out · timer visible · both notetakers set up <b>and the structured notetaker seated where you can read their screen</b> · your tag card beside you.</p></div><div class="note"><b>Press T now</b> and read the six tags and three tiers once before anyone sits down. T works from any slide, all session.<br><br><b>Press D now</b> and read the instructions for keeping the discussion moving. D works from any slide. all session.<br><br>Press <b>→</b> when the session starts. The clock starts itself.</div></div>
+<div class="slide" id="S1_0"><div class="kicker">Opening</div><h1>Set it up<span class="t">0 → 2</span></h1><div class="ask">“This morning we heard Dom on the Tri-Agency policy landscape, then four people describing RDM from four different angles, and Lee on what already exists nationally. This session is your turn to do that at the table. By the end you should have a sense of what people outside your own department actually do, where your work overlaps, and where things fall between you. This is the first breakout, so we’re all getting used to the format. There are no wrong answers here.<span class="then">And these two are our notetakers, <em>gesture to them</em>, and they’re here so I can concentrate on the conversation instead of writing things down. As you heard this morning, they’re capturing what gets said, not who said it. They won’t join in, so don’t wait for them.”</span></div><dl class="meta"><dt>Optional</dt><dd>Let them say their own first names if they’d like to</dd><dt>Don’t</dt><dd>Re-explain the anonymity commitment. It was covered properly at the welcome; one nod to it is enough</dd><dt>Then</dt><dd>Straight into Q1. Do not ask if anyone has questions.</dd></dl><div class="note">Two minutes total. If you are still talking at the three-minute mark you have started the session badly.</div></div>
+<div class="slide" id="S2_0"><div class="kicker">Q1</div><h1>Introductions<span class="t">2 → 16</span></h1><div class="ask">“Let’s go around. Your name, your institution, your role, and one line on how research data touches your work. <em>I’ll start.</em>”</div><dl class="meta"><dt>Format</dt><dd>Go-around · 100 seconds each</dd><dt>You first</dt><dd>30 seconds. Yours sets the length everyone copies.</dd><dt>Watch</dt><dd>Speakers <b>two and three</b>. That is where the norm locks in.</dd></dl><div class="note">If someone starts on their whole portfolio: <i>“we’ll get into the detail in a minute, let’s keep going round.”</i></div></div>
+<div class="slide" id="S3_0"><div class="kicker">Q2</div><h1>What people get wrong<span class="t">16 → 22</span></h1><div class="ask">“Take the Breakout 1 card out of the package in front of you. The question’s printed on it. One line.<span class="then">Ninety seconds. Then we’ll go round and just read them out, <em>no explaining yet</em>, because the next question is where we dig in.”</span></div><dl class="meta"><dt>Format</dt><dd>90 sec silent write, then a read-out round</dd><dt>You first</dt><dd>Read yours in about 8 seconds</dd><dt>Then</dt><dd><b>Collect the cards and keep them in front of you</b>: they are your Q3 fallback and nobody else has a copy</dd><dt>Tagging</dt><dd><b>Starts here, and it is a warm-up.</b> Only tag the two or three that obviously fit. Skip the rest. <b>Press ↓ for worked examples.</b></dd><dt>Say aloud</dt><dd><span class="q">“Let’s tag that as ___”</span></dd></dl><div class="note">Hold the full ninety seconds of quiet, then read yours first. <b>Press T any time for the six tags.</b> Tagging becomes routine in Q3; this is just where you get the feel of saying it out loud.</div></div>
+<div class="slide help" id="S3_1"><div class="kicker">Q2 · tagging, worked</div><h1>What it sounds like</h1><div class="ask">You name <em>which of the six the item is about</em>, out loud, so the notetaker types your decision instead of guessing one. A tag names the <b>subject</b>, not the problem.<span class="then">The test: <em>“this one is about ___.”</em> The blank is the tag. If it will not fill, say “other”, or say nothing.</span></div><div class="big"><table style="width:100%;border-collapse:collapse;font-size:18px;line-height:1.35"><tr><td style="width:54%;padding:8px 20px 8px 0;color:#4a4741;border-bottom:1px solid #e2ded6">“People think the library only wants the final dataset. We’d rather hear from them at the proposal stage.”</td><td style="padding:8px 0;border-bottom:1px solid #e2ded6">→ <b>“That’s an ownership and referral one.”</b></td></tr><tr><td style="padding:8px 20px 8px 0;color:#4a4741;border-bottom:1px solid #e2ded6">“Everyone assumes IT storage is infinite and free.”</td><td style="padding:8px 0;border-bottom:1px solid #e2ded6">→ <b>“Infrastructure and tools, that one.”</b></td></tr><tr><td style="padding:8px 20px 8px 0;color:#4a4741;border-bottom:1px solid #e2ded6">“People think ethics is a form you do at the start, not something running through the project.”</td><td style="padding:8px 0;border-bottom:1px solid #e2ded6">→ <b>“Policy and compliance.”</b></td></tr><tr><td style="padding:8px 20px 8px 0;color:#4a4741">“People think I’m the one who fixes the printer.”</td><td style="padding:8px 0;color:#8a867e">→ <i>say nothing. It does not fit one of the six, and forcing it is worse than leaving it.</i></td></tr></table></div><div class="note"><b>Two or three of the seven, not all of them.</b> Woven in as a short aside while the group is still on it, then straight to the next person. You are summarising, not announcing.</div></div>
+<div class="slide" id="S4_0"><div class="kicker">Q3</div><h1>Overlaps and gaps<span class="t">22 → 37</span></h1><div class="ask"><em>Task first, then split them.</em><span class="then">“We’re going to do this in small groups for six minutes. The question is: where do your jobs overlap, and what falls between you? One line each on the sheet, and then we’ll hear them all.”</span><span class="then">Now point: “You three together. You three. And you two. <em>Don’t move, just turn your chairs toward each other.</em>” Hand each group a sheet.</span></div><dl class="meta"><dt>Split by</dt><dd>Pointing, not counting off. Faster and nobody loses track.</dd><dt>Groups</dt><dd>7 people → 3 + 2 + 2, or 3 + 4. 6 people → 3 + 3.</dd><dt>One table</dt><dd>Everyone is round one table, so nobody moves seats. Chairs turn, that is all. It will be loud and they will half-hear each other, which is fine.</dd><dt>You do</dt><dd>Stay in your seat. Lean toward each group for twenty seconds to check they have the question, then leave them to it. Do not join in.</dd><dt>At 6 min</dt><dd>“Let’s hear them.” Back to the full table.</dd><dt>Tagging</dt><dd><b>Every example gets one now.</b> As it comes back to the table, say the tag and the units. Press <b>T</b> if you need the list.</dd><dt>Say aloud</dt><dd><span class="q">“Let’s tag that as ___”</span> <span class="q">“So that’s ___ and ___”</span></dd></dl><div class="note">Give the task <b>before</b> you split them, or they will split and then ask what they are doing. Do not sort overlaps from gaps; just capture the example.</div></div>
+<div class="slide help" id="S4_1"><div class="kicker">If it stalls</div><h1>Q3 · Overlaps and gaps</h1><ol class="fb"><li><i>“Think about the cards we just read. Several of those are half an overlap already.”</i></li><li>Read out two of the Q2 cards <b>from the pile in front of you</b>. Not from the notetaker: Q2 was never captured live.</li><li>Pick whichever fits: <i>“Who owns the DMP once it’s written, and who checks it gets followed?”</i> · <i>“Who fields a researcher’s question about anonymization: ethics or the library?”</i> · <i>“When a grad student leaves, whose job is it to make sure the data doesn’t leave with them?”</i></li></ol></div>
+<div class="slide" id="S5_0"><div class="kicker">Q4</div><h1>Collaboration<span class="t">37 → 53</span></h1><div class="ask">“Given the overlaps and gaps we just named, where would working together actually make things easier?”</div><dl class="meta"><dt>Format</dt><dd>Open floor</dd><dt>Say aloud</dt><dd><span class="q">“Let’s tag that as ___”</span> <span class="q">“So that’s ___ and ___”</span><span class="q">“That’s a bigger ask”</span></dd><dt>Careful</dt><dd>Name a big idea, don’t develop it. That’s Breakout 2’s job.</dd></dl><div class="note">Bigger-ask items get read aloud at the start of Breakout 2. Say them clearly enough to be quoted.</div></div>
+<div class="slide help" id="S5_1"><div class="kicker">If it stalls</div><h1>Q4 · Collaboration</h1><ol class="fb"><li>Ask the context notetaker for one specific Q3 example to react to.</li><li><i>“If you could ask one other unit for help with one task tomorrow, what would it be?”</i></li><li><i>“Is there a single point of contact that would save you time right now?”</i></li></ol></div>
+<div class="slide" id="S6_0"><div class="kicker">Wrap</div><h1>Close it out<span class="t">53 → 58</span></h1><div class="ask">Thank the group. Read back two or three things that came up more than once, <em>off the notetaker’s screen, in your voice</em>.</div><dl class="meta"><dt>Then</dt><dd>Q2 cards and triad sheets into the numbered folders</dd><dt>Nothing else</dt><dd>No slip in this session: Breakout 2 picks this up in an hour, same room, same you</dd></dl><div class="note">Do not ask the student to summarize. You deliver it; they keep it on screen.</div></div></div>
+<div class="hint" id="hint"><kbd>↓</kbd> if it stalls</div>
+<div class="chip" id="behind"></div>
+<div class="chip" id="resetchip">press R twice: reset the clock for Part 2</div>
+<div id="ref"><div class="close"><kbd>T</kbd> or <kbd>esc</kbd> to close</div><div class="ovclock" id="refclock"></div>
+<div class="cols"><div>
+<h2>The six tags</h2>
+<div style="font-size:15px;color:#4a4741;line-height:1.45;margin-bottom:12px">A tag names <b>the subject</b>, not the problem. So a gap and an overlap take the <b>same</b> tag: “nobody owns the handoff” and “we both do it and never compare notes” are both ownership and referral. Same question, opposite answer.</div>
+<table>
+<tr><td class="k">Ownership and referral</td><td>whose job is it, and where does someone go first</td></tr>
+<tr><td class="k">Training and awareness</td><td>they don’t know it exists, or don’t know how</td></tr>
+<tr><td class="k">Capacity and staffing</td><td>nobody has the time or the position</td></tr>
+<tr><td class="k">Infrastructure and tools</td><td>storage, platforms, software, documentation and deposit</td></tr>
+<tr><td class="k">Policy and compliance</td><td>Tri-Agency, institutional policy, ethics and sensitive data</td></tr>
+<tr><td class="k">Regional community</td><td>shared resources, contacts, community of practice</td></tr>
+<tr><td class="k" style="color:#8a867e">Other</td><td style="color:#8a867e">say it, the notetaker writes it in</td></tr>
+</table>
+<div class="never"><b>Unsure?</b> Say “other”, or say nothing. A blank is honest; a wrong tag is worse, because nobody downstream can tell.</div>
+</div><div>
+<h2>The three tiers</h2>
+<div class="q">“Could we start this next month, with the people in this room, and no new money?”</div>
+<table>
+<tr><td class="k">Yes</td><td>coordination only</td></tr>
+<tr><td class="k">No, but a unit head could say yes</td><td>light lift</td></tr>
+<tr><td class="k">No: budget, a position, or a decision from above</td><td>needs real backing</td></tr>
+</table>
+<h2 style="margin-top:26px">Say these out loud</h2>
+<div class="say"><b>“Let’s tag that as ___”</b><br><b>“That one’s ___”</b> <span style="font-size:15px;color:#8a867e">tier</span><br><b>“So that’s ___ and ___”</b> <span style="font-size:15px;color:#8a867e">units</span></div>
+<div class="never"><b>Never</b> a name in the capture. Units only. Asked to be quoted by name? “Let me follow up after the session.”</div>
+</div></div></div>
+<div id="room"><div class="close"><kbd>D</kbd> or <kbd>esc</kbd> to close</div><div class="ovclock" id="roomclock"></div>
+<div class="cols"><div>
+<h2>Someone is taking up too much room</h2>
+<div class="say"><b>“That’s useful, and I want to hear how that lands for a smaller shop.”</b></div>
+<div class="never">Thank them <b>specifically</b>, then redirect. The cleanest move there is.</div>
+<h2 style="margin-top:26px">Someone hasn’t spoken</h2>
+<div class="say"><b>“Number 5, you’ve been thinking about something.”</b></div>
+<div class="never">Numbers are less exposing than names. And after any card write, <b>go round in order</b>: nobody has to volunteer, and the quiet people have already written their answer.</div>
+<h2 style="margin-top:26px">Keep a round short</h2>
+<div class="say"><b>“Just read them out, no explaining yet. The next question is where we dig in.”</b></div>
+<div class="never">A constraint with a promise attached reads as a plan, not a brush-off.</div>
+</div><div>
+<h2>Big-institution voices</h2>
+<div class="never" style="margin-top:0;padding-top:0;border-top:none">Seat them <b>sixth or seventh</b> in any go-around. Give them one planned moment:</div>
+<div class="say" style="margin-top:10px"><b>“I’ll come to number 6 near the end, for the view from a bigger shop.”</b></div>
+<h2 style="margin-top:26px">Yellow card is up</h2>
+<div class="say"><b>“Hold that thought a second.”</b></div>
+<div class="never">The notetaker is losing content. Fifteen seconds now saves the capture.</div>
+<h2 style="margin-top:26px">Gone somewhere difficult</h2>
+<div class="never" style="margin-top:0;padding-top:0;border-top:none">If it drifts from the Code of Conduct, step in. Unsure, or it continues? Catch Nick or Sandra at the next transition; they are walking the rooms. <b>You will not be second-guessed for flagging.</b></div>
+</div></div></div>
+<div id="nav"><a href="../index.html" style="color:#4a4741;text-decoration:none;border-bottom:1px solid #c9c3b6">← Back to site</a><span><kbd>←</kbd><kbd>→</kbd> or click edges</span><span><kbd>↓</kbd> if it stalls</span>
+<span><kbd>S</kbd> start/pause</span><span><kbd>R</kbd><kbd>R</kbd> reset · <kbd>U</kbd> undo</span><span><kbd>−</kbd><kbd>+</kbd> adjust clock</span><span><kbd>T</kbd> tags &amp; tiers</span><span><kbd>D</kbd> the room</span><span><kbd>F</kbd> full screen</span>
+<div id="dots"></div></div>
+<script>
+var GRID=[{"win": null, "rows": 1, "reset": false}, {"win": [0, 2], "rows": 1, "reset": false}, {"win": [2, 16], "rows": 1, "reset": false}, {"win": [16, 22], "rows": 2, "reset": false}, {"win": [22, 37], "rows": 2, "reset": false}, {"win": [37, 53], "rows": 2, "reset": false}, {"win": [53, 58], "rows": 1, "reset": false}],c=0,r=0,t0=null,acc=0,running=false;
+var prevAcc=null,rArm=0,undoUntil=0;
+var slides=document.querySelectorAll('.slide');
+function key(c,r){return 'S'+c+'_'+r}
+function pad(n){return (n<10?'0':'')+n}
+function overlayOpen(){return document.getElementById('ref').className!=='' || document.getElementById('room').className!==''}
+function show(){
+  slides.forEach(function(s){s.classList.remove('on')});
+  var el=document.getElementById(key(c,r));
+  if(!el){r=0;el=document.getElementById(key(c,0))}
+  el.classList.add('on');
+  var w=GRID[c].win;
+  document.getElementById('win').textContent = w ? (w[0]+' → '+w[1]+' min') : '';
+  var d=document.getElementById('dots');d.innerHTML='';
+  for(var i=0;i<GRID.length;i++){var s=document.createElement('div');
+    s.className='dot'+(i===c?' on':'');d.appendChild(s)}
+  document.getElementById('hint').className='hint'+((GRID[c].rows>1&&r===0)?' on':'');
+  var bc=document.getElementById('behind'), m=Math.floor(elapsed()/60000);
+  if(w && (t0||acc) && m>=w[0]+2 && m<w[1]){
+    bc.textContent='≈ '+(m-w[0])+' min behind · cut sheet';bc.className='chip on';
+  } else bc.className='chip';
+  fit(); tick();
+}
+function fit(){
+  var el=document.querySelector('.slide.on'); if(!el) return;
+  el.style.transform='none';
+  var st=document.getElementById('stage');
+  var ah=st.clientHeight-44, aw=st.clientWidth-104;
+  var s=Math.min(1, ah/el.offsetHeight, aw/el.offsetWidth);
+  if(s<0.999) el.style.transform='scale('+(Math.floor(s*1000)/1000)+')';
+}
+window.addEventListener('resize',fit);
+function elapsed(){return acc + (running && t0 ? (Date.now()-t0) : 0)}
+function startClock(){if(!running){t0=Date.now();running=true}}
+function tick(){
+  var ms=elapsed(),m=Math.floor(ms/60000),s=Math.floor(ms/1000)%60;
+  var tstr = (t0||acc) ? (m+':'+pad(s)) : '–:––';
+  document.getElementById('clock').textContent = tstr;
+  document.getElementById('refclock').textContent = tstr;
+  document.getElementById('roomclock').textContent = tstr;
+  var d=new Date();
+  document.getElementById('tod').textContent = pad(d.getHours())+':'+pad(d.getMinutes());
+  var bar=document.getElementById('bar');bar.className='';
+  var w=GRID[c].win;
+  if(w && (t0||acc)){
+    var lead=Math.min(2, Math.max(0.5, (w[1]-w[0])*0.2))*60000;
+    var rem=w[1]*60000-ms;
+    if(rem<=0) bar.className='over';
+    else if(rem<=lead) bar.className='warn';
+  }
+  var st=document.getElementById('state'), now=Date.now();
+  if(rArm && now-rArm<1500){st.textContent='press R again to reset'}
+  else if(undoUntil && now<undoUntil){st.textContent='reset · press U to undo'}
+  else if(!running && !acc && c>0 && w){bar.className='warn';st.textContent='timer not running · press S'}
+  else if(bar.className==='over'){st.textContent='over · catch up or cut'}
+  else if(bar.className==='warn'){st.textContent='wrap this segment'}
+  else st.textContent = running?'running':(acc?'paused':'→ to begin');
+  var rc=document.getElementById('resetchip');
+  rc.className='chip'+((GRID[c].reset && (t0||acc) && w && m>w[1])?' on':'');
+}
+setInterval(tick,500);
+function nav(d){
+  if(overlayOpen()) return;
+  if(d>0 && c<GRID.length-1){
+    if(c===0 && !running && !acc) startClock();
+    c++;r=0;show();
+  } else if(d<0 && c>0){c--;r=0;show()}
+}
+document.addEventListener('keydown',function(e){
+  var k=e.key;
+  var ref=document.getElementById('ref'), room=document.getElementById('room');
+  if(k==='t'||k==='T'){room.className='';ref.className=ref.className?'':'on';e.preventDefault();return}
+  if(k==='d'||k==='D'){ref.className='';room.className=room.className?'':'on';e.preventDefault();return}
+  if(k==='Escape'){ref.className='';room.className='';return}
+  if(overlayOpen()){e.preventDefault();return}
+  if(k==='ArrowRight'||k==='PageDown'){nav(1);e.preventDefault()}
+  else if(k==='ArrowLeft'||k==='PageUp'){nav(-1);e.preventDefault()}
+  else if(k===' '){e.preventDefault()}
+  else if(k==='ArrowDown'){if(GRID[c].rows>1){r=1;show()}e.preventDefault()}
+  else if(k==='ArrowUp'){if(r>0){r=0;show()}e.preventDefault()}
+  else if(k==='s'||k==='S'){if(running){acc=elapsed();running=false;t0=null}else{startClock()}tick()}
+  else if(k==='r'||k==='R'){
+    var now=Date.now();
+    if(now-rArm<1500){prevAcc=elapsed();acc=0;t0=running?Date.now():null;rArm=0;undoUntil=now+8000;tick()}
+    else{rArm=now;tick()}
+  }
+  else if(k==='u'||k==='U'){if(prevAcc!==null && Date.now()<undoUntil){acc=prevAcc;t0=running?Date.now():null;prevAcc=null;undoUntil=0;tick()}}
+  else if(k==='-'||k==='_'){acc=Math.max(0,elapsed()-60000);t0=running?Date.now():null;tick();show()}
+  else if(k==='='||k==='+'){acc=elapsed()+60000;t0=running?Date.now():null;tick();show()}
+  else if(k==='f'||k==='F'){if(document.fullscreenElement)document.exitFullscreen();else document.documentElement.requestFullscreen()}
+  else if(k==='Home'){c=0;r=0;show()}
+  else if(k==='End'){c=GRID.length-1;r=0;show()}
+});
+document.getElementById('stage').addEventListener('click',function(e){
+  if(overlayOpen()) return;
+  var w=window.innerWidth, x=e.clientX;
+  if(x<w*0.3) nav(-1); else if(x>w*0.7) nav(1);
+});
+document.getElementById('ref').addEventListener('click',function(){this.className=''});
+document.getElementById('room').addEventListener('click',function(){this.className=''});
+show();
+</script></body></html>
