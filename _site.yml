@@ -10,13 +10,13 @@ navbar:
       href: 03_code-of-conduct.html
     - text: "Facilitator Materials"
       menu:
-          - text: "Day 1: Breakout 1"
+          - text: "Day 1: Breakout 1 - Demystifying RDM Across Units"
             href: facilitator-materials/day1-breakout1.html
-          - text: "Day 1: Breakout 2"
+          - text: "Day 1: Breakout 2 - Blue-Sky Solutions"
             href: facilitator-materials/day1-breakout2.html
-          - text: "Day 1: Breakout 3"
+          - text: "Day 1: Breakout 3 - Prioritizing Directions"
             href: facilitator-materials/day1-breakout3.html
-          - text: "Day 2: Breakout 4"
+          - text: "Day 2: Breakout 4 - Workshopping RDM Priorities"
             href: facilitator-materials/day2-breakout4.html
 
 
