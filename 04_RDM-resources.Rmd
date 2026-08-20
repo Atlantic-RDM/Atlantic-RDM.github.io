@@ -1,0 +1,46 @@
+---
+Title: "RDM Resources"
+pagetitle: "RDM Resources"
+output:
+  html_document:
+    includes:
+      after_body: footer.html
+    toc: true
+    toc_depth: 3
+    toc_float:
+      collapsed: false
+      smooth_scroll: false
+---
+
+## RDM Resources
+
+
+#### <a href="https://borealisdata.ca/" target="_blank">Borealis data repository</a>
+
+Borealis is a bilingual, multidisciplinary, Canadian research data repository, supported by academic libraries and research institutions across Canada. It is a platform to store datasets for long-term preservation and discovery, to help researchers meet data retention and sharing requirements. Borealis can be freely used to discover Canadian datasets, but deposits require an institutional 
+
+#### <a href="https://www.frdr-dfdr.ca/repo/" target="_blank">Federated Research Data Repository</a>
+
+FRDR (the Federated Research Data Repository) is a bilingual publishing platform for sharing and preserving Canadian research data, with the unique ability to house large datasets. Unlike Borealis, researchers affiliated with Canadian institutions can deposit data into FRDR without needing an institutional account.
+
+#### <a href="https://dmp-pgd.ca/" target="_blank">DMP Assistant</a>
+
+The DMP Assistant is a national, online, bilingual data management planning tool to assist researchers in preparing data management plans (DMPs). The web portal features example DMPs, tutorials and webinars, and other resources to get started with the tool.
+
+
+#### <a href="https://zenodo.org/records/4060159#.X4CanO17mUk" target="_blank">Sensitive Data Toolkit for Researchers Part 1: Glossary of Terms for Sensitive Data used for Research Purposes</a>
+
+A resource intended to provide definitions for a number of common terms used in the discussion of the management of sensitive data in the Canadian context.
+
+#### <a href="https://zenodo.org/records/4060449#.X4Caye17mUk" target="_blank">Sensitive Data Toolkit for Researchers Part 2: Human Participant Research Data Risk Matrix</a>
+
+A resource intended to help researchers determine risk level for human participant research data, and make decisions with respect to its management, deposit, and appropriate access/future use.
+
+#### <a href="https://zenodo.org/records/4060461#.X4CbEO17mUk" target="_blank">Sensitive Data Toolkit for Researchers Part 3: Research Data Management Language for Informed Consent</a>
+
+A resource intended to assist researchers working with sensitive data in the development of tailored, deposit-friendly language for ethics approval and informed consent.
+
+#### <a href="https://science.gc.ca/site/science/en/interagency-research-funding/policies-and-guidelines/research-data-management/tri-agency-research-data-management-policy" target="_blank">Tri-Agency RDM Policy</a>
+
+
+#### <a href="https://science.gc.ca/site/science/en/interagency-research-funding/policies-and-guidelines/research-data-management/funding-opportunities-requiring-data-management-plans" target="_blank">Tri-Agency grants requiring DMPs</a>
